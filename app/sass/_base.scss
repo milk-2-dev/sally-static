@@ -1,0 +1,185 @@
+
+/**********************************************************************************************
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+										3. Global Styles
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+***********************************************************************************************/
+
+html, body {
+  overflow-x:hidden;
+}
+body {
+  overflow:hidden;
+  font:400 16px/1.875 'Open Sans', Helvetica, Arial, sans-serif;
+  color:#718097;
+  background:#fefefe;
+  position:relative;
+}
+img, iframe {
+  max-width:100%;
+}
+img {
+  height: auto;
+}
+.clearfix {
+  clear:both;
+}
+.color-light {
+  color:#fff;
+}
+
+/********************************************
+			   3-1. Align Styles
+*********************************************/
+.align-left {
+  text-align:left !important;
+}
+.align-right {
+  text-align:right !important;
+}
+.align-center {
+  text-align:center !important;
+}
+img.align-left {
+  float:left;
+  margin:.5em 2em .5em 0;
+}
+img.align-right {
+  float:right;
+  margin:.5em 0 .5em 2em;
+}
+img.align-center {
+  margin:1em auto;
+  display:block;
+}
+
+
+/********************************************
+			3-2. Main Container
+*********************************************/
+#splendid-main-container {
+  padding-top:50px;
+  padding-bottom:50px;
+}
+.first-section {
+  margin-top:-50px!important;
+}
+.last-section {
+  margin-bottom:-50px!important;
+}
+#splendid-main-container.page-layout .first-section {
+  margin-top:-100px!important;
+}
+#splendid-main-container.page-layout .last-section {
+  margin-bottom:-100px!important;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.overflow-visible {
+  overflow: hidden;
+}
+div.bg-pos-center {
+  background-position: center !important;
+}
+
+/********************************************
+			3-3. Boxed Layout
+*********************************************/
+body.b_1170 {
+  background:#e7e7e7;
+}
+body.b_1170 #splendid-main-container {
+  padding:0 40px;
+}
+body.b_1170 #splendid-main-container.container {
+  background:#fff;
+}
+body.b_1170 .container {
+  padding:0 40px;
+}
+body.b_1170 .section .row .container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+body.b_1170 .full-width{
+  margin-left:0;
+  width:auto;
+}
+body.b_1170 #footer #main-footer {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+body.b_1170 #splendid-main-container .full-width{
+  margin-left:-40px;
+  margin-right:-40px;
+  width:auto;
+}
+body.b_1170 #header,
+body.b_1170 #footer,
+body.b_1170 .page-heading,
+body.b_1170 .home-flexslider{
+  margin:0 auto;
+}
+.fullwidth-container > .container {
+  width: 100% !important;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/********************************************
+   3-4. Add one fifth column to grid system
+*********************************************/
+.col-lg-one-fifth,
+.col-md-one-fifth,
+.col-sm-one-fifth,
+.col-xs-one-fifth {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  float:left;
+}
+
+/********************************************
+				3-5. Layout Fixes
+*********************************************/
+body.modal-open {
+  padding-right:0 !important;
+}
+@media(min-width:768px){
+  body.b_1170 #header,body.b_1170 #footer,body.b_1170 .page-heading,body.b_1170 .home-flexslider {width:750px!important;}
+}
+@media(min-width:992px){
+  body.b_1170 #header,body.b_1170 #footer,body.b_1170 .page-heading,body.b_1170 .home-flexslider {width:970px!important;}
+  div.parallax-bg{display: none;}
+}
+@media(min-width:1200px){
+  .container {width:1170px;}
+  body.b_1170 #header,body.b_1170 #footer,body.b_1170 .page-heading,body.b_1170 .home-flexslider {width:1170px!important;}
+}
+@media(min-width:1250px){
+  .container {width:1230px;}
+  body.b_1170 #header, body.b_1170 #footer, body.b_1170 .page-heading, body.b_1170 .home-flexslider {width:1230px!important;}
+}
+@media(min-width:1520px){
+  .headerstyle7 .container{ width:1230px;}
+}
+@media(max-width:1519px){
+  .headerstyle7 .container{ width:900px;}
+}
+@media(max-width:1190px){
+  .headerstyle7 .container{ width:100%;}
+}
+@media(min-width:1200px){
+  .col-lg-one-fifth{width:20%;}
+}
+@media(min-width:992px) and (max-width:1199px){
+  .col-md-one-fifth{width:20%;}
+}
+@media(min-width:768px) and (max-width:991px){
+  .col-sm-one-fifth{width:20%;}
+}
+@media(max-width:767px){
+  .col-xs-one-fifth{width:20%;} .col-lg-one-fifth{width:100%;}
+}
