@@ -38,7 +38,8 @@ gulp.task('scripts', function() {
         'app/libs/tether/dist/js/tether.min.js',
         'app/libs/bootstrap/dist/js/bootstrap.min.js',
         'app/libs/OwlCarousel2/dist/owl.carousel.min.js',
-        'app/libs/gsap/src/minified/TweenMax.min.js'
+        'app/libs/gsap/src/minified/TweenMax.min.js',
+        'app/libs/seiyria-bootstrap-slider/dist/bootstrap-slider.js'
         ])
         .pipe(concat('libs.min.js'))
         .pipe(uglify())

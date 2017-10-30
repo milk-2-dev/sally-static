@@ -2391,3 +2391,5 @@
     }); // End Of Document Ready
 
 })(jQuery, this, document);
+
+$("#ex2").slider({});
