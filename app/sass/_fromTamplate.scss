@@ -663,7 +663,7 @@ textarea.unfilled:focus{
 #header.not-fixed .logo a.logo-dark,
 #header.fixed-header .logo a.logo-light { display: none; }
 #header.fixed-header .logo a.logo-dark { display: block; }
-#header .navigation{
+.search-form__filter select{
   display:table;
   width:100%;
 }
@@ -1831,15 +1831,15 @@ body.headerstyle7 .full-width{
 /********************************************
 		5-11-4. Header Light Font Color
 *********************************************/
-#header .color-light,
-#header .color-light a,
-#header.just-fixed-header #main-header.sticky-color-light #main-nav li a,
-#header.fixed-header #main-header.sticky-color-light #main-nav li a,
-#header #preheader.color-light .menu li a,
-#header .color-light .social-icons a,
-#header .color-light .iconic-list li .fa{
-  color:#fff;
-}
+//#header .color-light,
+//#header .color-light a,
+//#header.just-fixed-header #main-header.sticky-color-light #main-nav li a,
+//#header.fixed-header #main-header.sticky-color-light #main-nav li a,
+//#header #preheader.color-light .menu li a,
+//#header .color-light .social-icons a,
+//#header .color-light .iconic-list li .fa{
+//  color:#fff;
+//}
 #header .color-light .inline-list{
   opacity:.6;
 }
@@ -10032,12 +10032,6 @@ html.js .progressbar-animated .progress-width{
 }
 
 .features .features-row {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: box;
-  display: flexbox;
   display: flex;
   -webkit-flex-flow: wrap;
   flex-flow: wrap;

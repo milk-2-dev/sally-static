@@ -433,6 +433,7 @@
     margin: -10px 0;
     display: block;
     text-align: left;
+    color:#fff;
 
     @media(max-width:991px){
         display: inline-block;
@@ -643,83 +644,6 @@
     font-weight: 600;
 }
 
-.search-form{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #000;
-    margin-top: 30px;
-}
-
-.search-form__filter{
-    width:30%;
-    padding: 10px 20px 10px 10px;
-    border-right: 1px solid #000;
-    text-align: left;
-
-    label{
-        font-weight: 100;
-        font-size: 14px;
-        line-height: 1;
-        margin-bottom: 0;
-        margin-left: 15px;
-    }
-
-    select{
-        font-weight: 700;
-        font-size: 18px;
-        margin: 0;
-        border: none;
-        background: transparent;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        cursor: pointer;
-        padding: 0 15px;
-        background: image_url('carret.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center right;
-
-
-        &:focus{
-            border: none;
-            outline: none;
-        }
-    }
-}
-
-.search-form__input{
-    padding: 20px;
-    width:70%;
-    text-align: left;
-    position: relative;
-    padding-right: 50px;
-
-
-
-    input{
-        border: none;
-        width: 100%;
-        background: transparent;
-
-        &:focus{
-            border: none;
-            outline: none;
-        }
-    }
-
-    button{
-        border: none;
-        background: transparent;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 20px;
-        margin: auto;
-        cursor: pointer;
-    }
-}
 
 .custom-posts{
     .sc-blog-post{
@@ -770,4 +694,83 @@
 
         }
     }
+}
+
+.user-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 40px;
+    background: #af7bf2;
+    padding: 0 15px;
+    margin-right: -15px;
+
+    .dropdown{
+        text-align: left;
+
+        >a{
+            display: block;
+            padding-right: 40px;
+            background: url('../../img/caret--white.png');
+            background-size: 15px;
+            background-repeat: no-repeat;
+            background-position: center right;
+
+            &:hover,
+            &:focus{
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.user-bar__avatar{
+    display: inline-block;
+    margin-right: 15px;
+
+    img{
+        border-radius: 50%;
+    }
+}
+
+.user-bar__info{
+    position: relative;
+    padding-right: 40px;
+    //margin-top:20px;
+
+    .dropdown-menu{
+        a {
+            color: #000;
+        }
+    }
+}
+
+.user-bar__info-notification{
+    position: absolute;
+    top: -20px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background: #161c43;
+    border-radius: 50%;
+    font-weight: 700;
+}
+
+.user-bar__info-title{
+    display: block;
+    font-size: 13px;
+    line-height: 1;
+    color: #fff;
+}
+
+.user-bar__info-cost{
+    display: block;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    color: #fff;
 }

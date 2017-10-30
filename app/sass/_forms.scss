@@ -1,0 +1,136 @@
+.search-form{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #000;
+  margin-top: 30px;
+}
+
+.search-form__filter{
+  width:30%;
+  padding: 10px 20px 10px 10px;
+  border-right: 1px solid #000;
+  text-align: left;
+
+  label{
+    font-weight: 100;
+    font-size: 14px;
+    line-height: 1;
+    margin-bottom: 0;
+    margin-left: 15px;
+  }
+
+  select{
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0;
+    border: none;
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    padding: 0 15px;
+    background: url('../../img/caret.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+
+
+    &:focus{
+      border: none;
+      outline: none;
+    }
+  }
+}
+
+.search-form__input{
+  padding: 20px;
+  width:70%;
+  text-align: left;
+  position: relative;
+  padding-right: 50px;
+
+
+
+  input{
+    border: none;
+    width: 100%;
+    background: transparent;
+
+    &:focus{
+      border: none;
+      outline: none;
+    }
+  }
+
+  button{
+    border: none;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 20px;
+    margin: auto;
+    cursor: pointer;
+  }
+}
+
+.quick-amplify-form{
+
+}
+
+.quick-amplify-form__wrap{
+  padding: 15px;
+  border: 1px solid #000;
+}
+
+.quick-amplify-form__input{
+  //@extend.search-form__input;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  input{
+    border: none;
+    width: 100%;
+    background: transparent;
+    margin-right: 30px;
+
+    &:focus{
+      border: none;
+      outline: none;
+    }
+  }
+
+  button{
+    margin: 0;
+  }
+
+}
+
+.form-item{
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.input-notification{
+  display: block;
+  text-align: right;
+  margin-top:-10px;
+}
+
+.form-item--few-blocks{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-item__title{
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.form-item__desc{
+  margin-bottom: 0;
+}

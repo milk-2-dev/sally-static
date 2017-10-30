@@ -34,10 +34,11 @@ gulp.task('browser-sync',function(){
 gulp.task('scripts', function() {
     return gulp.src([
         // 'app/libs/modernizr.js',
-        'app/libs/jQuery/dist/jquery.min.js',
+        'app/libs/jquery/dist/jquery.min.js',
+        'app/libs/tether/dist/js/tether.min.js',
         'app/libs/bootstrap/dist/js/bootstrap.min.js',
-        'app/libs/owlcarousel/dist/owl.carousel.min.js',
-        'app/libs/components-font-awesome/dist/owl.carousel.min.js'
+        'app/libs/OwlCarousel2/dist/owl.carousel.min.js',
+        'app/libs/gsap/src/minified/TweenMax.min.js'
         ])
         .pipe(concat('libs.min.js'))
         .pipe(uglify())

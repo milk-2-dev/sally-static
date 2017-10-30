@@ -28,16 +28,38 @@
 
                     <div class="col-lg-3 col-md-3">
                         <div class="logo">
-                            <a class="logo__text" href="http://localhost:3000/">Sally</a>
+                            <a class="logo__text" href="/">Sally</a>
                             <!-- (image_tag 'img/logo.png', alt: 'Logo') -->
                         </div>
                     </div>
 
                     <div class="col-lg-9 col-md-9 sing">
-                        <a class="sing__in button unfilled br-light br-color-blue color-white" href="http://localhost:3000/users/sign_in">Sign in</a>
+                        <a class="sing__in button unfilled br-light br-color-blue color-white" href="javascript:void(0);">Add Your Ad</a>
 
-                        <a class="sing__up" href="http://localhost:3000/users/sign_up">Sign up</a>
+                        <div class="user-bar">
+                            <div class="user-bar__avatar">
+                                <img src="http://placehold.it/50x50" alt="">
+                            </div>
 
+                            <div class="user-bar__info">
+                                <span class="user-bar__info-notification">10</span>
+                                <div class="dropdown">
+                                    <a data-toggle="dropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <span class="user-bar__info-title">
+                                          Impression Available
+                                      </span>
+                                        <span class="user-bar__info-cost">
+                                          $1,000,000,00
+                                      </span>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -105,59 +127,128 @@
             </div>
         </div>
         <!-- /Lower Header -->
-
-        <!-- <ul id="preheader-social-nav" class="social-icons">
-          <li><a href="/users/auth/facebook">
-                <i class="fa fa-facebook fa-sm"></i>
-  </a>        </li>
-          <li><a href="/users/auth/google_oauth2">
-                <i class="fa fa-google-plus fa-sm"></i>
-  </a>        </li>
-          <li><a href="/users/auth/amazon">
-                <i class="fa fa-amazon fa-sm"></i>
-  </a>        </li>
-        </ul> -->
     </header>
     <!-- /HEADER -->
 
     <!-- Main Container -->
     <main id="splendid-main-container padding_t_0">
         <div class="">
-            <section class="full-width margin_b_50 padding_b_50 padding_t_50 custom-bg15" style="background-image: url('')">
+            <section class="full-width padding_b_50 padding_t_50 custom-bg15">
                 <div class="container align-center">
-                    <h1>Welcome to Sally.org</h1>
-
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor<br>
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud<br>
-                        exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.
-                    </p>
-
-                    <a class="button big-margin bg-black color-white" href="http://localhost:3000/">How It Works</a>
-
-                    <div>
-                        <form class="search-form">
-                            <div class="search-form__filter">
-                                <label for="filter-select">Search For</label>
-
-                                <select id="filter-select">
-                                    <option>Message</option>
-                                    <option>Images</option>
-                                    <option>Posts</option>
-                                </select>
-                            </div>
-                            <div class="search-form__input">
-                                <input type="" name="" placeholder="Enter Search Terms">
-                                <button type="submit">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <form class="quick-amplify-form">
+                        <div class="quick-amplify-form__wrap">
+                            <div class="quick-amplify-form__input">
+                                <input type="" name="" placeholder="Input Website or Article URL">
+                                <button type="submit" class="button bg-black color-white">
+                                    Cancel
                                 </button>
                             </div>
-                        </form>
+                        </div>
+
+
+                        <h3 class="margin_t_50 align-left">Quick Amplify</h3>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-item">
+                                    <p class="form-item__title">Default Location</p>
+                                    <div class="form-item--few-blocks">
+                                        <p class="form-item__desc">All United States</p>
+                                        <a href="javascript:void(0);" class="button small br-light br-color-blue color-blue">
+                                        Edit Location</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-item">
+                                    <p class="form-item__title">Default Audience</p>
+                                    <div class="form-item--few-blocks">
+                                        <p class="form-item__desc">Everyone</p>
+                                        <a href="javascript:void(0);" class="button small br-light br-color-blue color-blue">
+                                            Edit Audience</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-item">
+                                            <p class="form-item__title">Age</p>
+
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-item">
+                                            <p class="form-item__title">Gender</p>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-item">
+                                    <p class="form-item__title">Approximate # of Impressions</p>
+                                    <input class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-url" type="text" value="" name="" id="" placeholder="500">
+                                    <span class="input-notification">Cost is $50.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section class="blank-section color-light bg-dark-blue">
+
+                <div class="container">
+                    <div class="align-center margin_b_25 padding_t_50">
+                        <h2>How it works</h2>
+                    </div>
+
+                    <!--<div class="divider"></div>-->
+
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="content-box style1">
+                                <div class="icon">
+                                    <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                                </div>
+                                <h6>Find A message</h6>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="content-box style1">
+                                <div class="icon">
+                                    <i class="fa fa-users" aria-hidden="true"></i>
+                                </div>
+                                <h6>Choose Audience</h6>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="content-box style1">
+                                <div class="icon">
+                                    <i class="fa fa-cogs" aria-hidden="true"></i>
+                                </div>
+                                <h6>Promote</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 button-block align-center margin_b_50 margin_t_50">
+                            <a href="javascript:void(0);" class="button margin_0 bg-blue color-white">
+                                Read More
+                            </a>
+                        </div>
                     </div>
                 </div>
+
             </section>
 
             <section class="custom-posts margin_b_50">
@@ -196,11 +287,6 @@
                                         </ul>
                                         <h3 class="post-title"><a href="http://localhost:3000/#">Normal Post Format</a></h3>
                                         <p>Donec id ipsum ipsum. Phasellus odio lorem, mattis quis pore eu. Etiam sagittis justo eu […]</p>
-
-                                        <ul class="post-meta post-meta--custom">
-                                            <li><a href="javascript:void(0)">Entertainment</a></li>
-                                            <li><a href="javascript:void(0)">Politics</a></li>
-                                        </ul>
                                     </section>
                                 </div>
                             </article>
@@ -221,11 +307,6 @@
                                         </ul>
                                         <h3 class="post-title"><a href="http://localhost:3000/#">Normal Post Format</a></h3>
                                         <p>Donec id ipsum ipsum. Phasellus odio lorem, mattis quis pore eu. Etiam sagittis justo eu […]</p>
-
-                                        <ul class="post-meta post-meta--custom">
-                                            <li><a href="javascript:void(0)">Entertainment</a></li>
-                                            <li><a href="javascript:void(0)">Politics</a></li>
-                                        </ul>
                                     </section>
                                 </div>
                             </article>
@@ -246,11 +327,6 @@
                                         </ul>
                                         <h3 class="post-title"><a href="http://localhost:3000/#">Normal Post Format</a></h3>
                                         <p>Donec id ipsum ipsum. Phasellus odio lorem, mattis quis pore eu. Etiam sagittis justo eu […]</p>
-
-                                        <ul class="post-meta post-meta--custom">
-                                            <li><a href="javascript:void(0)">Entertainment</a></li>
-                                            <li><a href="javascript:void(0)">Politics</a></li>
-                                        </ul>
                                     </section>
                                 </div>
                             </article>
@@ -271,11 +347,6 @@
                                         </ul>
                                         <h3 class="post-title"><a href="http://localhost:3000/#">Normal Post Format</a></h3>
                                         <p>Donec id ipsum ipsum. Phasellus odio lorem, mattis quis pore eu. Etiam sagittis justo eu […]</p>
-
-                                        <ul class="post-meta post-meta--custom">
-                                            <li><a href="javascript:void(0)">Entertainment</a></li>
-                                            <li><a href="javascript:void(0)">Politics</a></li>
-                                        </ul>
                                     </section>
                                 </div>
                             </article>
@@ -296,11 +367,6 @@
                                         </ul>
                                         <h3 class="post-title"><a href="http://localhost:3000/#">Normal Post Format</a></h3>
                                         <p>Donec id ipsum ipsum. Phasellus odio lorem, mattis quis pore eu. Etiam sagittis justo eu […]</p>
-
-                                        <ul class="post-meta post-meta--custom">
-                                            <li><a href="javascript:void(0)">Entertainment</a></li>
-                                            <li><a href="javascript:void(0)">Politics</a></li>
-                                        </ul>
                                     </section>
                                 </div>
                             </article>
@@ -321,192 +387,11 @@
                                         </ul>
                                         <h3 class="post-title"><a href="http://localhost:3000/#">Normal Post Format</a></h3>
                                         <p>Donec id ipsum ipsum. Phasellus odio lorem, mattis quis pore eu. Etiam sagittis justo eu […]</p>
-
-                                        <ul class="post-meta post-meta--custom">
-                                            <li><a href="javascript:void(0)">Entertainment</a></li>
-                                            <li><a href="javascript:void(0)">Politics</a></li>
-                                        </ul>
                                     </section>
                                 </div>
                             </article>
                         </div>
                     </div>
-
-                </div>
-            </section>
-
-            <section class="custom-posts">
-                <div class="container">
-                    <div class="promo-box style5">
-                        <div class="promo-box-inner">
-                            <div class="promo-box-content">
-                                <h2>
-                                    Support A Case
-                                </h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua.</p>
-                            </div>
-                            <div class="promo-box-actions">
-                                <a class="button unfilled br-light br-color-blue color-blue" href="http://localhost:3000/">See All</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <article class="sc-blog-post blog-post blog-post-standard style-normal">
-                                <div class="blog-post-inner">
-                                    <div class="post-featured-image">
-                                        <header class="post-header">
-                                            <img src="http://placehold.it/380x280" alt="Splendid responsive isometric">
-                                            <a href="javascript:void(0);">
-                                                <i class="fa fa-play" aria-hidden="true"></i>
-                                            </a>
-                                        </header>
-                                    </div>
-                                    <section class="post-content">
-                                        <ul class="post-meta">
-                                            <li>Dec 4th 2017</li>
-                                            <li>120,000 Impressions</li>
-                                        </ul>
-                                        <h3 class="post-title"><a href="http://localhost:3000/#">Normal Post Format</a></h3>
-                                        <p>Donec id ipsum ipsum. Phasellus odio lorem, mattis quis pore eu. Etiam sagittis justo eu […]</p>
-
-                                        <ul class="post-meta post-meta--custom">
-                                            <li><a href="javascript:void(0)">Entertainment</a></li>
-                                            <li><a href="javascript:void(0)">Politics</a></li>
-                                        </ul>
-                                    </section>
-                                </div>
-                            </article>
-                        </div>
-
-                        <div class="col-md-4">
-                            <article class="sc-blog-post blog-post blog-post-standard style-normal">
-                                <div class="blog-post-inner">
-                                    <div class="post-featured-image">
-                                        <header class="post-header">
-                                            <img src="http://placehold.it/380x280" alt="Splendid responsive isometric">
-                                        </header>
-                                    </div>
-                                    <section class="post-content">
-                                        <ul class="post-meta">
-                                            <li>Dec 4th 2017</li>
-                                            <li>120,000 Impressions</li>
-                                        </ul>
-                                        <h3 class="post-title"><a href="http://localhost:3000/#">Normal Post Format</a></h3>
-                                        <p>Donec id ipsum ipsum. Phasellus odio lorem, mattis quis pore eu. Etiam sagittis justo eu […]</p>
-
-                                        <ul class="post-meta post-meta--custom">
-                                            <li><a href="javascript:void(0)">Entertainment</a></li>
-                                            <li><a href="javascript:void(0)">Politics</a></li>
-                                        </ul>
-                                    </section>
-                                </div>
-                            </article>
-                        </div>
-
-                        <div class="col-md-4">
-                            <article class="sc-blog-post blog-post blog-post-standard style-normal">
-                                <div class="blog-post-inner">
-                                    <div class="post-featured-image">
-                                        <header class="post-header">
-                                            <img src="http://placehold.it/380x280" alt="Splendid responsive isometric">
-                                        </header>
-                                    </div>
-                                    <section class="post-content">
-                                        <ul class="post-meta">
-                                            <li>Dec 4th 2017</li>
-                                            <li>120,000 Impressions</li>
-                                        </ul>
-                                        <h3 class="post-title"><a href="http://localhost:3000/#">Normal Post Format</a></h3>
-                                        <p>Donec id ipsum ipsum. Phasellus odio lorem, mattis quis pore eu. Etiam sagittis justo eu […]</p>
-
-                                        <ul class="post-meta post-meta--custom">
-                                            <li><a href="javascript:void(0)">Entertainment</a></li>
-                                            <li><a href="javascript:void(0)">Politics</a></li>
-                                        </ul>
-                                    </section>
-                                </div>
-                            </article>
-                        </div>
-
-                        <div class="col-md-4">
-                            <article class="sc-blog-post blog-post blog-post-standard style-normal">
-                                <div class="blog-post-inner">
-                                    <div class="post-featured-image">
-                                        <header class="post-header">
-                                            <img src="http://placehold.it/380x280" alt="Splendid responsive isometric">
-                                        </header>
-                                    </div>
-                                    <section class="post-content">
-                                        <ul class="post-meta">
-                                            <li>Dec 4th 2017</li>
-                                            <li>120,000 Impressions</li>
-                                        </ul>
-                                        <h3 class="post-title"><a href="http://localhost:3000/#">Normal Post Format</a></h3>
-                                        <p>Donec id ipsum ipsum. Phasellus odio lorem, mattis quis pore eu. Etiam sagittis justo eu […]</p>
-
-                                        <ul class="post-meta post-meta--custom">
-                                            <li><a href="javascript:void(0)">Entertainment</a></li>
-                                            <li><a href="javascript:void(0)">Politics</a></li>
-                                        </ul>
-                                    </section>
-                                </div>
-                            </article>
-                        </div>
-
-                        <div class="col-md-4">
-                            <article class="sc-blog-post blog-post blog-post-standard style-normal">
-                                <div class="blog-post-inner">
-                                    <div class="post-featured-image">
-                                        <header class="post-header">
-                                            <img src="http://placehold.it/380x280" alt="Splendid responsive isometric">
-                                        </header>
-                                    </div>
-                                    <section class="post-content">
-                                        <ul class="post-meta">
-                                            <li>Dec 4th 2017</li>
-                                            <li>120,000 Impressions</li>
-                                        </ul>
-                                        <h3 class="post-title"><a href="http://localhost:3000/#">Normal Post Format</a></h3>
-                                        <p>Donec id ipsum ipsum. Phasellus odio lorem, mattis quis pore eu. Etiam sagittis justo eu […]</p>
-
-                                        <ul class="post-meta post-meta--custom">
-                                            <li><a href="javascript:void(0)">Entertainment</a></li>
-                                            <li><a href="javascript:void(0)">Politics</a></li>
-                                        </ul>
-                                    </section>
-                                </div>
-                            </article>
-                        </div>
-
-                        <div class="col-md-4">
-                            <article class="sc-blog-post blog-post blog-post-standard style-normal">
-                                <div class="blog-post-inner">
-                                    <div class="post-featured-image">
-                                        <header class="post-header">
-                                            <img src="http://placehold.it/380x280" alt="Splendid responsive isometric">
-                                        </header>
-                                    </div>
-                                    <section class="post-content">
-                                        <ul class="post-meta">
-                                            <li>Dec 4th 2017</li>
-                                            <li>120,000 Impressions</li>
-                                        </ul>
-                                        <h3 class="post-title"><a href="http://localhost:3000/#">Normal Post Format</a></h3>
-                                        <p>Donec id ipsum ipsum. Phasellus odio lorem, mattis quis pore eu. Etiam sagittis justo eu […]</p>
-
-                                        <ul class="post-meta post-meta--custom">
-                                            <li><a href="javascript:void(0)">Entertainment</a></li>
-                                            <li><a href="javascript:void(0)">Politics</a></li>
-                                        </ul>
-                                    </section>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-
                 </div>
             </section>
         </div>
