@@ -2395,5 +2395,6 @@
 var s = $("#ex2").slider();
 
 s.on("slide", function (val) {
-    $('#actualValue').html(val);
+    console.log(val);
+    $('#actualValue').html(val.value[0] + ' - ' + val.value[1]);
 });

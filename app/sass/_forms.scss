@@ -134,3 +134,35 @@
 .form-item__desc{
   margin-bottom: 0;
 }
+
+.gender-radio{
+  display: flex;
+  justify-content: space-between;
+
+  input{
+    display: none;
+  }
+
+  label{
+    padding: 5px 15px;
+    border: 1px solid #a65bf4;
+    transition: .2s ease-in-out;
+    margin-right: 20px;
+    color: #a661e8;
+    background: #fff;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+
+    &:last-child{
+      margin-right:0;
+    }
+  }
+
+  input{
+    &:checked + label{
+      background: #a661e8;
+      color: #fff;
+    }
+  }
+}

@@ -176,24 +176,34 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-item">
-                                            <p class="form-item__title">Age</p>
+                                            <p class="form-item__title margin_b_20">Age</p>
 
                                             <input id="ex2" type="text" class="span2"
                                                    value=""
                                                    data-slider-min="18"
                                                    data-slider-max="100"
                                                    data-slider-step="1"
-                                                   data-slider-value="[21,65]"
+                                                   data-slider-value="[18,65]"
                                                    data-slider-tooltip="hide"
-                                                   data-slider-ticks-labels='["Min age", "Max age"]'
+
                                             />
-<p id="actualValue"></p>
+                                            <p id="actualValue">21 - 65</p>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-item">
-                                            <p class="form-item__title">Gender</p>
+                                            <p class="form-item__title margin_b_20">Gender</p>
 
+                                            <div class="gender-radio">
+                                                <input type="radio" checked name="gender" id="genderAll" value="3"/>
+                                                <label for="genderAll">All</label>
+
+                                                <input type="radio" name="gender" id="genderMen" value="1"/>
+                                                <label for="genderMen">Men</label>
+
+                                                <input type="radio" name="gender" id="genderWoman" value="2"/>
+                                                <label for="genderWoman">Woman</label>
+                                            </div>
 
 
                                         </div>
