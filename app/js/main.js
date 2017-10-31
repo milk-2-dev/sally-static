@@ -2392,4 +2392,8 @@
 
 })(jQuery, this, document);
 
-$("#ex2").slider({});
+var s = $("#ex2").slider();
+
+s.on("slide", function (val) {
+    $('#actualValue').html(val);
+});
