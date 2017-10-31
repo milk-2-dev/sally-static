@@ -170,3 +170,17 @@
     }
   }
 }
+
+.login-form{
+  .form-item{
+    margin-bottom: 30px;
+  }
+
+  .form-button{
+    .button{
+      margin:0;
+      width:100%;
+      text-align: center;
+    }
+  }
+}

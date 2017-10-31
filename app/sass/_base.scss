@@ -183,3 +183,40 @@ body.modal-open {
 @media(max-width:767px){
   .col-xs-one-fifth{width:20%;} .col-lg-one-fifth{width:100%;}
 }
+
+@media (min-width: 576px){
+  .modal-dialog {
+    max-width: 100%;
+    margin: 30px auto;
+  }
+}
+
+@media(min-width:768px){.modal-dialog{width:700px;}}
+@media(min-width:992px){.modal-dialog{width:800px;}}
+
+.modal-body {
+  padding: 30px;
+}
+
+.modal-header {
+  padding: 30px;
+
+  h5{
+    margin: 0;
+    font-weight: 700;
+  }
+}
+
+.modal-title{
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.login-via-social{
+  margin-bottom: 30px;
+
+  a{
+    width:100%;
+    text-align: center;
+  }
+}
