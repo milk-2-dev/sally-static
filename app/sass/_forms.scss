@@ -116,8 +116,12 @@
 
 .input-notification{
   display: block;
-  text-align: right;
+  text-align: left;
   margin-top:-10px;
+
+  a{
+    text-decoration: underline;
+  }
 }
 
 .form-item--few-blocks{
