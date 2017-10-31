@@ -243,7 +243,7 @@
                                 </div>
 
                                 <div class="form-button align-left">
-                                    <button class="button flat bg-blue color-white">Amplify Now</button>
+                                    <button type="button" class="button flat bg-blue color-white" data-toggle="modal" data-target="#confirmPurchase">Amplify Now</button>
                                     <a class="button unfilled br-light br-color-blue color-blue">Add To Cart</a>
                                 </div>
                                 <span class="input-notification"><a href="javascript:void(0);">Advanced Amplify</a></span>
@@ -400,6 +400,66 @@
     </main>
     <!-- Main Container -->
 
+    <!--MODALS-->
+        <div class="modal fade" id="confirmPurchase" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="modal-title">
+                        Log In Through
+                    </p>
+
+                    <div class="row login-via-social">
+                        <div class="col-md-6">
+                            <a class="button unfilled br-light br-color-blue color-blue" href="javascript:void(0);">Facebook</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a class="button unfilled br-light br-color-blue color-blue" href="javascript:void(0);">Google</a>
+                        </div>
+                    </div>
+
+                    <p class="modal-title margin_b_30">
+                        Or Email
+                    </p>
+
+                    <form action="" class="login-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-item">
+                                    <p class="form-item__title">Email Address</p>
+                                    <input class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-url" type="text" value="" name="" placeholder="Title Example">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-item">
+                                    <p class="form-item__title">Email Address</p>
+                                    <input class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-url" type="text" value="" name="" placeholder="Title Example">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-button align-left">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <button class="button big-margin bg-black color-white" type="submit">Log In</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <a class="button big-margin bg-light-gray" href="#">Forgot Password</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--MODALS-->
 
     <!-- FOOTER -->
     <footer id="footer" class="light-color alternative">
