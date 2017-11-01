@@ -36,7 +36,7 @@
                     <div class="col-lg-9 col-md-9 sing">
                         <a class="sing__in button unfilled br-light br-color-blue color-white" href="javascript:void(0);" data-toggle="modal" data-target="#logIn">Sign in</a>
 
-                        <a class="sing__up" href="http://localhost:3000/users/sign_up">Sign up</a>
+                        <a class="sing__up" href="javascript:void(0);" data-toggle="modal" data-target="#singUp">Sign up</a>
 
                     </div>
                 </div>
@@ -123,7 +123,7 @@
     <!-- Main Container -->
     <main id="splendid-main-container padding_t_0">
         <div class="">
-            <section class="full-width margin_b_50 padding_b_50 padding_t_50 custom-bg15" style="background-image: url('')">
+            <section class="full-width margin_b_50 padding_b_50 padding_t_50 custom-bg15">
                 <div class="container align-center">
                     <h1>Welcome to Sally.org</h1>
 
@@ -514,11 +514,11 @@
     <!-- Main Container -->
 
     <!--MODALS-->
-        <div class="modal fade" id="logIn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="logIn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+                    <h5 class="modal-title">Log In</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -551,8 +551,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-item">
-                                    <p class="form-item__title">Email Address</p>
-                                    <input class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-url" type="text" value="" name="" placeholder="Title Example">
+                                    <p class="form-item__title">Password</p>
+                                    <input class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-url" type="password" value="" name="" placeholder="******">
                                 </div>
                             </div>
                         </div>
@@ -572,6 +572,92 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="singUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Sing Up</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="modal-title">
+                        Sing Up Through
+                    </p>
+
+                    <div class="row login-via-social">
+                        <div class="col-md-6">
+                            <a class="button unfilled br-light br-color-blue color-blue" href="javascript:void(0);">Facebook</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a class="button unfilled br-light br-color-blue color-blue" href="javascript:void(0);">Google</a>
+                        </div>
+                    </div>
+
+                    <p class="modal-title margin_b_30">
+                        Or Email
+                    </p>
+
+                    <form action="" class="login-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-item">
+                                    <p class="form-item__title">First Name</p>
+                                    <input class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-url" type="text" value="" name="" placeholder="Title Example">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-item">
+                                    <p class="form-item__title">Last Name</p>
+                                    <input class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-url" type="text" value="" name="" placeholder="Title Example">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-item">
+                                    <p class="form-item__title">Email Address</p>
+                                    <input class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-url" type="text" value="" name="" placeholder="Title Example">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-item">
+                                    <p class="form-item__title">Password</p>
+                                    <input class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-url" type="text" value="" name="" placeholder="Title Example">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-button align-left margin_b_30">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <button class="button big-margin bg-black color-white" type="submit">Create Account</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <a class="button big-margin bg-light-gray" href="#">Cancel</a>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="modal-title">
+                            Terms
+                        </p>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            A, aspernatur beatae dignissimos eos eum eveniet iusto
+                            magnam nobis sed! Accusantium amet cupiditate dignissimos
+                            dolorum et magni nostrum pariatur porro sunt?
+                        </p>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!--MODALS-->
 
 
