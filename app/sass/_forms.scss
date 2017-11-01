@@ -184,3 +184,33 @@
     }
   }
 }
+
+.modal-select{
+  width:100%;
+  padding: 10px 0;
+  border: 1px solid #000;
+  text-align: left;
+
+  select{
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0;
+    border: none;
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    padding: 0 15px;
+    background: url('../../img/caret.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+
+
+    &:focus{
+      border: none;
+      outline: none;
+    }
+  }
+}

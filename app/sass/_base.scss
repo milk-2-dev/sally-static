@@ -194,6 +194,13 @@ body.modal-open {
 @media(min-width:768px){.modal-dialog{width:700px;}}
 @media(min-width:992px){.modal-dialog{width:800px;}}
 
+.modal-dialog{
+  &.modal-xs{
+    max-width: 500px;
+  }
+}
+
+
 .modal-body {
   padding: 30px;
 }

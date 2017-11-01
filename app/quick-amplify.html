@@ -14,7 +14,7 @@
     <![endif]-->
 
 </head>
-<body class="headerstyle4 headerfixed ">
+<body class="headerstyle4">
 <!-- Splendid Content -->
 <div id="splendid-content">
 
@@ -204,8 +204,6 @@
                                                 <input type="radio" name="gender" id="genderWoman" value="2"/>
                                                 <label for="genderWoman">Woman</label>
                                             </div>
-
-
                                         </div>
                                     </div>
                                 </div>
@@ -243,8 +241,8 @@
                                 </div>
 
                                 <div class="form-button align-left">
-                                    <button type="button" class="button flat bg-blue color-white" data-toggle="modal" data-target="#confirmPurchase">Amplify Now</button>
-                                    <a class="button unfilled br-light br-color-blue color-blue">Add To Cart</a>
+                                    <button type="button" class="button flat bg-blue color-white" data-toggle="modal" data-target="#messageAmplified">Amplify Now</button>
+                                    <a class="button unfilled br-light br-color-blue color-blue" data-toggle="modal" data-target="#confirmPurchase">Add To Cart</a>
                                 </div>
                                 <span class="input-notification"><a href="javascript:void(0);">Advanced Amplify</a></span>
                             </div>
@@ -401,7 +399,7 @@
     <!-- Main Container -->
 
     <!--MODALS-->
-        <div class="modal fade" id="confirmPurchase" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="confirmPurchase" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -437,6 +435,41 @@
 
                     <button class="button big-margin bg-black color-white" type="submit">Confirm</button>
                     <a class="button big-margin bg-light-gray" href="#">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="messageAmplified" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xs" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Mwssage Amplified</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="margin_b_30">
+                        You have successfuly Amplified a message.
+                        Go to My Dashboard to view the progress
+                        you've made with this Amplify
+                    </p>
+
+                    <div class="button-block">
+                        <a class="button bg-black color-white margin_b_20 button_w_full">My Dashboard</a>
+
+                        <div class="modal-select margin_b_20">
+                            <select name="doSome" id="id1">
+                                <option value="1">Share</option>
+                                <option value="2">Select2</option>
+                                <option value="3">Select3</option>
+                                <option value="4">Select4</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <a class="button bg-light-gray button_w_full margin_b_0 margin_t_0" href="#">Exit</a>
                 </div>
             </div>
         </div>
