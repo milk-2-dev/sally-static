@@ -10,8 +10,8 @@ html, body {
 }
 body {
   overflow:hidden;
-  font:400 16px/1.875 'Open Sans', Helvetica, Arial, sans-serif;
-  color:#718097;
+  font:400 16px/1.875 'MuseoSansRegular', Helvetica, Arial, sans-serif;
+  color:map_get($colors, 'grey');
   background:#fefefe;
   position:relative;
 }
@@ -27,32 +27,6 @@ img {
 .color-light {
   color:#fff;
 }
-
-/********************************************
-			   3-1. Align Styles
-*********************************************/
-.align-left {
-  text-align:left !important;
-}
-.align-right {
-  text-align:right !important;
-}
-.align-center {
-  text-align:center !important;
-}
-img.align-left {
-  float:left;
-  margin:.5em 2em .5em 0;
-}
-img.align-right {
-  float:right;
-  margin:.5em 0 .5em 2em;
-}
-img.align-center {
-  margin:1em auto;
-  display:block;
-}
-
 
 /********************************************
 			3-2. Main Container

@@ -1329,7 +1329,7 @@ body.headerstyle7 .full-width{
 *********************************************/
 #header #main-header.br-color-white, .br-color-light{border-color:#fff;}
 #header #main-header.br-color-black{border-color:#212428!important;}
-#header #main-header.br-color-blue{border-color:#a65bf4!important;}
+#header #main-header.br-color-blue{border-color:map-get($colors, 'pink') !important;}
 #header #main-header.br-color-dark-blue{border-color:#161c43!important;}
 #header #main-header.br-color-light-blue{border-color:#2eb9ea!important;}
 #header #main-header.br-color-turquoise-blue{border-color:#5fd0e4!important;}
@@ -9448,7 +9448,7 @@ html.js .progressbar-animated .progress-width{
 .sc-blog-post.blog-post-medium.style-alt .post-title{
   font-size:1.875em;
   line-height:1.5;
-  margin:25px 0;
+  margin:0 0;
 }
 .sc-blog-post.blog-post-medium.style-alt .post-featured-image{
   width:40%;
@@ -9551,7 +9551,7 @@ html.js .progressbar-animated .progress-width{
 
 /* SC Blog Post Standard */
 .sc-blog-post.blog-post-standard .post-title{
-  margin-top: 20px;
+  margin-top: 0;
   font-size:1.875em;
 }
 .sc-blog-post.blog-post-standard.style-normal .post-title{

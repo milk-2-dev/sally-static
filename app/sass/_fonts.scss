@@ -55,3 +55,13 @@
   font-weight: normal;
   font-style: italic;
 }
+
+@font-face {
+  font-family: "MuseoSansRegular";
+  src: url("../fonts/MuseoSansRegular.eot");
+  src: url("../fonts/MuseoSansRegular.eot?#iefix")format("embedded-opentype"),
+  url("../fonts/MuseoSansRegular.woff") format("woff"),
+  url("../fonts/MuseoSansRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}

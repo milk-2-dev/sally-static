@@ -2392,9 +2392,10 @@
 
 })(jQuery, this, document);
 
-var s = $("#ex2").slider();
+// var s = $("#ex2").slider();
+//
+// s.on("slide", function (val) {
+//     console.log(val);
+//     $('#actualValue').html(val.value[0] + ' - ' + val.value[1]);
+// });
 
-s.on("slide", function (val) {
-    console.log(val);
-    $('#actualValue').html(val.value[0] + ' - ' + val.value[1]);
-});
