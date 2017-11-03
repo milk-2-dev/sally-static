@@ -1,0 +1,11 @@
+.icon{
+  display: inline-block;
+
+  &.icon-target-icon{
+    @include sprite($target-icon);
+  }
+
+  &.icon-message{
+    @include sprite($message-icon);
+  }
+}

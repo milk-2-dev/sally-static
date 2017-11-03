@@ -150,7 +150,7 @@
 .blog-post-standard + .blog-post-standard{margin-top:100px;}
 .blog-post-standard .post-featured-image,
 .blog-post-standard .post-header{margin-bottom:12px;}
-.blog-post-standard a{color:#718097;}
+.blog-post-standard a{color:map_get($colors, 'features-post-title');}
 .blog-post-standard a:hover{color:#a65bf4;}
 .blog-post-standard .post-gallery .flex-direction-nav a {
   width: 71px;
@@ -1142,14 +1142,22 @@ section.post-comments{
 //custom
 .post-description{
   p{
+    position: relative;
     margin-bottom: 20px;
     line-height: 1.2;
     font-family:'MuseoSansRegular';
     font-size: 16px;
     font-weight: 500;
+    padding-left: 26px;
 
     &:last-child{
       margin-bottom:0;
+    }
+
+    .icon{
+      position: absolute;
+      top: 0;
+      left:0;
     }
   }
 }

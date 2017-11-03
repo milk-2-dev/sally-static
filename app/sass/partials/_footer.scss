@@ -1,3 +1,9 @@
+.prefooter{
+    background:url('../img/geometry.png');
+    background-color: map_get($colors, 'pink');
+    background-size: cover;
+}
+
 /* =========================================================================
                                  FOOTER
 ========================================================================= */
@@ -118,6 +124,27 @@
             &:before,
             &:after{
                 display: none;
+            }
+        }
+    }
+}
+
+.menu-footer{
+    ul{
+        padding:0;
+        margin:0;
+        list-style: none;
+
+        li{
+            color:map-get($colors, 'grey');
+            margin-bottom: 20px;
+
+            &:last-child{
+                margin-bottom:0;
+            }
+
+            a{
+                font-size: 18px;
             }
         }
     }

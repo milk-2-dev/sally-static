@@ -7,6 +7,7 @@
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.22);
   border: solid 1px map_get($colors, 'border-grey');
   padding:8px;
+  background: #fff;
 
   input[type="text"]{
     margin: 0 8px 0 0;
