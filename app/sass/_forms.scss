@@ -1,25 +1,37 @@
 .share-form{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid #000;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.22);
-  border: solid 1px map_get($colors, 'border-grey');
-  padding:8px;
-  background: #fff;
+  position: relative;
+  //display: flex;
+  //justify-content: space-between;
+  //align-items: center;
+  //
+
+  //&:focus{
+  //  outline: 1px solid #4a90e2;
+  //}
 
   input[type="text"]{
-    margin: 0 8px 0 0;
-    border:none;
-    background: transparent;
+    margin: 0;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.22);
+    border: solid 1px map_get($colors, 'border-grey');
+    padding:8px 120px 8px 20px;
+    background: #fff;
+    min-height: 72px;
+    transition: .1s ease-in-out;
 
     &:focus{
+      border: solid 1px #4a90e2;
       outline: none;
+      //border-radius: 5px;
+      //box-shadow: 0 0 0 1px #4a90e2;
     }
   }
 
   .button{
+    position: absolute;
+    top:8px;
+    right:8px;
     margin:0;
     padding: 13px 29px 12px;
   }

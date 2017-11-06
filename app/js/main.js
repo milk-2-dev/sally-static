@@ -2397,5 +2397,4 @@
 // s.on("slide", function (val) {
 //     console.log(val);
 //     $('#actualValue').html(val.value[0] + ' - ' + val.value[1]);
-// });
-
+// });'.share-form input').onfocus($('.share-form').css('border', '1px solid red'));

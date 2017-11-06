@@ -14,26 +14,33 @@
     <![endif]-->
 
 </head>
-<body class="headerstyle4">
+<body class="headerstyle4 headerfixed">
 <!-- Splendid Content -->
 <div id="splendid-content">
 
     <!-- HEADER -->
-    <header id="header" class="header4">
+    <header id="header" class="">
 
         <!-- Main Header -->
         <div id="main-header" class="bg-white">
             <div class="container-fluid padding_l_40 padding_r_40">
                 <div class="row align-items-center">
 
-                    <div class="col-lg-3 col-md-3">
+                    <div class="col-lg-1 col-md-1">
                         <div class="logo">
                             <a class="logo__text" href="http://localhost:3000/">S</a>
                             <!-- (image_tag 'img/logo.png', alt: 'Logo') -->
                         </div>
                     </div>
 
-                    <div class="col-lg-9 col-md-9 small-menu">
+                    <div class="col-lg-5 col-md-5">
+                        <form class="share-form">
+                            <input type="text" placeholder="Add a link...">
+                            <button class="button bg-black color-white" data-toggle="modal" data-target="#messagePreview">share</button>
+                        </form>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 small-menu">
 
                         <ul>
                             <li><a href="javascript:void(0);">How it works</a></li>
@@ -128,7 +135,7 @@
 
                 <form class="share-form">
                     <input type="text" placeholder="Add a link...">
-                    <button class="button bg-black color-white">share</button>
+                    <a class="button bg-black color-white" data-toggle="modal" data-target="#messagePreview">share</a>
                 </form>
             </div>
         </section>
@@ -152,9 +159,11 @@
                                 <div class="post-featured-image">
                                     <header class="post-header">
                                         <img src="http://placehold.it/380x280" alt="Splendid responsive isometric">
-                                        <!--<a href="javascript:void(0);">-->
+                                        <!--<a class="post-action" href="javascript:void(0);">-->
                                             <!--<i class="fa fa-play" aria-hidden="true"></i>-->
                                         <!--</a>-->
+
+                                        <a href="" class="button bg-black color-white">sway</a>
                                     </header>
                                 </div>
                                 <section class="post-content">
@@ -464,6 +473,99 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <p class="modal-title">
+                        Sing Up Through
+                    </p>
+
+                    <div class="row login-via-social">
+                        <div class="col-md-6">
+                            <a class="button unfilled br-light br-color-blue color-blue" href="javascript:void(0);">Facebook</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a class="button unfilled br-light br-color-blue color-blue" href="javascript:void(0);">Google</a>
+                        </div>
+                    </div>
+
+                    <p class="modal-title margin_b_30">
+                        Or Email
+                    </p>
+
+                    <form action="" class="login-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-item">
+                                    <p class="form-item__title">First Name</p>
+                                    <input class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-url" type="text" value="" name="" placeholder="Title Example">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-item">
+                                    <p class="form-item__title">Last Name</p>
+                                    <input class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-url" type="text" value="" name="" placeholder="Title Example">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-item">
+                                    <p class="form-item__title">Email Address</p>
+                                    <input class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-url" type="text" value="" name="" placeholder="Title Example">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-item">
+                                    <p class="form-item__title">Password</p>
+                                    <input class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-url" type="text" value="" name="" placeholder="Title Example">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-button align-left margin_b_30">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <button class="button big-margin bg-black color-white" type="submit">Create Account</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <a class="button big-margin bg-light-gray" href="#">Cancel</a>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="modal-title">
+                            Terms
+                        </p>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            A, aspernatur beatae dignissimos eos eum eveniet iusto
+                            magnam nobis sed! Accusantium amet cupiditate dignissimos
+                            dolorum et magni nostrum pariatur porro sunt?
+                        </p>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="messagePreview" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Message preview</h5>
+                    <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+                        <!--<span aria-hidden="true">&times;</span>-->
+                    <!--</button>-->
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-7 col-md-6">
+
+                        </div>
+                        <div class="col-lg-7 col-md-6">
+
+                        </div>
+                    </div>
                     <p class="modal-title">
                         Sing Up Through
                     </p>

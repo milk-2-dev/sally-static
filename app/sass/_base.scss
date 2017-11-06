@@ -206,3 +206,21 @@ body.modal-open {
   font-size: 20px;
   text-transform: uppercase;
 }
+
+.modal-content{
+  border-radius:20px;
+  border: none;
+}
+
+.modal-header{
+  padding: 30px 30px 15px;
+  border-bottom: 1px solid map_get($colors, 'grey');
+
+}
+
+.modal-title{
+  text-transform: uppercase;
+  font-family: MuseoSansRegular;
+  font-size: 24px;
+  font-weight: bold;
+}
