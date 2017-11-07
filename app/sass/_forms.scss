@@ -159,6 +159,27 @@
   &:last-child{
     margin-bottom:0;
   }
+
+  .input-success{
+    position: relative;
+
+    input {
+      padding-right: 50px;
+    }
+
+    i{
+      position: absolute;
+      top:50%;
+      right:10px;
+      transform: translate(0, -50%);
+      font-size: 26px;
+      color: #6fc319;
+    }
+  }
+}
+
+.input-ellipsis{
+  text-overflow: ellipsis;
 }
 
 .input-notification{

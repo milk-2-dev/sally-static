@@ -635,63 +635,116 @@
                     <!--</button>-->
                 </div>
                 <div class="modal-body">
-                    <form class="quick-amplify-form">
-                        <div class="form-item">
-                            <p class="form-item__title">Your link</p>
-                            <input type="text" value="http://www.example.com">
-                        </div>
-
-                        <div class="form-item">
-                            <p class="form-item__title">Who needs to see it</p>
-                            <div class="select-block">
-                                <select name="" id="example">
-                                    <option value="1">1</option>
-                                    <option value="1">2</option>
-                                    <option value="1">3</option>
-                                </select>
+                    <div class="modal-body__wrap">
+                        <form class="quick-amplify-form">
+                            <div class="form-item">
+                                <p class="form-item__title">Your link</p>
+                                <div class="input-success">
+                                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                    <input class="input-ellipsis" type="text" value="http://www.example.com">
+                                </div>
                             </div>
-                            
-                            <a href="" class="input-notification align-right">customize audience</a>
-                        </div>
 
-                        <div class="form-item">
-                            <p class="form-item__title">location</p>
+                            <div class="form-item">
+                                <p class="form-item__title">Who needs to see it</p>
+                                <div class="select-block">
+                                    <select name="" id="example">
+                                        <option value="1">1</option>
+                                        <option value="1">2</option>
+                                        <option value="1">3</option>
+                                    </select>
+                                </div>
 
-                            <input type="text">
-                        </div>
-
-                        <div class="form-item">
-                            <p class="form-item__title">Age</p>
-
-                            <input id="ageAuditory" type="text" class="span2" value="" data-slider-min="18" data-slider-max="100" data-slider-step="1" data-slider-value="[18,65]" data-slider-tooltip="hide">
-                            <p id="actualValue">21 - 65</p>
-                        </div>
-
-                        <div class="form-item">
-                            <p class="form-item__title margin_b_20">Gender</p>
-
-                            <div class="gender-radio">
-                                <input type="radio" checked="" name="gender" id="genderAll" value="3">
-                                <label for="genderAll">All</label>
-
-                                <input type="radio" name="gender" id="genderMen" value="1">
-                                <label for="genderMen">Men</label>
-
-                                <input type="radio" name="gender" id="genderWoman" value="2">
-                                <label for="genderWoman">Woman</label>
+                                <a href="" class="input-notification align-right">customize audience</a>
                             </div>
-                        </div>
-                    </form>
+
+                            <div class="form-item">
+                                <p class="form-item__title">location</p>
+
+                                <input type="text">
+                            </div>
+
+                            <div class="form-item">
+                                <p class="form-item__title">Age</p>
+
+                                <input id="ageAuditory" type="text" class="span2" value="" data-slider-min="18" data-slider-max="100" data-slider-step="1" data-slider-value="[18,65]" data-slider-tooltip="hide">
+                                <p id="actualValue">21 - 65</p>
+                            </div>
+
+                            <div class="form-item">
+                                <p class="form-item__title margin_b_20">Gender</p>
+
+                                <div class="gender-radio">
+                                    <input type="radio" checked="" name="gender" id="genderAll" value="3">
+                                    <label for="genderAll">All</label>
+
+                                    <input type="radio" name="gender" id="genderMen" value="1">
+                                    <label for="genderMen">Men</label>
+
+                                    <input type="radio" name="gender" id="genderWoman" value="2">
+                                    <label for="genderWoman">Woman</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
                 </div>
                 <div class="modal-footer">
                     <div class="modal-buttons">
                         <a href="" class="button bg-light-gray">cancel</a>
-                        <a href="" class="button color-white bg-blue">done</a>
+                        <a href="" class="button color-white bg-blue" data-toggle="modal" data-target="#payment">done</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="payment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="" class="margin_r_20"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                    <h5 class="modal-title">PAYMENT & review </h5>
+                    <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+                        <!--<span aria-hidden="true">&times;</span>-->
+                    <!--</button>-->
+                </div>
+                <div class="modal-body">
+<h1>EБАТЬ - КАПАТЬ</h1>
+                </div>
+                <div class="modal-footer">
+                    <div class="modal-buttons">
+                        <a href="" class="button bg-light-gray">cancel</a>
+                        <a href="" class="button color-white bg-blue" data-toggle="modal" data-target="#success">done</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="" class="margin_r_20"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                    <h5 class="modal-title">PAYMENT & review </h5>
+                    <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+                    <!--<span aria-hidden="true">&times;</span>-->
+                    <!--</button>-->
+                </div>
+                <div class="modal-body">
+                    <h1>EБАТЬ - КАПАТЬ ОПЯТЬ МОДАЛЬ</h1>
+                </div>
+                <div class="modal-footer">
+                    <div class="modal-buttons">
+                        <a href="" class="button bg-light-gray">cancel</a>
+                        <a href="" class="button color-white bg-blue" data-toggle="modal" data-target="#payment">done</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!--MODALS-->
 

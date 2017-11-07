@@ -178,6 +178,12 @@ body.modal-open {
   padding: 0;
 }
 
+.modal-body__wrap {
+  overflow-y: scroll;
+  max-height:550px;
+}
+
+
 .modal-header {
   padding: 30px 30px 15px;
   border-bottom: 1px solid lighten(map_get($colors, 'grey'), 50%);
