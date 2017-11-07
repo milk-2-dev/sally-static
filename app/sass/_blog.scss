@@ -997,7 +997,7 @@ section.post-comments{
 }
 .sc-blog-post.blog-post-standard.style-normal .post-title{
   font-size:1.2em;
-  font-family: 'MuseoSansRegular';
+  font-family: 'MuseoSans';
   font-weight: bold;
   margin-bottom: 20px;
 }
@@ -1145,7 +1145,7 @@ section.post-comments{
     position: relative;
     margin-bottom: 20px;
     line-height: 1.2;
-    font-family:'MuseoSansRegular';
+    font-family:'MuseoSans';
     font-size: 16px;
     font-weight: 500;
     padding-left: 26px;
@@ -1162,3 +1162,243 @@ section.post-comments{
   }
 }
 
+.message-preview{
+  padding:0 15px;
+}
+
+.message-article{
+  padding-top:15px;
+  padding-bottom:15px;
+  border-right: 1px solid lighten(map_get($colors, 'grey'), 50%);
+
+  article{
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+}
+
+.message-article__head{
+  margin-bottom: 20px;
+}
+
+.message-article__head-wrap{
+  &:after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+.message-article__main-info{
+  float: left;
+  margin-bottom: 20px;
+}
+
+.message-article__logo{
+  display: block;
+  max-width: 60px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  float: left;
+}
+
+.message-article__author{
+  color: blue;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.message-article__meta{
+  margin:0;
+  padding: 0;
+  list-style:none;
+  font-size: 14px;
+  
+  li{
+    display: inline-block;
+    color: lighten(map_get($colors, 'grey'), 20%);
+    margin-right: 16px;
+    position: relative;
+
+    &:after{
+      content: '';
+      position: absolute;
+      top:0;
+      bottom:0;
+      right:-10px;
+      width:4px;
+      height:4px;
+      margin:auto;
+      border-radius: 50%;
+      background: lighten(map_get($colors, 'grey'), 20%);
+    }
+
+    &:last-child{
+      &:after{
+        display: none;
+      }
+    }
+  }
+}
+
+.message-article__menu{
+  float:right;
+  margin-bottom:20px;
+}
+
+.message-article__head-desc{
+  line-height: 1.2;
+  font-weight: 600;
+  margin-bottom:20px;
+}
+
+.message-article__content{
+  border: 1px solid lighten(map_get($colors, 'grey'), 50%);
+}
+
+.message-article__content-img{
+  margin-bottom: 10px;
+}
+
+.message-article__content-title{
+  font-size: 26px;
+  margin-bottom: 5px;
+  padding:0 8px;
+  line-height: 1.2;
+}
+
+.message-article__content-text{
+  margin-bottom: 5px;
+  padding:0 8px;
+  line-height: 1.4;
+}
+
+.message-article__content-link{
+  text-transform: uppercase;
+  color: lighten(map_get($colors, 'grey'), 20%);
+  padding:0 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.message-list{
+  padding-top: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+
+    li{
+      margin-bottom:30px;
+      position: relative;
+      padding-left:30px;
+      font-family: MuseoSans;
+      line-height: 1.4;
+      color:#000;
+      font-weight: 400;
+
+      span{
+        display: block;
+
+        &.url{
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          max-width: 365px;
+        }
+      }
+
+      .icon{
+        position: absolute;
+        top:2px;
+        left:0;
+      }
+    }
+  }
+
+  .modal-title{
+    margin-bottom:35px;
+  }
+
+  .dropdown{
+    .dropdown-toggle{
+      position: relative;
+      padding:0;
+      border:none;
+      width:100%;
+      text-align: left;
+      padding-right:16px;
+      white-space: normal;
+      cursor: pointer;
+      line-height: 1.4;
+
+      &:after{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 5px;
+        margin:auto;
+      }
+
+      &:hover,
+      &:active,
+      &:focus{
+        background: transparent;
+      }
+    }
+  }
+}
+
+.message-edit{
+  &:after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  a{
+    display: inline-block;
+    float:right;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+
+    .icon{
+      margin-right: 5px;
+      vertical-align: text-bottom;
+    }
+
+    span{
+      display: inline-block;
+      vertical-align: middle;
+      font-family: MuseoSans;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1;
+    }
+  }
+}
+
+.message-set-reach{
+  padding: 50px 40px 10px;
+}
+
+.message-reach__views{
+  font-family: MuseoSans;
+  font-size: 36px;
+  font-weight: 500;
+  line-height:1;
+  text-align: right;
+  margin-bottom:0;
+}
+
+.message-reach__costs{
+  font-family: MuseoSans;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: right;
+  color: #4a4a4a;
+}

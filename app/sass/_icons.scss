@@ -8,4 +8,32 @@
   &.icon-message{
     @include sprite($message-icon);
   }
+
+  &.icon-edit{
+    @include sprite($edit-icon);
+  }
+
+  &.icon-link{
+    @include sprite($link-icon);
+  }
+
+  &.icon-target{
+    @include sprite($target-icon);
+  }
+
+  &.icon-customizations{
+    @include sprite($customizations-icon);
+  }
+
+  &.icon-location{
+    @include sprite($location-icon);
+  }
+
+  &.icon-timing{
+    @include sprite($timing-icon);
+  }
+
+  &.icon-gender{
+    @include sprite($gender-icon);
+  }
 }
