@@ -546,50 +546,59 @@
                                 Save obamacare
                             </p>
 
-                            <ul>
-                                <li>
-                                    <i class="icon icon-link"></i>
-                                    <span class="url">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
-                                </li>
-                                <li>
-                                    <i class="icon icon-target"></i>
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="message-list__item">
+                                <i class="icon icon-link"></i>
+                                <span class="url">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+                            </div>
+
+                            <div class="message-list__item">
+                                <i class="icon icon-target"></i>
+                                <div id="accordion" role="tablist" aria-multiselectable="true">
+                                    <div class="card">
+                                        <div class="card-header" role="tab" id="headingOne">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                <i class="fa fa-caret-down"></i>
+                                                Politically liberal, Household Income: Under $50,000
+                                            </a>
+                                        </div>
+
+                                        <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                                            <div class="card-block">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                            </div>
                                         </div>
                                     </div>
-                                </li>
-                                <li>
-                                    <i class="icon icon-customizations"></i>
-                                    <span>
-                                        Interests: Barack Obama, <br/>
-                                        Behaviors: Cofee
-                                    </span>
-                                </li>
-                                <li>
-                                    <i class="icon icon-location"></i>
-                                    <span>
-                                        California, United States
-                                    </span>
-                                </li>
-                                <li>
-                                    <i class="icon icon-timing"></i>
-                                    <span>
-                                        24 - 61
-                                    </span>
-                                </li>
-                                <li>
-                                    <i class="icon icon-gender"></i>
-                                    <span>
-                                        All
-                                    </span>
-                                </li>
-                            </ul>
+                                </div>
+                            </div>
+
+                            <div class="message-list__item">
+                                <i class="icon icon-customizations"></i>
+                                <span>
+                                    Interests: Barack Obama, <br/>
+                                    Behaviors: Cofee
+                                </span>
+                            </div>
+
+                            <div class="message-list__item">
+                                <i class="icon icon-location"></i>
+                                <span>
+                                    California, United States
+                                </span>
+                            </div>
+
+                            <div class="message-list__item">
+                                <i class="icon icon-timing"></i>
+                                <span>
+                                    24 - 61
+                                </span>
+                            </div>
+
+                            <div class="message-list__item">
+                                <i class="icon icon-gender"></i>
+                                <span>
+                                    All
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -635,7 +644,7 @@
                     <!--</button>-->
                 </div>
                 <div class="modal-body">
-                    <div class="modal-body__wrap">
+                    <div class="modal-body__overflow">
                         <form class="quick-amplify-form">
                             <div class="form-item">
                                 <p class="form-item__title">Your link</p>
@@ -710,12 +719,75 @@
                     <!--</button>-->
                 </div>
                 <div class="modal-body">
-<h1>EБАТЬ - КАПАТЬ</h1>
+                    <div class="modal-body__wrap">
+                        <form action="" class="payment">
+                            <div class="form-item">
+                                <p class="form-item__title">
+                                    address information
+                                </p>
+
+                                <div class="payment-item">
+                                    <div class="payment-item__head">
+                                        <img src="http://placehold.it/50x30" alt="">
+                                        <p>Address Book</p>
+                                    </div>
+
+                                    <ul>
+                                        <li>John Smith</li>
+                                        <li>1234 Main St.</li>
+                                        <li>Anytown, State 10203</li>
+                                        <li>UNITED STATES</li>
+                                    </ul>
+
+                                    <div class="payment-radio">
+                                        <input type="radio" name="addressBook" id="addressBook" value="3">
+                                        <label for="addressBook">John Smith, 1234 Main St., Anytown, State...</label>
+
+                                        <input type="radio" name="addressBook" id="addressBook2" value="1">
+                                        <label for="addressBook2">John Smith, 9876 Other St., Anytown, State...</label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="form-item">
+                                <p class="form-item__title">
+                                    Payment information
+                                </p>
+
+                                <div class="payment-item">
+                                    <div class="payment-item__head">
+                                        <img src="http://placehold.it/50x30" alt="">
+                                        <p>Payment Method</p>
+                                    </div>
+
+                                    <p class="payment-card">
+                                        visa... 1010
+                                    </p>
+
+                                    <div class="payment-radio">
+                                        <input type="radio" name="paymentCard" id="paymentCard" value="3">
+                                        <label for="paymentCard">
+                                            Visa… 1010
+                                            <img src="http://placehold.it/53x30" alt="" class="cart-type">
+                                        </label>
+
+                                        <input type="radio" name="paymentCard" id="paymentCard2" value="1">
+                                        <label for="paymentCard2">
+                                            Visa… 1234
+                                            <img src="http://placehold.it/53x30" alt="" class="cart-type">
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <div class="modal-buttons">
                         <a href="" class="button bg-light-gray">cancel</a>
-                        <a href="" class="button color-white bg-blue" data-toggle="modal" data-target="#success">done</a>
+                        <a href="" class="button color-white bg-blue" data-toggle="modal" data-target="#success">purchase</a>
                     </div>
                 </div>
             </div>
@@ -725,20 +797,36 @@
     <div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <a href="" class="margin_r_20"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
-                    <h5 class="modal-title">PAYMENT & review </h5>
+                <div class="modal-header justify-content-center">
+                    <h5 class="modal-title">SUCCESS!</h5>
                     <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
                     <!--<span aria-hidden="true">&times;</span>-->
                     <!--</button>-->
                 </div>
                 <div class="modal-body">
-                    <h1>EБАТЬ - КАПАТЬ ОПЯТЬ МОДАЛЬ</h1>
-                </div>
-                <div class="modal-footer">
-                    <div class="modal-buttons">
-                        <a href="" class="button bg-light-gray">cancel</a>
-                        <a href="" class="button color-white bg-blue" data-toggle="modal" data-target="#payment">done</a>
+                    <div class="modal-body__wrap">
+                        <h5 class="align-center">
+                            Your sway has been sent!
+                        </h5>
+                        <h5 class="margin_b_40">
+                            Let your friends know that you’ve championed a message, and encourage them to follow your lead:
+                        </h5>
+
+                        <div class="modal-social">
+                            <a href=""><img src="http://placehold.it/50x50" alt=""></a>
+                            <a href=""><img src="http://placehold.it/50x50" alt=""></a>
+                            <a href=""><img src="http://placehold.it/50x50" alt=""></a>
+                            <a href=""><img src="http://placehold.it/50x50" alt=""></a>
+                            <a href=""><img src="http://placehold.it/50x50" alt=""></a>
+                        </div>
+
+                        <div class="succses-buttons">
+                            <a href="" class="button bg-black color-white">go to dashboard</a>
+                            <br/>
+                            <a href="" class="">back to home</a>
+                        </div>
+
+
                     </div>
                 </div>
             </div>

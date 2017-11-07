@@ -1287,35 +1287,55 @@ section.post-comments{
   padding-left: 30px;
   padding-right: 30px;
 
-  ul{
-    margin:0;
-    padding:0;
-    list-style:none;
+  .message-list__item{
+    margin-bottom:30px;
+    position: relative;
+    padding-left:30px;
+    font-family: MuseoSans;
+    line-height: 1.4;
+    color:#000;
+    font-weight: 400;
 
-    li{
-      margin-bottom:30px;
-      position: relative;
-      padding-left:30px;
-      font-family: MuseoSans;
-      line-height: 1.4;
-      color:#000;
-      font-weight: 400;
+    span{
+      display: block;
 
-      span{
-        display: block;
-
-        &.url{
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          overflow: hidden;
-          max-width: 365px;
-        }
+      &.url{
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        max-width: 365px;
       }
+    }
 
-      .icon{
-        position: absolute;
-        top:2px;
-        left:0;
+    .icon{
+      position: absolute;
+      top:2px;
+      left:0;
+    }
+
+    .card{
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+    }
+
+    .card-header{
+      padding: 0;
+      background-color: transparent;
+      border-bottom: none;
+
+      a{
+        padding-right: 20px;
+        position: relative;
+        display: block;
+        color: #000;
+
+        i{
+          position: absolute;
+          top:50%;
+          right: 10px;
+          transform: translate(0, -50%);
+        }
       }
     }
   }
