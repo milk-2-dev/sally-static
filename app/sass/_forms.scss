@@ -296,13 +296,13 @@
     margin-bottom: 30px;
   }
 
-  .form-button{
-    .button{
-      margin:0;
-      width:100%;
-      text-align: center;
-    }
-  }
+  //.form-button{
+  //  .button{
+  //    margin:0;
+  //    width:100%;
+  //    text-align: center;
+  //  }
+  //}
 }
 
 .select-block{
@@ -380,4 +380,60 @@
 
 .cart-type{
   float: right;
+}
+
+.login-form__wrap{
+  padding:0 50px;
+
+  h4{
+    color:lighten(map_get($colors, 'grey'), 20%);
+    margin:0;
+  }
+}
+
+.login-block{
+  padding:0 50px 0;
+
+
+  &.br_b{
+    border-bottom: 1px solid lighten(map_get($colors, 'grey'), 50%);
+  }
+
+  &.br_b--or{
+    position: relative;
+    border-bottom: 1px solid lighten(map_get($colors, 'grey'), 50%);
+
+    &:after{
+      content: 'or';
+      position: absolute;
+      bottom:-18px;
+      left: 50%;
+      padding:10px 30px;
+      background: #fff;
+      z-index: 1;
+      transform: translate(-50%, 0);
+      font-family: Helvetica;
+      font-size: 20px;
+      line-height: 1;
+    }
+  }
+
+  a{
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-right:0;
+
+    &:last-child{
+      margin-bottom:0;
+    }
+  }
+}
+
+.link-create-account{
+  font-family: Helvetica;
+  font-size: 20px;
+  text-align: center;
+  margin:0;
+  padding-top: 40px;
 }
