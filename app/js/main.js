@@ -2380,7 +2380,7 @@
             var wp_vars = {"template_url":"http:\/\/splendidwp.staging.wpengine.com\/wp-content\/themes\/splendid"};
             $('.raty-rating').raty({
                 readOnly: true,
-                path: wp_vars.template_url + '/img/raty',
+                path: wp_vars.template_url + '/images/raty',
                 score: function(){
                     return $(this).data('score');
                 }
@@ -2415,3 +2415,46 @@ function setReach(){
 }
 
 setReach();
+
+$(document).ready(function() {
+    function responsive() {
+        var myWidth = $('body').innerWidth();
+
+        if (myWidth < 768) {
+            if (!$('body').hasClass("mobile")) {
+
+                var owl = $(".custom-posts .owl-carousel").owlCarousel({
+                    items: 1,
+                    slideSpeed: 500,
+                    autoplay: true,
+                    autoplayTimeout: 4500,
+                    loop: true,
+                    mouseDrag: true,
+                    singleItem: true,
+                    dots: false,
+                    margin: 0,
+                    dotsData: false,
+                    nav: false
+                }).data('owlCarousel');
+
+                $('body').removeClass("desctop");
+                $('body').addClass("mobile");
+            }
+        } else {
+            if (!$('body').hasClass("desctop")) {
+
+                $(".custom-posts .owl-carousel").trigger('destroy.owl.carousel');
+                $(".custom-posts .owl-carousel").css('display','flex');
+                $('body').removeClass("mobile");
+                $('body').addClass("desctop");
+            }
+        }
+    }
+
+    responsive();
+
+    $(window).resize(function () {
+        responsive();
+    });
+
+});

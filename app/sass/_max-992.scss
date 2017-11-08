@@ -146,11 +146,43 @@
     height:21px;
     margin:22px auto;
     display:block;
-    background:url(../img/sprites/accordion-icon.png) no-repeat;
+    background:url(../images/sprites/accordion-icon.png) no-repeat;
   }
 
   li.dropdown-active>.dropdown-icon span{
     background-position:-21px 0;
+  }
+
+  .small-menu{
+    ul{
+      margin: 0 !important;
+
+      li{
+        margin-right: 20px;
+
+        a{
+          font-size: 14px;
+
+          &.small-menu__attention {
+            padding: 13px 20px;
+          }
+        }
+      }
+    }
+  }
+
+  #header .logo {
+    padding: 0;
+  }
+
+  .first-screen{
+    padding: 40px 0;
+    text-align: center;
+
+    h1{
+      font-size: 26px;
+      margin-bottom: 20px !important;
+    }
   }
 
 }

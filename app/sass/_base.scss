@@ -14,6 +14,10 @@ body {
   color:map_get($colors, 'grey');
   background:#fefefe;
   position:relative;
+
+  &.mobile{
+    padding-bottom:73px;
+  }
 }
 img, iframe {
   max-width:100%;
@@ -310,6 +314,43 @@ body.modal-open {
 
     &:last-child{
       margin-bottom: 0;
+    }
+  }
+}
+
+.mobile-menu{
+  padding:20px 0;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  left:0;
+  right:0;
+  z-index: 5;
+  display: none;
+
+  ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    li{
+      margin-right:20px;
+      text-transform: uppercase;
+      font-family: MuseoSans;
+      font-size: 16px;
+      font-weight: 500;
+
+      &+li{
+        margin-top:0;
+      }
+
+      &:last-child{
+        margin-right:0;
+      }
     }
   }
 }

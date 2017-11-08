@@ -193,7 +193,7 @@ module.exports = function(grunt) {
 					expand: true,
 					flatten: true,
 					cwd: 'src/',
-					src: [ 'img/*.*' ],
+					src: [ 'images/*.*' ],
 					dest: 'dist/assets'
 				},
 
@@ -214,7 +214,7 @@ module.exports = function(grunt) {
 				docsAssets: {
 					expand: true,
 					cwd: '<%= app.docs.src %>/assets/',
-					src: [ 'css/*.css', 'vendors/*.js', 'vendors/*.map', 'img/*.*', 'js/*.*' ],
+					src: [ 'css/*.css', 'vendors/*.js', 'vendors/*.map', 'images/*.*', 'js/*.*' ],
 					dest: '<%= app.docs.dest %>/assets/'
 				},
 

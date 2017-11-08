@@ -55,7 +55,7 @@ gulp.task('css-libs', ['sass'], function() {
 
 gulp.task('sprite', function () {
     // Generate our spritesheet
-    var spriteData = gulp.src('app/img/icons/*.png').pipe(spritesmith({
+    var spriteData = gulp.src('app/images/icons/*.png').pipe(spritesmith({
         imgName: 'sprite.png',
         cssName: '_sprite.scss'
     }));
@@ -65,7 +65,7 @@ gulp.task('sprite', function () {
     // DEV: We must buffer our stream into a Buffer for `imagemin`
         //.pipe(buffer())
         //.pipe(imagemin())
-        .pipe(gulp.dest('app/img/sprites/'));
+        .pipe(gulp.dest('app/images/sprites/'));
 
     // Pipe CSS stream through CSS optimizer and onto disk
     var cssStream = spriteData.css
