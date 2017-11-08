@@ -123,4 +123,20 @@
   .mobile-menu{
     display: block;
   }
+
+  .message-article{
+    border-right: none;
+  }
+
+  .message-edit{
+    a{
+      position: absolute;
+      top:auto;
+      bottom:3px;
+    }
+  }
+
+  .message-reach__views{
+    margin-top: 20px;
+  }
 }

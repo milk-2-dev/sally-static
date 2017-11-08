@@ -353,4 +353,36 @@ body.modal-open {
       }
     }
   }
+
+  &.login-user{
+    a{
+      position: relative;
+      font-size: 30px;
+      opacity:.5;
+      color: map_get($colors, 'grey');
+
+      &:after{
+        content: '';
+        display: none;
+        position: absolute;
+        left:0;
+        right:0;
+        bottom:-15px;
+        width:10px;
+        height:10px;
+        margin:auto;
+        border-radius: 50%;
+        background: map_get($colors, 'grey');
+
+      }
+
+      &.active{
+        opacity:1;
+
+        &:after{
+          display: block;
+        }
+      }
+    }
+  }
 }

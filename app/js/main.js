@@ -2443,6 +2443,9 @@ $(document).ready(function() {
 
                 $('body').removeClass("desctop");
                 $('body').addClass("mobile");
+
+                $('.message-set-reach').find('.modal-title').append($('.message-reach__costs'))
+
             }
         } else {
             if (!$('body').hasClass("desctop")) {
@@ -2451,6 +2454,8 @@ $(document).ready(function() {
                 $(".custom-posts .owl-carousel").css('display','flex');
                 $('body').removeClass("mobile");
                 $('body').addClass("desctop");
+
+                $('.message-set-reach').find('.message-reach__views').after($('.message-reach__costs'))
             }
         }
     }

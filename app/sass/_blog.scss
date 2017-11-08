@@ -1394,21 +1394,20 @@ section.post-comments{
 }
 
 .message-edit{
-  &:after{
-    content: '';
-    display: block;
-    clear: both;
-  }
+  position: relative;
+  padding-top:40px;
+  padding-right:75px;
 
   a{
+    position: absolute;
+    top:-5px;
+    right:0;
     display: inline-block;
-    float:right;
     text-transform: uppercase;
-    margin-bottom: 15px;
 
     .icon{
       margin-right: 5px;
-      vertical-align: text-bottom;
+      vertical-align: middle;
     }
 
     span{
@@ -1424,6 +1423,10 @@ section.post-comments{
 
 .message-set-reach{
   padding: 50px 40px 10px;
+
+  .modal-title{
+    margin-bottom: 15px;
+  }
 }
 
 .message-reach__views{
