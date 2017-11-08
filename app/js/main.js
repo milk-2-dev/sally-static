@@ -2396,10 +2396,12 @@
 function setAgeAuditory(){
     var s = $("#ageAuditory").slider();
 
-    s.on("change", function (val) {
-        console.log(val);
-        $('#actualValue').html(val.value.newValue[0] + ' - ' + val.value.newValue[1]);
-    });
+    if(s != undefined){
+        s.on("change", function (val) {
+            console.log(val);
+            $('#actualValue').html(val.value.newValue[0] + ' - ' + val.value.newValue[1]);
+        });
+    }
 }
 
 setAgeAuditory();
@@ -2408,10 +2410,12 @@ function setReach(){
     var s = $("#setReach").slider();
     var viewCost = $("#setReach").attr('data-view-value');
 
-    s.on("change", function (val) {
-        $('#setReachViews span').html(val.value.newValue);
-        $('#setReachMany span').html(val.value.newValue * viewCost);
-    });
+    if(s != undefined){
+        s.on("change", function (val) {
+            $('#setReachViews span').html(val.value.newValue);
+            $('#setReachMany span').html(val.value.newValue * viewCost);
+        });
+    }
 }
 
 setReach();
