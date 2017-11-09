@@ -165,7 +165,8 @@ body.modal-open {
 @media (min-width: 576px){
   .modal-dialog {
     max-width: 100%;
-    margin: 30px auto;
+    margin: 20px auto;
+    height: calc(100vh - 40px);
   }
 }
 
@@ -183,8 +184,8 @@ body.modal-open {
 }
 
 .modal-body__overflow {
-  overflow-y: scroll;
-  max-height:550px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .modal-body__wrap {
@@ -226,6 +227,8 @@ body.modal-open {
   border-radius:20px;
   border: none;
   overflow: hidden;
+  background: #FFFFFF;
+  box-shadow: 0 10px 30px 0 rgba(0,0,0,0.50);
 }
 
 .modal-title{
@@ -385,4 +388,12 @@ body.modal-open {
       }
     }
   }
+}
+
+.message-list{
+  overflow-y: auto;
+}
+
+.message-article{
+  overflow-y: auto;
 }

@@ -2420,6 +2420,36 @@ function setReach(){
 
 setReach();
 
+// $('.button').on('click', function(){
+//     changeHeiht();
+// })
+
+// $('.modal').on('shown.bs.modal', function (e) {
+//     changeHeiht(e.currentTarget.id);
+// })
+
+function changeHeiht(e){
+    var modalFooterHeight = $('#'+ e).find('.modal-footer').outerHeight(true);
+    var modalBodyOverflowHeight = $(window).height() - modalFooterHeight - 120;
+
+    // console.log(e2);
+    // console.log(e3);
+
+    return {
+        set: function(e2, e3){
+            $('#'+ e).find('.'+ e2).css('max-height', modalBodyOverflowHeight);
+            $('#'+ e).find('.'+ e3).css('max-height', modalBodyOverflowHeight);
+        },
+
+        reset: function(e2, e3){
+            $('#'+ e).find('.'+ e2).css('max-height', '100%');
+            $('#'+ e).find('.'+ e3).css('max-height', '100%');
+        }
+    }
+}
+
+
+
 $(document).ready(function() {
     function responsive() {
         var myWidth = $('body').innerWidth();
@@ -2448,6 +2478,24 @@ $(document).ready(function() {
                 $('.message-set-reach').find('.modal-title').after($('.message-reach__costs'));
                 $('.custom-posts').find('.container').after($('.owl-carousel'));
 
+                //initialize change height for modal content
+                $('.modal').on('shown.bs.modal', function (e) {
+                    var change = changeHeiht(e.currentTarget.id);
+                    console.log('enter to function');
+
+                    change.set('modal-body__overflow', 'modal-body__overflow');
+                    change.reset('message-article', 'message-list');
+                })
+
+                if($('.modal').hasClass('show')){
+                    $('.modal .show').attr('id');
+                    console.log($('.modal').hasClass('show').attr('id'));
+                }
+
+
+
+                //changeHeiht(e.currentTarget.id, 'modal-body__overflow');
+
             }
         } else {
             if (!$('body').hasClass("desctop")) {
@@ -2459,6 +2507,17 @@ $(document).ready(function() {
 
                 $('.message-set-reach').find('.message-reach__views').after($('.message-reach__costs'));
                 $('.custom-posts').find('.promo-box').after($('.owl-carousel'));
+
+                //initialize change height for modal content
+                $('.modal').on('shown.bs.modal', function (e) {
+                    var change = changeHeiht(e.currentTarget.id);
+
+                    change.set('message-article', 'message-list');
+                    change.reset('modal-body__overflow', 'modal-body__overflow');
+                    //changeHeiht(e.currentTarget.id, 'message-article', 'message-list');
+                })
+                //changeHeiht(e.currentTarget.id, 'message-article', 'message-list');
+
             }
         }
     }

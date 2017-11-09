@@ -1190,6 +1190,8 @@ section.post-comments{
   padding-top:15px;
   padding-bottom:15px;
   border-right: 1px solid lighten(map_get($colors, 'grey'), 50%);
+  //overflow-y: auto;
+  //max-height: calc(100vh - 378px);
 
   article{
     padding: 10px;
@@ -1279,6 +1281,7 @@ section.post-comments{
 
 .message-article__content-img{
   margin-bottom: 10px;
+  width: 100%;
 }
 
 .message-article__content-title{
@@ -1306,6 +1309,8 @@ section.post-comments{
   padding-top: 15px;
   padding-left: 30px;
   padding-right: 30px;
+  //overflow-y: auto;
+  //max-height: calc(100vh - 378px);
 
   .message-list__item{
     margin-bottom:30px;

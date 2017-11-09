@@ -124,8 +124,18 @@
     display: block;
   }
 
+  //.modal-body{
+  //  max-height: calc(100vh - 378px);
+  //  overflow-y: auto;
+  //}
+
+  .message-preview{
+    margin:0;
+  }
+
   .message-article{
     border-right: none;
+    max-height: 100%;
   }
 
   .message-edit{
@@ -149,4 +159,5 @@
   //    float: right;
   //  }
   //}
+
 }
