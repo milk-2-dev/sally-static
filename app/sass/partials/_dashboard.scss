@@ -1,5 +1,23 @@
 .analytics{
+  &.no-hover{
+    .analytics-item{
+      &:hover{
+        background: transparent;
+        color: inherit;
+        border-color: #000;
 
+        &:before{
+          display:none;
+        }
+      }
+    }
+  }
+
+  .row{
+    >div{
+      margin-bottom:20px;
+    }
+  }
 }
 
 .analytics-item{

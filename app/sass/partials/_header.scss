@@ -16,9 +16,9 @@
                 font-size: 18px;
             }
 
-            .button{
-                background: lighten(map_get($colors, 'grey'), 10%);
-            }
+            //.button{
+            //    background: lighten(map_get($colors, 'grey'), 10%);
+            //}
         }
     }
 }
@@ -281,8 +281,8 @@
             transform: translate(-50%, -50%);
             opacity: 0;
             transition: .2s ease-in-out;
-            font-family: Helvetica;
-            font-size: 18px;
+            //font-family: Helvetica;
+            //font-size: 18px;
             font-weight: bold;
             margin: 0;
             padding: 10px;
@@ -321,7 +321,7 @@
     margin-left: 40px;
     background: #af7bf2;
     padding: 0 15px;
-    margin-right: -15px;
+    margin-right: -55px;
 
     .dropdown{
         text-align: left;
@@ -355,6 +355,7 @@
 .user-bar__info{
     position: relative;
     padding-right: 40px;
+    min-width:200px;
     //margin-top:20px;
 
     .dropdown-menu{
