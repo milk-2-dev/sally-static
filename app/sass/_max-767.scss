@@ -159,5 +159,34 @@
   //    float: right;
   //  }
   //}
+  #main-footer .row{
+    margin: 0;
+  }
 
+
+  .button{
+    padding: 16px 40px 15px;
+  }
+
+  .share-form {
+    input[type="text"]{
+      min-height:54px;
+    }
+
+    .button{
+      top: 3px;
+      right: 3px;
+      padding: 13px 29px 10px;
+    }
+  }
+
+  .first-screen {
+    h1 {
+      font-size: 24px;
+    }
+  }
+
+  h2{
+    font-size: 24px;
+  }
 }

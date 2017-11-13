@@ -2450,6 +2450,15 @@ function changeHeiht(e){
     }
 }
 
+function heightMobMenu(){
+    var  h = $('.mobile-menu').outerHeight(true);
+    console.log(h);
+
+    $('body').css('padding-bottom', h);
+}
+
+heightMobMenu();
+
 
 $(document).ready(function() {
     function responsive() {
@@ -2474,7 +2483,7 @@ $(document).ready(function() {
 
                 var owl = $(".custom-posts .owl-carousel").owlCarousel({
                     center: true,
-                    items: 2,
+                    items: 1,
                     slideSpeed: 500,
                     autoplay: true,
                     autoplayTimeout: 4500,
