@@ -659,7 +659,17 @@
                                     </select>
                                 </div>
 
-                                <a href="" class="input-notification align-right">customize audience</a>
+                                <a href="javascript:void(0);" class="input-notification align-right"
+                                onclick="$('#customizeAudience').show('slow')">customize audience</a>
+                            </div>
+
+                            <div class="form-item" id="customizeAudience" style="display: none">
+                                <p class="form-item__title">Behavior and Interests</p>
+
+                                <input type="text">
+                                <span class="input-notification">
+                                    ie: likes <b>COFFEE</b>, watches <b>ANIME</b>
+                                </span>
                             </div>
 
                             <div class="form-item">

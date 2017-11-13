@@ -2505,7 +2505,15 @@ $(document).ready(function() {
                     dots: false,
                     margin: 0,
                     dotsData: false,
-                    nav: false
+                    nav: false,
+                    responsive:{
+                        0:{
+                            items:1
+                        },
+                        450:{
+                            items:1.5
+                        }
+                    }
                 }).data('owlCarousel');
 
                 $('body').removeClass("desctop");
