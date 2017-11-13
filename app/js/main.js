@@ -2451,13 +2451,25 @@ function changeHeiht(e){
 }
 
 function heightMobMenu(){
-    var  h = $('.mobile-menu').outerHeight(true);
+
     console.log(h);
 
-    $('body').css('padding-bottom', h);
+
 }
 
-heightMobMenu();
+function heightMobMenu() {
+    var  h = $('.mobile-menu').outerHeight(true);
+
+    return {
+        set: function(value) {
+            $('body').css('padding-bottom', h);
+        },
+
+        reset: function() {
+            $('body').css('padding-bottom', '0');
+        }
+    };
+}
 
 
 $(document).ready(function() {
@@ -2514,6 +2526,11 @@ $(document).ready(function() {
                     }
                 })
             }
+
+            var makePad = heightMobMenu();
+
+            makePad.set();
+
         } else {
             if (!$('body').hasClass("desctop")) {
 
@@ -2549,6 +2566,10 @@ $(document).ready(function() {
                         change.reset('modal-body__overflow', 'modal-body__overflow');
                     }
                 }
+
+                var makePad = heightMobMenu();
+
+                makePad.reset();
 
             }
         }
