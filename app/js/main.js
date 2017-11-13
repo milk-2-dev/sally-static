@@ -272,33 +272,33 @@
          */
 
         // Enables Full Width Sections
-        function enableFullWidth(){
-            initFullWidth();
-            $window.on('load resize', function(){
-                initFullWidth();
-                if (window_w >= 991) {
-                    megaMenu();
-                };
-            });
-            $window.on('resize', function(){
-                if (window_w >= 991) {
-                    if ($('.dropdown-inner').length && $body.hasClass('headerstyle7') == false) {
-                        $('.dropdown-inner').css({
-                            'display': 'block',
-                            'visibility': 'hidden'
-                        });
-                        $('#primary-nav').find('.menu-item-has-children:not(.megamenu)').find('.mn-sub').css({
-                            'display': 'block',
-                            'visibility': 'hidden'
-                        });
-                        setTimeout(function(){
-                            $('.dropdown-inner').slideUp();
-                        }, 100);
-                    };
-                };
-                menuItemsDelay();
-            });
-        }
+        // function enableFullWidth(){
+        //     initFullWidth();
+        //     $window.on('load resize', function(){
+        //         initFullWidth();
+        //         if (window_w >= 991) {
+        //             megaMenu();
+        //         };
+        //     });
+        //     $window.on('resize', function(){
+        //         if (window_w >= 991) {
+        //             if ($('.dropdown-inner').length && $body.hasClass('headerstyle7') == false) {
+        //                 $('.dropdown-inner').css({
+        //                     'display': 'block',
+        //                     'visibility': 'hidden'
+        //                 });
+        //                 $('#primary-nav').find('.menu-item-has-children:not(.megamenu)').find('.mn-sub').css({
+        //                     'display': 'block',
+        //                     'visibility': 'hidden'
+        //                 });
+        //                 setTimeout(function(){
+        //                     $('.dropdown-inner').slideUp();
+        //                 }, 100);
+        //             };
+        //         };
+        //         menuItemsDelay();
+        //     });
+        // }
 
         // Initializes Fullwidth Sections
         function initFullWidth(){
