@@ -108,7 +108,7 @@
 
         //smoothScroll(1.3, 220); // Smooth Scroll
 
-        enableFullWidth(); // Full Width Sections
+        //enableFullWidth(); // Full Width Sections
 
         enableFullHeight(); // Full Height Sections
 
