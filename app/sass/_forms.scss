@@ -437,3 +437,28 @@
   margin:0;
   padding-top: 40px;
 }
+
+.class-b{
+  border:5px solid #000;
+  padding:10px;
+
+  &:last-child{
+    span{
+      &:last-child{
+        background:red;
+      }
+    }
+  }
+
+  span{
+    height:50px;
+    display: block;
+    width: 150px;
+
+    &:last-child{
+      background:blue;
+    }
+  }
+
+
+}

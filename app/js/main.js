@@ -2450,12 +2450,6 @@ function changeHeiht(e){
     }
 }
 
-function heightMobMenu(){
-
-    console.log(h);
-
-
-}
 
 function heightMobMenu() {
     var  h = $('.mobile-menu').outerHeight(true);
