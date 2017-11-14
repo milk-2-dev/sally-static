@@ -12,13 +12,13 @@
             display: block;
 
             input{
-                min-height: 66px;
+                min-height: 58px;
                 font-size: 18px;
             }
 
-            //.button{
-            //    background: lighten(map_get($colors, 'grey'), 10%);
-            //}
+            .button{
+                padding: 12px 29px 11px;
+            }
         }
     }
 }
