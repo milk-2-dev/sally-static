@@ -2537,7 +2537,7 @@ $(document).ready(function() {
             if (!$('body').hasClass("desctop")) {
 
                 $(".custom-posts .owl-carousel").trigger('destroy.owl.carousel');
-                $(".custom-posts .owl-carousel").css('display','flex');
+                // $(".custom-posts .owl-carousel").css('display','flex');
                 $('body').removeClass("mobile");
                 $('body').addClass("desctop");
 
