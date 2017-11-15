@@ -83,7 +83,7 @@ $medium-down: "#{$screen} and (max-width:#{lower-bound($medium-range)})" !defaul
 				top: 1rem;
 				right: 0;
 				border: 2px solid #FFF;
-				background: image_url(download.png) $owl-success-color no-repeat 50% 55%;
+				background: url(../images/download.png) $owl-success-color no-repeat 50% 55%;
 				@include owl-radius(100%);
 			}
 		}
@@ -292,7 +292,7 @@ $medium-down: "#{$screen} and (max-width:#{lower-bound($medium-range)})" !defaul
 a#custom-tweet-button  {
 	padding: 6px 13px 6px 13px;
 	margin-left: 0px;
-	background: url('../images/twitter_25.png') 1px center no-repeat;
+	background: image_url('twitter_25.png') 1px center no-repeat;
 }
 
 blockquote p {
