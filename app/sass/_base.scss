@@ -137,8 +137,7 @@ body.modal-open {
   body.b_1170 #header,body.b_1170 #footer,body.b_1170 .page-heading,body.b_1170 .home-flexslider {width:1170px!important;}
 }
 @media(min-width:1250px){
-  .container {width:1230px;}
-  body.b_1170 #header, body.b_1170 #footer, body.b_1170 .page-heading, body.b_1170 .home-flexslider {width:1230px!important;}
+  .container {width:1054px;}
 }
 @media(min-width:1520px){
   .headerstyle7 .container{ width:1230px;}
@@ -257,6 +256,8 @@ body.modal-open {
 .slider-track {
   border-radius: 0;
   background: #d8d8d8;
+  height:6px;
+  margin-top:-4px;
 }
 
 .slider.slider-horizontal {
@@ -266,6 +267,8 @@ body.modal-open {
 .slider-handle {
   background-color: map_get($colors, 'pink');
   background-image: none;
+  width:19px;
+  height:19px;
 }
 
 .modal-buttons{
@@ -276,13 +279,18 @@ body.modal-open {
   }
   
   a,
-  button{
+  button,
+  .button{
     margin:0;
     border:none;
     border-radius: 0;
     width:50%;
     float: left;
     text-align: center;
+    font-family: MuseoSans;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1.1px;
   }
 }
 
@@ -403,7 +411,7 @@ body.modal-open {
 /* Promo Boxes */
 .promo-box{
   display: block;
-  margin:40px 0 20px;
+  margin:40px 0 35px;
   background-position:center center;
   background-repeat:repeat;
   background-size:100% auto
@@ -474,12 +482,16 @@ body.modal-open {
   transition:		 all 0.5s ease;
 }
 .promo-box.style2 .promo-box-inner{
-  padding:70px 80px 80px;
+  padding:65px 80px 65px;
   text-align:center;
   color:#fff;
+
+  .button{
+    margin:0;
+  }
 }
 .promo-box.style2 h1,
-.promo-box.style2 h2,
+//.promo-box.style2 h2,
 .promo-box.style2 h3,
 .promo-box.style2 h4,
 .promo-box.style2 h5,
@@ -487,8 +499,10 @@ body.modal-open {
   color:#fff;
 }
 .promo-box.style2 h2 {
-  font-size: 42px;
-  line-height: 60px;
+  ffont-family: MuseoSans;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 .promo-box.style2 h5 {
   margin-bottom: 50px;

@@ -3,3 +3,9 @@
   margin-right:0 !important;
   text-align: center;
 }
+
+.button{
+  &.bg-light-gray{
+    color: #979797;
+  }
+}

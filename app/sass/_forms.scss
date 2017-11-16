@@ -1,13 +1,30 @@
+form{
+  label,
+  input[type="checkbox"]{
+    cursor:pointer;
+  }
+
+  .chosen-container-multi .chosen-choices {
+    background:#f4f6fa none repeat scroll 0 0;
+    border:1px solid #dce3ef;
+    border-radius:5px;
+    display:block;
+    margin:0;
+    padding:11px 10px;
+    width:100%;
+  }
+
+  .slider-handle {
+    cursor: pointer;
+  }
+
+  .slider.slider-horizontal {
+    margin-bottom: 8px;
+  }
+}
+
 .share-form{
   position: relative;
-  //display: flex;
-  //justify-content: space-between;
-  //align-items: center;
-  //
-
-  //&:focus{
-  //  outline: 1px solid #4a90e2;
-  //}
 
   input[type="text"]{
     margin: 0;
@@ -25,6 +42,10 @@
       outline: none;
       //border-radius: 5px;
       //box-shadow: 0 0 0 1px #4a90e2;
+
+      +.button{
+        background: #000;
+      }
     }
   }
 
@@ -34,6 +55,7 @@
     right:8px;
     margin:0;
     padding: 19px 29px 16px;
+    background: #d4d4d4;
   }
 }
 
@@ -188,6 +210,7 @@
   text-transform: uppercase;
   font-size: 16px;
   font-weight: 500;
+  margin-top:10px;
 
   a{
     text-decoration: underline;
@@ -223,7 +246,7 @@
   }
 
   label{
-    padding: 5px 15px;
+    padding: 13px 15px;
     border: 1px solid #a65bf4;
     transition: .2s ease-in-out;
     margin-right: 20px;
@@ -232,6 +255,9 @@
     cursor: pointer;
     width: 100%;
     text-align: center;
+    font-family: MuseoSans;
+    font-size: 20px;
+    font-weight: 500;
 
     &:last-child{
       margin-right:0;

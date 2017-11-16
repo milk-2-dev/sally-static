@@ -2489,7 +2489,7 @@ $(document).ready(function() {
 
                 var owl = $(".custom-posts .owl-carousel").owlCarousel({
                     center: true,
-                    items: 1,
+                    items: 3,
                     slideSpeed: 500,
                     autoplay: true,
                     autoplayTimeout: 4500,
@@ -2504,7 +2504,7 @@ $(document).ready(function() {
                         0:{
                             items:1
                         },
-                        450:{
+                        400:{
                             items:1.5
                         }
                     }
@@ -2542,7 +2542,7 @@ $(document).ready(function() {
                 $('body').addClass("desctop");
 
                 $('.message-set-reach').find('.message-reach__views').after($('.message-reach__costs'));
-                $('.custom-posts').find('.promo-box').after($('.owl-carousel'));
+                $('.custom-posts').find('.row').html($('.owl-carousel'));
 
                 //initialize change height for modal content
                 $('.modal').on('shown.bs.modal', function (e) {
