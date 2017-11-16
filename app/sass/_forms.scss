@@ -1,3 +1,80 @@
+
+/********************************************
+			  		4-6. Forms
+*********************************************/
+.input-row{
+  margin:0 -8px;
+}
+.input-row>div{
+  padding:0 8px;
+}
+label{
+  font-weight:700;
+  font-size:0.875em;
+  color:#525f71;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+.select2-container .select2-choice,
+input[type="search"],
+select,
+textarea{
+  display:block;
+  width:100%;
+  padding:11px 10px;
+  background:#f4f6fa;
+  border:1px solid #dce3ef;
+  margin:0;
+  border-radius:5px;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="search"]:focus,
+select:focus,
+textarea:focus{
+  outline:1px solid #a65bf4;
+}
+label + input[type="text"],
+label + input[type="password"],
+label + input[type="email"],
+label + input[type="tel"],
+label + input[type="search"],
+label + select,
+label + textarea{
+  margin-top:5px;
+}
+input[type="text"].unfilled,
+input[type="password"].unfilled,
+input[type="email"].unfilled,
+input[type="tel"].unfilled,
+input[type="search"].unfilled,
+select.unfilled,
+textarea.unfilled,
+.shortcode_wysija input.wysija-input {
+  background:none;
+  border:2px solid #fff;
+  color:#fff;
+  outline:none!important;
+  -webkit-transition: border .3s;
+  -o-transition: border .3s;
+  transition: border .3s;
+}
+input[type="text"].unfilled:focus,
+input[type="password"].unfilled:focus,
+input[type="email"].unfilled:focus,
+input[type="tel"].unfilled:focus,
+input[type="search"].unfilled:focus,
+select.unfilled:focus,
+textarea.unfilled:focus{
+  border-color:#a65bf4;
+}
+
 form{
   label,
   input[type="checkbox"]{
@@ -51,11 +128,12 @@ form{
 
   .button{
     position: absolute;
-    top:8px;
+    top:50%;
     right:8px;
     margin:0;
     padding: 19px 29px 16px;
     background: #d4d4d4;
+    transform: translate(0, -50%);
   }
 }
 
