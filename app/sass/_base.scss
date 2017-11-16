@@ -344,17 +344,18 @@ body.modal-open {
     padding: 0;
     margin: 0;
     list-style: none;
-
     display: flex;
     justify-content: space-around;
     align-items: center;
 
     li{
-      margin-right:20px;
       text-transform: uppercase;
       font-family: MuseoSans;
       font-size: 16px;
       font-weight: 500;
+      width: 33.33%;
+      padding: 10px;
+      text-align: center;
 
       &+li{
         margin-top:0;
@@ -362,6 +363,15 @@ body.modal-open {
 
       &:last-child{
         margin-right:0;
+      }
+
+      a{
+        color: #4a4a4a;
+        transition: .2s ease-in-out;
+
+        &.active{
+          color: map_get($colors, 'pink');
+        }
       }
     }
   }
@@ -389,6 +399,7 @@ body.modal-open {
       }
 
       &.active{
+        color: map_get($colors, 'grey');
         opacity:1;
 
         &:after{
