@@ -123,6 +123,11 @@
     margin:0;
   }
 
+  .message-list{
+    padding-left:0;
+    padding-right:0;
+  }
+
   .message-article{
     border-right: none;
     max-height: 100%;
@@ -137,22 +142,34 @@
   }
 
   .message-reach__views{
-    margin-top: 20px;
+    margin-top: 18px;
   }
 
-  //.message-set-reach{
-  //  .modal-title{
-  //    float: left;
-  //  }
-  //
-  //  .message-reach__costs{
-  //    float: right;
-  //  }
+  .message-set-reach{
+    padding: 32px 35px 32px;
+
+    .modal-title {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+  }
+
+  //.message-reach__costs{
+  //  font-size: 16px;
   //}
+
+  .modal-header{
+    padding-left:15px;
+    padding-right:15px;
+  }
+
+  .modal-title{
+    font-size: 20px;
+  }
+
   #main-footer .row{
     margin: 0;
   }
-
 
   .button{
     padding: 16px 40px 15px;
@@ -317,5 +334,19 @@
 
   .login-form__wrap{
     padding:0;
+  }
+
+  .owl-item>div {
+    padding: 0 5px;
+  }
+
+  .sc-blog-post{
+     &.blog-post-standard{
+        &.style-normal{
+          .post-title{
+            min-height:49px;
+          }
+        }
+     }
   }
 }

@@ -2465,6 +2465,27 @@ function heightMobMenu() {
     };
 }
 
+function cropText(){
+
+
+    $('.sc-blog-post').each(function() {
+        var text = $(this).find('.post-title a').html();
+        var result;
+
+
+
+        if(Number(text.length) > 45 ){
+            result = text.slice(0,30);
+            result += '...';
+        }
+
+        $(this).find('.post-title a').html(result);
+    });
+
+
+
+}
+
 
 $(document).ready(function() {
     function responsive() {
@@ -2489,7 +2510,7 @@ $(document).ready(function() {
 
                 var owl = $(".custom-posts .owl-carousel").owlCarousel({
                     center: true,
-                    items: 3,
+                    items: 1,
                     slideSpeed: 500,
                     autoplay: true,
                     autoplayTimeout: 4500,
@@ -2500,12 +2521,15 @@ $(document).ready(function() {
                     margin: 0,
                     dotsData: false,
                     nav: false,
+                    //autoHeight:true,
                     responsive:{
                         0:{
-                            items:1
+                            items:1,
+                            stagePadding: 20
                         },
-                        400:{
-                            items:1.5
+                        480:{
+                            items:1,
+                            stagePadding: 80
                         }
                     }
                 }).data('owlCarousel');
@@ -2519,7 +2543,6 @@ $(document).ready(function() {
                 //initialize change height for modal content
                 $('.modal').on('shown.bs.modal', function (e) {
                     var change = changeHeiht(e.currentTarget.id);
-                    console.log('from 768 ' + e.currentTarget.id);
 
                     change.set('modal-body__overflow', 'modal-body__overflow');
 
@@ -2527,6 +2550,8 @@ $(document).ready(function() {
                         change.reset('message-article', 'message-list');
                     }
                 })
+
+                cropText();
             }
 
             var makePad = heightMobMenu();
