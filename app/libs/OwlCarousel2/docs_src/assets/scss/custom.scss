@@ -1,10 +1,6 @@
 $owl-primary-color: #1ccacd;
 $owl-success-color: #ff3f4d;
 $owl-gray-color: #f7f7f7;
-
-
-$medium-down: "#{$screen} and (max-width:#{lower-bound($medium-range)})" !default;
-
 /* Custom mixins */
 
 @mixin owl-transition($p:all, $t:300ms) {
@@ -74,18 +70,18 @@ $medium-down: "#{$screen} and (max-width:#{lower-bound($medium-range)})" !defaul
 					opacity: 1;
 				}
 			}
-			.download{
-				width:1rem;
-				height: 1rem;
-				background: $owl-success-color;
-				display: block;
-				position: absolute;
-				top: 1rem;
-				right: 0;
-				border: 2px solid #FFF;
-				background: url(../images/download.png) $owl-success-color no-repeat 50% 55%;
-				@include owl-radius(100%);
-			}
+			//.download{
+			//	width:1rem;
+			//	height: 1rem;
+			//	background: $owl-success-color;
+			//	display: block;
+			//	position: absolute;
+			//	top: 1rem;
+			//	right: 0;
+			//	border: 2px solid #FFF;
+			//	background: url('../images/download.png') $owl-success-color no-repeat 50% 55%;
+			//	@include owl-radius(100%);
+			//}
 		}
 	}
 }
@@ -289,11 +285,11 @@ $medium-down: "#{$screen} and (max-width:#{lower-bound($medium-range)})" !defaul
 		}
 	}
 }
-a#custom-tweet-button  {
-	padding: 6px 13px 6px 13px;
-	margin-left: 0px;
-	background: image_url('twitter_25.png') 1px center no-repeat;
-}
+//a#custom-tweet-button  {
+//	padding: 6px 13px 6px 13px;
+//	margin-left: 0px;
+//	background: url('twitter_25.png') 1px center no-repeat;
+//}
 
 blockquote p {
 	color:#A0A0A0
