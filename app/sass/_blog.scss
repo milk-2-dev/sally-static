@@ -616,10 +616,10 @@ section.post-author{
 
   iframe{
     border:none !important;
-
-    .unclickable{
-      margin:auto !important;
-    }
+    max-width:502px;
+    max-height:550px;
+    margin:auto;
+    display: block;
   }
 
   article{
@@ -648,7 +648,8 @@ section.post-author{
 
 .message-article__logo{
   display: block;
-  max-width: 60px;
+  width: 40px;
+  height: 40px;
   margin-right: 10px;
   margin-bottom: 20px;
   float: left;
@@ -657,7 +658,7 @@ section.post-author{
 .message-article__author{
   color: blue;
   font-weight: 700;
-  margin-bottom: 0;
+  margin-bottom: 2px;
 }
 
 .message-article__meta{
@@ -696,6 +697,32 @@ section.post-author{
 .message-article__menu{
   float:right;
   margin-bottom:20px;
+
+  span{
+    position: relative;
+    padding: 6px 12px 6px 25px;
+    //border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+    border: 1px solid;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    font-family: sans-serif;
+
+      background-color: #f6f7f9;
+      border-color: #ced0d4;
+      color: #4b4f56;
+
+
+    i{
+      font-size: 16px;
+      position: absolute;
+      top:50%;
+      left:5px;
+      transform: translate(0, -50%);
+    }
+  }
 }
 
 .message-article__head-desc{
@@ -714,16 +741,22 @@ section.post-author{
 }
 
 .message-article__content-title{
-  font-size: 26px;
+  font-size: 18px;
   margin-bottom: 5px;
-  padding:0 8px;
+  padding: 0 8px;
   line-height: 1.2;
+  font-family: serif;
+  color: #000;
 }
 
 .message-article__content-text{
   margin-bottom: 5px;
   padding:0 8px;
   line-height: 1.4;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 16px;
+  max-height: 80px;
+  font-size: 12px;
 }
 
 .message-article__content-link{
