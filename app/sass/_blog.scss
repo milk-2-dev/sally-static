@@ -162,13 +162,13 @@
 .blog-standard-fullwidth .post-header blockquote {padding:35px 50px;}
 .blog-standard-fullwidth .post-header blockquote .quote-content{font-size:1.3333em;}
 .blog-standard-fullwidth .post-link{
-  background-image:url(../images/sprites/link-icon.png);
+  background:url(../images/sprites/link-icon.png);
   background-position:40px 40px;
   background-repeat:no-repeat;
   padding: 40px 40px 40px 140px;
 }
 .blog-standard-fullwidth .blog-post-standard-alt .post-link{
-  background-image:none;
+  background:none;
   padding: 40px;
 }
 #blog-wrapper.blog-standard-fullwidth{padding-top:100px;}
@@ -190,7 +190,7 @@
 .blog-post-standard-alt .post-header blockquote {padding:35px 50px;}
 .blog-post-standard-alt .post-header blockquote .quote-content{font-size:1.3333em;}
 .blog-post-standard-alt .post-link{
-  background-image:url(../images/sprites/link-icon.png);
+  background:url(../images/sprites/link-icon.png);
   background-position:40px 40px;
   background-repeat:no-repeat;
   padding: 40px 40px 40px 140px;
@@ -612,8 +612,15 @@ section.post-author{
   padding-top:15px;
   padding-bottom:15px;
   border-right: 1px solid lighten(map_get($colors, 'grey'), 50%);
-  //overflow-y: auto;
-  //max-height: calc(100vh - 378px);
+  overflow-y: auto;
+
+  iframe{
+    border:none !important;
+
+    .unclickable{
+      margin:auto !important;
+    }
+  }
 
   article{
     padding: 10px;

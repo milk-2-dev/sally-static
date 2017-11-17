@@ -2608,4 +2608,12 @@ $(document).ready(function() {
         responsive();
     });
 
+$('.messagePreview').on('shown.bs.modal', function(){
+        var $head = $(".message-article iframe").find("head");
+        $head.append('<style>.unclickable{\n' +
+            '      margin:auto !important;\n' +
+            '    }</style>');
+    })
+
+
 });

@@ -209,7 +209,7 @@ Last change:	11/13/2015
   z-index: 2;
 }
 .page-heading, .page-heading.style-image {
-  background-image: url('../images/geometry.png');
+  background: url('../images/geometry.png');
 }
 .page-heading.style2{
   padding: 160px 0;
@@ -353,7 +353,7 @@ Last change:	11/13/2015
 *********************************************/
 .page-heading.style-image{
   padding:170px 0 200px;
-  background-image:none;
+  background:none;
 }
 .page-heading.style-image h1{
   font-size:3em;
@@ -663,7 +663,7 @@ body #splendid-main-container.layout-404,
   padding:80px 0;
 }
 .landing-blank-browser{
-  background-image:url(../images/homepages/landing-browser.png);
+  background:url(../images/homepages/landing-browser.png);
   background-position:center top;
   background-repeat:no-repeat;
   background-color:#161d25;
@@ -920,7 +920,7 @@ body #splendid-main-container.layout-404,
 }
 .blog-pagination>ul a.prev,
 .blog-pagination>ul a.next{
-  background-image:url(../images/sprites/pagination-arrows.png);
+  background:url(../images/sprites/pagination-arrows.png);
   background-position: -2px -2px;
   margin:0 10px;
   border:2px solid #718097;
@@ -4357,7 +4357,7 @@ html.js .progressbar-animated .progress-width{
   display:table;
   padding-top:6px;
   background:#000;
-  background-image:none;
+  background:none;
 }
 .audiojs>div{
   display:table-cell;
@@ -4367,15 +4367,15 @@ html.js .progressbar-animated .progress-width{
 .audiojs .scrubber{
   width:50%;
   background:#aaa;
-  background-image:none;
+  background:none;
   border:none;
 }
 .audiojs .progress{
-  background-image:none;
+  background:none;
   background:#ccc;
 }
 .audiojs .loaded{
-  background-image:none;
+  background:none;
   background:#fff;
 }
 

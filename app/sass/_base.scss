@@ -221,8 +221,8 @@ body.modal-open {
 }
 
 .slider-handle {
-  background-color: map_get($colors, 'pink');
-  background-image: none;
+  background: map_get($colors, 'pink');
+  //background: none;
   width:19px;
   height:19px;
 }
@@ -367,10 +367,6 @@ body.modal-open {
 }
 
 .message-list{
-  overflow-y: auto;
-}
-
-.message-article{
   overflow-y: auto;
 }
 
@@ -676,5 +672,6 @@ body.modal-open {
 .promotion-settings{
   p{
     margin-bottom:0;
+    word-wrap: break-word;
   }
 }
