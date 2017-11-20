@@ -319,7 +319,7 @@ $spritesheet: (240px, 216px, 'sprite.png', $spritesheet-sprites, );
 
 @mixin sprite-image($sprite) {
   $sprite-image: nth($sprite, 9);
-  background:image_url('sprites/#{$sprite-image}');
+  background:url('../images/sprites/#{$sprite-image}');
 }
 
 @mixin sprite($sprite) {
