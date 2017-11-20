@@ -14,7 +14,7 @@
     <![endif]-->
 </head>
 
-<body class="headerstyle4 headerfixed">
+<body class="headerstyle4 headerfixed" data-spy="scroll">
 <!-- Splendid Content -->
 <div id="splendid-content">
 
@@ -481,9 +481,9 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Message preview</h5>
-                    <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-                        <!--<span aria-hidden="true">&times;</span>-->
-                    <!--</button>-->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <div class="modal-body__overflow">
@@ -524,8 +524,29 @@
                                         <p class="message-article__content-text">
                                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur id molestias odit perspiciatis porro ratione vel. Corporis eaque illo iste laboriosam nulla quo repudiandae veritatis. Adipisci id itaque nihil.
                                         </p>
-                                        <a href="" class="message-article__content-link">blog.bufferapp.com</a>
+                                        <div class="message-article__content-link">
+                                            <span>
+                                                blog.bufferapp.com
+                                            </span>
+                                            <a>Подробнее</a>
+                                        </div>
                                     </section>
+                                    <div class="message-article__footer">
+                                        <ul>
+                                            <li>
+                                                <i class="icon icon-facebook-like"></i>
+                                                <span>Нравится</span>
+                                            </li>
+                                            <li>
+                                                <i class="icon icon-facebook-comment"></i>
+                                                <span>Комментарий</span>
+                                            </li>
+                                            <li>
+                                                <i class="icon icon-facebook-share"></i>
+                                                <span>Поделиться</span>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </article>
                             </div>
 
@@ -635,11 +656,14 @@
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <a href="" class="margin_r_20"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
-                    <h5 class="modal-title">Edit your sway</h5>
-                    <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-                        <!--<span aria-hidden="true">&times;</span>-->
-                    <!--</button>-->
+                    <h5 class="modal-title">
+                        <a href="" class="margin_r_20"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        Edit your sway
+                    </h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <div class="modal-body__overflow">
