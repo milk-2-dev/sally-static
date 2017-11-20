@@ -131,9 +131,13 @@
   .message-article{
     border-right: none;
     max-height: 100%;
+    padding-left:0;
+    padding-right:0;
   }
 
   .message-edit{
+    padding-top:0;
+
     a{
       position: absolute;
       top:auto;
@@ -348,5 +352,22 @@
           }
         }
      }
+  }
+
+
+  .message-article__menu{
+    padding: 16px 12px;
+    border: none;
+    background: transparent;
+
+    span{
+      display: none;
+    }
+  }
+
+  .message-article__content-link{
+    span{
+      font-size: 12px;
+    }
   }
 }

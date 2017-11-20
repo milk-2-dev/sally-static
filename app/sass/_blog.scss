@@ -554,31 +554,32 @@ section.post-author{
   float:right;
   margin-bottom:20px;
 
+  position: relative;
+  padding: 6px 12px 6px 25px;
+  //border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+  border: 1px solid;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  font-family: sans-serif;
+  background-color: #f6f7f9;
+  border-color: #ced0d4;
+  color: #4b4f56;
+
   span{
-    position: relative;
-    padding: 6px 12px 6px 25px;
-    //border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
-    border: 1px solid;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
-    font-size: 12px;
-    font-weight: bold;
-    text-align: center;
-    font-family: sans-serif;
 
-      background-color: #f6f7f9;
-      border-color: #ced0d4;
-      color: #4b4f56;
-
-
-    i{
-      font-size: 16px;
-      position: absolute;
-      top:50%;
-      left:5px;
-      transform: translate(0, -50%);
-    }
   }
+
+  i{
+    font-size: 16px;
+    position: absolute;
+    top:50%;
+    left:5px;
+    transform: translate(0, -50%);
+  }
+
 }
 
 .message-article__head-desc{
@@ -615,7 +616,7 @@ section.post-author{
   line-height: 1.4;
   font-family: Helvetica, Arial, sans-serif;
   line-height: 16px;
-  max-height: 80px;
+  //max-height: 80px;
   font-size: 12px;
 }
 
@@ -623,6 +624,12 @@ section.post-author{
   margin-bottom:10px;
   padding:0 8px;
 
+  &:after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+  
   span{
     text-transform: uppercase;
     color: lighten(map_get($colors, 'grey'), 20%);
