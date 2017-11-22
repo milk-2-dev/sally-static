@@ -121,18 +121,19 @@
 
   .message-preview{
     margin:0;
+    height:auto;
   }
 
   .message-list{
-    padding-left:15px;
-    padding-right:15px;
+    padding-left:0;
+    padding-right:0;
   }
 
   .message-article{
     border-right: none;
     max-height: 100%;
-    padding-left:0;
-    padding-right:0;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .message-edit{
