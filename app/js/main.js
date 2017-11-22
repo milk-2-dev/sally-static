@@ -7,7 +7,7 @@
 
 
 function setAgeAuditory(){
-    var s = $("#ageAuditory").slider();
+    var s = $("#ageAuditory").bootstrapSlider();
 
     if(s != undefined){
         s.on("change", function (val) {
@@ -16,10 +16,10 @@ function setAgeAuditory(){
     }
 }
 
-setAgeAuditory();
+//setAgeAuditory();
 
 function setReach(){
-    var s = $("#setReach").slider();
+    var s = $("#setReach").bootstrapSlider();
     var viewCost = $("#setReach").attr('data-view-value');
 
     if(s != undefined){
@@ -30,24 +30,33 @@ function setReach(){
     }
 }
 
-setReach();
+//setReach();
 
 function changeHeiht(e){
-    var modalFooterHeight = $('#'+ e).find('.modal-footer').outerHeight(true);
 
-    var modalBodyOverflowHeight = $(window).height() - modalFooterHeight - 120;
+    console.log('modal id - '+e);
+    var modalId = $('#'+ e);
+    var modalHeader = modalId.find('.modal-header');
+    var modalFooter = modalId.find('.modal-footer');
 
-    return {
-        set: function(e2, e3){
-            $('#'+ e).find('.'+ e2).css('max-height', modalBodyOverflowHeight);
-            $('#'+ e).find('.'+ e3).css('max-height', modalBodyOverflowHeight);
-        },
+    var modalHeaderHeight = modalHeader.outerHeight(true);
 
-        reset: function(e2, e3){
-            $('#'+ e).find('.'+ e2).css('max-height', '100%');
-            $('#'+ e).find('.'+ e3).css('max-height', '100%');
-        }
-    }
+    // console.log('modalHeaderHeight - '+modalHeaderHeight);
+
+    var modalFooterHeight = modalFooter.outerHeight(true);
+
+    // console.log('modalFooterHeight - '+modalFooterHeight);
+    //
+    // console.log('window height - '+$(window).height());
+
+    var modalMargin = 40; // margin: 20px 0;
+
+    var modalBodyOverflowHeight = $(window).height() - modalFooterHeight - modalHeaderHeight - modalMargin;
+
+    // console.log('modalBodyOverflowHeight - '+modalBodyOverflowHeight);
+
+
+    modalId.find('.modal-body__overflow').css('height', modalBodyOverflowHeight);
 }
 
 
@@ -67,7 +76,7 @@ function heightMobMenu() {
 
 function cropText(){
     $('.sc-blog-post').each(function() {
-        var text = $(this).find('.post-title a').html();
+        var text = $(this).find('.post-title').html();
         var result;
 
         if(Number(text.length) > 45 ){
@@ -75,26 +84,42 @@ function cropText(){
             result += '...';
         }
 
-        $(this).find('.post-title a').html(result);
+        $(this).find('.post-title').html(result);
     });
 }
 
+function lookForModal(e, id){
+
+    if(e){
+        var change = changeHeiht(e.currentTarget.id);
+    }
+    else{
+        var change = changeHeiht(id);
+    }
+}
+
+$(document).on('hide.bs.modal','.modal', function (e) {
+    $('.modal-backdrop').remove();
+})
+
+
 $(document).ready(function() {
     function responsive() {
+
+        $(document).on('shown.bs.modal','.modal', function (e) {
+            lookForModal(e, false);
+        })
+
+        if($('.modal').hasClass('show')){
+            var id = $('.modal.show').attr('id');
+            lookForModal(false, id);
+        }
+
+
+
         var myWidth = $('body').innerWidth();
 
         if (myWidth < 768) {
-
-            if($('.modal').hasClass('show')){
-                var modalId = $('.modal.show').attr('id');
-                var change = changeHeiht(modalId);
-
-                change.set('modal-body__overflow', 'modal-body__overflow');
-
-                if(modalId == 'messagePreview'){
-                    change.reset('message-article', 'message-list');
-                }
-            }
 
             if (!$('body').hasClass("mobile")) {
 
@@ -130,16 +155,14 @@ $(document).ready(function() {
                 $('.message-set-reach').find('.modal-title').after($('.message-reach__costs'));
                 $('.custom-posts').find('.container').after($('.owl-carousel'));
 
-                //initialize change height for modal content
-                $('.modal').on('shown.bs.modal', function (e) {
-                    var change = changeHeiht(e.currentTarget.id);
-
-                    change.set('modal-body__overflow', 'modal-body__overflow');
-
-                    if(e.currentTarget.id == 'messagePreview'){
-                        change.reset('message-article', 'message-list');
-                    }
-                })
+                // $(document).on('shown.bs.modal','.modal', function (e) {
+                //     lookForModal(e, false);
+                // })
+                //
+                // if($('.modal').hasClass('show')){
+                //     var id = $('.modal.show').attr('id');
+                //     lookForModal(false, id);
+                // }
 
                 cropText();
             }
@@ -158,30 +181,14 @@ $(document).ready(function() {
                 $('.message-set-reach').find('.message-reach__views').after($('.message-reach__costs'));
                 $('.custom-posts').find('.row').html($('.owl-carousel'));
 
-                //initialize change height for modal content
-                $('.modal').on('shown.bs.modal', function (e) {
-                    var change = changeHeiht(e.currentTarget.id);
-                    console.log('from more ' + e.currentTarget.id);
-
-                    change.set('modal-body__overflow', 'modal-body__overflow');
-
-                    if(e.currentTarget.id == 'messagePreview'){
-                        change.set('message-article', 'message-list');
-                        change.reset('modal-body__overflow', 'modal-body__overflow');
-                    }
-                })
-
-                if($('.modal').hasClass('show')){
-                    var modalId = $('.modal.show').attr('id');
-                    var change = changeHeiht(modalId);
-
-                    change.set('modal-body__overflow', 'modal-body__overflow');
-
-                    if(modalId == 'messagePreview'){
-                        change.set('message-article', 'message-list');
-                        change.reset('modal-body__overflow', 'modal-body__overflow');
-                    }
-                }
+                // $(document).on('shown.bs.modal','.modal', function (e) {
+                //     lookForModal(e, false);
+                // })
+                //
+                // if($('.modal').hasClass('show')){
+                //     var id = $('.modal.show').attr('id');
+                //     lookForModal(false, id);
+                // }
 
                 var makePad = heightMobMenu();
 
