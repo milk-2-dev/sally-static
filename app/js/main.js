@@ -1,10 +1,4 @@
-/*!
- * imagesLoaded PACKAGED v3.1.8
- * JavaScript is all like "You images are done yet or what?"
- * MIT License
- */
-
-
+//const device = device.default;
 
 function setAgeAuditory(){
     var s = $("#ageAuditory").bootstrapSlider();
@@ -16,7 +10,7 @@ function setAgeAuditory(){
     }
 }
 
-//setAgeAuditory();
+setAgeAuditory();
 
 function setReach(){
     var s = $("#setReach").bootstrapSlider();
@@ -30,7 +24,7 @@ function setReach(){
     }
 }
 
-//setReach();
+setReach();
 
 function changeHeiht(e){
 
@@ -41,17 +35,23 @@ function changeHeiht(e){
 
     var modalHeaderHeight = modalHeader.outerHeight(true);
 
-    // console.log('modalHeaderHeight - '+modalHeaderHeight);
+   //alert('modalHeaderHeight - '+modalHeaderHeight);
 
     var modalFooterHeight = modalFooter.outerHeight(true);
 
-    // console.log('modalFooterHeight - '+modalFooterHeight);
+    //alert('modalFooterHeight - '+modalFooterHeight);
     //
-    // console.log('window height - '+$(window).height());
+    //alert('window height - '+$(window).height());
 
-    var modalMargin = 40; // margin: 20px 0;
+    var modalMargin = 20; // margin: 20px 0;
 
     var modalBodyOverflowHeight = $(window).height() - modalFooterHeight - modalHeaderHeight - modalMargin;
+
+    //alert('modalBodyOverflowHeight - '+modalBodyOverflowHeight);
+
+    // if($('html').is('.iphone')){
+    //     modalBodyOverflowHeight = modalBodyOverflowHeight;
+    // }
 
     // console.log('modalBodyOverflowHeight - '+modalBodyOverflowHeight);
 
@@ -98,8 +98,43 @@ function lookForModal(e, id){
     }
 }
 
+scrollToTop=0;
+
+$(document).on('scroll', function (e) {
+
+    scrollToTop = $(window).scrollTop();
+
+    console.log('scrollToTop '+scrollToTop);
+
+})
+
+
+// $(document).on('hide.bs.modal','.modal', function (e) {
+//     $('.modal-backdrop').remove();
+// })
+//
+$(document).on('shown.bs.modal','.modal', function (e) {
+    actualHeight = scrollToTop ;
+
+    //console.log('actualHeight '+actualHeight);
+
+    $('.modal-open').css({
+        'top': actualHeight* (-1),
+        'position': 'fixed',
+        'width': '100%'
+    });
+
+
+})
+
 $(document).on('hide.bs.modal','.modal', function (e) {
-    $('.modal-backdrop').remove();
+    $('.modal-open').css({
+        'top': 'auto',
+        'position': 'relative',
+        'width': '100%'
+    });
+
+    $(window).scrollTop(actualHeight);
 })
 
 
@@ -114,8 +149,6 @@ $(document).ready(function() {
             var id = $('.modal.show').attr('id');
             lookForModal(false, id);
         }
-
-
 
         var myWidth = $('body').innerWidth();
 
@@ -154,15 +187,6 @@ $(document).ready(function() {
 
                 $('.message-set-reach').find('.modal-title').after($('.message-reach__costs'));
                 $('.custom-posts').find('.container').after($('.owl-carousel'));
-
-                // $(document).on('shown.bs.modal','.modal', function (e) {
-                //     lookForModal(e, false);
-                // })
-                //
-                // if($('.modal').hasClass('show')){
-                //     var id = $('.modal.show').attr('id');
-                //     lookForModal(false, id);
-                // }
 
                 cropText();
             }
