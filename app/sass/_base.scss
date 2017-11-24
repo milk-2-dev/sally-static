@@ -131,9 +131,16 @@ body.modal-open {
   }
 }
 
+.modal-open{
+  .modal{
+    -webkit-overflow-scrolling:touch;
+  }
+}
+
 .modal-dialog{
   width:100%;
   margin:10px auto 10px;
+  padding: 0 10px;
 
   &.modal-xs{
     max-width: 500px;

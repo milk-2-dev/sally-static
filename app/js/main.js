@@ -9,6 +9,7 @@ function openSignIn(){
     });
 }
 
+
 function setAgeAuditory(){
     var s = $("#ageAuditory").bootstrapSlider();
 
@@ -125,12 +126,20 @@ $(document).on('shown.bs.modal','.modal', function (e) {
         'position': 'fixed',
         'width': '100%'
     });
+})
 
+$('#messagePreviewEdit').on('hidden.bs.modal', function(){
+    $('body').addClass('modal-open');
 
+    $('.modal-open').css({
+        'top': actualHeight* (-1),
+        'position': 'fixed',
+        'width': '100%'
+    });
 })
 
 $(document).on('hide.bs.modal','.modal', function (e) {
-    $('.modal-open').css({
+    $('body').css({
         'top': 'auto',
         'position': 'relative',
         'width': '100%'
@@ -229,4 +238,79 @@ $(document).ready(function() {
     $(window).resize(function () {
         responsive();
     });
+
+
+
+    /////////////
+
+    // $('.post-header > .button').on('click', function(){
+    //     var t = $(this).attr("data-iad-id");
+    //     $.ajax({
+    //         url: "../preview.json",
+    //         type: "GET",
+    //         dataType: "json",
+    //         success: function (data, textStatus, jqXHR) {
+    //             //manipulate dom
+    //
+    //
+    //             $('#messagePreview').modal('show');
+    //
+    //             var facebookIframe = '';
+    //
+    //             function makeFrame(src) {
+    //                 $.ajax({
+    //                     url: 'http://whateverorigin.org/get?url=' + encodeURIComponent(src) + '&callback=?',
+    //                     type: "GET",
+    //                     success: function (fbData, textStatus, jqXHR) {
+    //
+    //                         if (!$('body').hasClass("mobile")) {
+    //                             facebookIframe = '<iframe ' +
+    //                                 'width="'+data.mobile.width+'"' +
+    //                                 'height="'+data.mobile.height+'"' +
+    //                                 'scrolling="yes" ' +
+    //                                 'style="border: none;">' + fbData + '</iframe>';
+    //
+    //
+    //                             $('.message-article').html(facebookIframe);
+    //                         } else if (!$('body').hasClass("desctop")) {
+    //
+    //                             facebookIframe = '<iframe ' +
+    //                                 'src="'+data.desctop.src +'" ' +
+    //                                 'width="'+data.desctop.width+'"' +
+    //                                 'height="'+data.desctop.height+'"' +
+    //                                 'scrolling="yes" ' +
+    //                                 'style="border: none;">' + fbData + '</iframe>';
+    //
+    //                             $('.message-article').html(facebookIframe);
+    //                         }
+    //                     }
+    //                 });
+    //             }
+    //
+    //             $('#messagePreview').on('shown.bs.modal', function(){
+    //                 var myWidth = $('body').innerWidth();
+    //
+    //                 if (myWidth < 768) {
+    //                     makeFrame(data.mobile.src);
+    //                 } else {
+    //                     makeFrame(data.desctop.src);
+    //                 }
+    //
+    //                 $(window).resize(function () {
+    //                     if (myWidth < 768) {
+    //                         makeFrame(data.mobile.src);
+    //                     } else {
+    //                         makeFrame(data.desctop.src);
+    //                     }
+    //                 });
+    //             });
+    //         }
+    //     });
+    // });
+
 });
+
+
+
+
+

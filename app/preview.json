@@ -1,0 +1,13 @@
+{
+  "desctop":{
+    "src":"https://www.facebook.com/ads/api/preview_iframe.php?d=AQK3mD1tVGNgIxOwgeJXX3s_sLQJUJvygbfALSgExTxwWnoI3gPuJL0jieni7lr1fV-GZB6xPuqQESRX0QL4PfnlRVndFb4jL7PVFeJHRq4-_lc68ZU-qe7T4yGoX0VLN_SeGBs45-tKpxlv01H51pQBg6T-o17PoXWLhZlPjUc5UmtX4FFUQ7En4bFBkZpvxVRyaJYC_EPssBu8jrUP0Q7M3DfbK5yMXUIlj0kq-yThuYOYSS8Y34wh9YCVhwpWuns&t=AQLAsCiyayGA2IxZ",
+    "width":"540",
+    "height":"690"
+  },
+
+  "mobile":{
+    "src":"https://www.facebook.com/ads/api/preview_iframe.php?d=AQIsezf87iu8xExFmIAzoAaG3LBux0tuFLnu3mtTcP2Mvr1zlj1_7qClJCvjOViy6knWbozLru6pBB_skHoy12E6xelaVZ5PX4StVvToAr1RIWh5K7iD8XRWlApj3igaxO09nKfYgN6nn6SJjNDB-qu-CV3NIH493SmiRF4dygheVM1a8rtRRE3IqP9VYKPPknxcHoe3QifCnaueKKhMch06ej7UbQZw6BHI3ToqiHl-9aZuaFVj_51rKCUktktZCOc&t=AQLB6JeOpfrhrcgq",
+    "width":"335",
+    "height":"450"
+  }
+}
