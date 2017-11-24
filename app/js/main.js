@@ -1,4 +1,13 @@
-//const device = device.default;
+//Opening Modals
+
+function openSignIn(){
+    var modalId = $('.modal.show').attr('id');
+    $('#'+modalId).modal('hide');
+    $('#signUp').modal('show');
+    $('#signUp').on('shown.bs.modal', function(){
+        $('body').addClass('modal-open');
+    });
+}
 
 function setAgeAuditory(){
     var s = $("#ageAuditory").bootstrapSlider();
@@ -27,34 +36,14 @@ function setReach(){
 setReach();
 
 function changeHeiht(e){
-
-    console.log('modal id - '+e);
     var modalId = $('#'+ e);
     var modalHeader = modalId.find('.modal-header');
     var modalFooter = modalId.find('.modal-footer');
-
     var modalHeaderHeight = modalHeader.outerHeight(true);
-
-   //alert('modalHeaderHeight - '+modalHeaderHeight);
-
     var modalFooterHeight = modalFooter.outerHeight(true);
-
-    //alert('modalFooterHeight - '+modalFooterHeight);
-    //
-    //alert('window height - '+$(window).height());
-
     var modalMargin = 20; // margin: 20px 0;
 
     var modalBodyOverflowHeight = $(window).height() - modalFooterHeight - modalHeaderHeight - modalMargin;
-
-    //alert('modalBodyOverflowHeight - '+modalBodyOverflowHeight);
-
-    // if($('html').is('.iphone')){
-    //     modalBodyOverflowHeight = modalBodyOverflowHeight;
-    // }
-
-    // console.log('modalBodyOverflowHeight - '+modalBodyOverflowHeight);
-
 
     modalId.find('.modal-body__overflow').css('height', modalBodyOverflowHeight);
 }
@@ -76,25 +65,38 @@ function heightMobMenu() {
 
 function cropText(){
     $('.sc-blog-post').each(function() {
-        var text = $(this).find('.post-title').html();
-        var result;
+        var text = $(this).find('.post-title').text();
+        var textArr = text.split(' ');
+        var symbolLength = 0;
+        var resultText ='';
 
-        if(Number(text.length) > 45 ){
-            result = text.slice(0,30);
-            result += '...';
+        if(text.length > 40){
+            textArr.forEach(function(item, i, arr) {
+
+                if(symbolLength < 40){
+                    symbolLength += item.length+1;
+
+                    resultText += item+' ';
+                }
+            });
+
+            resultText = resultText.trim();
+            resultText += '...';
+        }
+        else{
+            resultText = text;
         }
 
-        $(this).find('.post-title').html(result);
+        $(this).find('.post-title').html(resultText);
     });
 }
 
-function lookForModal(e, id){
-
-    if(e){
-        var change = changeHeiht(e.currentTarget.id);
+function lookForModal(e){
+    if(typeof(e) == 'object'){
+        changeHeiht(e.currentTarget.id);
     }
     else{
-        var change = changeHeiht(id);
+        changeHeiht(e);
     }
 }
 
@@ -104,7 +106,7 @@ $(document).on('scroll', function (e) {
 
     scrollToTop = $(window).scrollTop();
 
-    console.log('scrollToTop '+scrollToTop);
+    //console.log('scrollToTop '+scrollToTop);
 
 })
 
@@ -142,12 +144,12 @@ $(document).ready(function() {
     function responsive() {
 
         $(document).on('shown.bs.modal','.modal', function (e) {
-            lookForModal(e, false);
+            lookForModal(e);
         })
 
         if($('.modal').hasClass('show')){
             var id = $('.modal.show').attr('id');
-            lookForModal(false, id);
+            lookForModal(id);
         }
 
         var myWidth = $('body').innerWidth();

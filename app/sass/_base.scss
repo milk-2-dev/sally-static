@@ -114,18 +114,27 @@ body.modal-open {
   .col-xs-one-fifth{width:20%;} .col-lg-one-fifth{width:100%;}
 }
 
+//@media (min-width: 576px){
+//  .modal-dialog {
+//    max-width: 100%;
+//    margin: 20px auto;
+//    height: calc(100vh - 40px);
+//  }
+//}
+
+@media(min-width:768px){.modal-dialog.modal-sm{max-width:606px;}}
+@media(min-width:992px){.modal-dialog.modal-lg{max-width:972px;}}
 @media (min-width: 576px){
   .modal-dialog {
     max-width: 100%;
-    margin: 20px auto;
-    height: calc(100vh - 40px);
+    margin: 10px auto 10px;
   }
 }
 
-@media(min-width:768px){.modal-dialog.modal-sm{width:606px;}}
-@media(min-width:992px){.modal-dialog.modal-lg{width:972px;}}
-
 .modal-dialog{
+  width:100%;
+  margin:10px auto 10px;
+
   &.modal-xs{
     max-width: 500px;
   }
