@@ -104,7 +104,7 @@ $(document).on('scroll', function (e) {
 
     scrollToTop = $(window).scrollTop();
 
-    console.log('scrollToTop '+scrollToTop);
+    //console.log('scrollToTop '+scrollToTop);
 
 })
 
