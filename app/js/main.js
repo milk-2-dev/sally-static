@@ -1,22 +1,9 @@
-//Opening Modals
-
-function openSignIn(){
-    var modalId = $('.modal.show').attr('id');
-    $('#'+modalId).modal('hide');
-    $('#signUp').modal('show');
-    $('#signUp').on('shown.bs.modal', function(){
-        $('body').addClass('modal-open');
-    });
-}
-
-
 function setAgeAuditory(){
     var s = $("#ageAuditory").bootstrapSlider();
-
     if(s != undefined){
-        s.on("change", function (val) {
-            $('#actualValue').html(val.value.newValue[0] + ' - ' + val.value.newValue[1]);
-        });
+    s.on("change", function (val) {
+        $('#actualValue').html(val.value.newValue[0] + ' - ' + val.value.newValue[1]);
+    });
     }
 }
 
@@ -106,16 +93,8 @@ scrollToTop=0;
 $(document).on('scroll', function (e) {
 
     scrollToTop = $(window).scrollTop();
-
-    //console.log('scrollToTop '+scrollToTop);
-
 })
 
-
-// $(document).on('hide.bs.modal','.modal', function (e) {
-//     $('.modal-backdrop').remove();
-// })
-//
 $(document).on('shown.bs.modal','.modal', function (e) {
     actualHeight = scrollToTop ;
 
@@ -216,15 +195,6 @@ $(document).ready(function() {
                 $('.message-set-reach').find('.message-reach__views').after($('.message-reach__costs'));
                 $('.custom-posts').find('.row').html($('.owl-carousel'));
 
-                // $(document).on('shown.bs.modal','.modal', function (e) {
-                //     lookForModal(e, false);
-                // })
-                //
-                // if($('.modal').hasClass('show')){
-                //     var id = $('.modal.show').attr('id');
-                //     lookForModal(false, id);
-                // }
-
                 var makePad = heightMobMenu();
 
                 makePad.reset();
@@ -238,76 +208,6 @@ $(document).ready(function() {
     $(window).resize(function () {
         responsive();
     });
-
-
-
-    /////////////
-
-    // $('.post-header > .button').on('click', function(){
-    //     var t = $(this).attr("data-iad-id");
-    //     $.ajax({
-    //         url: "../preview.json",
-    //         type: "GET",
-    //         dataType: "json",
-    //         success: function (data, textStatus, jqXHR) {
-    //             //manipulate dom
-    //
-    //
-    //             $('#messagePreview').modal('show');
-    //
-    //             var facebookIframe = '';
-    //
-    //             function makeFrame(src) {
-    //                 $.ajax({
-    //                     url: 'http://whateverorigin.org/get?url=' + encodeURIComponent(src) + '&callback=?',
-    //                     type: "GET",
-    //                     success: function (fbData, textStatus, jqXHR) {
-    //
-    //                         if (!$('body').hasClass("mobile")) {
-    //                             facebookIframe = '<iframe ' +
-    //                                 'width="'+data.mobile.width+'"' +
-    //                                 'height="'+data.mobile.height+'"' +
-    //                                 'scrolling="yes" ' +
-    //                                 'style="border: none;">' + fbData + '</iframe>';
-    //
-    //
-    //                             $('.message-article').html(facebookIframe);
-    //                         } else if (!$('body').hasClass("desctop")) {
-    //
-    //                             facebookIframe = '<iframe ' +
-    //                                 'src="'+data.desctop.src +'" ' +
-    //                                 'width="'+data.desctop.width+'"' +
-    //                                 'height="'+data.desctop.height+'"' +
-    //                                 'scrolling="yes" ' +
-    //                                 'style="border: none;">' + fbData + '</iframe>';
-    //
-    //                             $('.message-article').html(facebookIframe);
-    //                         }
-    //                     }
-    //                 });
-    //             }
-    //
-    //             $('#messagePreview').on('shown.bs.modal', function(){
-    //                 var myWidth = $('body').innerWidth();
-    //
-    //                 if (myWidth < 768) {
-    //                     makeFrame(data.mobile.src);
-    //                 } else {
-    //                     makeFrame(data.desctop.src);
-    //                 }
-    //
-    //                 $(window).resize(function () {
-    //                     if (myWidth < 768) {
-    //                         makeFrame(data.mobile.src);
-    //                     } else {
-    //                         makeFrame(data.desctop.src);
-    //                     }
-    //                 });
-    //             });
-    //         }
-    //     });
-    // });
-
 });
 
 
