@@ -138,11 +138,14 @@
 
   .message-edit{
     padding-top:0;
+    padding-right: 0;
 
     a{
-      position: absolute;
-      top:auto;
-      bottom:3px;
+      position: relative;
+      top: auto;
+      bottom: auto;
+      float: right;
+      margin: 0 0 0 5px;
     }
   }
 
@@ -202,7 +205,7 @@
   }
 
   .modal-body__overflow{
-    min-height:250px;
+    min-height:150px;
   }
 
   .main-banner{

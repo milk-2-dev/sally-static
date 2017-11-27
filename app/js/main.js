@@ -1,3 +1,14 @@
+//Opening Modals
+
+function openSignIn(){
+    var modalId = $('.modal.show').attr('id');
+    $('#'+modalId).modal('hide');
+    $('#signUp').modal('show');
+    $('#signUp').on('shown.bs.modal', function(){
+        $('body').addClass('modal-open');
+    });
+}
+
 
 function setAgeAuditory(){
     var s = $("#ageAuditory").bootstrapSlider();
@@ -9,7 +20,7 @@ function setAgeAuditory(){
     }
 }
 
-//setAgeAuditory();
+setAgeAuditory();
 
 function setReach(){
     var s = $("#setReach").bootstrapSlider();
@@ -23,31 +34,17 @@ function setReach(){
     }
 }
 
-//setReach();
+setReach();
 
 function changeHeiht(e){
-
-    console.log('modal id - '+e);
     var modalId = $('#'+ e);
     var modalHeader = modalId.find('.modal-header');
     var modalFooter = modalId.find('.modal-footer');
-
     var modalHeaderHeight = modalHeader.outerHeight(true);
-
-    // console.log('modalHeaderHeight - '+modalHeaderHeight);
-
     var modalFooterHeight = modalFooter.outerHeight(true);
-
-    // console.log('modalFooterHeight - '+modalFooterHeight);
-    //
-    // console.log('window height - '+$(window).height());
-
-    var modalMargin = 40; // margin: 20px 0;
+    var modalMargin = 20; // margin: 20px 0;
 
     var modalBodyOverflowHeight = $(window).height() - modalFooterHeight - modalHeaderHeight - modalMargin;
-
-    // console.log('modalBodyOverflowHeight - '+modalBodyOverflowHeight);
-
 
     modalId.find('.modal-body__overflow').css('height', modalBodyOverflowHeight);
 }
@@ -69,30 +66,86 @@ function heightMobMenu() {
 
 function cropText(){
     $('.sc-blog-post').each(function() {
-        var text = $(this).find('.post-title').html();
-        var result;
+        var text = $(this).find('.post-title').text();
+        var textArr = text.split(' ');
+        var symbolLength = 0;
+        var resultText ='';
 
-        if(Number(text.length) > 45 ){
-            result = text.slice(0,30);
-            result += '...';
+        if(text.length > 40){
+            textArr.forEach(function(item, i, arr) {
+
+                if(symbolLength < 40){
+                    symbolLength += item.length+1;
+
+                    resultText += item+' ';
+                }
+            });
+
+            resultText = resultText.trim();
+            resultText += '...';
+        }
+        else{
+            resultText = text;
         }
 
-        $(this).find('.post-title').html(result);
+        $(this).find('.post-title').html(resultText);
     });
 }
 
-function lookForModal(e, id){
-
-    if(e){
-        var change = changeHeiht(e.currentTarget.id);
+function lookForModal(e){
+    if(typeof(e) == 'object'){
+        changeHeiht(e.currentTarget.id);
     }
     else{
-        var change = changeHeiht(id);
+        changeHeiht(e);
     }
 }
 
+scrollToTop=0;
+
+$(document).on('scroll', function (e) {
+
+    scrollToTop = $(window).scrollTop();
+
+    //console.log('scrollToTop '+scrollToTop);
+
+})
+
+
+// $(document).on('hide.bs.modal','.modal', function (e) {
+//     $('.modal-backdrop').remove();
+// })
+//
+$(document).on('shown.bs.modal','.modal', function (e) {
+    actualHeight = scrollToTop ;
+
+    //console.log('actualHeight '+actualHeight);
+
+    $('.modal-open').css({
+        'top': actualHeight* (-1),
+        'position': 'fixed',
+        'width': '100%'
+    });
+})
+
+$('#messagePreviewEdit').on('hidden.bs.modal', function(){
+    $('body').addClass('modal-open');
+
+    $('.modal-open').css({
+        'top': actualHeight* (-1),
+        'position': 'fixed',
+        'width': '100%'
+    });
+})
+
 $(document).on('hide.bs.modal','.modal', function (e) {
-    $('.modal-backdrop').remove();
+    $('body').css({
+        'top': 'auto',
+        'position': 'relative',
+        'width': '100%'
+    });
+
+    $(window).scrollTop(actualHeight);
 })
 
 
@@ -100,15 +153,13 @@ $(document).ready(function() {
     function responsive() {
 
         $(document).on('shown.bs.modal','.modal', function (e) {
-            lookForModal(e, false);
+            lookForModal(e);
         })
 
         if($('.modal').hasClass('show')){
             var id = $('.modal.show').attr('id');
-            lookForModal(false, id);
+            lookForModal(id);
         }
-
-
 
         var myWidth = $('body').innerWidth();
 
@@ -147,15 +198,6 @@ $(document).ready(function() {
 
                 $('.message-set-reach').find('.modal-title').after($('.message-reach__costs'));
                 $('.custom-posts').find('.container').after($('.owl-carousel'));
-
-                // $(document).on('shown.bs.modal','.modal', function (e) {
-                //     lookForModal(e, false);
-                // })
-                //
-                // if($('.modal').hasClass('show')){
-                //     var id = $('.modal.show').attr('id');
-                //     lookForModal(false, id);
-                // }
 
                 cropText();
             }
@@ -196,4 +238,79 @@ $(document).ready(function() {
     $(window).resize(function () {
         responsive();
     });
+
+
+
+    /////////////
+
+    // $('.post-header > .button').on('click', function(){
+    //     var t = $(this).attr("data-iad-id");
+    //     $.ajax({
+    //         url: "../preview.json",
+    //         type: "GET",
+    //         dataType: "json",
+    //         success: function (data, textStatus, jqXHR) {
+    //             //manipulate dom
+    //
+    //
+    //             $('#messagePreview').modal('show');
+    //
+    //             var facebookIframe = '';
+    //
+    //             function makeFrame(src) {
+    //                 $.ajax({
+    //                     url: 'http://whateverorigin.org/get?url=' + encodeURIComponent(src) + '&callback=?',
+    //                     type: "GET",
+    //                     success: function (fbData, textStatus, jqXHR) {
+    //
+    //                         if (!$('body').hasClass("mobile")) {
+    //                             facebookIframe = '<iframe ' +
+    //                                 'width="'+data.mobile.width+'"' +
+    //                                 'height="'+data.mobile.height+'"' +
+    //                                 'scrolling="yes" ' +
+    //                                 'style="border: none;">' + fbData + '</iframe>';
+    //
+    //
+    //                             $('.message-article').html(facebookIframe);
+    //                         } else if (!$('body').hasClass("desctop")) {
+    //
+    //                             facebookIframe = '<iframe ' +
+    //                                 'src="'+data.desctop.src +'" ' +
+    //                                 'width="'+data.desctop.width+'"' +
+    //                                 'height="'+data.desctop.height+'"' +
+    //                                 'scrolling="yes" ' +
+    //                                 'style="border: none;">' + fbData + '</iframe>';
+    //
+    //                             $('.message-article').html(facebookIframe);
+    //                         }
+    //                     }
+    //                 });
+    //             }
+    //
+    //             $('#messagePreview').on('shown.bs.modal', function(){
+    //                 var myWidth = $('body').innerWidth();
+    //
+    //                 if (myWidth < 768) {
+    //                     makeFrame(data.mobile.src);
+    //                 } else {
+    //                     makeFrame(data.desctop.src);
+    //                 }
+    //
+    //                 $(window).resize(function () {
+    //                     if (myWidth < 768) {
+    //                         makeFrame(data.mobile.src);
+    //                     } else {
+    //                         makeFrame(data.desctop.src);
+    //                     }
+    //                 });
+    //             });
+    //         }
+    //     });
+    // });
+
 });
+
+
+
+
+
