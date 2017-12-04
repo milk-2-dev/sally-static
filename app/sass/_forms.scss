@@ -538,21 +538,32 @@ form{
   padding-top: 40px;
 }
 
-.share-form__menu{
-
-  a{
+.main-form{
+  .nav-link{
+    padding:0;
+  }
+  .tab-content{
+    padding:0;
+    border:none;
+  }
+}
+.main-form__menu{
+  .nav-item{
     display: inline-block;
     margin-bottom:8px;
     margin-right:30px;
+
+    &:last-child{
+      margin-right:0;
+    }
+  }
+
+  a{
     font-size: 25px;
     color: #4a4a4a;
 
     &:hover{
       color: #a65bf4;
-    }
-
-    &:last-child{
-      margin-right:0;
     }
   }
 }
