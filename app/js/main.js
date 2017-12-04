@@ -268,25 +268,58 @@ $(document).ready(function() {
 	//
 	// });
 
-	// Dropzone.options.myAwesomeDropzone= {
-	// 	previewTemplate: document.querySelector('#preview-template').innerHTML,
-	// 	parallelUploads: 2,
-	// 	thumbnailHeight: 120,
-	// 	thumbnailWidth: 120,
-	// 	maxFilesize: 3,
-	// 	filesizeBase: 1000,
-	// 	thumbnail: function(file, dataUrl) {
-	// 		if (file.previewElement) {
-	// 			file.previewElement.classList.remove("dz-file-preview");
-	// 			var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
-	// 			for (var i = 0; i < images.length; i++) {
-	// 				var thumbnailElement = images[i];
-	// 				thumbnailElement.alt = file.name;
-	// 				thumbnailElement.src = dataUrl;
-	// 			}
-	// 			setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
-	// 		}
-	// 	}
-	// };
+	Dropzone.options = {
+		previewTemplate: document.querySelector('#preview-template').innerHTML,
+		//parallelUploads: 2,
+        addRemoveLinks: true,
+		thumbnailHeight: 150,
+		thumbnailWidth: 150,
+        paramName: 'file',
+        maxFilesize: 2, // MB
+        maxFiles: 1,
+        dictDefaultMessage: 'Drag an image here to upload, or click to select one',
+		thumbnail: function(file, dataUrl) {
+			if (file.previewElement) {
+				file.previewElement.classList.remove("dz-file-preview");
+				var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
+				for (var i = 0; i < images.length; i++) {
+					var thumbnailElement = images[i];
+					thumbnailElement.alt = file.name;
+					thumbnailElement.src = dataUrl;
+				}
+				setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
+			}
+		},
+        init:function(){
+            var self = this;
+            // config
+            self.options.addRemoveLinks = true;
+            self.options.dictRemoveFile = "Delete";
+            //New file added
+            self.on("addedfile", function (file) {
+                console.log('new file added ', file);
+            });
+            // Send file starts
+            self.on("sending", function (file) {
+                console.log('upload started', file);
+                $('.meter').show();
+            });
+
+            // File upload Progress
+            self.on("totaluploadprogress", function (progress) {
+                console.log("progress ", progress);
+                $('.roller').width(progress + '%');
+            });
+
+            self.on("queuecomplete", function (progress) {
+                $('.meter').delay(999).slideUp(999);
+            });
+
+            // On removing file
+            self.on("removedfile", function (file) {
+                console.log(file);
+            });
+        }
+	};
 
 });

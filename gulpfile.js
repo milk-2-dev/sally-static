@@ -40,7 +40,6 @@ gulp.task('scripts', function() {
         'app/libs/OwlCarousel2/dist/owl.carousel.min.js',
         'app/libs/gsap/src/minified/TweenMax.min.js',
         'app/libs/seiyria-bootstrap-slider/dist/bootstrap-slider.js',
-        'app/libs/modernizr/bin/modernizr.js',
         'app/libs/dropzone/dist/dropzone.js'
         ])
         .pipe(concat('libs.min.js'))
