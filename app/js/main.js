@@ -49,7 +49,6 @@ function changeHeiht(e){
     modalId.find('.modal-body__overflow').css('height', modalBodyOverflowHeight);
 }
 
-
 function heightMobMenu() {
     var  h = $('.mobile-menu').outerHeight(true);
 
@@ -106,8 +105,6 @@ scrollToTop=0;
 $(document).on('scroll', function (e) {
 
     scrollToTop = $(window).scrollTop();
-
-    //console.log('scrollToTop '+scrollToTop);
 
 })
 
@@ -239,78 +236,57 @@ $(document).ready(function() {
         responsive();
     });
 
+	  /////////////test progress
+
+    function userBarStatus(){
+        var statusValue = $('.skill__circle').attr('data-value');
+        $('.skill__circle .skill__circle_progress').css('stroke-dashoffset', 100 - statusValue);
+    }
+
+	  userBarStatus();
 
 
-    /////////////
+	// $('#my-awesome-dropzone').Dropzone( {
+	// 	previewTemplate: document.querySelector('#preview-template').innerHTML,
+	// 	parallelUploads: 2,
+	// 	thumbnailHeight: 120,
+	// 	thumbnailWidth: 120,
+	// 	maxFilesize: 3,
+	// 	filesizeBase: 1000,
+	// 	thumbnail: function(file, dataUrl) {
+	// 		if (file.previewElement) {
+	// 			file.previewElement.classList.remove("dz-file-preview");
+	// 			var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
+	// 			for (var i = 0; i < images.length; i++) {
+	// 				var thumbnailElement = images[i];
+	// 				thumbnailElement.alt = file.name;
+	// 				thumbnailElement.src = dataUrl;
+	// 			}
+	// 			setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
+	// 		}
+	// 	}
+	//
+	// });
 
-    // $('.post-header > .button').on('click', function(){
-    //     var t = $(this).attr("data-iad-id");
-    //     $.ajax({
-    //         url: "../preview.json",
-    //         type: "GET",
-    //         dataType: "json",
-    //         success: function (data, textStatus, jqXHR) {
-    //             //manipulate dom
-    //
-    //
-    //             $('#messagePreview').modal('show');
-    //
-    //             var facebookIframe = '';
-    //
-    //             function makeFrame(src) {
-    //                 $.ajax({
-    //                     url: 'http://whateverorigin.org/get?url=' + encodeURIComponent(src) + '&callback=?',
-    //                     type: "GET",
-    //                     success: function (fbData, textStatus, jqXHR) {
-    //
-    //                         if (!$('body').hasClass("mobile")) {
-    //                             facebookIframe = '<iframe ' +
-    //                                 'width="'+data.mobile.width+'"' +
-    //                                 'height="'+data.mobile.height+'"' +
-    //                                 'scrolling="yes" ' +
-    //                                 'style="border: none;">' + fbData + '</iframe>';
-    //
-    //
-    //                             $('.message-article').html(facebookIframe);
-    //                         } else if (!$('body').hasClass("desctop")) {
-    //
-    //                             facebookIframe = '<iframe ' +
-    //                                 'src="'+data.desctop.src +'" ' +
-    //                                 'width="'+data.desctop.width+'"' +
-    //                                 'height="'+data.desctop.height+'"' +
-    //                                 'scrolling="yes" ' +
-    //                                 'style="border: none;">' + fbData + '</iframe>';
-    //
-    //                             $('.message-article').html(facebookIframe);
-    //                         }
-    //                     }
-    //                 });
-    //             }
-    //
-    //             $('#messagePreview').on('shown.bs.modal', function(){
-    //                 var myWidth = $('body').innerWidth();
-    //
-    //                 if (myWidth < 768) {
-    //                     makeFrame(data.mobile.src);
-    //                 } else {
-    //                     makeFrame(data.desctop.src);
-    //                 }
-    //
-    //                 $(window).resize(function () {
-    //                     if (myWidth < 768) {
-    //                         makeFrame(data.mobile.src);
-    //                     } else {
-    //                         makeFrame(data.desctop.src);
-    //                     }
-    //                 });
-    //             });
-    //         }
-    //     });
-    // });
+	// Dropzone.options.myAwesomeDropzone= {
+	// 	previewTemplate: document.querySelector('#preview-template').innerHTML,
+	// 	parallelUploads: 2,
+	// 	thumbnailHeight: 120,
+	// 	thumbnailWidth: 120,
+	// 	maxFilesize: 3,
+	// 	filesizeBase: 1000,
+	// 	thumbnail: function(file, dataUrl) {
+	// 		if (file.previewElement) {
+	// 			file.previewElement.classList.remove("dz-file-preview");
+	// 			var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
+	// 			for (var i = 0; i < images.length; i++) {
+	// 				var thumbnailElement = images[i];
+	// 				thumbnailElement.alt = file.name;
+	// 				thumbnailElement.src = dataUrl;
+	// 			}
+	// 			setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
+	// 		}
+	// 	}
+	// };
 
 });
-
-
-
-
-

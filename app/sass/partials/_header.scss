@@ -1,8 +1,13 @@
-/* =========================================================================
-                                 HEADER
-========================================================================= */
+/**********************************************************************************************
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+											5. Headers
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+***********************************************************************************************/
 
 #header{
+    .logo{
+        padding:10px 0;
+    }
     .share-form{
         display: none;
     }
@@ -264,7 +269,7 @@
     justify-content: space-between;
     align-items: center;
     margin-left: 40px;
-    background: #af7bf2;
+    background: #e4e4e5;
     padding: 0 15px;
     margin-right: -35px;
 
@@ -273,11 +278,23 @@
 
         >a{
             display: block;
-            padding-right: 40px;
-            background:url('../../images/caret--white.png');
-            background-size: 15px;
-            background-repeat: no-repeat;
-            background-position: center right;
+            padding-right: 15px;
+            position: relative;
+
+            &:after{
+                content: '\f078';
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translate(0 ,-50%);
+                display: inline-block;
+                font: normal normal normal 14px/1 FontAwesome;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                color: rgb(74, 74, 74);;
+            }
 
             &:hover,
             &:focus{
@@ -291,6 +308,7 @@
 .user-bar__avatar{
     display: inline-block;
     margin-right: 15px;
+    position: relative;
 
     img{
         border-radius: 50%;
@@ -299,8 +317,9 @@
 
 .user-bar__info{
     position: relative;
-    padding-right: 80px;
+    //padding-right: 80px;
     min-width:200px;
+    max-width: 250px;
     //margin-top:20px;
 
     .dropdown-menu{
@@ -324,6 +343,17 @@
     font-weight: 700;
 }
 
+.user-bar__user-name{
+    display: block;
+    color: #555;
+    text-transform: uppercase;
+    max-width:210px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 4px;
+}
+
 .user-bar__info-title{
     display: block;
     font-size: 13px;
@@ -333,15 +363,16 @@
 
 .user-bar__info-cost{
     display: block;
+    font-weight: bold;
     text-transform: uppercase;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 1.2;
-    color: #fff;
+    font-size: 12px;
+    color: #989898;
 }
 
 .small-menu{
-    text-align: right;
+    //text-align: right;
+    display: flex;
+    justify-content: flex-end;
 
     ul{
         margin:0;
