@@ -20,10 +20,9 @@
 
     <!-- HEADER -->
     <header id="header">
-
         <!-- Main Header -->
-        <div id="main-header" class="bg-white hidden-sm-down">
-            <div class="container-fluid padding_l_35 padding_r_35"> <!-- fix andrew -->
+        <div id="main-header" class="hidden-sm-down">
+            <div class="container-fluid padding_l_35 padding_r_35">
                 <div class="row align-items-center">
 
                     <div class="col-lg-1 col-md-1">
@@ -33,49 +32,65 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-5 col-md-5">
-                        <form class="share-form">
-                            <input type="text" placeholder="Add a link...">
-                            <button class="button bg-black color-white" data-toggle="modal" data-target="#messagePreview">share</button>
-                        </form>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 small-menu">
-
+                    <div class="col-lg-11 col-md-11 small-menu">
                         <ul>
-                            <li><a href="javascript:void(0);">How it works</a></li>
-                            <li><a href="javascript:void(0);" data-toggle="modal" data-target="#signIn">sign in</a></li>
-                            <li><a href="javascript:void(0);" class="small-menu__attention" data-toggle="modal" data-target="#signUp">sign up</a></li>
+                            <li><a href="javascript:void(0);" data-toggle="modal" data-target="">explore</a></li>
+                            <li><a href="./creat-ad.html">add an ad</a></li>
                         </ul>
 
-                        <!--<a class="sign__in button unfilled br-light br-color-blue color-white" href="javascript:void(0);" >Sign in</a>-->
+                        <div class="user-bar">
+                            <div class="user-bar__avatar">
+                                <svg class="skill__circle" data-value="45" data-group="Frontend" xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 34 34">
+                                    <circle class="skill__circle_background" cx="16" cy="16" r="15.9155"></circle>
+                                    <circle class="skill__circle_progress" cx="16" cy="16" r="15.9155"></circle>
+                                </svg>
+                                <div class="skill__circle_title">13</div>
+                            </div>
 
-                        <!--<a class="sign__up" href="javascript:void(0);" data-toggle="modal" data-target="#signUp">Sign up</a>-->
-
+                            <div class="user-bar__info">
+                                <!--<span class="user-bar__info-notification">10</span>-->
+                                <div class="dropdown">
+                                    <a data-toggle="dropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <span class="user-bar__user-name">
+                                          Benjamin Xue
+                                      </span>
+                                        <span class="user-bar__info-cost">
+                                          $10,080
+                                      </span>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- /Main Header -->
     </header>
 
     <!--mobile menu-->
     <!--not login-->
-    <!--<div class="mobile-menu">-->
-        <!--<ul>-->
-            <!--<li><a href="javascript:void(0);" class="active" data-toggle="modal" data-target="#signIn">sign in</a></li>-->
-            <!--<li><a href="javascript:void(0);" data-toggle="modal" data-target="#signUp">sign up</a></li>-->
-        <!--</ul>-->
-    <!--</div>-->
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="javascript:void(0);" class="active" data-toggle="modal" data-target="#signIn">sign in</a></li>
+            <li><a href="javascript:void(0);" data-toggle="modal" data-target="#signUp">sign up</a></li>
+        </ul>
+    </div>
     <!--not login-->
 
     <!--login-->
-    <div class="mobile-menu login-user">
-    <ul>
-    <li><a href="javascript:void(0);"><i class="fa fa-signal" aria-hidden="true"></i></a></li>
-    <li><a class="active" href="javascript:void(0);"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-    <li><a href="javascript:void(0);"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-    </ul>
-    </div>
+    <!--<div class="mobile-menu login-user">-->
+    <!--<ul>-->
+    <!--<li><a href="javascript:void(0);"><i class="fa fa-signal" aria-hidden="true"></i></a></li>-->
+    <!--<li><a class="active" href="javascript:void(0);"><i class="fa fa-home" aria-hidden="true"></i></a></li>-->
+    <!--<li><a href="javascript:void(0);"><i class="fa fa-user" aria-hidden="true"></i></a></li>-->
+    <!--</ul>-->
+    <!--</div>-->
     <!--login-->
     <!--mobile menu-->
 
@@ -85,17 +100,111 @@
     <main id="splendid-main-container padding_t_0">
         <section class="margin_b_60 first-screen"> <!-- fix andrew -->
             <div class="container">
-                <p class="logo-label" data-toggle="modal" data-target="#messagePreviewEdit">SWAY</p>
+                <p class="logo-label">SWAY</p>
                 <h1 class="margin_t_0">The power to change minds.</h1> <!-- fix andrew -->
 
-                <p class="margin_b_50 hidden-sm-down"> <!-- fix andrew -->
+                <p class="margin_b_40 hidden-sm-down"> <!-- fix andrew 04.12-->
                     Advocate for you values throught effective digital communication.
                 </p>
 
-                <form class="share-form">
-                    <input type="text" placeholder="Add a link...">
-                    <a class="button bg-black color-white" data-toggle="modal" data-target="#messagePreview">sway</a> <!-- fix andrew -->
-                </form>
+                <div class="main-form">
+                    <div class="main-form__menu">
+                        <ul class="nav " id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="formLink-tab"
+                                   data-toggle="tab"
+                                   href="#formLink"
+                                   role="tab"
+                                   aria-controls="formLink"
+                                   aria-selected="true">
+
+                                    <i class="fa fa-link" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="formImages-tab"
+                                   data-toggle="tab"
+                                   href="#formImages"
+                                   role="tab"
+                                   aria-controls="formImages"
+                                   aria-selected="false">
+
+                                    <i class="fa fa-picture-o" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:void(0);">
+
+                                    <i class="fa fa-camera" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="formLink" role="tabpanel" aria-labelledby="formLink-tab">
+                            <form class="share-form">
+                                <input type="text" placeholder="Add a link...">
+                                <a class="button bg-black color-white" data-toggle="modal" data-target="#messagePreview">sway</a> <!-- fix andrew -->
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="formImages" role="tabpanel" aria-labelledby="formImages-tab">
+                            <div class="form-upload">
+
+                                <form action="/" id="myAwesomeDropzone"
+                                      class="dropzone"
+                                >
+                                    <div class="fallback">
+                                        <input name="file" type="file" multiple />
+                                    </div>
+                                </form>
+
+                                <button style="display: none" type="submit" form="myAwesomeDropzone" class="margin_t_20 button bg-blue small btn-round color-white margin_r_0">
+                                    Sway
+                                </button>
+
+                                <div id="preview-template" style="display: none;">
+
+                                    <div class="dz-preview dz-file-preview">
+                                        <div class="dz-image"><img data-dz-thumbnail=""></div>
+
+                                        <div class="dz-details">
+                                            <div class="dz-size"><span data-dz-size=""></span></div>
+                                            <div class="dz-filename"><span data-dz-name=""></span></div>
+                                        </div>
+                                        <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress=""></span></div>
+                                        <div class="dz-error-message"><span data-dz-errormessage=""></span></div>
+
+                                        <div class="dz-success-mark">
+                                            <svg width="54px" height="54px" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                                                <!-- Generator: Sketch 3.2.1 (9971) - http://www.bohemiancoding.com/sketch -->
+                                                <title>Check</title>
+                                                <desc>Created with Sketch.</desc>
+                                                <defs></defs>
+                                                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                                                    <path d="M23.5,31.8431458 L17.5852419,25.9283877 C16.0248253,24.3679711 13.4910294,24.366835 11.9289322,25.9289322 C10.3700136,27.4878508 10.3665912,30.0234455 11.9283877,31.5852419 L20.4147581,40.0716123 C20.5133999,40.1702541 20.6159315,40.2626649 20.7218615,40.3488435 C22.2835669,41.8725651 24.794234,41.8626202 26.3461564,40.3106978 L43.3106978,23.3461564 C44.8771021,21.7797521 44.8758057,19.2483887 43.3137085,17.6862915 C41.7547899,16.1273729 39.2176035,16.1255422 37.6538436,17.6893022 L23.5,31.8431458 Z M27,53 C41.3594035,53 53,41.3594035 53,27 C53,12.6405965 41.3594035,1 27,1 C12.6405965,1 1,12.6405965 1,27 C1,41.3594035 12.6405965,53 27,53 Z" id="Oval-2" stroke-opacity="0.198794158" stroke="#747474" fill-opacity="0.816519475" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <div class="dz-error-mark">
+                                            <svg data-dz-remove width="54px" height="54px" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                                                <!-- Generator: Sketch 3.2.1 (9971) - http://www.bohemiancoding.com/sketch -->
+                                                <title>error</title>
+                                                <desc>Created with Sketch.</desc>
+                                                <defs></defs>
+                                                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                                                    <g id="Check-+-Oval-2" sketch:type="MSLayerGroup" stroke="#747474" stroke-opacity="0.198794158" fill="#FFFFFF" fill-opacity="0.816519475">
+                                                        <path d="M32.6568542,29 L38.3106978,23.3461564 C39.8771021,21.7797521 39.8758057,19.2483887 38.3137085,17.6862915 C36.7547899,16.1273729 34.2176035,16.1255422 32.6538436,17.6893022 L27,23.3431458 L21.3461564,17.6893022 C19.7823965,16.1255422 17.2452101,16.1273729 15.6862915,17.6862915 C14.1241943,19.2483887 14.1228979,21.7797521 15.6893022,23.3461564 L21.3431458,29 L15.6893022,34.6538436 C14.1228979,36.2202479 14.1241943,38.7516113 15.6862915,40.3137085 C17.2452101,41.8726271 19.7823965,41.8744578 21.3461564,40.3106978 L27,34.6568542 L32.6538436,40.3106978 C34.2176035,41.8744578 36.7547899,41.8726271 38.3137085,40.3137085 C39.8758057,38.7516113 39.8771021,36.2202479 38.3106978,34.6538436 L32.6568542,29 Z M27,53 C41.3594035,53 53,41.3594035 53,27 C53,12.6405965 41.3594035,1 27,1 C12.6405965,1 1,12.6405965 1,27 C1,41.3594035 12.6405965,53 27,53 Z" id="Oval-2" sketch:type="MSShapeGroup"></path>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -123,7 +232,7 @@
                                             <!--<i class="fa fa-play" aria-hidden="true"></i>-->
                                             <!--</a>-->
 
-                                            <a href="" class="button bg-black color-white">sway</a>
+                                            <button class="button bg-black color-white" data-iad-id="129">sway</button>
                                         </header>
                                     </div>
                                     <section class="post-content">
@@ -170,6 +279,8 @@
                                             <!--<a href="javascript:void(0);">-->
                                             <!--<i class="fa fa-play" aria-hidden="true"></i>-->
                                             <!--</a>-->
+                                            <button class="button bg-black color-white" data-iad-id="127">sway</button>
+
                                         </header>
                                     </div>
                                     <section class="post-content">
@@ -418,7 +529,7 @@
                             </div>
 
                             <p class="link-create-account">
-                                Don`t have an account? <a href="">Create one now!</a>
+                                Don`t have an account? <a href="javascript:void(0);" onClick="openSignIn()">Create one now!</a>
                             </p>
                         </div>
                     </div>
@@ -547,17 +658,21 @@
                                         </ul>
                                     </div>
                                 </article>
+                                <!--<iframe src="https://www.facebook.com/ads/api/preview_iframe.php?d=AQJNQQxnVVnyeFoY4HOq9Rs537ZmbJvSfzDB4_VwMrPKzQiljlzplUCkXXwdaGdk5hRimyEKfkoB_GjkmR0nQr9rsHkcjSSZeFea9FBHA_gSBgXrcikUJx06ihU9s9-5PhYxQvknmEGWMZXg_w434SznpD7Bg345_Jlv4jXKYJ8iFpn1x7MEQj2FFltBV5X20gy7HaoG9kk84hHUwfUhHU0OhJC0_Dq5LyGyUlzpb65exQggtLnnFzYGzT9ep6FekhU&amp;t=AQKlkpqcbrpg5DRp" width="540" height="690" scrolling="yes" style="border: none;"></iframe>-->
+                                <!--<iframe src='https://www.facebook.com/ads/api/preview_iframe.php?d=AQK63gSlz5CuRmHUhhFK6Vp_bQHgF9JOlOrh1yrAAt6eg5M1Nf3kZydb0JwPF1bVcJIEY3q-GpGaIM5IC1bOIa2bYuPmRSUa0Oj8zlYiuqTyzgrPi5lY_oIeGQ9JtgXqEQYcf4IiH0aOwkGM9uGfWromFOvZ3zCKajFmjguY4obddPGcxMp_4M4phqdDKRwTnMvIJOllU2fAU5Zz7IpHd7GqDoucNuYCd8BCIt7qPxfnYCNETz_oerwnqhtjQ7GMmMc&amp;t=AQJcHGHsr4ATQvGc' width='335' height='450' scrolling='yes' style='border: none;'></iframe>-->
                             </div>
 
                             <!--<iframe id="iframeTest" src="https://www.facebook.com/ads/api/preview_iframe.php?d=AQLvo9L0n03HrHNviXU3jXtJBHD4PFJ1GR-_dA9jSq1AHavINVoGMQwZzeuxa6pnhJVepGxExOdpHlNJERQo3otDwJuQsQMZ6visPKibD2onTD0eTVwe_td6TU9RVehS0HNO0tDc-DhOH79xe2jS8_nZeRo-UzGV2pI6LAeAwjjBEaAYGt01DYIsQ7c0pMnCBX41kPBVQUra_8t1h5DO9wSXXNeLEIlZQOWQaDOw27sDS98CGSxtf2fDK7NFrANQI5I&amp;t=AQKZriBJLjH_lcS8" width="540" height="690" scrolling="yes"></iframe>                            </div>-->
                             <div class="col-lg-5 col-md-5 message-list">
                                 <p class="modal-title message-edit">
-                                    Save obamacare
-
                                     <a href="" data-toggle="modal" data-target="#messagePreviewEdit">
                                         <i class="icon icon-edit"></i>
                                         <span>edit</span>
                                     </a>
+
+                                    Save obamacare Save obamacare Save obamacare
+
+
                                 </p>
 
                                 <div class="message-list__item">
@@ -643,7 +758,7 @@
 
 
                     <div class="modal-buttons">
-                        <a href="" class="button bg-light-gray">cancel</a>
+                        <a href="javascript:void(0);"  data-dismiss="modal" class="button bg-light-gray">cancel</a>
                         <a href="" class="button color-white bg-blue">sway</a>
                     </div>
                 </div>
@@ -707,7 +822,7 @@
                             <div class="form-item">
                                 <p class="form-item__title">Age</p>
 
-                                <input id="ageAuditory" type="text" class="span2" value="" data-slider-min="18" data-slider-max="100" data-slider-step="1" data-slider-value="[18,65]" data-slider-tooltip="hide">
+                                <input id="ageAuditory" type="text" class="span2" value="" data-slider-min="21" data-slider-max="100" data-slider-step="1" data-slider-value="[18,65]" data-slider-tooltip="hide">
                                 <p id="actualValue">21 - 65</p>
                             </div>
 
@@ -731,7 +846,7 @@
 
                 <div class="modal-footer">
                     <div class="modal-buttons">
-                        <a href="" class="button bg-light-gray">cancel</a>
+                        <a href="javascript:void(0);"  data-dismiss="modal" class="button bg-light-gray">cancel</a>
                         <a href="" class="button color-white bg-blue" data-toggle="modal" data-target="#payment">done</a>
                     </div>
                 </div>
@@ -817,7 +932,7 @@
                 </div>
                 <div class="modal-footer">
                     <div class="modal-buttons">
-                        <a href="" class="button bg-light-gray">cancel</a>
+                        <a href="javascript:void(0);"  data-dismiss="modal" class="button bg-light-gray">cancel</a>
                         <a href="" class="button color-white bg-blue" data-toggle="modal" data-target="#success">purchase</a>
                     </div>
                 </div>
@@ -852,12 +967,10 @@
                         </div>
 
                         <div class="succses-buttons">
-                            <a href="" class="button bg-black color-white">go to dashboard</a>
+                            <a href="javascript:void(0);" class="button bg-black color-white">go to dashboard</a>
                             <br/>
-                            <a href="" class="">back to home</a>
+                            <a href="javascript:void(0);" class="">back to home</a>
                         </div>
-
-
                     </div>
                 </div>
             </div>
@@ -901,6 +1014,13 @@
 
 </body>
 
+
+
 <script src="js/libs.min.js"></script>
+
+
+<!--<script>Dropzone.autoDiscover = false;</script>-->
+
 <script src="js/main.js"></script>
+<script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
 </html>

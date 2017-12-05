@@ -247,99 +247,13 @@ $(document).ready(function() {
 
 	  userBarStatus();
 
+    ////////////Add an ad
 
-	// $('#my-awesome-dropzone').Dropzone( {
-	// 	previewTemplate: document.querySelector('#preview-template').innerHTML,
-	// 	parallelUploads: 2,
-	// 	thumbnailHeight: 120,
-	// 	thumbnailWidth: 120,
-	// 	maxFilesize: 3,
-	// 	filesizeBase: 1000,
-	// 	thumbnail: function(file, dataUrl) {
-	// 		if (file.previewElement) {
-	// 			file.previewElement.classList.remove("dz-file-preview");
-	// 			var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
-	// 			for (var i = 0; i < images.length; i++) {
-	// 				var thumbnailElement = images[i];
-	// 				thumbnailElement.alt = file.name;
-	// 				thumbnailElement.src = dataUrl;
-	// 			}
-	// 			setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
-	// 		}
-	// 	}
-	//
-	// });
-	//Dropzone.autoDiscover = false;
-
-	// $("div#myAwesomeDropzone").dropzone({
-	// 	previewTemplate: document.querySelector('#preview-template').innerHTML,
-	//
-	// 	url: "/file/post",
-	// 	method: "post",
-	// 	withCredentials: false,
-	// 	parallelUploads: 2,
-	// 	uploadMultiple: false,
-	// 	maxFilesize: 256,
-	// 	paramName: "file",
-	// 	createImageThumbnails: true,
-	// 	maxThumbnailFilesize: 10,
-	// 	thumbnailWidth: 150,
-	// 	thumbnailHeight: 150,
-	// 	filesizeBase: 1000,
-	// 	maxFiles: 1,
-	// 	addRemoveLinks: true,
-	// 	previewsContainer: null,
-	// 	capture: null,
-	// 	dictDefaultMessage: "Drop files here to upload test test test test",
-	// 	dictFallbackMessage: "Your browser does not support drag'n'drop file uploads.",
-	// 	dictFallbackText: "Please use the fallback form below to upload your files like in the olden days.",
-	// 	dictFileTooBig: "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.",
-	// 	dictInvalidFileType: "You can't upload files of this type.",
-	// 	dictResponseError: "Server responded with {{statusCode}} code.",
-	// 	dictCancelUpload: "Cancel upload",
-	// 	dictCancelUploadConfirmation: "Are you sure you want to cancel this upload?",
-	// 	dictRemoveFile: "Remove file",
-	// 	dictRemoveFileConfirmation: null,
-	// 	dictMaxFilesExceeded: "You can not upload any more files.",
-	// 	thumbnail: function(file, dataUrl) {
-	// 		if (file.previewElement) {
-	// 			file.previewElement.classList.remove("dz-file-preview");
-	// 			var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
-	// 			for (var i = 0; i < images.length; i++) {
-	// 				var thumbnailElement = images[i];
-	// 				thumbnailElement.alt = file.name;
-	// 				thumbnailElement.src = dataUrl;
-	// 			}
-	// 			setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
-	// 		}
-	// 	}
-	// });
-
-	//console.log(Dropzone.options.myAwesomeDropzone.thumbnailWidth);
-
-	//Dropzone.autoDiscover = false;
-	// new Dropzone('#myAwesomeDropzone', {
-	// 	previewTemplate: document.querySelector('#preview-template').innerHTML,
-	// 	parallelUploads: 2,
-	// 	thumbnailHeight: 120,
-	// 	thumbnailWidth: 120,
-	// 	maxFilesize: 3,
-	// 	filesizeBase: 1000,
-	// 	thumbnail: function(file, dataUrl) {
-	// 		if (file.previewElement) {
-	// 			file.previewElement.classList.remove("dz-file-preview");
-	// 			var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
-	// 			for (var i = 0; i < images.length; i++) {
-	// 				var thumbnailElement = images[i];
-	// 				thumbnailElement.alt = file.name;
-	// 				thumbnailElement.src = dataUrl;
-	// 			}
-	// 			setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
-	// 		}
-	// 	}
-	//
-	// });
-
+  $('#inputForPreview').on('change', function(){
+      $('#preview-block>img').css('display', 'none');
+      $('#preview-block').find('.message-article').css('display', 'block');
+      $('button[form="myAwesomeDropzone"]').css('display','block')
+  })
 
 	var dropzone = new Dropzone('#myAwesomeDropzone', {
 		previewTemplate: document.querySelector('#preview-template').innerHTML,
@@ -371,4 +285,6 @@ $(document).ready(function() {
 		}
 
 	});
+
+
 });

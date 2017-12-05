@@ -21,13 +21,13 @@ input[type="tel"],
 input[type="search"],
 select,
 textarea{
-  display:block;
-  width:100%;
-  padding:11px 10px;
-  background:#f4f6fa;
-  border:1px solid #dce3ef;
-  margin:0;
-  border-radius:5px;
+  display: block;
+  width: 100%;
+  padding: 15px 15px 13px;
+  border: 1px solid #dce3ef;
+  margin: 0;
+  border-radius: 4px;
+  font-weight: 100;
 }
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -36,7 +36,8 @@ input[type="tel"]:focus,
 input[type="search"]:focus,
 select:focus,
 textarea:focus{
-  outline:1px solid #a65bf4;
+  border:1px solid map_get($colors, 'pink');
+  outline: none;
 }
 label + input[type="text"],
 label + input[type="password"],
@@ -282,9 +283,9 @@ form{
   display: block;
   text-align: left;
   text-transform: uppercase;
-  font-size: 16px;
-  font-weight: 500;
-  margin-top:10px;
+  font-size: 14px;
+  font-weight: 100;
+  margin-top: 10px;
 
   a{
     text-decoration: underline;
@@ -549,6 +550,13 @@ form{
   }
 }
 .main-form__menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ul{
+    text-align: right;
+  }
   .nav-item{
     display: inline-block;
     margin-bottom:8px;
@@ -571,4 +579,16 @@ form{
       color: #a65bf4;
     }
   }
+}
+
+.main-form__menu-title{
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.modal-emulation__input{
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.22);
 }
