@@ -738,15 +738,25 @@ button.close{
   padding:10px;
   border:1px solid #555;
   border-radius: 4px;
+  text-align: center;
 
   .dropzone {
     padding: 10px;
-    border:2px dashed #000;
+    border:2px dashed map_get($colors, 'pink');
 
     .dz-preview{
       .dz-image {
         border-radius: 4px;
       }
     }
+  }
+
+  .dz-message{
+    color: #aaa;
+  }
+
+  .dz-message__title{
+    display: block;
+    font-size: 30px;
   }
 }

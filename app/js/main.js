@@ -1,3 +1,5 @@
+Dropzone.autoDiscover = false;
+
 //Opening Modals
 
 function openSignIn(){
@@ -267,18 +269,90 @@ $(document).ready(function() {
 	// 	}
 	//
 	// });
+	//Dropzone.autoDiscover = false;
 
-	Dropzone.options = {
+	// $("div#myAwesomeDropzone").dropzone({
+	// 	previewTemplate: document.querySelector('#preview-template').innerHTML,
+	//
+	// 	url: "/file/post",
+	// 	method: "post",
+	// 	withCredentials: false,
+	// 	parallelUploads: 2,
+	// 	uploadMultiple: false,
+	// 	maxFilesize: 256,
+	// 	paramName: "file",
+	// 	createImageThumbnails: true,
+	// 	maxThumbnailFilesize: 10,
+	// 	thumbnailWidth: 150,
+	// 	thumbnailHeight: 150,
+	// 	filesizeBase: 1000,
+	// 	maxFiles: 1,
+	// 	addRemoveLinks: true,
+	// 	previewsContainer: null,
+	// 	capture: null,
+	// 	dictDefaultMessage: "Drop files here to upload test test test test",
+	// 	dictFallbackMessage: "Your browser does not support drag'n'drop file uploads.",
+	// 	dictFallbackText: "Please use the fallback form below to upload your files like in the olden days.",
+	// 	dictFileTooBig: "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.",
+	// 	dictInvalidFileType: "You can't upload files of this type.",
+	// 	dictResponseError: "Server responded with {{statusCode}} code.",
+	// 	dictCancelUpload: "Cancel upload",
+	// 	dictCancelUploadConfirmation: "Are you sure you want to cancel this upload?",
+	// 	dictRemoveFile: "Remove file",
+	// 	dictRemoveFileConfirmation: null,
+	// 	dictMaxFilesExceeded: "You can not upload any more files.",
+	// 	thumbnail: function(file, dataUrl) {
+	// 		if (file.previewElement) {
+	// 			file.previewElement.classList.remove("dz-file-preview");
+	// 			var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
+	// 			for (var i = 0; i < images.length; i++) {
+	// 				var thumbnailElement = images[i];
+	// 				thumbnailElement.alt = file.name;
+	// 				thumbnailElement.src = dataUrl;
+	// 			}
+	// 			setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
+	// 		}
+	// 	}
+	// });
+
+	//console.log(Dropzone.options.myAwesomeDropzone.thumbnailWidth);
+
+	//Dropzone.autoDiscover = false;
+	// new Dropzone('#myAwesomeDropzone', {
+	// 	previewTemplate: document.querySelector('#preview-template').innerHTML,
+	// 	parallelUploads: 2,
+	// 	thumbnailHeight: 120,
+	// 	thumbnailWidth: 120,
+	// 	maxFilesize: 3,
+	// 	filesizeBase: 1000,
+	// 	thumbnail: function(file, dataUrl) {
+	// 		if (file.previewElement) {
+	// 			file.previewElement.classList.remove("dz-file-preview");
+	// 			var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
+	// 			for (var i = 0; i < images.length; i++) {
+	// 				var thumbnailElement = images[i];
+	// 				thumbnailElement.alt = file.name;
+	// 				thumbnailElement.src = dataUrl;
+	// 			}
+	// 			setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
+	// 		}
+	// 	}
+	//
+	// });
+
+
+	var dropzone = new Dropzone('#myAwesomeDropzone', {
 		previewTemplate: document.querySelector('#preview-template').innerHTML,
-		//parallelUploads: 2,
-        addRemoveLinks: true,
+		parallelUploads: null,
 		thumbnailHeight: 150,
 		thumbnailWidth: 150,
-        paramName: 'file',
-        maxFilesize: 2, // MB
-        maxFiles: 1,
-        dictDefaultMessage: 'Drag an image here to upload, or click to select one',
-		thumbnail: function(file, dataUrl) {
+		maxFilesize: 3,
+		filesizeBase: 1000,
+		maxFiles: 1,
+		dictDefaultMessage: "<i class='fa fa-5x fa-picture-o' aria-hidden='true'></i> <br/><span class='dz-message__title'>Drag & Drop</span> a video or image here <br/> or <br/> " +
+    "<span class='button bg-blue small btn-round color-white margin_r_0'>Chose file</span>",
+
+    thumbnail: function(file, dataUrl) {
 			if (file.previewElement) {
 				file.previewElement.classList.remove("dz-file-preview");
 				var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
@@ -290,36 +364,11 @@ $(document).ready(function() {
 				setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
 			}
 		},
-        init:function(){
-            var self = this;
-            // config
-            self.options.addRemoveLinks = true;
-            self.options.dictRemoveFile = "Delete";
-            //New file added
-            self.on("addedfile", function (file) {
-                console.log('new file added ', file);
-            });
-            // Send file starts
-            self.on("sending", function (file) {
-                console.log('upload started', file);
-                $('.meter').show();
-            });
+		init: function() {
+			this.on("addedfile", function(file) {
+			    $('button[form="myAwesomeDropzone"]').css('display', 'inline-block');
+      });
+		}
 
-            // File upload Progress
-            self.on("totaluploadprogress", function (progress) {
-                console.log("progress ", progress);
-                $('.roller').width(progress + '%');
-            });
-
-            self.on("queuecomplete", function (progress) {
-                $('.meter').delay(999).slideUp(999);
-            });
-
-            // On removing file
-            self.on("removedfile", function (file) {
-                console.log(file);
-            });
-        }
-	};
-
+	});
 });
