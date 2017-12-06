@@ -5,7 +5,7 @@
 .blog-post-standard .post-featured-image,
 .blog-post-standard .post-header{margin-bottom:12px;}
 //.blog-post-standard a{color:map_get($colors, 'features-post-title');}
-.blog-post-standard a:hover{color:#a65bf4;}
+.blog-post-standard a:hover{color:map_get($colors, 'pink');}
 .blog-post-standard .post-gallery .flex-direction-nav a {
   width: 71px;
   height: 71px;
@@ -78,7 +78,7 @@ section.post-tags{
   content:', ';
 }
 .post-tags ul li a{color:#718097;}
-.post-tags ul li a:hover{color:#a65bf4;}
+.post-tags ul li a:hover{color:map_get($colors, 'pink');}
 
 /********************************************
 				9-7. Post Share
@@ -148,7 +148,7 @@ section.post-author{
   -moz-border-radius:50%;
 }
 .post-author .author-meta a{
-  color:#a65bf4;
+  color:map_get($colors, 'pink');
 }
 .post-author.style2 {
   display: block;
@@ -192,12 +192,12 @@ section.post-author{
   white-space: normal;
 }
 .post-author.style2 .button:before {
-  background-color: #a65bf4;
+  background-color: map_get($colors, 'pink');
   border-radius: 0;
 }
 .post-author.style2 .button:hover {
   color: #ffffff;
-  border-color: #a65bf4;
+  border-color: map_get($colors, 'pink');
 }
 .sidebar-dual .post-author.style2 {
   width: auto;
@@ -301,7 +301,7 @@ section.post-author{
   color:#525f71;
 }
 .sc-blog-post.style-list .blog-post-inner .post-title a:hover{
-  color:#a65bf4;
+  color:map_get($colors, 'pink');
 }
 
 /* SC Blog Post Medium */

@@ -107,7 +107,7 @@ img.align-center {
 *********************************************/
 .color-white, .color-white.button, .color-white.button:hover, .color-light,.wysija-submit-field.wysija-submit{color:#fff !important;}
 .color-black{color:#212428!important;}
-.color-blue{color:#a65bf4!important;}
+.color-blue{color:map_get($colors, 'pink')!important;}
 .color-dark-blue{color:#161c43!important;}
 .color-light-blue{color:#2eb9ea!important;}
 .color-turquoise-blue{color:#5fd0e4!important;}

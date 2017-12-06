@@ -217,7 +217,7 @@
             */
             &.active{
                 &:before{
-                    background:#a65bf4;
+                    background:map_get($colors, 'pink');
                 }
             }
 

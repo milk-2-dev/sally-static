@@ -263,6 +263,8 @@ $(document).ready(function() {
 		maxFilesize: 3,
 		filesizeBase: 1000,
 		maxFiles: 1,
+		addRemoveLinks: true,
+		dictRemoveFile: "<i class='fa fa-close' aria-hidden='true'></i>",
 		dictDefaultMessage: "<i class='fa fa-5x fa-picture-o' aria-hidden='true'></i> <br/><span class='dz-message__title'>Drag & Drop</span> a video or image here <br/> or <br/> " +
     "<span class='button bg-blue small btn-round color-white margin_r_0'>Chose file</span>",
 
@@ -281,7 +283,18 @@ $(document).ready(function() {
 		init: function() {
 			this.on("addedfile", function(file) {
 			    $('button[form="myAwesomeDropzone"]').css('display', 'inline-block');
+			    $('#myAwesomeDropzone').css('poiter-event', 'none');
+        $('.dz-progress').css('display', 'none');
       });
+
+			this.on("removedfile", function(file) {
+				$('button[form="myAwesomeDropzone"]').css('display', 'none');
+      });
+
+			this.on("maxfilesexceeded", function(file){
+					this.removeAllFiles();
+					this.addFile(file);
+			});
 		}
 
 	});

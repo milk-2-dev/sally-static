@@ -539,7 +539,7 @@ body.modal-open {
 //  left:0;
 //  top:0;
 //  font-size:30px;
-//  color:#a65bf4;
+//  color:map_get($colors, 'pink');
 //  line-height:1;
 //}
 //.promo-box.style4:before,
@@ -549,7 +549,7 @@ body.modal-open {
 //  content: '';
 //  display: inline-block;
 //  position: absolute;
-//  background-color: #a65bf4;
+//  background-color: map_get($colors, 'pink');
 //  -webkit-transition: all 0.5s cubic-bezier(.7,.01,.61,.89);
 //  -moz-transition:    all 0.5s cubic-bezier(.7,.01,.61,.89);
 //  transition:		 all 0.5s cubic-bezier(.7,.01,.61,.89);
@@ -758,6 +758,13 @@ button.close{
   .dz-message__title{
     display: block;
     font-size: 30px;
+  }
+
+  .dz-remove{
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    z-index: 10;
   }
 }
 

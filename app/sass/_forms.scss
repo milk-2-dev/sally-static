@@ -69,7 +69,7 @@ input[type="tel"].unfilled:focus,
 input[type="search"].unfilled:focus,
 select.unfilled:focus,
 textarea.unfilled:focus{
-  border-color:#a65bf4;
+  border-color:map_get($colors, 'pink');
 }
 
 form{
@@ -322,7 +322,7 @@ form{
 
   label{
     padding: 13px 15px;
-    border: 1px solid #a65bf4;
+    border: 1px solid map_get($colors, 'pink');
     transition: .2s ease-in-out;
     margin-right: 20px;
     color: #a661e8;
@@ -354,7 +354,7 @@ form{
 
   label{
     padding: 5px 15px 5px 45px;
-    border: 1px solid #a65bf4;
+    border: 1px solid map_get($colors, 'pink');
     transition: .2s ease-in-out;
     color: #a661e8;
     background: #fff;
@@ -572,11 +572,11 @@ form{
     color: #4a4a4a;
 
     &.active{
-      color: #a65bf4;
+      color: map_get($colors, 'pink');
     }
 
     &:hover{
-      color: #a65bf4;
+      color: map_get($colors, 'pink');
     }
   }
 }

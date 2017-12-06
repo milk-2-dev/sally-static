@@ -281,7 +281,7 @@
 }
 #footer .tagcloud a:hover {
     color: white;
-    border: 2px solid #a65bf4;
+    border: 2px solid map_get($colors, 'pink');
 }
 
 
