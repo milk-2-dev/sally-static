@@ -255,49 +255,55 @@ $(document).ready(function() {
       $('button[form="myAwesomeDropzone"]').css('display','block')
   })
 
-	var dropzone = new Dropzone('#myAwesomeDropzone', {
-		previewTemplate: document.querySelector('#preview-template').innerHTML,
-		parallelUploads: null,
-		thumbnailHeight: 150,
-		thumbnailWidth: 150,
-		maxFilesize: 3,
-		filesizeBase: 1000,
-		maxFiles: 1,
-		addRemoveLinks: true,
-		dictRemoveFile: "<i class='fa fa-close' aria-hidden='true'></i>",
-		dictDefaultMessage: "<i class='fa fa-5x fa-picture-o' aria-hidden='true'></i> <br/><span class='dz-message__title'>Drag & Drop</span> a video or image here <br/> or <br/> " +
-    "<span class='button bg-blue small btn-round color-white margin_r_0'>Chose file</span>",
+	if ($('#myAwesomeDropzone').length) {
 
-    thumbnail: function(file, dataUrl) {
-			if (file.previewElement) {
-				file.previewElement.classList.remove("dz-file-preview");
-				var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
-				for (var i = 0; i < images.length; i++) {
-					var thumbnailElement = images[i];
-					thumbnailElement.alt = file.name;
-					thumbnailElement.src = dataUrl;
+		var dropzone = new Dropzone('#myAwesomeDropzone', {
+      url: '/',
+			previewTemplate: document.querySelector('#preview-template').innerHTML,
+			parallelUploads: null,
+			thumbnailHeight: 150,
+			thumbnailWidth: 150,
+			maxFilesize: 3,
+			filesizeBase: 1000,
+			maxFiles: 1,
+			addRemoveLinks: true,
+			dictRemoveFile: "<i class='fa fa-close' aria-hidden='true'></i>",
+			dictDefaultMessage: "<i class='fa fa-5x fa-picture-o' aria-hidden='true'></i> <br/><span class='dz-message__title'>Drag & Drop</span> a video or image here <br/> or <br/> " +
+			"<span class='button bg-blue small btn-round color-white margin_r_0'>Chose file</span>",
+
+			thumbnail: function(file, dataUrl) {
+				if (file.previewElement) {
+					file.previewElement.classList.remove("dz-file-preview");
+					var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
+					for (var i = 0; i < images.length; i++) {
+						var thumbnailElement = images[i];
+						thumbnailElement.alt = file.name;
+						thumbnailElement.src = dataUrl;
+					}
+					setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
 				}
-				setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
-			}
-		},
-		init: function() {
-			this.on("addedfile", function(file) {
-			    $('button[form="myAwesomeDropzone"]').css('display', 'inline-block');
-			    $('#myAwesomeDropzone').css('poiter-event', 'none');
-        $('.dz-progress').css('display', 'none');
-      });
+			},
+			init: function() {
+				this.on("addedfile", function(file) {
+					$('button[form="myAwesomeDropzone"]').css('display', 'inline-block');
+					$('#myAwesomeDropzone').css('poiter-event', 'none');
+					$('.dz-progress').css('display', 'none');
+				});
 
-			this.on("removedfile", function(file) {
-				$('button[form="myAwesomeDropzone"]').css('display', 'none');
-      });
+				this.on("removedfile", function(file) {
+					$('button[form="myAwesomeDropzone"]').css('display', 'none');
+				});
 
-			this.on("maxfilesexceeded", function(file){
+				this.on("maxfilesexceeded", function(file){
 					this.removeAllFiles();
 					this.addFile(file);
-			});
-		}
+				});
+			}
 
-	});
+		});
+
+	}
+
 
 
 });

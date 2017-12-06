@@ -94,6 +94,8 @@ form{
 
   .slider.slider-horizontal {
     margin-bottom: 8px;
+    margin: 0 10px;
+    max-width: 328px;
   }
 }
 
@@ -308,6 +310,11 @@ form{
   font-weight: bold;
 }
 
+.form-item__description{
+  font-size: 14px;
+  color:map_get($colors, 'text-grey')
+}
+
 .form-item__desc{
   margin-bottom: 0;
 }
@@ -341,7 +348,7 @@ form{
 
   input{
     &:checked + label{
-      background: #a661e8;
+      background: map_get($colors, 'pink');
       color: #fff;
     }
   }
