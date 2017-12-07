@@ -37,8 +37,8 @@
               </div>
 
               <div class="small-block padding_20">
-                <div class="form-custom ">
-                  <form action="">
+                <div class="form-custom">
+                  <form action="" id="formToValidateOrder">
                     <div class="message-article">
                       <article>
                         <header class="message-article__head">
@@ -63,10 +63,10 @@
                           </div>
                         </header>
                         <section class="message-article__content">
-                          <div class="form-item edit-box">
+                          <div class="form-item edit-box ">
                             <div class="form-upload">
 
-                              <div id="myAwesomeDropzone" class="dropzone">
+                              <div id="myAwesomeDropzone" class="dropzone empty">
                                 <div class="fallback">
                                   <input name="file" type="file" multiple />
                                 </div>
@@ -118,22 +118,22 @@
                             </div>
                           </div>
 
-                          <div class="form-item edit-box">
-                            <textarea class="max-length" maxLength="5" name="" cols="4" placeholder="Add a Header"></textarea>
+                          <div class="form-item edit-box ">
+                            <textarea class="max-length validate-order" maxLength="5" name="" cols="4" placeholder="Add a Header"></textarea>
                             <span class="edit-box-text">headline</span>
                             <span class="edit-box-error"></span>
                             <span class="edit-box-count"></span>
                           </div>
 
-                          <div class="form-item edit-box">
-                            <textarea class="max-length" maxLength="30" name="" cols="4" placeholder="Include an informative description..."></textarea>
+                          <div class="form-item edit-box ">
+                            <textarea class="max-length validate-order" maxLength="30" name="" cols="4" placeholder="Include an informative description..."></textarea>
                             <span class="edit-box-text">description</span>
                             <span class="edit-box-error"></span>
                             <span class="edit-box-count"></span>
                           </div>
 
-                          <div class="form-item edit-box">
-                            <input type="text" placeholder="Insert a URL that your ad will direct to...">
+                          <div class="form-item edit-box ">
+                            <input class="validate-order" type="text" placeholder="Insert a URL that your ad will direct to...">
                             <span class="edit-box-text">link</span>
                           </div>
                         </section>
@@ -144,7 +144,7 @@
               </div>
             </div>
 
-            <div class="col-md-4 modal-emulation-options">
+            <div class="col-md-4 modal-emulation-options" >
               <div class="modal-emulation-options-tabs">
                 <ul class="nav " id="optionsTab" role="tablist">
                   <li class="nav-item">
@@ -271,7 +271,7 @@
               </div>
 
               <div class="order-button">
-                <a href="javascript:void(0);" class="button bg-blue btn-round color-white margin_r_0">next</a>
+                <a id="validateOrder" href="javascript:void(0);" class="button bg-blue btn-round color-white margin_r_0 disabled">next</a>
               </div>
             </div>
           </div>

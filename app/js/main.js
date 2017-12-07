@@ -1,5 +1,82 @@
 Dropzone.autoDiscover = false;
 
+/********************************
+ GLOBAL VARIABLES
+ ********************************/
+
+    // Window Object and Window Variables
+var $window = $(window),
+    $document = $(document),
+    window_w = $window.width(),
+    window_h = $window.height(),
+    window_s = $window.scrollTop();
+
+// Update variables on resize
+$window.on('load resize', function(){
+    window_w = $window.width();
+    window_h = $window.height();
+    window_s = $window.scrollTop();
+
+});
+
+// Update scrollTop on scroll
+$window.on('scroll', function(){
+    window_s = $window.scrollTop();
+});
+
+// Global Elements
+var $html = $('html'),
+    $body = $('body');
+
+// Splendid Main Variables
+var splendidVars = {
+    fixedHeader: false,
+    stickyHeader:false,
+    headerHeight: 0,
+    supportTransforms: ($html.hasClass('csstransforms')) ? true : false,
+    supportTransitions: ($html.hasClass('csstransitions')) ? true : false
+}
+
+/**
+ *	Fixed Header (body.headerfixed)
+ */
+
+// Enables Fixed Header
+function enableFixedHeader(){
+    initFixedHeader();
+    toggleFixedHeader();
+    $(window).on('load scroll resize', toggleFixedHeader);
+}
+
+// Initializes Fixed Header
+function initFixedHeader(){
+    splendidVars['fixedHeader'] = ($body.hasClass('headerfixed') ? true : false);
+}
+
+// Toggle Fixed Header
+function toggleFixedHeader(){
+    var header = $('#header');
+    if(header.length && splendidVars['fixedHeader']){
+        var header_h = header.height();
+
+        if(!header.hasClass('fixed-header'))
+            splendidVars['headerHeight'] = header_h;
+
+        header_h = splendidVars['headerHeight'];
+        if(window_s > header_h){
+            header.addClass('fixed-header').removeClass('not-fixed');;
+            if(header.css('position') == 'fixed' && !header.hasClass('header6') && !header.hasClass('header7')) $body.css('padding-top', header_h + 'px');
+        }else{
+            header.removeClass('fixed-header').addClass('not-fixed');
+            if(!header.hasClass('header6')) $body.css('padding-top', '');
+        }
+    }else{
+        header.addClass('not-fixed');
+    }
+}
+
+enableFixedHeader();
+
 //Opening Modals
 
 function openSignIn(){
@@ -283,20 +360,69 @@ $(document).ready(function() {
 		$('#shareSetting').toggle('fast', function(){
 
 		});
-	})
+	});
+
+
+    //validate-order
+
+    function checkParams(form , button){
+        var form = $(form);
+
+        $(form).find('.validate-order').each(function(){
+            $(this).keyup(function() {
+                validateOrder(form, button)
+            });
+        })
+    }
+
+    function checkValidate(form, button){
+        var form = $(form);
+        var emptyCount = $(form).find('.empty').length;
+        if(emptyCount <= 0 ){
+            $(button).removeClass('disabled');
+        }
+        else{
+            $(button).addClass('disabled');
+        }
+    }
+
+    function validateOrder(form, button){ //formToValidateOrder//validateOrder
+        var form = $(form);
+
+        $(form).find('.validate-order').each(function(){
+           var inputVal = $(this).val().length;
+
+            if(inputVal){
+                $(this).removeClass('empty');
+            }
+            else{
+                $(this).addClass('empty');
+            }
+        })
+
+        checkValidate(form, button);
+    }
+
+    checkParams('#formToValidateOrder', '#validateOrder');
+
+    $('#formToValidateOrder').find('.form-upload').on('click', function(){
+        checkParams('#formToValidateOrder', '#validateOrder');
+    })
+
+    //validate-order
 
 	////////////Add an ad
 
-  $('#inputForPreview').on('change', function(){
-      $('#preview-block>img').css('display', 'none');
-      $('#preview-block').find('.message-article').css('display', 'block');
-      $('button[form="myAwesomeDropzone"]').css('display','block')
-  })
+    $('#inputForPreview').on('change', function(){
+        $('#preview-block>img').css('display', 'none');
+        $('#preview-block').find('.message-article').css('display', 'block');
+        $('button[form="myAwesomeDropzone"]').css('display','block')
+    })
 
-	if ($('#myAwesomeDropzone').length) {
+    if ($('#myAwesomeDropzone').length) {
 
 		var dropzone = new Dropzone('#myAwesomeDropzone', {
-      url: '/',
+            url: '/',
 			previewTemplate: document.querySelector('#preview-template').innerHTML,
 			parallelUploads: null,
 			thumbnailHeight: 307,
@@ -327,10 +453,14 @@ $(document).ready(function() {
 					$('button[form="myAwesomeDropzone"]').css('display', 'inline-block');
 					$('#myAwesomeDropzone').css('poiter-event', 'none');
 					$('.dz-progress').css('display', 'none');
+					$('.form-upload .dropzone').css('border', 'none');
+					$('.form-upload .dropzone').removeClass('empty');
 				});
 
 				this.on("removedfile", function(file) {
 					$('button[form="myAwesomeDropzone"]').css('display', 'none');
+                    $('.form-upload .dropzone').css('border', '2px dashed #8f29fc');
+                    $('.form-upload .dropzone').addClass('empty');
 				});
 
 				this.on("maxfilesexceeded", function(file){
@@ -342,7 +472,4 @@ $(document).ready(function() {
 		});
 
 	}
-
-
-
 });
