@@ -247,6 +247,42 @@ $(document).ready(function() {
 
 	  userBarStatus();
 
+    /////////////input length
+
+	function maxCharacters(){
+		var textareaElem = $('.max-length');
+
+
+		$(textareaElem).each(function(){
+			var maxLength = $(this).attr('maxLength');
+
+			console.log(maxLength);
+
+			$(this).parent().find('.edit-box-count').text(maxLength +'/'+ maxLength);
+
+			$(this).keyup(function() {
+				var textlen = maxLength - $(this).val().length;
+
+				console.log(textlen);
+
+				if(textlen >=0 && textlen <= maxLength){
+					$(this).parent().find('.edit-box-count').text(textlen +'/'+ maxLength);
+					$(this).parent().find('.edit-box-error').text('');
+				}
+
+				if(textlen == 0){
+					$(this).parent().find('.edit-box-error').show();
+					$(this).parent().find('.edit-box-error').text('Max length');
+				}
+
+			});
+		})
+	}
+
+	maxCharacters();
+
+
+
     ////////////Add an ad
 
   $('#inputForPreview').on('change', function(){
@@ -261,8 +297,9 @@ $(document).ready(function() {
       url: '/',
 			previewTemplate: document.querySelector('#preview-template').innerHTML,
 			parallelUploads: null,
-			thumbnailHeight: 150,
-			thumbnailWidth: 150,
+			thumbnailHeight: 307,
+			thumbnailWidth: 548,
+			thumbnailMethod: 'crop',
 			maxFilesize: 3,
 			filesizeBase: 1000,
 			maxFiles: 1,
