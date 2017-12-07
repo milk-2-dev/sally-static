@@ -256,14 +256,10 @@ $(document).ready(function() {
 		$(textareaElem).each(function(){
 			var maxLength = $(this).attr('maxLength');
 
-			console.log(maxLength);
-
 			$(this).parent().find('.edit-box-count').text(maxLength +'/'+ maxLength);
 
 			$(this).keyup(function() {
 				var textlen = maxLength - $(this).val().length;
-
-				console.log(textlen);
 
 				if(textlen >=0 && textlen <= maxLength){
 					$(this).parent().find('.edit-box-count').text(textlen +'/'+ maxLength);
@@ -281,9 +277,15 @@ $(document).ready(function() {
 
 	maxCharacters();
 
+	///////////// Share toogle
 
+	$('#shareSettingsTogle').on('click', function(){
+		$('#shareSetting').toggle('fast', function(){
 
-    ////////////Add an ad
+		});
+	})
+
+	////////////Add an ad
 
   $('#inputForPreview').on('change', function(){
       $('#preview-block>img').css('display', 'none');
@@ -308,18 +310,18 @@ $(document).ready(function() {
 			dictDefaultMessage: "<i class='fa fa-5x fa-picture-o' aria-hidden='true'></i> <br/><span class='dz-message__title'>Drag & Drop</span> a video or image here <br/> or <br/> " +
 			"<span class='button bg-blue small btn-round color-white margin_r_0'>Chose file</span>",
 
-			thumbnail: function(file, dataUrl) {
-				if (file.previewElement) {
-					file.previewElement.classList.remove("dz-file-preview");
-					var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
-					for (var i = 0; i < images.length; i++) {
-						var thumbnailElement = images[i];
-						thumbnailElement.alt = file.name;
-						thumbnailElement.src = dataUrl;
-					}
-					setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
-				}
-			},
+			// thumbnail: function(file, dataUrl) {
+			// 	if (file.previewElement) {
+			// 		file.previewElement.classList.remove("dz-file-preview");
+			// 		var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
+			// 		for (var i = 0; i < images.length; i++) {
+			// 			var thumbnailElement = images[i];
+			// 			thumbnailElement.alt = file.name;
+			// 			thumbnailElement.src = dataUrl;
+			// 		}
+			// 		setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
+			// 	}
+			// },
 			init: function() {
 				this.on("addedfile", function(file) {
 					$('button[form="myAwesomeDropzone"]').css('display', 'inline-block');

@@ -745,8 +745,53 @@ button.close{
     border:2px dashed map_get($colors, 'pink');
 
     .dz-preview{
+
+
       .dz-image {
         border-radius: 4px;
+        width:100%;
+        height:100%;
+      }
+
+      .dz-remove{
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        z-index: 100;
+        font-weight: 100;
+        font-size: 25px;
+
+        i{
+          cursor:pointer;
+        }
+      }
+
+      .dz-remove--icon{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        color: #fff;
+        background: #d8d8d8;
+        padding: 5px 20px;
+        border-radius: 8px;
+
+        &:after{
+          content: 'replace';
+          display: none;
+          color: #fff;
+          text-transform: uppercase;
+          text-align: center;
+        }
+
+        &:hover{
+          cursor: pointer;
+        }
+
+        i{
+          cursor: pointer;
+        }
       }
     }
   }
@@ -758,13 +803,6 @@ button.close{
   .dz-message__title{
     display: block;
     font-size: 30px;
-  }
-
-  .dz-remove{
-    position: absolute;
-    top: -15px;
-    right: -15px;
-    z-index: 10;
   }
 }
 
@@ -819,6 +857,10 @@ button.close{
 }
 
 .modal-emulation-workspace{
+  max-height: calc(100vh - 61px);
+  overflow-y: auto;
+  padding: 0 20px;
+
   .form-item{
     margin-bottom:20px;
 
@@ -837,6 +879,14 @@ button.close{
     border: none;
   }
 
+  .dropzone{
+    padding:0;
+    border: 1px solid #dce3ef;
+
+    .dz-preview{
+      margin:0;
+    }
+  }
 }
 
 .modal-emulation-workspace-nav{
@@ -854,7 +904,7 @@ button.close{
     }
 
     i{
-      margin:0 10px;
+      margin-right:10px;
     }
   }
 }
@@ -866,30 +916,39 @@ button.close{
   font-size:20px !important;
 }
 
+
+
 .modal-emulation-options{
   position: relative;
   z-index: 1;
   background: #fff;
-  margin-right: -15px;
   height: 100%;
   box-shadow: 4px 0 10px 4px rgba(0,0,0,0.22);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0 30px;
+  padding-left:0;
+  padding-right:0;
 
   .order-button{
     text-align: center;
     margin-bottom: 20px;
+    padding: 0 $MEO-padding;
 
     a{
       width: 100%;
     }
   }
+
+  textarea{
+    resize: none;
+  }
 }
 
 .modal-emulation-options-tabs{
   .nav{
+    padding: 0 $MEO-padding;
+
     li{
       width:50%;
       text-align: center;
@@ -913,8 +972,8 @@ button.close{
 
   .tab-content{
     border:none;
-    padding-left:0;
-    padding-right:0;
+    padding-left:$MEO-padding;
+    padding-right:$MEO-padding;
     z-index: 1;
     max-height:calc(100vh - 205px);
     overflow-y: auto;
@@ -950,3 +1009,96 @@ button.close{
     color: #888;
   }
 }
+
+
+#shareSettingsTogle {
+  display: none;
+
+  &:checked{
+    + label {
+      background: map_get($colors, 'modal-blue');
+      &:before {
+        content: "public";
+      }
+      &:after {
+        left: 50px;
+      }
+    }
+  }
+
+
+  + label{
+    position: relative;
+    display: block;
+    width: 80px;
+    height: 35px;
+    border-radius: 50px;
+    cursor: pointer;
+    background: #7d7d7d;
+
+    &:before {
+      content: "private";
+      position: absolute;
+      right: -100%;
+      top: 50%;
+      transform: translate(0, -50%);
+      color: #000;
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      display: block;
+      width: 25px;
+      height: 25px;
+      border-radius:50%;
+      background: #fff;
+      transition: .5s;
+    }
+  }
+}
+//[for="payt2"] {
+//  position: relative;
+//  display: block;
+//  width: 80px;
+//  height: 35px;
+//  //padding: 15px;
+//  border-radius: 50px;
+//  cursor: pointer;
+//  background: #7d7d7d;
+//}
+//[for="payt2"]:before {
+//  content: "private";
+//  position: absolute;
+//  right: -100%;
+//  top: 50%;
+//  transform: translate(0, -50%);
+//  color: #000;
+//  text-transform: uppercase;
+//  font-size: 16px;
+//}
+//[for="payt2"]:after {
+//  content: "";
+//  position: absolute;
+//  left: 5px;
+//  top: 5px;
+//  display: block;
+//  width: 25px;
+//  height: 25px;
+//  border-radius:50%;
+//  background: #fff;
+//  transition: .5s;
+//}
+//#payt2:checked ~ [for="payt2"]{
+//  background: map_get($colors, 'modal-blue');
+//  &:before {
+//    content:"public";
+//  }
+//  &:after {
+//    left: 50px;
+//  }
+//}
