@@ -28,6 +28,27 @@
         </a>
       </div>
       <div class="modal-emulation-body">
+        <div class="saving-info">
+          <span>s</span>
+          <span>a</span>
+          <span>v</span>
+          <span>i</span>
+          <span>n</span>
+          <span>g</span>
+          <span>&nbsp y</span>
+          <span>o</span>
+          <span>u</span>
+          <span>r</span>
+          <span>&nbsp i</span>
+          <span>n</span>
+          <span>f</span>
+          <span>o</span>
+          <span>&nbsp .</span>
+          <span>.</span>
+          <span>.</span>
+
+          <!--<span class="loading">saving your info...</span>-->
+        </div>
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-8 modal-emulation-workspace">
@@ -62,7 +83,7 @@
                             <span class="edit-box-count"></span>
                           </div>
                         </header>
-                        <section class="message-article__content">
+                        <section class="message-article__content no-border">
                           <div class="form-item edit-box ">
                             <div class="form-upload">
 
@@ -119,7 +140,7 @@
                           </div>
 
                           <div class="form-item edit-box ">
-                            <textarea class="max-length validate-order" maxLength="5" name="" cols="4" placeholder="Add a Header"></textarea>
+                            <textarea class="max-length validate-order" maxLength="25" name="" cols="4" placeholder="Add a Header"></textarea>
                             <span class="edit-box-text">headline</span>
                             <span class="edit-box-error"></span>
                             <span class="edit-box-count"></span>
@@ -184,7 +205,7 @@
                         </div>
                       </div>
 
-                      <div class="form-item" id="customizeAudience">
+                      <div class="form-item" id="customizeAudience" onclick="$('#saveCustomAudinceButton').show()">
                         <p class="form-item__title">Behavior and Interests</p>
 
                         <input type="text" placeholder="Search behaviors & interests...">
@@ -217,13 +238,20 @@
 
                         <div class="gender-radio">
                           <input type="radio" checked="" name="gender" id="genderAll" value="3">
-                          <label for="genderAll">All</label>
+                          <label for="genderAll">
+                            <i class="fa fa-female" aria-hidden="true"></i>
+                            <i class="fa fa-male" aria-hidden="true"></i>
+                          </label>
 
                           <input type="radio" name="gender" id="genderMen" value="1">
-                          <label for="genderMen">Men</label>
+                          <label for="genderMen">
+                            <i class="fa fa-male" aria-hidden="true"></i>
+                          </label>
 
                           <input type="radio" name="gender" id="genderWoman" value="2">
-                          <label for="genderWoman">Woman</label>
+                          <label for="genderWoman">
+                            <i class="fa fa-female" aria-hidden="true"></i>
+                          </label>
                         </div>
                       </div>
                     </div>
@@ -252,17 +280,33 @@
                       <div id="shareSetting" style="display: none;">
                         <div class="form-item">
                           <p class="form-item__title">Sway name</p>
-                          <input type="text" placeholder="The 20 Best New Social Media Tools">
+                          <input type="text" value="The 20 Best New Social Media Tools">
                         </div>
 
                         <div class="form-item">
                           <p class="form-item__title">sway description</p>
-                          <textarea name="" id="" rows="4"></textarea>
+                          <textarea
+                                  name=""
+                                  id=""
+                                  rows="4">There are an incredible amount of social media tools on the market! How do you know which oners are right for you?
+                          </textarea>
                         </div>
 
                         <div class="form-item">
                           <p class="form-item__title">ad tags</p>
-                          <input type="text">
+
+                          <div class="input-with-icon">
+
+                            <select id="tagSelection" class="js-example-basic-multiple-limit js-states form-control" multiple="multiple">
+                              <option value="1">value 1</option>
+                              <option value="2">value 2</option>
+                              <option value="3">value 3 long example</option>
+                              <option value="4">value 4</option>
+                              <option value="5">value 5</option>
+                              <option value="6">value 6</option>
+                            </select>
+                            <pre data-fill-from=".js-code-placeholder"></pre>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -271,6 +315,7 @@
               </div>
 
               <div class="order-button">
+                <a id="saveCustomAudinceButton" class="text-uppercase margin_b_10" style="display: none" href="" data-target="#saveCustomAudience" data-toggle="modal">Save custom audience</a>
                 <a id="validateOrder" href="javascript:void(0);" class="button bg-blue btn-round color-white margin_r_0 disabled">next</a>
               </div>
             </div>
@@ -282,9 +327,59 @@
   <!-- Main Container -->
 </div>
 <!-- Splendid Content -->
+
+<div class="modal fade" id="saveCustomAudience" tabindex="-1" role="dialog" aria-labelledby="saveCustomAudienceLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header justify-content-center">
+        <h5 class="modal-title">save custom audience</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-body__wrap">
+          <form action="">
+            <div class="form-item">
+              <p class="form-item__title">custom audience name</p>
+              <input type="text" placeholder="ex: Males who likes cats in Colorado"></div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="modal-buttons">
+          <a href="javascript:void(0);"  data-dismiss="modal" class="button bg-light-gray">cancel</a>
+          <a href="" class="button color-white bg-blue" data-dismiss="modal" onclick="savingActivate('.saving-info');">save</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 </body>
 
 <script src="js/libs.min.js"></script>
 <script src="js/main.js"></script>
 <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
+
+<!--todo убрать это дерьмо отсюда-->
+
+<script type="application/javascript">
+	////////////Activate saving block
+
+	function savingActivate(block){
+		var savingBlock = $('body').find(block);
+
+		savingBlock.addClass('show');
+
+		function func() {
+			savingBlock.removeClass('show');
+		}
+
+		setTimeout(func, 3500);
+	}
+
+	////////////Activate saving block
+</script>
 </html>

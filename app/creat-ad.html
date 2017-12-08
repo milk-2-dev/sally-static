@@ -39,10 +39,12 @@
                 <li class="nav-item">
                   <a class="nav-link active" id="formLink-tab"
                      data-toggle="tab"
+                     data-name="insert a url"
                      href="#formLink"
                      role="tab"
                      aria-controls="formLink"
-                     aria-selected="true">
+                     aria-selected="true"
+                     onclick="changeFormTitle(this)">
 
                     <i class="fa fa-link" aria-hidden="true"></i>
                   </a>
@@ -50,10 +52,12 @@
                 <li class="nav-item">
                   <a class="nav-link" id="formImages-tab"
                      data-toggle="tab"
+                     data-name="Upload a file"
                      href="#formImages"
                      role="tab"
                      aria-controls="formImages"
-                     aria-selected="false">
+                     aria-selected="false"
+                     onclick="changeFormTitle(this)">
 
                     <i class="fa fa-picture-o" aria-hidden="true"></i>
                   </a>
@@ -201,4 +205,15 @@
 <script src="js/libs.min.js"></script>
 <script src="js/main.js"></script>
 <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
+
+<script type="application/javascript">
+	function changeFormTitle(elem){
+
+		var text = $(elem).attr('data-name');
+		console.log(text);
+		$('body').find('.main-form__menu-title').html(text);
+
+  }
+</script>
+
 </html>

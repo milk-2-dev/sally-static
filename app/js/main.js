@@ -366,6 +366,8 @@ $(document).ready(function() {
     //validate-order
 
     function checkParams(form , button){
+    	console.log('enter');
+
         var form = $(form);
 
         $(form).find('.validate-order').each(function(){
@@ -386,7 +388,7 @@ $(document).ready(function() {
         }
     }
 
-    function validateOrder(form, button){ //formToValidateOrder//validateOrder
+    function validateOrder(form, button){
         var form = $(form);
 
         $(form).find('.validate-order').each(function(){
@@ -411,6 +413,21 @@ $(document).ready(function() {
 
     //validate-order
 
+	/////////////Activate selection
+	$(function(){
+		$("#tagSelection").select2({
+			allowClear: true,
+			//maximumSelectionLength: 2,
+			placeholder: 'Search for tags or add new...',
+			width: '100%',
+			containerCssClass : "label-icon"
+		});
+	});
+
+	/////////////Activate selection
+
+
+
 	////////////Add an ad
 
     $('#inputForPreview').on('change', function(){
@@ -422,7 +439,7 @@ $(document).ready(function() {
     if ($('#myAwesomeDropzone').length) {
 
 		var dropzone = new Dropzone('#myAwesomeDropzone', {
-            url: '/',
+			url: '/',
 			previewTemplate: document.querySelector('#preview-template').innerHTML,
 			parallelUploads: null,
 			thumbnailHeight: 307,
@@ -436,18 +453,6 @@ $(document).ready(function() {
 			dictDefaultMessage: "<i class='fa fa-5x fa-picture-o' aria-hidden='true'></i> <br/><span class='dz-message__title'>Drag & Drop</span> a video or image here <br/> or <br/> " +
 			"<span class='button bg-blue small btn-round color-white margin_r_0'>Chose file</span>",
 
-			// thumbnail: function(file, dataUrl) {
-			// 	if (file.previewElement) {
-			// 		file.previewElement.classList.remove("dz-file-preview");
-			// 		var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
-			// 		for (var i = 0; i < images.length; i++) {
-			// 			var thumbnailElement = images[i];
-			// 			thumbnailElement.alt = file.name;
-			// 			thumbnailElement.src = dataUrl;
-			// 		}
-			// 		setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
-			// 	}
-			// },
 			init: function() {
 				this.on("addedfile", function(file) {
 					$('button[form="myAwesomeDropzone"]').css('display', 'inline-block');
@@ -455,12 +460,14 @@ $(document).ready(function() {
 					$('.dz-progress').css('display', 'none');
 					$('.form-upload .dropzone').css('border', 'none');
 					$('.form-upload .dropzone').removeClass('empty');
+					validateOrder('#formToValidateOrder', '#validateOrder');
 				});
 
 				this.on("removedfile", function(file) {
 					$('button[form="myAwesomeDropzone"]').css('display', 'none');
-                    $('.form-upload .dropzone').css('border', '2px dashed #8f29fc');
-                    $('.form-upload .dropzone').addClass('empty');
+					$('.form-upload .dropzone').css('border', '2px dashed #8f29fc');
+					$('.form-upload .dropzone').addClass('empty');
+					validateOrder('#formToValidateOrder', '#validateOrder');
 				});
 
 				this.on("maxfilesexceeded", function(file){
