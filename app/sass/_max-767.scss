@@ -198,6 +198,18 @@
     h1 {
       font-size: 24px;
     }
+
+    .main-form__menu {
+      .nav{
+        a{
+          border-bottom: 2px solid transparent;
+
+          &.active {
+            border-bottom: 2px solid #2b2b2b;
+          }
+        }
+      }
+    }
   }
 
   h2{
@@ -358,7 +370,6 @@
      }
   }
 
-
   .message-article__menu{
     padding: 16px 12px;
     border: none;
@@ -374,4 +385,160 @@
       font-size: 12px;
     }
   }
+
+  .modal-emulation{
+    .main-form__menu{
+      justify-content: center;
+
+      .nav{
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 60px;
+        justify-content: center;
+        padding-top: 10px;
+        background: #fff;
+        z-index: 9999;
+
+        a{
+          border-bottom: 2px solid transparent;
+
+          &.active {
+            border-bottom: 2px solid map_get($colors, 'modal-blue');
+          }
+        }
+      }
+    }
+  }
+
+  .modal-emulation__next-button {
+    font-size: 20px !important;
+    margin: 0 !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9999;
+    border-radius: 0;
+  }
+
+  .modal-emulation-head{
+    .modal-title{
+      text-align: left;
+      padding-left: 30px;
+    }
+
+    .close{
+      right:auto;
+      left:20px;
+
+      i{
+        &:before{
+          content: '\f053';
+        }
+      }
+    }
+  }
+
+  .modal-emulation-body{
+    height: calc(100vh - 55px);
+    background: #fff;
+    min-height: 440px;
+    &.step1 {
+      padding: 30px 0 110px;
+    }
+
+    @media (max-height: 350px){
+        height: 100%;
+        min-height: auto;
+    }
+
+  }
+
+  .main-form__menu-title{
+    position: absolute;
+    top:35px;
+    left:0;
+    right:0;
+    text-align: center;
+  }
+
+  .small-block{
+    &.content-center{
+      border-radius:0;
+      border: none;
+      margin: 0 auto;
+      box-shadow: none;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  .form-upload{
+    .dropzone {
+      padding: 0;
+      border: 1px solid transparent;
+    }
+  }
+
+  .modal-emulation-options{
+    .order-button {
+
+      #validateOrder{
+        margin: 0;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        border-radius: 0;
+      }
+    }
+  }
+
+  .modal-emulation-options{
+    box-shadow: none;
+  }
+
+  .modal-emulation-options-tabs{
+    >ul {
+      position: fixed;
+      left: 0;
+      right: 0;
+      background: #fff;
+      bottom:51px;
+      padding: 10px 0;
+      justify-content: center;
+      z-index: 10;
+
+      .nav-item {
+        width:auto;
+        margin-right: 30px;
+
+        &:last-child{
+          margin-right:0;
+        }
+      }
+
+      a{
+        padding: 0 10px 5px;
+        border-color: transparent;
+        color: #d8d8d8;
+
+        &.active{
+          color: #2b2b2b;
+        }
+
+        &:hover{
+          color: #9013FE;
+        }
+      }
+    }
+
+    .tab-content{
+      max-height: calc(100vh - 132px);
+    }
+  }
+
 }

@@ -8,6 +8,10 @@
   &.bg-light-gray{
     color: #979797;
   }
+
+  &.min_w_250{
+    min-width: 250px;
+  }
 }
 
 .order-button{
@@ -15,6 +19,14 @@
     background-color: #d8d8d8 !important;
     pointer-events: none;
   }
+}
+
+.modal-emulation__next-button{
+  position: absolute;
+  right:32px;
+  bottom:32px;
+  font-size:20px !important;
+  margin: 0 !important;
 }
 
 .button.big-margin{margin:20px 30px 20px 0;}

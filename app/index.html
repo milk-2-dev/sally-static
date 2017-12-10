@@ -85,7 +85,7 @@
     <main id="splendid-main-container padding_t_0">
         <section class="margin_b_60 first-screen"> <!-- fix andrew -->
             <div class="container">
-                <p class="logo-label" >SWAY</p>
+                <p class="logo-label" data-toggle="modal" data-target="#shouldPost" >SWAY</p>
                 <h1 class="margin_t_0">The power to change minds.</h1> <!-- fix andrew -->
 
                 <p class="margin_b_40 hidden-sm-down"> <!-- fix andrew 04.12-->
@@ -144,7 +144,7 @@
                                     </div>
                                 </form>
 
-                                <button style="display: none" type="submit" form="myAwesomeDropzone" class="margin_t_20 button bg-blue small btn-round color-white margin_r_0">
+                                <button type="submit" style="display: none" form="myAwesomeDropzone" class="button min_w_250 bg-blue small btn-round color-white margin_r_0">
                                     create ad
                                 </button>
 
@@ -961,6 +961,60 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="shouldPost" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        Message should post under
+                    </h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body__wrap">
+                        <form class="form-custom">
+                            <div class="form-item">
+                                <p class="form-item__title">
+                                    accounts
+                                </p>
+
+                                <div class="radio-block">
+                                    <input type="radio" name="post-place" id="postPlace">
+                                    <label for="postPlace">Sway page</label>
+                                </div>
+
+                                <div class="radio-block label-layer">
+                                    <input type="radio" name="post-place" id="postPlaceSelect">
+                                    <label class="" for="postPlaceSelect"></label>
+                                    <div class="select-block">
+                                        <select name="" id="">
+                                            <option value="">1</option>
+                                            <option value="">2</option>
+                                            <option value="">3</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <div class="modal-buttons">
+                        <a href="javascript:void(0);"  data-dismiss="modal" class="button bg-light-gray">cancel</a>
+                        <a href="" class="button color-white bg-blue" data-toggle="modal" data-target="#payment">done</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!--MODALS-->
     <!-- FOOTER -->

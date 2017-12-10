@@ -49,3 +49,15 @@
     @include sprite($facebook-share);
   }
 }
+
+.icon-round{
+  width:95px;
+  height:95px;
+  border-radius: 50%;
+  background: #d8d8d8;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin: 0 auto 25px;
+}

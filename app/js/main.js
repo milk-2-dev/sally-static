@@ -187,16 +187,8 @@ $(document).on('scroll', function (e) {
 
 })
 
-
-// $(document).on('hide.bs.modal','.modal', function (e) {
-//     $('.modal-backdrop').remove();
-// })
-//
 $(document).on('shown.bs.modal','.modal', function (e) {
     actualHeight = scrollToTop ;
-
-    //console.log('actualHeight '+actualHeight);
-
     $('.modal-open').css({
         'top': actualHeight* (-1),
         'position': 'fixed',
@@ -223,6 +215,22 @@ $(document).on('hide.bs.modal','.modal', function (e) {
 
     $(window).scrollTop(actualHeight);
 })
+
+function removeTab(){
+    if ($('.modal-emulation-workspace').length) {
+        var formCustomblock = $('.modal-emulation-workspace .small-block .form-custom');
+        var secondTab = $('#settingsTab .wrap-for-mobile');
+
+        var newTab = '<div class="tab-pane fade" id="prevForm" role="tabpanel" aria-labelledby="audienceTab-tab">' +
+            '</div>'
+
+        $(newTab).appendTo('#audienceTabContent');
+        $(formCustomblock).appendTo('#prevForm');
+        $('#audienceTab').removeClass('show active');
+        $('#prevForm').tab('show');
+        $(secondTab).appendTo('#audienceTab');
+    }
+}
 
 
 $(document).ready(function() {
@@ -276,6 +284,50 @@ $(document).ready(function() {
                 $('.custom-posts').find('.container').after($('.owl-carousel'));
 
                 cropText();
+
+                if ($('#myAwesomeDropzone').length) {
+
+                    var dropzone = new Dropzone('#myAwesomeDropzone', {
+                        url: '/',
+                        previewTemplate: document.querySelector('#preview-template').innerHTML,
+                        parallelUploads: null,
+                        thumbnailHeight: 307,
+                        thumbnailWidth: 548,
+                        thumbnailMethod: 'crop',
+                        maxFilesize: 3,
+                        filesizeBase: 1000,
+                        maxFiles: 1,
+                        addRemoveLinks: true,
+                        dictRemoveFile: "<i class='fa fa-close' aria-hidden='true'></i>",
+                        dictDefaultMessage: "<i class='fa fa-5x fa-picture-o' aria-hidden='true'></i> <br/><br/><span class='button bg-blue small btn-round color-white min_w_250 margin_r_0'>Choose a file</span>",
+
+                        init: function() {
+                            this.on("addedfile", function(file) {
+                                $('button[form="myAwesomeDropzone"]').removeClass('disabled');
+                                $('#myAwesomeDropzone').css('poiter-event', 'none');
+                                $('.dz-progress').css('display', 'none');
+                                $('.form-upload .dropzone').css('border', 'none');
+                                $('.form-upload .dropzone').removeClass('empty');
+                                validateOrder('#formToValidateOrder', '#validateOrder');
+                            });
+
+                            this.on("removedfile", function(file) {
+                                $('button[form="myAwesomeDropzone"]').addClass('disabled');
+                                $('.form-upload .dropzone').css('border', '2px dashed #8f29fc');
+                                $('.form-upload .dropzone').addClass('empty');
+                                validateOrder('#formToValidateOrder', '#validateOrder');
+                            });
+
+                            this.on("maxfilesexceeded", function(file){
+                                this.removeAllFiles();
+                                this.addFile(file);
+                            });
+                        }
+                    });
+
+                }
+
+                removeTab();
             }
 
             var makePad = heightMobMenu();
@@ -291,15 +343,6 @@ $(document).ready(function() {
 
                 $('.message-set-reach').find('.message-reach__views').after($('.message-reach__costs'));
                 $('.custom-posts').find('.row').html($('.owl-carousel'));
-
-                // $(document).on('shown.bs.modal','.modal', function (e) {
-                //     lookForModal(e, false);
-                // })
-                //
-                // if($('.modal').hasClass('show')){
-                //     var id = $('.modal.show').attr('id');
-                //     lookForModal(false, id);
-                // }
 
                 var makePad = heightMobMenu();
 
@@ -366,8 +409,6 @@ $(document).ready(function() {
     //validate-order
 
     function checkParams(form , button){
-    	console.log('enter');
-
         var form = $(form);
 
         $(form).find('.validate-order').each(function(){
@@ -451,11 +492,11 @@ $(document).ready(function() {
 			addRemoveLinks: true,
 			dictRemoveFile: "<i class='fa fa-close' aria-hidden='true'></i>",
 			dictDefaultMessage: "<i class='fa fa-5x fa-picture-o' aria-hidden='true'></i> <br/><span class='dz-message__title'>Drag & Drop</span> a video or image here <br/> or <br/> " +
-			"<span class='button bg-blue small btn-round color-white margin_r_0'>Chose file</span>",
+			"<span class='button bg-blue small btn-round color-white min_w_250 margin_r_0'>Choose a file</span>",
 
 			init: function() {
 				this.on("addedfile", function(file) {
-					$('button[form="myAwesomeDropzone"]').css('display', 'inline-block');
+					$('button[form="myAwesomeDropzone"]').removeClass('disabled');
 					$('#myAwesomeDropzone').css('poiter-event', 'none');
 					$('.dz-progress').css('display', 'none');
 					$('.form-upload .dropzone').css('border', 'none');
@@ -464,7 +505,7 @@ $(document).ready(function() {
 				});
 
 				this.on("removedfile", function(file) {
-					$('button[form="myAwesomeDropzone"]').css('display', 'none');
+					$('button[form="myAwesomeDropzone"]').addClass('disabled');
 					$('.form-upload .dropzone').css('border', '2px dashed #8f29fc');
 					$('.form-upload .dropzone').addClass('empty');
 					validateOrder('#formToValidateOrder', '#validateOrder');

@@ -28,14 +28,14 @@
           </a>
       </div>
       <div class="modal-emulation-body step1">
-        <div class="small-block">
+        <div class="small-block content-center">
           <div class="main-form">
             <div class="main-form__menu">
               <span class="main-form__menu-title">
                 insert a url
               </span>
 
-              <ul class="nav main-form__menu" id="myTab" role="tablist">
+              <ul class="nav" id="myTab" role="tablist">
                 <li class="nav-item">
                   <a class="nav-link active" id="formLink-tab"
                      data-toggle="tab"
@@ -63,7 +63,14 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="javascript:void(0);">
+                  <a class="nav-link" id="formCamera-tab"
+                     data-toggle="tab"
+                     data-name="Record a video"
+                     href="#formCamera"
+                     role="tab"
+                     aria-controls="formCamera"
+                     aria-selected="false"
+                     onclick="changeFormTitle(this)">
 
                     <i class="fa fa-camera" aria-hidden="true"></i>
                   </a>
@@ -75,8 +82,8 @@
 
               <div class="tab-pane fade show active" id="formLink" role="tabpanel" aria-labelledby="formLink-tab">
                 <div class="form-item">
-                  <input id="inputForPreview" class="modal-emulation__input" type="text" placeholder="Paste a link of what you want to share...">
-                  <span class="input-notification align-left">If your url is valid, you will see a preview below</span>
+                  <input id="inputForPreview" class="modal-emulation__input focus-purple" type="text" placeholder="Paste a link of what you want to share...">
+                  <span class="input-notification align-left hidden-sm-down">If your url is valid, you will see a preview below</span>
                 </div>
               </div>
 
@@ -124,11 +131,22 @@
                   </div>
                 </div>
               </div>
+
+              <div class="tab-pane fade" id="formCamera" role="tabpanel" aria-labelledby="formCamera-tab">
+                <div class="form-item text-center">
+                  <div class="icon-round">
+                    <i class="fa fa-camera fa-3x color-white" aria-hidden="true"></i>
+                  </div>
+
+                  <a href="" class="button bg-blue small btn-round color-white min_w_250 margin_r_0">record</a>
+
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="small-block padding_20" id="preview-block">
+        <div class="small-block padding_20 hidden-sm-down" id="preview-block">
           <img src="./images/facebook-preview.png" alt="">
           <div class="message-article" style="display: none">
             <article>
@@ -193,7 +211,10 @@
           </div>
         </div>
 
-        <button style="display: none" type="submit" form="myAwesomeDropzone" class="modal-emulation__next-button button margin_r_0 bg-blue btn-round color-white" href="">Next</button>
+        <div class="order-button">
+          <button type="submit" form="myAwesomeDropzone" class="modal-emulation__next-button button margin_r_0 bg-blue btn-round color-white disabled" href="">Next</button>
+        </div>
+
       </div>
     </section>
   </main>
@@ -207,12 +228,9 @@
 <script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
 
 <script type="application/javascript">
-	function changeFormTitle(elem){
-
-		var text = $(elem).attr('data-name');
-		console.log(text);
-		$('body').find('.main-form__menu-title').html(text);
-
+  function changeFormTitle(elem){
+    var text = $(elem).attr('data-name');
+    $('body').find('.main-form__menu-title').html(text);
   }
 </script>
 
