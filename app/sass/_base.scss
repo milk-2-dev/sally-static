@@ -143,6 +143,11 @@ body.modal-open {
 
 .slider.slider-horizontal {
   width: 100%;
+
+  .slider-handle,
+  .slider-tick {
+    margin-left: -5px;
+  }
 }
 
 .slider-handle {
@@ -737,6 +742,7 @@ button.close{
       display: inline-block;
       transform-origin:50% 50% -10px;
       transform-style: preserve-3d;
+
       @for $i from 1 to 18{
         &:nth-child(#{$i}){
           animation-delay:$i/15+s;
@@ -992,16 +998,20 @@ button.close{
 }
 
 .wrap-for-mobile{
-  padding-top:40px;
   position: relative;
+}
 
-  &:before{
-    content: '';
-    position: absolute;
-    left:-30px;
-    right:-30px;
-    top:0;
-    border-top:1px solid #8d8d8d;
+.tags{
+  display: block;
 
+  .tags-item{
+    padding: 4px 10px;
+    color: #fff;
+    background: #e7b5f2;
+    margin-right: 4px;
+    margin-top: 5px;
+    border-radius: 50px;
+    font-size: 12px;
+    text-transform: lowercase;
   }
 }

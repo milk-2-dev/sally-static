@@ -813,7 +813,17 @@ section.post-author{
 }
 
 .message-set-reach{
-  padding: 30px 40px 10px;
+  padding-top: 30px;
+  position: relative;
+
+  &:before{
+    content: '';
+    position: absolute;
+    left:-30px;
+    right:-30px;
+    top:0;
+    border-top:1px solid #cacaca;
+  }
 
   .modal-title{
     margin-bottom: 15px;
@@ -822,7 +832,7 @@ section.post-author{
 
 .message-reach__views{
   font-family: MuseoSans;
-  font-size: 36px;
+  font-size: 26px;
   font-weight: 500;
   line-height:1;
   text-align: right;
@@ -835,6 +845,8 @@ section.post-author{
   font-weight: 500;
   text-align: right;
   color: #4a4a4a;
+  margin-top:10px;
+  margin-bottom:0;
 }
 
 .post-link{

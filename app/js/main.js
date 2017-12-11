@@ -217,19 +217,31 @@ $(document).on('hide.bs.modal','.modal', function (e) {
 })
 
 function removeTab(){
-    if ($('.modal-emulation-workspace').length) {
-        var formCustomblock = $('.modal-emulation-workspace .small-block .form-custom');
-        var secondTab = $('#settingsTab .wrap-for-mobile');
+	return {
+		moveForMob: function(){
+			if ($('.modal-emulation-workspace').length) {
+				var formCustomBlock = $('.modal-emulation-workspace .small-block .form-custom');
+				var secondTab = $('#settingsTab .wrap-for-mobile');
 
-        var newTab = '<div class="tab-pane fade" id="prevForm" role="tabpanel" aria-labelledby="audienceTab-tab">' +
-            '</div>'
+				$(formCustomBlock).appendTo('#prevForm');
+				$('#audienceTab').removeClass('show active');
+				$('#prevForm').tab('show');
+				$(secondTab).appendTo('#audienceTab');
+			}
+		},
 
-        $(newTab).appendTo('#audienceTabContent');
-        $(formCustomblock).appendTo('#prevForm');
-        $('#audienceTab').removeClass('show active');
-        $('#prevForm').tab('show');
-        $(secondTab).appendTo('#audienceTab');
-    }
+		moveBack: function(){
+			var formCustomBlock = $('#prevForm .form-custom');
+			var parentBlock = $('.modal-emulation-workspace .small-block');
+			var secondTab = $('#audienceTab .wrap-for-mobile');
+
+			$(formCustomBlock).appendTo(parentBlock);
+
+			$('#audienceTab').tab('show');
+			$(secondTab).appendTo('#settingsTab');
+
+		}
+	}
 }
 
 
@@ -280,54 +292,54 @@ $(document).ready(function() {
                 $('body').removeClass("desctop");
                 $('body').addClass("mobile");
 
-                $('.message-set-reach').find('.modal-title').after($('.message-reach__costs'));
+                //('.message-set-reach').find('.modal-title').after($('.message-reach__costs'));
                 $('.custom-posts').find('.container').after($('.owl-carousel'));
 
                 cropText();
 
                 if ($('#myAwesomeDropzone').length) {
 
-                    var dropzone = new Dropzone('#myAwesomeDropzone', {
-                        url: '/',
-                        previewTemplate: document.querySelector('#preview-template').innerHTML,
-                        parallelUploads: null,
-                        thumbnailHeight: 307,
-                        thumbnailWidth: 548,
-                        thumbnailMethod: 'crop',
-                        maxFilesize: 3,
-                        filesizeBase: 1000,
-                        maxFiles: 1,
-                        addRemoveLinks: true,
-                        dictRemoveFile: "<i class='fa fa-close' aria-hidden='true'></i>",
-                        dictDefaultMessage: "<i class='fa fa-5x fa-picture-o' aria-hidden='true'></i> <br/><br/><span class='button bg-blue small btn-round color-white min_w_250 margin_r_0'>Choose a file</span>",
-
-                        init: function() {
-                            this.on("addedfile", function(file) {
-                                $('button[form="myAwesomeDropzone"]').removeClass('disabled');
-                                $('#myAwesomeDropzone').css('poiter-event', 'none');
-                                $('.dz-progress').css('display', 'none');
-                                $('.form-upload .dropzone').css('border', 'none');
-                                $('.form-upload .dropzone').removeClass('empty');
-                                validateOrder('#formToValidateOrder', '#validateOrder');
-                            });
-
-                            this.on("removedfile", function(file) {
-                                $('button[form="myAwesomeDropzone"]').addClass('disabled');
-                                $('.form-upload .dropzone').css('border', '2px dashed #8f29fc');
-                                $('.form-upload .dropzone').addClass('empty');
-                                validateOrder('#formToValidateOrder', '#validateOrder');
-                            });
-
-                            this.on("maxfilesexceeded", function(file){
-                                this.removeAllFiles();
-                                this.addFile(file);
-                            });
-                        }
-                    });
+                    // var dropzone = new Dropzone('#myAwesomeDropzone', {
+                    //     url: '/',
+                    //     previewTemplate: document.querySelector('#preview-template').innerHTML,
+                    //     parallelUploads: null,
+                    //     thumbnailHeight: 307,
+                    //     thumbnailWidth: 548,
+                    //     thumbnailMethod: 'crop',
+                    //     maxFilesize: 3,
+                    //     filesizeBase: 1000,
+                    //     maxFiles: 1,
+                    //     addRemoveLinks: true,
+                    //     dictRemoveFile: "<i class='fa fa-close' aria-hidden='true'></i>",
+                    //     dictDefaultMessage: "<i class='fa fa-5x fa-picture-o' aria-hidden='true'></i> <br/><br/><span class='button bg-blue small btn-round color-white min_w_250 margin_r_0'>Choose a file</span>",
+                    //
+                    //     init: function() {
+                    //         this.on("addedfile", function(file) {
+                    //             $('button[form="myAwesomeDropzone"]').removeClass('disabled');
+                    //             $('#myAwesomeDropzone').css('poiter-event', 'none');
+                    //             $('.dz-progress').css('display', 'none');
+                    //             $('.form-upload .dropzone').css('border', 'none');
+                    //             $('.form-upload .dropzone').removeClass('empty');
+                    //             validateOrder('#formToValidateOrder', '#validateOrder');
+                    //         });
+                    //
+                    //         this.on("removedfile", function(file) {
+                    //             $('button[form="myAwesomeDropzone"]').addClass('disabled');
+                    //             $('.form-upload .dropzone').css('border', '2px dashed #8f29fc');
+                    //             $('.form-upload .dropzone').addClass('empty');
+                    //             validateOrder('#formToValidateOrder', '#validateOrder');
+                    //         });
+                    //
+                    //         this.on("maxfilesexceeded", function(file){
+                    //             this.removeAllFiles();
+                    //             this.addFile(file);
+                    //         });
+                    //     }
+                    // });
 
                 }
 
-                removeTab();
+                removeTab().moveForMob();
             }
 
             var makePad = heightMobMenu();
@@ -341,12 +353,13 @@ $(document).ready(function() {
                 $('body').removeClass("mobile");
                 $('body').addClass("desctop");
 
-                $('.message-set-reach').find('.message-reach__views').after($('.message-reach__costs'));
+                //$('.message-set-reach').find('.message-reach__views').after($('.message-reach__costs'));
                 $('.custom-posts').find('.row').html($('.owl-carousel'));
 
                 var makePad = heightMobMenu();
 
                 makePad.reset();
+	            removeTab().moveBack();
 
             }
         }

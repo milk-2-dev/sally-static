@@ -168,14 +168,15 @@
             <div class="col-md-4 modal-emulation-options" >
               <div class="modal-emulation-options-tabs">
                 <ul class="nav " id="optionsTab" role="tablist">
-                  <li class="nav-item">
-                    <a class="nav-link hidden-md-up"
+                  <li class="nav-item hidden-md-up">
+                    <a class="nav-link"
                        id="prevForm-tab"
                        data-toggle="tab"
                        href="#prevForm"
                        role="tab"
-                       aria-controls="audienceTab"
+                       aria-controls="prevFormTab"
                        aria-selected="true">
+
                       <i class="fa fa-list-alt" aria-hidden="true"></i>
 
                     </a>
@@ -207,7 +208,12 @@
                   </li>
                   <li class="nav-item hidden-md-up">
                     <a class="nav-link"
-                       href="./create-ad-preview.html">
+                       id="previewTab-tab"
+                       data-toggle="tab"
+                       href="#previewTab"
+                       role="tab"
+                       aria-controls="previewTab"
+                       aria-selected="false">
                       <i class="fa fa-binoculars" aria-hidden="true"></i>
                     </a>
                   </li>
@@ -276,6 +282,7 @@
                         </div>
                       </div>
                     </div>
+
                     <div class="tab-pane fade" id="settingsTab" role="tabpanel" aria-labelledby="settingsTab-tab">
                       <div class="wrap-for-mobile">
                         <div class="form-item">
@@ -333,6 +340,54 @@
                         </div>
                       </div>
                     </div>
+
+                    <!--// for mob-->
+
+                    <div class="tab-pane fade hidden-md-up" id="previewTab" role="tabpanel" aria-labelledby="previewTab-tab">
+                      <div class="message-article" >
+                        <article>
+                          <header class="message-article__head">
+                            <div class="message-article__head-wrap">
+                              <img class="message-article__logo" src="http://placehold.it/60x60" alt="">
+
+                              <div class="message-article__main-info">
+                                <p class="message-article__author">Buffer</p>
+
+                                <ul class="message-article__meta">
+                                  <li>4 January at 17:01</li>
+                                  <li><i class="fa fa-globe" aria-hidden="true"></i></li>
+                                </ul>
+                              </div>
+                            </div>
+
+                            <p class="message-article__head-desc">
+                              Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
+                              Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
+                            </p>
+                          </header>
+                          <section class="message-article__content">
+                            <img src="http://placehold.it/535x330" alt="" class="message-article__content-img">
+                            <p class="message-article__content-title">
+                              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                            <p class="message-article__content-text">
+                              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur id molestias odit perspiciatis porro ratione vel. Corporis eaque illo iste laboriosam nulla quo repudiandae veritatis. Adipisci id itaque nihil.
+                            </p>
+                            <div class="message-article__content-link">
+                                            <span>
+                                                blog.bufferapp.com
+                                            </span>
+                              <a>More</a>
+                            </div>
+                          </section>
+                        </article>
+                      </div>
+                    </div>
+
+                    <!--//here will be included content by js-->
+                    <div class="tab-pane fade" id="prevForm" role="tabpanel" aria-labelledby="prevForm-tab"></div>
+                    <!--// for mob-->
+
                   </div>
                 </form>
               </div>
