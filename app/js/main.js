@@ -339,6 +339,8 @@ $(document).ready(function() {
 
                 }
                 removeTab().moveForMob();
+
+	              $('.message-article article').after($('.message-set-reach')) //move block like in https://projects.invisionapp.com/share/SAEOF3BUH#/screens/268129653
             }
 
             var makePad = heightMobMenu();
@@ -483,53 +485,55 @@ $(document).ready(function() {
 
 	////////////Add an ad
 
-    $('#inputForPreview').on('change', function(){
-        $('#preview-block>img').css('display', 'none');
-        $('#preview-block').find('.message-article').css('display', 'block');
-        $('button[form="myAwesomeDropzone"]').css('display','block')
-    })
+  $('#inputForPreview').on('change', function(){
+      $('#preview-block>img').css('display', 'none');
+      $('#preview-block').find('.message-article').css('display', 'block');
+      $('button[form="myAwesomeDropzone"]').css('display','block')
+  })
 
-    if ($('#myAwesomeDropzone').length) {
+  if ($('#myAwesomeDropzone').length) {
 
-		var dropzone = new Dropzone('#myAwesomeDropzone', {
-			url: '/',
-			previewTemplate: document.querySelector('#preview-template').innerHTML,
-			parallelUploads: null,
-			thumbnailHeight: 307,
-			thumbnailWidth: 548,
-			thumbnailMethod: 'crop',
-			maxFilesize: 3,
-			filesizeBase: 1000,
-			maxFiles: 1,
-			addRemoveLinks: true,
-			dictRemoveFile: "<i class='fa fa-close' aria-hidden='true'></i>",
-			dictDefaultMessage: "<i class='fa fa-5x fa-picture-o' aria-hidden='true'></i> <br/><span class='dz-message__title'>Drag & Drop</span> a video or image here <br/> or <br/> " +
-			"<span class='button bg-blue small btn-round color-white min_w_250 margin_r_0'>Choose a file</span>",
+	var dropzone = new Dropzone('#myAwesomeDropzone', {
+		url: '/',
+		previewTemplate: document.querySelector('#preview-template').innerHTML,
+		parallelUploads: null,
+		thumbnailHeight: 307,
+		thumbnailWidth: 548,
+		thumbnailMethod: 'crop',
+		maxFilesize: 6,
+		filesizeBase: 1000,
+		maxFiles: 1,
+		addRemoveLinks: true,
+		dictRemoveFile: "<i class='fa fa-close' aria-hidden='true'></i>",
+		dictDefaultMessage: "<i class='fa fa-5x fa-picture-o' aria-hidden='true'></i> <br/><span class='dz-message__title'>Drag & Drop</span> a video or image here <br/> or <br/> " +
+		"<span class='button bg-blue small btn-round color-white min_w_250 margin_r_0'>Choose a file</span>",
 
-			init: function() {
-				this.on("addedfile", function(file) {
-					$('button[form="myAwesomeDropzone"]').removeClass('disabled');
-					$('#myAwesomeDropzone').css('poiter-event', 'none');
-					$('.dz-progress').css('display', 'none');
-					$('.form-upload .dropzone').css('border', 'none');
-					$('.form-upload .dropzone').removeClass('empty');
-					validateOrder('#formToValidateOrder', '#validateOrder');
-				});
+		init: function() {
+			this.on("addedfile", function(file) {
+				$('button[form="myAwesomeDropzone"]').removeClass('disabled');
+				$('#myAwesomeDropzone').css('poiter-event', 'none');
+				$('.dz-progress').css('display', 'none');
+				//$('.form-upload .dropzone').css('border', 'none');
+				$('.form-upload .dropzone').removeClass('empty');
+				validateOrder('#formToValidateOrder', '#validateOrder');
+			});
 
-				this.on("removedfile", function(file) {
-					$('button[form="myAwesomeDropzone"]').addClass('disabled');
-					$('.form-upload .dropzone').css('border', '2px dashed #8f29fc');
-					$('.form-upload .dropzone').addClass('empty');
-					validateOrder('#formToValidateOrder', '#validateOrder');
-				});
+			this.on("removedfile", function(file) {
+				$('button[form="myAwesomeDropzone"]').addClass('disabled');
+				//$('.form-upload .dropzone').css('border', '2px dashed #8f29fc');
+				$('.form-upload .dropzone').addClass('empty');
+				validateOrder('#formToValidateOrder', '#validateOrder');
+			});
 
-				this.on("maxfilesexceeded", function(file){
-					this.removeAllFiles();
-					this.addFile(file);
-				});
-			}
+			this.on("maxfilesexceeded", function(file){
+				this.removeAllFiles();
+				this.addFile(file);
+			});
+		}
 
-		});
+	});
 
-	}
+}
+
 });
+

@@ -122,19 +122,38 @@
   .message-preview{
     margin:0;
     height:auto;
+    padding:0;
+
+    .message-article{
+      border-right: none;
+      max-height: 100%;
+      order:2;
+      border-top: 1px solid map_get($colors, 'border-grey');
+      padding-top: 30px;
+    }
   }
 
   .message-list{
-    padding-left:0;
-    padding-right:0;
+    padding-left:30px;
+    padding-right:30px;
+    height:auto;
+
+    .modal-title{
+      padding-bottom: 30px;
+      position: relative;
+
+      &:after{
+        content: '';
+        position: absolute;
+        left: -30px;
+        right: -30px;
+        bottom:0;
+        border-bottom: 1px solid map_get($colors, 'border-grey');
+      }
+    }
   }
 
-  .message-article{
-    border-right: none;
-    max-height: 100%;
-    padding-left: 0;
-    padding-right: 0;
-  }
+
 
   .message-edit{
     padding-top:0;
@@ -154,17 +173,24 @@
   }
 
   .message-set-reach{
-    padding: 32px 35px 32px;
+    padding: 30px;
+    position: relative;
+    margin-top:30px;
+
+    &:before{
+      content: '';
+      position: absolute;
+      top:0;
+      left:-30px;
+      right:-30px;
+      border-top:1px solid map_get($colors, 'border-grey');
+    }
 
     .modal-title {
       margin-bottom: 15px;
       font-size: 16px;
     }
   }
-
-  //.message-reach__costs{
-  //  font-size: 16px;
-  //}
 
   .modal-header{
     padding-left:15px;
@@ -423,7 +449,8 @@
     border-radius: 0;
   }
 
-  .modal-emulation-head{
+  .modal-emulation-head,
+  .modal-header.change-icon{
     .modal-title{
       text-align: left;
       padding-left: 30px;
@@ -451,7 +478,7 @@
 
     @media (max-height: 350px){
         height: 100%;
-        min-height: auto;
+        min-height: 0;
     }
 
   }
@@ -552,6 +579,10 @@
       top:0;
       border-top:1px solid #8d8d8d;
     }
+  }
+
+  .main-form__menu {
+    justify-content: center;
   }
 
 }

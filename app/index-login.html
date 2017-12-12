@@ -14,7 +14,7 @@
     <![endif]-->
 </head>
 
-<body class="headerstyle4 headerfixed" data-spy="scroll">
+<body class="headerstyle4 headerfixed">
 <!-- Splendid Content -->
 <div id="splendid-content">
 
@@ -587,14 +587,25 @@
     <div class="modal fade" id="messagePreview" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Message preview</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                <div class="modal-header change-icon">
+                    <h5 class="modal-title">Message confirmation</h5>
+                    <a href="./index-login.html" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </a>
                 </div>
                 <div class="modal-body">
                     <div class="modal-body__overflow">
+                        <div class="img-block hidden-md-up">
+                            <div class="edit-menu">
+                                <ul>
+                                    <li><a href="javascript:void(0);"><i class="fa fa-binoculars" aria-hidden="true"></i></a></li>
+                                    <li><a href="javascript:void(0);" data-toggle="modal" data-target="#messagePreviewEdit"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+
+                            <img src="http://placehold.it/400x400" alt="">
+                        </div>
+
                         <div class="row message-preview">
                             <div class="col-lg-7 col-md-7 message-article">
                                 <article>
@@ -660,65 +671,70 @@
                                 <!--<iframe src='https://www.facebook.com/ads/api/preview_iframe.php?d=AQK63gSlz5CuRmHUhhFK6Vp_bQHgF9JOlOrh1yrAAt6eg5M1Nf3kZydb0JwPF1bVcJIEY3q-GpGaIM5IC1bOIa2bYuPmRSUa0Oj8zlYiuqTyzgrPi5lY_oIeGQ9JtgXqEQYcf4IiH0aOwkGM9uGfWromFOvZ3zCKajFmjguY4obddPGcxMp_4M4phqdDKRwTnMvIJOllU2fAU5Zz7IpHd7GqDoucNuYCd8BCIt7qPxfnYCNETz_oerwnqhtjQ7GMmMc&amp;t=AQJcHGHsr4ATQvGc' width='335' height='450' scrolling='yes' style='border: none;'></iframe>-->
                             </div>
 
-                            <!--<iframe id="iframeTest" src="https://www.facebook.com/ads/api/preview_iframe.php?d=AQLvo9L0n03HrHNviXU3jXtJBHD4PFJ1GR-_dA9jSq1AHavINVoGMQwZzeuxa6pnhJVepGxExOdpHlNJERQo3otDwJuQsQMZ6visPKibD2onTD0eTVwe_td6TU9RVehS0HNO0tDc-DhOH79xe2jS8_nZeRo-UzGV2pI6LAeAwjjBEaAYGt01DYIsQ7c0pMnCBX41kPBVQUra_8t1h5DO9wSXXNeLEIlZQOWQaDOw27sDS98CGSxtf2fDK7NFrANQI5I&amp;t=AQKZriBJLjH_lcS8" width="540" height="690" scrolling="yes"></iframe>                            </div>-->
-                            <div class="col-lg-5 col-md-5 message-list">
-                                <p class="modal-title message-edit">
-                                    <a href="" data-toggle="modal" data-target="#messagePreviewEdit">
-                                        <i class="icon icon-edit"></i>
-                                        <span>edit</span>
-                                    </a>
+                            <div class="col-lg-5 col-md-5 padding_l_0 padding_r_0">
+                                <div class="message-list">
+                                    <p class="modal-title message-edit">
+                                        <a href="javascript:void(0);" class="hidden-sm-down" data-toggle="modal" data-target="#messagePreviewEdit">
+                                            <i class="icon icon-edit"></i>
+                                            <span>edit</span>
+                                        </a>
 
-                                    Save obamacare Save obamacare
+                                        Save obamacare Save obamacare
 
-                                    <span class="tags">
-                                        <span class="tags-item">obamacare</span>
-                                        <span class="tags-item">healthcare</span>
-                                    </span>
-                                </p>
+                                        <span class="text-from-prev">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur id molestias odit perspiciatis porro ratione vel. Corporis eaque illo iste laboriosam nulla quo repudiandae veritatis. Adipisci id itaque nihil.
+                                        </span>
 
-                                <div class="form-item">
-                                    <p class="form-item__title">
-                                        demographic presents
+                                        <span class="tags">
+                                            <span class="tags-item">obamacare</span>
+                                            <span class="tags-item">healthcare</span>
+                                        </span>
                                     </p>
-                                    
-                                    <div class="select-block">
-                                        <select name="" id="">
-                                            <option value="">1</option>
-                                            <option value="">2</option>
-                                            <option value="">3</option>
-                                        </select>
-                                    </div>
-                                </div>
 
-                                <div class="message-list__item">
-                                    <i class="icon icon-customizations"></i>
-                                    <span>
+                                    <div class="form-item">
+                                        <p class="form-item__title">
+                                            demographic presents
+                                        </p>
+
+                                        <div class="select-block">
+                                            <select name="" id="">
+                                                <option value="">1</option>
+                                                <option value="">2</option>
+                                                <option value="">3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="message-list__item">
+                                        <i class="icon icon-customizations"></i>
+                                        <span>
                                     Interests: Barack Obama, <br/>
                                     Behaviors: Cofee
                                 </span>
-                                </div>
+                                    </div>
 
-                                <div class="message-list__item">
-                                    <i class="icon icon-location"></i>
-                                    <span>
+                                    <div class="message-list__item">
+                                        <i class="icon icon-location"></i>
+                                        <span>
                                     California, United States
                                 </span>
-                                </div>
+                                    </div>
 
-                                <div class="message-list__item">
-                                    <i class="icon icon-timing"></i>
-                                    <span>
+                                    <div class="message-list__item">
+                                        <i class="icon icon-timing"></i>
+                                        <span>
                                     24 - 61
                                 </span>
-                                </div>
+                                    </div>
 
-                                <div class="message-list__item">
-                                    <i class="icon icon-gender"></i>
-                                    <span>
+                                    <div class="message-list__item">
+                                        <i class="icon icon-gender"></i>
+                                        <span>
                                     All
                                 </span>
-                                </div>
+                                    </div>
 
+                                </div>
                                 <div class="message-set-reach">
                                     <div class="row justify-content-between padding_l_15 padding_r_15">
                                         <p class="modal-title">

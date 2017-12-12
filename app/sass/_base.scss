@@ -251,11 +251,6 @@ body.modal-open {
   }
 }
 
-.message-list{
-  overflow-y: auto;
-}
-
-
 /* Promo Boxes */
 .promo-box{
   display: block;
@@ -614,8 +609,6 @@ button.close{
     border:2px dashed map_get($colors, 'pink');
 
     .dz-preview{
-
-
       .dz-image {
         border-radius: 4px;
         width:100%;
@@ -663,6 +656,10 @@ button.close{
         }
       }
     }
+
+    &.dz-started{
+      border:none;
+    }
   }
 
   .dz-message{
@@ -696,7 +693,7 @@ button.close{
 .modal-emulation-body{
   position: relative;
   height:calc(100vh - 61px);
-  min-height: 700px;
+  //min-height: 700px;
   overflow-y: auto;
   background: #eaeae9;
 
@@ -779,7 +776,7 @@ button.close{
 
   .dropzone{
     padding:0;
-    border: 1px solid #dce3ef;
+    border: 2px dashed #dce3ef;
 
     .dz-preview{
       margin:0;
@@ -1016,7 +1013,63 @@ button.close{
   }
 }
 
-.ios,
+.img-block{
+  position: relative;
+  min-height:250px;
+  margin-bottom: 20px;
+
+  img{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .edit-menu{
+    border:1px solid map_get($colors, 'border-grey');
+    border-radius: 8px;
+    overflow: hidden;
+    position: absolute;
+    top:20px;
+    right:20px;
+    z-index: 10;
+
+    ul{
+      list-style: none;
+      padding:0;
+      margin:0;
+
+      li{
+        display: inline-block;
+        border-right: 1px solid map_get($colors, 'border-grey');
+        background: #fff;
+        margin-right:-4px;
+
+        &:last-child{
+          border-right: none;
+          margin-right:0;
+        }
+
+        a{
+          padding: 15px 20px;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.text-from-prev{
+  display: block;
+  font-size: 14px;
+  text-transform: none;
+  margin:10px 0;
+}
+
 .iphone{
   .modal-emulation-body {
     height: calc(100vh - 128px);
