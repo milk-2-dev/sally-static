@@ -41,7 +41,8 @@ gulp.task('scripts', function() {
         'app/libs/gsap/src/minified/TweenMax.min.js',
         'app/libs/seiyria-bootstrap-slider/dist/bootstrap-slider.js',
         'app/libs/dropzone/dist/dropzone.js',
-        'app/libs/select2/dist/js/select2.full.js'
+        'app/libs/select2/dist/js/select2.full.js',
+        'app/libs/mobile-detect/mobile-detect.js'
         ])
         .pipe(concat('libs.min.js'))
         .pipe(uglify())
