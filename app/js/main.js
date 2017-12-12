@@ -224,8 +224,8 @@ function removeTab(){
 				var secondTab = $('#settingsTab .wrap-for-mobile');
 
 				$(formCustomBlock).appendTo('#prevForm');
-				$('#audienceTab').removeClass('show active');
-				$('#prevForm').tab('show');
+				$('#audienceTab-tab').removeClass('show active');
+				$('#prevForm-tab').tab('show');
 				$(secondTab).appendTo('#audienceTab');
 			}
 		},
@@ -237,7 +237,7 @@ function removeTab(){
 
 			$(formCustomBlock).appendTo(parentBlock);
 
-			$('#audienceTab').tab('show');
+			$('#audienceTab-tab').tab('show');
 			$(secondTab).appendTo('#settingsTab');
 
 		}
@@ -338,7 +338,6 @@ $(document).ready(function() {
                     // });
 
                 }
-
                 removeTab().moveForMob();
             }
 

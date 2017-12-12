@@ -489,7 +489,7 @@
 
       #validateOrder{
         margin: 0;
-        position: fixed;
+        position: absolute;
         left: 0;
         bottom: 0;
         border-radius: 0;
@@ -503,7 +503,7 @@
 
   .modal-emulation-options-tabs{
     >ul {
-      position: fixed;
+      position: absolute;
       left: 0;
       right: 0;
       background: #fff;
@@ -537,7 +537,7 @@
     }
 
     .tab-content{
-      max-height: calc(100vh - 132px);
+      max-height: calc(100vh - 155px);
     }
   }
 

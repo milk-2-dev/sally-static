@@ -838,10 +838,10 @@ button.close{
 }
 
 .modal-emulation-options{
-  position: relative;
+  //position: relative;
   z-index: 1;
   background: #fff;
-  height: 100%;
+  //height: 100%;
   box-shadow: 4px 0 10px 4px rgba(0,0,0,0.22);
   display: flex;
   flex-direction: column;
@@ -1013,5 +1013,18 @@ button.close{
     border-radius: 50px;
     font-size: 12px;
     text-transform: lowercase;
+  }
+}
+
+.ios,
+.iphone{
+  .modal-emulation-body {
+    height: calc(100vh - 128px);
+  }
+
+  .modal-emulation-options-tabs{
+    .tab-content {
+      max-height: calc(100vh - 245px);
+    }
   }
 }
