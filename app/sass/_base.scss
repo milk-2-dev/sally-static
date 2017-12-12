@@ -891,7 +891,7 @@ button.close{
     padding-left:$MEO-padding;
     padding-right:$MEO-padding;
     z-index: 1;
-    max-height:calc(100vh - 235px);
+    //max-height:calc(100vh - 235px);
     overflow-y: auto;
   }
 
@@ -1068,16 +1068,4 @@ button.close{
   font-size: 14px;
   text-transform: none;
   margin:10px 0;
-}
-
-.iphone.safari{
-  .modal-emulation-body {
-    height: calc(100vh - 128px);
-  }
-
-  .modal-emulation-options-tabs{
-    .tab-content {
-      max-height: calc(100vh - 245px);
-    }
-  }
 }

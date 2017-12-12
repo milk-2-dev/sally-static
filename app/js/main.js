@@ -539,15 +539,75 @@ $(document).ready(function() {
 
 var md = new MobileDetect(window.navigator.userAgent);
 
-$('html').addClass(md.userAgent());
+var keys = ['iPad', 'NexusTablet', 'SamsungTablet', 'Kindle', 'SurfaceTablet', 'HPTablet', 'AsusTablet', 'BlackBerryTablet', 'HTCtablet', 'MotorolaTablet', 'NookTablet', 'AcerTablet', 'ToshibaTablet', 'LGTablet', 'FujitsuTablet', 'PrestigioTablet', 'LenovoTablet', 'YarvikTablet', 'MedionTablet', 'ArnovaTablet', 'IntensoTablet', 'IRUTablet', 'MegafonTablet', 'EbodaTablet', 'AllViewTablet', 'ArchosTablet', 'AinolTablet', 'SonyTablet', 'CubeTablet', 'CobyTablet', 'MIDTablet', 'SMiTTablet', 'RockChipTablet', 'FlyTablet', 'bqTablet', 'HuaweiTablet', 'NecTablet', 'PantechTablet', 'BronchoTablet', 'VersusTablet', 'ZyncTablet', 'PositivoTablet', 'NabiTablet', 'KoboTablet', 'DanewTablet', 'TexetTablet', 'PlaystationTablet', 'TrekstorTablet', 'PyleAudioTablet', 'AdvanTablet', 'DanyTechTablet', 'GalapadTablet', 'MicromaxTablet', 'KarbonnTablet', 'AllFineTablet', 'PROSCANTablet', 'YONESTablet', 'ChangJiaTablet', 'GUTablet', 'PointOfViewTablet', 'OvermaxTablet', 'HCLTablet', 'DPSTablet', 'VistureTablet', 'CrestaTablet', 'MediatekTablet', 'ConcordeTablet', 'GoCleverTablet', 'ModecomTablet', 'VoninoTablet', 'ECSTablet', 'StorexTablet', 'VodafoneTablet', 'EssentielBTablet', 'RossMoorTablet', 'iMobileTablet', 'TolinoTablet', 'AudioSonicTablet', 'AMPETablet', 'SkkTablet', 'TecnoTablet', 'JXDTablet', 'iJoyTablet', 'Hudl', 'TelstraTablet', 'GenericTablet', 'iPhone', 'BlackBerry', 'HTC', 'Nexus', 'Dell', 'Motorola', 'Samsung', 'LG', 'Sony', 'Asus', 'Micromax', 'Palm', 'Vertu', 'Pantech', 'Fly', 'iMobile', 'SimValley', 'GenericPhone', 'AndroidOS', 'BlackBerryOS', 'PalmOS', 'SymbianOS', 'WindowsMobileOS', 'WindowsPhoneOS', 'iOS', 'MeeGoOS', 'MaemoOS', 'JavaOS', 'webOS', 'badaOS', 'BREWOS', 'Dolfin', 'Opera', 'Skyfire', 'Bolt', 'TeaShark', 'Blazer', 'Safari', 'Tizen', 'UCBrowser', 'DiigoBrowser', 'Puffin', 'Mercury', 'GenericBrowser', 'DesktopMode', 'TV', 'Bot', 'MobileBot', 'Console', 'Watch'];
+var versionKeys = ['Mobile', 'Build', 'Version', 'VendorID', 'iPad', 'iPhone', 'iPod', 'Kindle', 'Coast', 'Dolfin', 'Fennec', 'IE', 'NetFront', 'MQQBrowser', 'MicroMessenger', 'Skyfire', 'Tizen', 'Trident', 'Presto', 'iOS', 'Android', 'BlackBerry', 'BREW', 'Java', 'Windows Phone OS', 'Windows Phone', 'Windows CE', 'Windows NT', 'Symbian', 'webOS'];
+var browserKeys = ['Chrome',
+'Dolfin',
+'Opera',
+'Skyfire',
+'Edge',
+'IE',
+'Firefox',
+'Bolt',
+'TeaShark',
+'Blazer',
+'Safari',
+'UCBrowser',
+'baiduboxapp',
+'baidubrowser',
+'DiigoBrowser',
+'Puffin',
+'Mercury',
+'ObigoBrowser',
+'NetFront',
+'GenericBrowser',
+'PaleMoon',
+'NokiaBrowser',
+'Opera Mini',
+'Opera Mobi',
+'UC Browser'];
 
-console.log( md.mobile() );          // 'Sony'
-console.log( md.phone() );           // 'Sony'
-console.log( md.tablet() );          // null
-console.log( md.userAgent() );       // 'Safari'
-console.log( md.os() );              // 'AndroidOS'
-console.log( md.is('iPhone') );      // false
-console.log( md.is('bot') );         // false
-console.log( md.version('Webkit') );         // 534.3
-console.log( md.versionStr('Build') );       // '4.1.A.0.562'
-console.log( md.match('playstation|xbox') ); // false
+var result;
+$.each(keys, function(i, key) {
+    result = md.is(key);
+    if (result) {
+        $('hmtl').addClass(key);
+    }
+});
+
+$.each(versionKeys, function(i, key) {
+    result = md.version(key);
+    if (result) {
+        $('html').addClass(key);
+    }
+});
+
+$.each(browserKeys, function(i, key) {
+    result = md.version(key);
+    if (result) {
+        $('html').addClass(key);
+    }
+});
+
+
+//make this perfect tomorrow
+
+var test = $(window).outerHeight();
+var head = $('.modal-emulation-head').outerHeight();
+var body = $('.modal-emulation-body');
+var tabContainer = $('.modal-emulation-options-tabs .tab-content');
+var tabContainerPaddingTop = parseInt($(tabContainer).css("padding-top"));
+var tabContainerPaddingBottom = parseInt($(tabContainer).css("padding-bottom"));
+var tabNavigation = $('.modal-emulation-options-tabs .nav').outerHeight();
+var orderButton = $('.modal-emulation-options .order-button').outerHeight();
+
+
+var bodyVal = test - head;
+
+body.height(bodyVal);
+
+var tabContainerVal = bodyVal - (tabNavigation + orderButton) - (tabContainerPaddingTop + tabContainerPaddingBottom);
+
+tabContainer.height(tabContainerVal);
+
+console.log(tabContainerVal);
