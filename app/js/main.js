@@ -1,4 +1,17 @@
+/// detect user device and browser
+var md = new MobileDetect(window.navigator.userAgent);
+$('html').addClass(md.userAgent());
+///
+
+///truncate a post text
+$('.post-title .three-dots').ThreeDots({ max_rows:2 });
+$('.post-description .three-dots').ThreeDots({ max_rows:3 });
+///
+
+///some settings for dropzone
 Dropzone.autoDiscover = false;
+///
+
 
 /********************************
  GLOBAL VARIABLES
@@ -420,53 +433,53 @@ $(document).ready(function() {
 	});
 
 
-    //validate-order
+  //validate-order
 
-    function checkParams(form , button){
-        var form = $(form);
+  function checkParams(form , button){
+      var form = $(form);
 
-        $(form).find('.validate-order').each(function(){
-            $(this).keyup(function() {
-                validateOrder(form, button)
-            });
-        })
-    }
+      $(form).find('.validate-order').each(function(){
+          $(this).keyup(function() {
+              validateOrder(form, button)
+          });
+      })
+  }
 
-    function checkValidate(form, button){
-        var form = $(form);
-        var emptyCount = $(form).find('.empty').length;
-        if(emptyCount <= 0 ){
-            $(button).removeClass('disabled');
-        }
-        else{
-            $(button).addClass('disabled');
-        }
-    }
+  function checkValidate(form, button){
+      var form = $(form);
+      var emptyCount = $(form).find('.empty').length;
+      if(emptyCount <= 0 ){
+          $(button).removeClass('disabled');
+      }
+      else{
+          $(button).addClass('disabled');
+      }
+  }
 
-    function validateOrder(form, button){
-        var form = $(form);
+  function validateOrder(form, button){
+      var form = $(form);
 
-        $(form).find('.validate-order').each(function(){
-           var inputVal = $(this).val().length;
+      $(form).find('.validate-order').each(function(){
+         var inputVal = $(this).val().length;
 
-            if(inputVal){
-                $(this).removeClass('empty');
-            }
-            else{
-                $(this).addClass('empty');
-            }
-        })
+          if(inputVal){
+              $(this).removeClass('empty');
+          }
+          else{
+              $(this).addClass('empty');
+          }
+      })
 
-        checkValidate(form, button);
-    }
+      checkValidate(form, button);
+  }
 
-    checkParams('#formToValidateOrder', '#validateOrder');
+  checkParams('#formToValidateOrder', '#validateOrder');
 
-    $('#formToValidateOrder').find('.form-upload').on('click', function(){
-        checkParams('#formToValidateOrder', '#validateOrder');
-    })
+  $('#formToValidateOrder').find('.form-upload').on('click', function(){
+      checkParams('#formToValidateOrder', '#validateOrder');
+  })
 
-    //validate-order
+  //validate-order
 
 	/////////////Activate selection
 	$(function(){
@@ -536,18 +549,3 @@ $(document).ready(function() {
 }
 
 });
-
-var md = new MobileDetect(window.navigator.userAgent);
-
-$('html').addClass(md.userAgent());
-
-console.log( md.mobile() );          // 'Sony'
-console.log( md.phone() );           // 'Sony'
-console.log( md.tablet() );          // null
-console.log( md.userAgent() );       // 'Safari'
-console.log( md.os() );              // 'AndroidOS'
-console.log( md.is('iPhone') );      // false
-console.log( md.is('bot') );         // false
-console.log( md.version('Webkit') );         // 534.3
-console.log( md.versionStr('Build') );       // '4.1.A.0.562'
-console.log( md.match('playstation|xbox') ); // false
