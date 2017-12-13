@@ -522,7 +522,7 @@ $(document).ready(function() {
 
 		dictInvalidFileType:"Please insert a valid image or video file under 24mb",
 
-		dictFileTooBig:"Please insert a valid image or video file under 24mb",
+		dictFileTooBig:"Please insert a valid image or video file under 24mb <br/> <span class='button bg-blue small btn-round color-white min_w_250 margin_r_0'>try again</span>",
 
 		//dictMaxFilesExceeded:"Please insert a valid image or video file under 24mb",
 		dictRemoveFile: "",
@@ -536,44 +536,64 @@ $(document).ready(function() {
 
 		init: function() {
 			this.on("addedfile", function(file) {
-				var closeIcon = '<i class=\'fa fa-close\' aria-hidden=\'true\'></i>';
-
+                $(file.previewTemplate).find('.dz-error-message').html('');
 				$('button[form="myAwesomeDropzone"]').removeClass('disabled');
 				$('.form-upload .order-block').css('display', 'block');
-				$('#myAwesomeDropzone').css('poiter-event', 'none');
-				$('.dz-progress').css('display', 'none');
-				//$('.form-upload .dropzone').css('border', 'none');
+				//$('#myAwesomeDropzone').css('poiter-event', 'none');
+				//$('.dz-progress').css('display', 'none');
 				$('.form-upload .dropzone').removeClass('empty');
-				$(file.previewTemplate).find('.dz-remove').text(closeIcon);
+				$(file.previewTemplate).find('.dz-remove').html('<i class="fa fa-close" aria-hidden="true"></i>');
+                $(file.previewTemplate).find('.dz-error-message').html();
+
+                console.log($(file.previewTemplate).find('.dz-error-message').html());
+
 				validateOrder('#formToValidateOrder', '#validateOrder');
 			});
 
 			this.on("removedfile", function(file) {
 				$('button[form="myAwesomeDropzone"]').addClass('disabled');
 				$('.form-upload .order-block').css('display', 'none');
-				//$('.form-upload .dropzone').css('border', '2px dashed #8f29fc');
 				$('.form-upload .dropzone').addClass('empty');
 				validateOrder('#formToValidateOrder', '#validateOrder');
 			});
 
+			// this.on("reset", function(file) {
+			// 	$('button[form="myAwesomeDropzone"]').addClass('disabled');
+			// 	$('.form-upload .order-block').css('display', 'none');
+			// 	//$('.form-upload .dropzone').css('border', '2px dashed #8f29fc');
+			// 	$('.form-upload .dropzone').addClass('empty');
+			// 	validateOrder('#formToValidateOrder', '#validateOrder');
+             //    this.removeAllFiles();
+			// });
+
 			this.on("maxfilesexceeded", function(file){
 				this.removeAllFiles();
+                $(file.previewTemplate).find('.dz-error-message').html('');
 				this.addFile(file);
 			});
 
 			this.on('error', function(file, response) {
 				console.log(file);
 				console.log(response);
+				console.log(dropzone.getAcceptedFiles());
+				//this.removeAllFiles(true);
+                var uploadedFile = this.getUploadingFiles();
+                dropzone.removeFile(uploadedFile);
 
-				var closeIcon = '<i class=\'fa fa-close\' aria-hidden=\'true\'></i>';
+				var form = this;
 
 				//this.removeAllFiles();
-				$(file.previewTemplate).find('.dz-error-message').text(response);
-				//$(buttonUpload).appendTo($(file.previewTemplate).find('.dz-error-message'));
-				// $('.form-upload .error-block').css('display', 'block');
-				$(file.previewTemplate).find('.dz-remove').text(closeIcon);
-				 $('.form-upload .order-block').css('display', 'none');
-				//alert(response);
+				$(file.previewTemplate).find('.dz-error-message').html(response);
+				$(file.previewTemplate).find('.dz-remove').html('test');
+				$(file.previewTemplate).find('.dz-image').html('');
+
+				$('.dz-error-message').on('click', function(){
+				    form.removeAllFiles(true);
+                })
+
+                $('.form-upload .order-block').css('display', 'none');
+
+
 			});
 		}
 
