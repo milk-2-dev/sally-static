@@ -513,12 +513,15 @@
 
   .modal-emulation-options{
     .order-button {
+      margin: 0;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right:0;
+      padding: 0;
 
       #validateOrder{
-        margin: 0;
-        position: absolute;
-        left: 0;
-        bottom: 0;
+        margin:0;
         border-radius: 0;
       }
     }
@@ -526,6 +529,10 @@
 
   .modal-emulation-options{
     box-shadow: none;
+
+    .order-button {
+      margin-bottom: 0;
+    }
   }
 
   .modal-emulation-options-tabs{
@@ -563,9 +570,9 @@
       }
     }
 
-    .tab-content{
-      max-height: calc(100vh - 155px);
-    }
+    //.tab-content{
+    //  max-height: calc(100vh - 155px);
+    //}
   }
 
   .wrap-for-mobile{
