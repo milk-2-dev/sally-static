@@ -655,6 +655,28 @@ button.close{
           cursor: pointer;
         }
       }
+
+      .dz-error-message{
+        //pointer-events: none;
+        z-index: 1000;
+        position: relative;
+        display: block;
+        opacity: 1;
+        //transition: opacity .3s ease;
+        border-radius: 0;
+        font-size: 20px;
+        top: auto;
+        left: auto;
+        width: 100%;
+        //background: #be2626;
+        background: transparent;
+        padding: .5em 1.2em;
+        color: #000;
+
+        &:after{
+          display: none;
+        }
+      }
     }
 
     &.dz-started{
