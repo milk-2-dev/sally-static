@@ -391,68 +391,9 @@ section.post-author{
 
   .post-header{
     position: relative;
-
-    //&:before{
-    //  content:'';
-    //  position: absolute;
-    //  top:0;
-    //  left:0;
-    //  right:0;
-    //  bottom:0;
-    //  background: rgba(0,0,0,0.5);
-    //  z-index: 1;
-    //  opacity: 0;
-    //  transition: .2s ease-in-out;
-    //}
-
-    //&:hover{
-    //  &:before{
-    //    opacity:.8;
-    //  }
-    //  .button{
-    //    opacity: 1;
-    //  }
-    //}
-
-    //.post-action{
-    //  position: absolute;
-    //  left: 0;
-    //  bottom: 0;
-    //  display: flex;
-    //  align-items: center;
-    //  justify-content: center;
-    //  width: 45px;
-    //  height: 40px;
-    //  background: #af7bf2;
-    //  color: #fff;
-    //  transition: .1s ease-in-out;
-    //
-    //  &:hover{
-    //    background: #fff;
-    //    color: #af7bf2;
-    //  }
-    //}
-
-    //.button{
-    //  position: absolute;
-    //  left: 50%;
-    //  top: 50%;
-    //  transform: translate(-50%, -50%);
-    //  opacity: 0;
-    //  transition: .2s ease-in-out;
-    //  //font-family: Helvetica;
-    //  //font-size: 18px;
-    //  font-weight: bold;
-    //  margin: 0;
-    //  padding: 10px;
-    //  min-width: 200px;
-    //  text-align: center;
-    //  z-index: 2;
-    //}
   }
 
   .owl-carousel{
-    //margin:0 -15px;
     display: flex !important;
     flex-wrap: wrap;
   }
@@ -729,7 +670,7 @@ section.post-author{
   .message-list__item{
     margin-bottom:30px;
     position: relative;
-    padding-left:30px;
+    padding-left:40px;
     font-family: MuseoSans;
     line-height: 1.4;
     color:#000;
@@ -748,8 +689,10 @@ section.post-author{
 
     .icon{
       position: absolute;
-      top:2px;
+      top:0;
       left:0;
+      width:26px;
+      text-align: center;
     }
 
     .card{

@@ -61,3 +61,13 @@
   align-items: center;
   margin: 0 auto 25px;
 }
+
+.icon-Ad_File {
+  font-size:3rem;
+
+  &.red_mod {
+    svg path{
+      fill: red;
+    }
+  }
+}

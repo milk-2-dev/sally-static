@@ -189,7 +189,7 @@ form{
     appearance: none;
     cursor: pointer;
     padding: 0 15px;
-    background:url('../../images/caret.png');
+    background:url('../../images/Nav_Down.svg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center right;
@@ -542,8 +542,8 @@ form{
     appearance: none;
     cursor: pointer;
     //padding: 0 15px;
-    background:url('../../images/caret.png');
-    background-size: 30px;
+    background:url('../../images/Nav_Down.svg');
+    background-size: 16px;
     background-repeat: no-repeat;
     background-position: calc(100% - 5px) center;
   }
@@ -767,12 +767,31 @@ form{
     font-size: 25px;
     color: map_get($colors, 'default-link');
 
+    svg{
+      path{
+        transition: .2s ease-in-out;
+        fill:map_get($colors, 'default-link');
+      }
+    }
+
     &.active{
       color: map_get($colors, 'active-link');
+
+      svg{
+        path{
+          fill:map_get($colors, 'active-link');
+        }
+      }
     }
 
     &:hover{
       color: map_get($colors, 'hover-link');
+
+      svg{
+        path{
+          fill:map_get($colors, 'hover-link');
+        }
+      }
     }
   }
 }
