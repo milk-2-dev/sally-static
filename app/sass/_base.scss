@@ -172,7 +172,6 @@ body.modal-open {
 }
 
 .mobile-menu{
-  padding:20px 0;
   background: #fff;
   position: fixed;
   bottom: 0;
@@ -182,7 +181,7 @@ body.modal-open {
   display: none;
 
   ul{
-    padding: 0;
+    padding:5px 0;
     margin: 0;
     list-style: none;
     display: flex;
@@ -192,9 +191,9 @@ body.modal-open {
     li{
       text-transform: uppercase;
       font-family: MuseoSans;
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 500;
-      width: 33.33%;
+      //width: 33.33%;
       padding: 10px;
       text-align: center;
 
@@ -207,22 +206,38 @@ body.modal-open {
       }
 
       a{
-        color: #4a4a4a;
+        color: map_get($colors, 'default-link');
         transition: .2s ease-in-out;
+        padding: 0;
+
+        &:hover{
+          color: map_get($colors, 'hover-link')
+        }
 
         &.active{
-          color: map_get($colors, 'pink');
+          color: map_get($colors, 'active-link');
         }
       }
+    }
+  }
+
+  .order-button{
+    .button{
+      margin:0;
+      display: block;
+      width: 100%;
+      border-radius: 0;
+      text-align: center;
+      border: none;
     }
   }
 
   &.login-user{
     a{
       position: relative;
-      font-size: 30px;
-      opacity:.5;
-      color: map_get($colors, 'grey');
+      //font-size: 30px;
+      //opacity:.5;
+      //color: map_get($colors, 'grey');
 
       &:after{
         content: '';
@@ -230,19 +245,13 @@ body.modal-open {
         position: absolute;
         left:0;
         right:0;
-        bottom:-15px;
-        width:10px;
-        height:10px;
-        margin:auto;
-        border-radius: 50%;
-        background: map_get($colors, 'grey');
+        bottom:-5px;
+        height:2px;
+        background: map_get($colors, 'modal-blue');
 
       }
 
       &.active{
-        color: map_get($colors, 'grey');
-        opacity:1;
-
         &:after{
           display: block;
         }
@@ -679,8 +688,17 @@ button.close{
       }
     }
 
+    &.dropzone-pretty{
+      padding:0;
+      border: 2px dashed #dce3ef;
+
+      .dz-preview{
+        margin:0;
+      }
+    }
+
     &.dz-started{
-      border:none;
+      border: 2px solid transparent;
     }
   }
 
@@ -714,7 +732,7 @@ button.close{
 
 .modal-emulation-body{
   position: relative;
-  height:calc(100vh - 61px);
+  //height:calc(100vh - 61px);
   //min-height: 700px;
   overflow-y: auto;
   background: #eaeae9;
@@ -796,14 +814,7 @@ button.close{
     }
   }
 
-  .dropzone{
-    padding:0;
-    border: 2px dashed #dce3ef;
 
-    .dz-preview{
-      margin:0;
-    }
-  }
 
   .message-article{
     border-right: none;

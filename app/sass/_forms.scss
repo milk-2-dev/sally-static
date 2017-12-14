@@ -271,8 +271,11 @@ form{
   margin-bottom: 40px;
   text-align: left;
 
-  .dropzone{
-    border:1px solid transparent;
+  .form-upload{
+    &.hover-border{
+      border:1px solid transparent;
+      border-radius: 0;
+    }
   }
 
   &:last-child{
@@ -315,7 +318,12 @@ form{
 
     &:hover{
       .dropzone{
-        border:1px solid map_get($colors, 'modal-blue');
+        border: 2px dashed transparent;
+      }
+      .form-upload{
+        &.hover-border{
+          border:1px solid map_get($colors, 'modal-blue');
+        }
       }
 
       .dz-remove--icon {
@@ -757,14 +765,14 @@ form{
 
   a{
     font-size: 25px;
-    color: #d8d8d8;
+    color: map_get($colors, 'default-link');
 
     &.active{
-      color: #2b2b2b;
+      color: map_get($colors, 'active-link');
     }
 
     &:hover{
-      color: #9013FE;
+      color: map_get($colors, 'hover-link');
     }
   }
 }
