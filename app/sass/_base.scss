@@ -11,9 +11,9 @@ body {
   color:map_get($colors, 'grey');
   background:#fefefe;
 
-  //>svg{
-  //  display: none;
-  //}
+  >svg{
+    display: none;
+  }
 }
 img, iframe {
   max-width:100%;
