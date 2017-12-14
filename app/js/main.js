@@ -3,11 +3,6 @@ var md = new MobileDetect(window.navigator.userAgent);
 $('html').addClass(md.userAgent());
 ///
 
-///truncate a post text
-$('.post-title .three-dots').ThreeDots({ max_rows:2 });
-$('.post-description .three-dots').ThreeDots({ max_rows:3 });
-///
-
 ///some settings for dropzone
 Dropzone.autoDiscover = false;
 ///
@@ -380,11 +375,17 @@ $(document).ready(function() {
 
                 $('.message-article article').after($('.message-set-reach')) //move block like in https://projects.invisionapp.com/share/SAEOF3BUH#/screens/268129653
                 modalEmulation('mobile');
+
+	            ///truncate a post text
+		            $('.post-title .three-dots').ThreeDots({ max_rows:2 });
+		            $('.post-description .three-dots').ThreeDots({ max_rows:3 });
+							///
             }
 
             var makePad = heightMobMenu();
 
             makePad.set();
+
 
         } else {
             if (!$('body').hasClass("desctop")) {
@@ -400,8 +401,13 @@ $(document).ready(function() {
 
                 makePad.reset();
 	            removeTab().moveBack();
+	            $('#messagePreview .message-list').after($('.message-set-reach')) //move block like in https://projects.invisionapp.com/share/SAEOF3BUH#/screens/268129653
+	            modalEmulation('desctop');
 
-                modalEmulation('desctop');
+	            ///truncate a post text
+		            $('.post-title .three-dots').ThreeDots({ max_rows:2 });
+		            $('.post-description .three-dots').ThreeDots({ max_rows:3 });
+							///
             }
         }
     }
