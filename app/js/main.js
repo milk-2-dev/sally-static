@@ -548,7 +548,6 @@ $(document).ready(function() {
 		thumbnailWidth: 548,
 		thumbnailMethod: 'crop',
 		maxFilesize: 1,
-		//filesizeBase: 1000,
 		maxFiles: 1,
 		addRemoveLinks: true,
 		acceptedFiles: 'image/*, video/*',
