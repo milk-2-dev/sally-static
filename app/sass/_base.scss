@@ -766,6 +766,10 @@ button.close{
 
     >.row{
       height:100%;
+
+      @media (max-height: 900px){
+        height:auto;
+      }
     }
   }
 
@@ -961,6 +965,7 @@ button.close{
     padding-right:$MEO-padding;
     z-index: 1;
     //max-height:calc(100vh - 235px);
+    height: calc(100vh - 205px);
     overflow-y: auto;
   }
 
