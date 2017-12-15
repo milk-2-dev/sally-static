@@ -49,3 +49,60 @@
     @include sprite($facebook-share);
   }
 }
+
+.icon-round{
+  width:95px;
+  height:95px;
+  border-radius: 50%;
+  background: #d8d8d8;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin: 0 auto 25px;
+}
+
+.icon-Ad_File {
+  font-size:3rem;
+
+  &.red_mod {
+    svg path{
+      fill: red;
+    }
+  }
+}
+
+.icon-Image{
+  &.medium-icon{
+    background: #d8d8d8;
+    width: 120px;
+    height: 70px;
+    border-radius: 4px;
+    text-align: center;
+    padding-top: 15px;
+
+    svg{
+      path{
+        fill: #fff;
+      }
+    }
+  }
+}
+
+.icon-Ad_Photo{
+  &.icon-white{
+    svg{
+      path{
+        fill:#fff;
+      }
+    }
+  }
+ &.lg-size{
+   font-size: 40px;
+
+  svg{
+    width: 100%;
+    height: 100%;
+  }
+ }
+}

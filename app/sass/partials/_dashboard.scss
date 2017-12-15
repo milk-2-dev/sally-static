@@ -42,7 +42,7 @@
 
   &:hover,
   &.active{
-    background: #a65bf4;
+    background: map_get($colors, 'pink');
     color:#fff;
     border-color: #fff;
 
@@ -67,7 +67,7 @@
 }
 
 .thead-color{
-  background: #a65bf4;
+  background: map_get($colors, 'pink');
   color:#fff;
 }
 

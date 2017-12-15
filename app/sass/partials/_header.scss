@@ -1,8 +1,13 @@
-/* =========================================================================
-                                 HEADER
-========================================================================= */
+/**********************************************************************************************
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+											5. Headers
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+***********************************************************************************************/
 
 #header{
+    .logo{
+        padding:10px 0;
+    }
     .share-form{
         display: none;
     }
@@ -33,6 +38,59 @@
         display: inline-block;
     }
 }
+
+
+/********************************************
+				5-1. Fixed Header
+*********************************************/
+#header.fixed-header{
+    position:fixed!important;
+    left:0!important;;
+    top:0!important;;
+    right:0!important;;
+    z-index:1000;
+    -webkit-transform: translateZ(0px);
+    box-shadow: 0 1px 3px rgba(0,0,0,.16);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.16);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.16);
+    -webkit-animation: animateFixedHeader .4s;
+    animation: animateFixedHeader .4s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    background: #fff;
+}
+
+#header.fixed-header .logo{
+    -webkit-animation: animateFixedHeaderLogo .6s;
+    animation: animateFixedHeaderLogo .6s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+#header.fixed-header .logo{
+    padding:10px 0;
+}
+#header.fixed-header .logo img{
+    height:40px;
+    width: auto;
+}
+#header.fixed-header #main-header .menu>ul>li>a{
+    padding:23px 0;
+}
+
+/********************************************
+				5-2. Main Header
+*********************************************/
+#main-header ul{
+    margin: 30px 0;
+    vertical-align: middle;
+}
+#main-header ul + ul,
+#main-header .button + ul,
+#main-header ul + .button{
+    margin-left:40px;
+}
+
 
 .preheader__right{
     display: flex;
@@ -212,7 +270,7 @@
             */
             &.active{
                 &:before{
-                    background:#a65bf4;
+                    background:map_get($colors, 'pink');
                 }
             }
 
@@ -264,7 +322,7 @@
     justify-content: space-between;
     align-items: center;
     margin-left: 40px;
-    background: #af7bf2;
+    background: #e4e4e5;
     padding: 0 15px;
     margin-right: -35px;
 
@@ -273,11 +331,23 @@
 
         >a{
             display: block;
-            padding-right: 40px;
-            background:image_url('caret--white.png');
-            background-size: 15px;
-            background-repeat: no-repeat;
-            background-position: center right;
+            padding-right: 15px;
+            position: relative;
+
+            &:after{
+                content: '\f078';
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translate(0 ,-50%);
+                display: inline-block;
+                font: normal normal normal 14px/1 FontAwesome;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                color: rgb(74, 74, 74);;
+            }
 
             &:hover,
             &:focus{
@@ -291,6 +361,7 @@
 .user-bar__avatar{
     display: inline-block;
     margin-right: 15px;
+    position: relative;
 
     img{
         border-radius: 50%;
@@ -299,8 +370,9 @@
 
 .user-bar__info{
     position: relative;
-    padding-right: 80px;
+    //padding-right: 80px;
     min-width:200px;
+    max-width: 250px;
     //margin-top:20px;
 
     .dropdown-menu{
@@ -324,6 +396,17 @@
     font-weight: 700;
 }
 
+.user-bar__user-name{
+    display: block;
+    color: #555;
+    text-transform: uppercase;
+    max-width:210px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 4px;
+}
+
 .user-bar__info-title{
     display: block;
     font-size: 13px;
@@ -333,15 +416,16 @@
 
 .user-bar__info-cost{
     display: block;
+    font-weight: bold;
     text-transform: uppercase;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 1.2;
-    color: #fff;
+    font-size: 12px;
+    color: #989898;
 }
 
 .small-menu{
-    text-align: right;
+    //text-align: right;
+    display: flex;
+    justify-content: flex-end;
 
     ul{
         margin:0;

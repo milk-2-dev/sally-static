@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Message</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icons" transform="translate(-28.000000, -320.000000)" fill="#9A9A9A">
+            <path d="M38,332 C35.95,332 34.194,330.764 33.422,329 L42.578,329 C41.806,330.764 40.05,332 38,332 M35,323.75 C35.689,323.75 36.25,324.31 36.25,325 C36.25,325.69 35.689,326.25 35,326.25 C34.311,326.25 33.75,325.69 33.75,325 C33.75,324.31 34.311,323.75 35,323.75 M41,323.75 C41.689,323.75 42.25,324.31 42.25,325 C42.25,325.69 41.689,326.25 41,326.25 C40.311,326.25 39.75,325.69 39.75,325 C39.75,324.31 40.311,323.75 41,323.75 M46,320 L30,320 C28.895,320 28,320.896 28,322 L28,334 C28,335.104 28.895,336 30,336 L31,336 L31,340 L35,336 L46,336 C47.105,336 48,335.104 48,334 L48,322 C48,320.896 47.105,320 46,320" id="Message"></path>
+        </g>
+    </g>
+</svg>

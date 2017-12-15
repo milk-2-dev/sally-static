@@ -122,19 +122,38 @@
   .message-preview{
     margin:0;
     height:auto;
+    padding:0;
+
+    .message-article{
+      border-right: none;
+      max-height: 100%;
+      order:2;
+      border-top: 1px solid map_get($colors, 'border-grey');
+      padding-top: 30px;
+    }
   }
 
   .message-list{
-    padding-left:0;
-    padding-right:0;
+    padding-left:30px;
+    padding-right:30px;
+    height:auto;
+
+    .modal-title{
+      padding-bottom: 30px;
+      position: relative;
+
+      &:after{
+        content: '';
+        position: absolute;
+        left: -30px;
+        right: -30px;
+        bottom:0;
+        border-bottom: 1px solid map_get($colors, 'border-grey');
+      }
+    }
   }
 
-  .message-article{
-    border-right: none;
-    max-height: 100%;
-    padding-left: 0;
-    padding-right: 0;
-  }
+
 
   .message-edit{
     padding-top:0;
@@ -149,22 +168,29 @@
     }
   }
 
-  .message-reach__views{
-    margin-top: 18px;
-  }
+  //.message-reach__views{
+  //  margin-top: 18px;
+  //}
 
   .message-set-reach{
-    padding: 32px 35px 32px;
+    padding: 30px;
+    position: relative;
+    margin-top:30px;
+
+    &:before{
+      content: '';
+      position: absolute;
+      top:0;
+      left:-30px;
+      right:-30px;
+      border-top:1px solid map_get($colors, 'border-grey');
+    }
 
     .modal-title {
       margin-bottom: 15px;
       font-size: 16px;
     }
   }
-
-  //.message-reach__costs{
-  //  font-size: 16px;
-  //}
 
   .modal-header{
     padding-left:15px;
@@ -197,6 +223,18 @@
   .first-screen {
     h1 {
       font-size: 24px;
+    }
+
+    .main-form__menu {
+      .nav{
+        a{
+          border-bottom: 2px solid transparent;
+
+          &.active {
+            border-bottom: 2px solid #2b2b2b;
+          }
+        }
+      }
     }
   }
 
@@ -358,7 +396,6 @@
      }
   }
 
-
   .message-article__menu{
     padding: 16px 12px;
     border: none;
@@ -374,4 +411,152 @@
       font-size: 12px;
     }
   }
+
+  .modal-emulation{
+    .main-form__menu{
+      justify-content: center;
+
+      .nav{
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 60px;
+        justify-content: center;
+        padding-top: 10px;
+        background: #fff;
+        z-index: 9999;
+
+        a{
+          border-bottom: 2px solid transparent;
+
+          &.active {
+            border-bottom: 2px solid map_get($colors, 'modal-blue');
+          }
+        }
+      }
+    }
+  }
+
+  .modal-emulation__next-button {
+    font-size: 20px !important;
+    margin: 0 !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9999;
+    border-radius: 0;
+  }
+
+  .modal-emulation-head,
+  .modal-header.change-icon{
+    .modal-title{
+      text-align: left;
+      padding-left: 30px;
+    }
+
+    .close{
+      right:auto;
+      left:20px;
+    }
+  }
+
+  .modal-emulation-body{
+    //height: calc(100vh - 55px);
+    background: #fff;
+    min-height: 280px;
+    &.step1 {
+      padding: 0;
+
+      .small-block{
+        &:first-child{
+          padding-top:90px;
+        }
+      }
+    }
+
+    //@media (max-height: 350px){
+    //    height: 100%;
+    //    min-height: 0;
+    //}
+
+  }
+
+  .main-form__menu-title{
+    position: absolute;
+    top:35px;
+    left:0;
+    right:0;
+    text-align: center;
+  }
+
+  .small-block{
+    &.content-center{
+      border-radius:0;
+      border: none;
+      margin: 0 auto;
+      box-shadow: none;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  .form-upload{
+    .dropzone {
+      padding: 0;
+      border: 1px solid transparent;
+    }
+  }
+
+  .modal-emulation-options{
+    box-shadow: none;
+    //.order-button {
+    //  margin: 0;
+    //  position: absolute;
+    //  left: 0;
+    //  bottom: 0;
+    //  right:0;
+    //  padding: 0;
+    //
+    //  #validateOrder{
+    //    margin:0;
+    //    border-radius: 0;
+    //  }
+    //}
+  }
+
+  .modal-emulation-options-tabs{
+
+  }
+
+  //.form-item{
+  //  &.edit-box{
+  //    &:hover{
+  //      .form-upload {
+  //        border: none;
+  //      }
+  //    }
+  //  }
+  //}
+
+  .wrap-for-mobile{
+    padding-top:40px;
+
+    &:before{
+      content: '';
+      position: absolute;
+      left:-30px;
+      right:-30px;
+      top:0;
+      border-top:1px solid #8d8d8d;
+    }
+  }
+
+  .main-form__menu {
+    justify-content: center;
+  }
+
 }

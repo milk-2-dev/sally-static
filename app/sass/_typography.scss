@@ -39,7 +39,7 @@ h6{
   margin:0.9375em 0 1.5em;
 }
 a{
-  color:#a65bf4;
+  color:map_get($colors, 'pink');
   transition: color .3s, border .3s, opacity .3s;
   -webkit-transition: color .3s, border .3s, opacity .3s;
   -moz-transition: color .3s, border .3s, opacity .3s;
