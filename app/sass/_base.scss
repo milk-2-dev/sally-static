@@ -714,6 +714,10 @@ button.close{
 
     &.dz-started{
       border: 2px solid transparent;
+
+      .dz-remove--icon{
+        display: none;
+      }
     }
   }
 
@@ -1111,6 +1115,7 @@ button.close{
     top:20px;
     right:20px;
     z-index: 10;
+    background: #fff;
 
     ul{
       list-style: none;

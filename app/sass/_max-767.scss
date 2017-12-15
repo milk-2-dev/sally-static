@@ -195,6 +195,10 @@
   .modal-header{
     padding-left:15px;
     padding-right:15px;
+
+    &.change-icon{
+      justify-content: flex-start !important;
+    }
   }
 
   .modal-title{
