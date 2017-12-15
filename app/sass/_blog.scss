@@ -769,12 +769,18 @@ section.post-author{
 
     .icon{
       margin-right: 5px;
-      vertical-align: middle;
+      vertical-align: baseline;
+
+      svg{
+        path{
+          fill: map_get($colors, 'pink');
+        }
+      }
     }
 
     span{
       display: inline-block;
-      vertical-align: middle;
+      vertical-align: baseline;
       font-family: MuseoSans;
       font-size: 16px;
       font-weight: 500;

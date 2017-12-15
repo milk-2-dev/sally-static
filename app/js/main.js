@@ -560,7 +560,9 @@ $(document).ready(function() {
 		//dictMaxFilesExceeded:"Please insert a valid image or video file under 24mb",
 		dictRemoveFile: "",
 
-		dictDefaultMessage: "<i class='fa fa-5x fa-picture-o' aria-hidden='true'></i> <br/><span class='dz-message__title'>Drag & Drop</span> a video or image here <br/> or <br/> " +
+		dictDefaultMessage: "<i class='icon icon-Image medium-icon' aria-hidden='true'>" +
+		"<svg width='75' height='41' viewBox='0 0 75 41' id='Image' y='269'><title>Image</title><path d='M34.62 34.498l3.157-3.252-7.393-8.04L44.74 8.302 75 40.931l-19.793.048.008.006H52.99L46.747 41l-.014-.015H0l20.67-21.493 13.95 15.006zM14.826 11.622c-3.372 0-6.105-2.602-6.105-5.811C8.72 2.6 11.454 0 14.826 0c3.371 0 6.104 2.602 6.104 5.81 0 3.21-2.733 5.812-6.104 5.812z' fill=''#8d8d8d' fill-rule='evenodd'></path></svg>" +
+		"</i> <br/><span class='dz-message__title'>Drag & Drop</span> a video or image here <br/> or <br/> " +
 		"<span class='button bg-blue small btn-round color-white min_w_250 margin_r_0'>Choose a file</span>",
 
 		accept: function(file, done) {
@@ -576,10 +578,7 @@ $(document).ready(function() {
 				//$('.dz-progress').css('display', 'none');
 				$('.form-upload .dropzone').removeClass('empty');
 				$(file.previewTemplate).find('.dz-remove').html('<i class="fa fa-close" aria-hidden="true"></i>');
-                $(file.previewTemplate).find('.dz-error-message').html();
-
-                console.log($(file.previewTemplate).find('.dz-error-message').html());
-
+				$(file.previewTemplate).find('.dz-error-message').html();
 				validateOrder('#formToValidateOrder', '#validateOrder');
 			});
 

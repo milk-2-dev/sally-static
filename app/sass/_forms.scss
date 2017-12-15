@@ -328,6 +328,11 @@ form{
 
       .dz-remove--icon {
         background: map_get($colors, 'modal-blue');
+
+        i{
+          background: map_get($colors, 'modal-blue');
+        }
+
         &:after{
           display: block;
         }

@@ -71,3 +71,38 @@
     }
   }
 }
+
+.icon-Image{
+  &.medium-icon{
+    background: #d8d8d8;
+    width: 120px;
+    height: 70px;
+    border-radius: 4px;
+    text-align: center;
+    padding-top: 15px;
+
+    svg{
+      path{
+        fill: #fff;
+      }
+    }
+  }
+}
+
+.icon-Ad_Photo{
+  &.icon-white{
+    svg{
+      path{
+        fill:#fff;
+      }
+    }
+  }
+ &.lg-size{
+   font-size: 40px;
+
+  svg{
+    width: 100%;
+    height: 100%;
+  }
+ }
+}

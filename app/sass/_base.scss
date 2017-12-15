@@ -11,9 +11,9 @@ body {
   color:map_get($colors, 'grey');
   background:#fefefe;
 
-  >svg{
-    display: none;
-  }
+  //>svg{
+  //  display: none;
+  //}
 }
 img, iframe {
   max-width:100%;
@@ -662,7 +662,7 @@ button.close{
         z-index: 100;
         color: #fff;
         background: #d8d8d8;
-        padding: 5px 20px;
+        padding: 10px;
         border-radius: 8px;
 
         &:after{
@@ -677,8 +677,9 @@ button.close{
           cursor: pointer;
         }
 
-        i{
+        i,svg,path{
           cursor: pointer;
+
         }
       }
 
@@ -883,7 +884,7 @@ button.close{
 
       svg{
         path{
-          transition: .2s eae-in-out;
+          transition: .3s;
           fill: map_get($colors, 'pink');
         }
       }
