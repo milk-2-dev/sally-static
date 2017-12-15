@@ -736,10 +736,12 @@ button.close{
 }
 
 .modal-emulation-head{
-  padding: 13px 30px 12px;
+  //padding: 13px 30px 12px;
+  padding: 20px 30px 15px;
   background: map_get($colors, 'modal-blue');
   position: relative;
   text-align: center;
+  z-index: 4;
 
 
   h5 {
@@ -778,8 +780,8 @@ button.close{
   }
 
   .saving-info{
-    position: absolute;
-    top:0;
+    position: fixed;
+    top: 0;
     left:0;
     width:100%;
     background: #676e72;
@@ -790,11 +792,7 @@ button.close{
     perspective:100px;
     opacity:0;
     transition: .2s ease-in-out;
-
-    &.show{
-      opacity: 1;
-      z-index: 10;
-    }
+    z-index: 2;
 
     span{
       animation:flip 2s infinite;
@@ -925,7 +923,7 @@ button.close{
 
   .order-button{
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding: 0 $MEO-padding;
 
     a{
@@ -1136,6 +1134,10 @@ button.close{
         a{
           padding: 15px 20px;
           display: block;
+
+          svg{
+            height:18px;
+          }
         }
       }
     }

@@ -449,7 +449,7 @@
       <div class="modal-footer">
         <div class="modal-buttons">
           <a href="javascript:void(0);"  data-dismiss="modal" class="button bg-light-gray">cancel</a>
-          <a href="" class="button color-white bg-blue" data-dismiss="modal" onclick="savingActivate(".saving-info");">save</a>
+          <a href="" class="button color-white bg-blue" data-dismiss="modal" onclick="savingActivate('.saving-info');">save</a>
         </div>
       </div>
     </div>
@@ -461,25 +461,4 @@
 
 <script src="js/libs.min.js"></script>
 <script src="js/main.js"></script>
-<!--<script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>-->
-
-<!--todo убрать это дерьмо отсюда-->
-
-<script type="application/javascript">
-	////////////Activate saving block
-
-	function savingActivate(block){
-		var savingBlock = $('body').find(block);
-
-		savingBlock.addClass('show');
-
-		function func() {
-			savingBlock.removeClass('show');
-		}
-
-		setTimeout(func, 3500);
-	}
-
-	////////////Activate saving block
-</script>
 </html>

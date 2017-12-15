@@ -248,7 +248,7 @@ function removeTab(){
 			var secondTab = $('#audienceTab .wrap-for-mobile');
             var orderBlock = $('.mobile-menu .order-button');
 
-            $(orderBlock).appendTo('modal-emulation-options');
+            $(orderBlock).appendTo('.modal-emulation-options');
 			$(formCustomBlock).appendTo(parentBlock);
 
 			$('a[href="#audienceTab"]').tab('show');
@@ -257,6 +257,31 @@ function removeTab(){
 		}
 	}
 }
+
+function savingActivate(block){
+    var savingBlock = $('body').find(block);
+    var headerHeight = $('.modal-emulation-head').outerHeight(true);
+
+    savingBlock.css({
+        'top': headerHeight,
+        'opacity': '1'
+    });
+
+    function func() {
+        savingBlock.css({
+            'top': '0',
+            'opacity': '0'
+        });
+    }
+
+    setTimeout(func, 3500);
+}
+
+function changeFormTitle(elem){
+    var text = $(elem).attr('data-name');
+    $('body').find('.main-form__menu-title').html(text);
+}
+
 
 function modalEmulation(device){
     var modalEmulationBlock = $('.modal-emulation');
@@ -376,6 +401,7 @@ $(document).ready(function() {
                 $('.message-article article').after($('.message-set-reach')) //move block like in https://projects.invisionapp.com/share/SAEOF3BUH#/screens/268129653
 
 	            $('#saveCustomAudinceButton').appendTo('#audienceTab .wrap-for-mobile');
+	            $('#saveCustomAudinceButton').addClass('button unfilled  br-color-blue br-light small-margin fill-frm-top unfilled  btn-large btn-round color-blue');
 
 	            modalEmulation('mobile');
 
