@@ -1,5 +1,6 @@
 .icon{
   display: inline-block;
+  line-height: 1.5;
 
   &.icon-target-icon{
     @include sprite($target-icon);
@@ -80,6 +81,8 @@
     border-radius: 4px;
     text-align: center;
     padding-top: 15px;
+    display: inline-block;
+    margin-bottom: 15px;
 
     svg{
       path{
@@ -99,6 +102,7 @@
   }
  &.lg-size{
    font-size: 40px;
+   height: 1.2em;
 
   svg{
     width: 100%;

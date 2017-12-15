@@ -714,6 +714,10 @@ button.close{
 
     &.dz-started{
       border: 2px solid transparent;
+
+      .dz-remove--icon{
+        display: none;
+      }
     }
   }
 
@@ -732,10 +736,12 @@ button.close{
 }
 
 .modal-emulation-head{
-  padding: 13px 30px 12px;
+  //padding: 13px 30px 12px;
+  padding: 20px 30px 15px;
   background: map_get($colors, 'modal-blue');
   position: relative;
   text-align: center;
+  z-index: 4;
 
 
   h5 {
@@ -766,12 +772,16 @@ button.close{
 
     >.row{
       height:100%;
+
+      @media (max-height: 900px){
+        height:auto;
+      }
     }
   }
 
   .saving-info{
-    position: absolute;
-    top:0;
+    position: fixed;
+    top: 0;
     left:0;
     width:100%;
     background: #676e72;
@@ -782,11 +792,7 @@ button.close{
     perspective:100px;
     opacity:0;
     transition: .2s ease-in-out;
-
-    &.show{
-      opacity: 1;
-      z-index: 10;
-    }
+    z-index: 2;
 
     span{
       animation:flip 2s infinite;
@@ -917,7 +923,7 @@ button.close{
 
   .order-button{
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding: 0 $MEO-padding;
 
     a{
@@ -961,6 +967,7 @@ button.close{
     padding-right:$MEO-padding;
     z-index: 1;
     //max-height:calc(100vh - 235px);
+    height: calc(100vh - 205px);
     overflow-y: auto;
   }
 
@@ -1106,6 +1113,7 @@ button.close{
     top:20px;
     right:20px;
     z-index: 10;
+    background: #fff;
 
     ul{
       list-style: none;
@@ -1126,6 +1134,10 @@ button.close{
         a{
           padding: 15px 20px;
           display: block;
+
+          svg{
+            height:18px;
+          }
         }
       }
     }

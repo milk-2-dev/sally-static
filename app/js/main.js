@@ -248,7 +248,7 @@ function removeTab(){
 			var secondTab = $('#audienceTab .wrap-for-mobile');
             var orderBlock = $('.mobile-menu .order-button');
 
-            $(orderBlock).appendTo('modal-emulation-options');
+            $(orderBlock).appendTo('.modal-emulation-options');
 			$(formCustomBlock).appendTo(parentBlock);
 
 			$('a[href="#audienceTab"]').tab('show');
@@ -257,6 +257,31 @@ function removeTab(){
 		}
 	}
 }
+
+function savingActivate(block){
+    var savingBlock = $('body').find(block);
+    var headerHeight = $('.modal-emulation-head').outerHeight(true);
+
+    savingBlock.css({
+        'top': headerHeight,
+        'opacity': '1'
+    });
+
+    function func() {
+        savingBlock.css({
+            'top': '0',
+            'opacity': '0'
+        });
+    }
+
+    setTimeout(func, 3500);
+}
+
+function changeFormTitle(elem){
+    var text = $(elem).attr('data-name');
+    $('body').find('.main-form__menu-title').html(text);
+}
+
 
 function modalEmulation(device){
     var modalEmulationBlock = $('.modal-emulation');
@@ -374,12 +399,17 @@ $(document).ready(function() {
                 removeTab().moveForMob();
 
                 $('.message-article article').after($('.message-set-reach')) //move block like in https://projects.invisionapp.com/share/SAEOF3BUH#/screens/268129653
-                modalEmulation('mobile');
+
+	            $('#saveCustomAudinceButton').appendTo('#audienceTab .wrap-for-mobile');
+	            $('#saveCustomAudinceButton').addClass('button unfilled  br-color-blue br-light small-margin fill-frm-top unfilled  btn-large btn-round color-blue');
+
+	            modalEmulation('mobile');
 
 	            ///truncate a post text
 		            $('.post-title .three-dots').ThreeDots({ max_rows:2 });
 		            $('.post-description .three-dots').ThreeDots({ max_rows:3 });
 							///
+
             }
 
             var makePad = heightMobMenu();
@@ -599,30 +629,17 @@ $(document).ready(function() {
 
 			this.on("maxfilesexceeded", function(file){
 				this.removeAllFiles();
-                $(file.previewTemplate).find('.dz-error-message').html('');
 				this.addFile(file);
 			});
 
 			this.on('error', function(file, response) {
-				console.log(file);
-				console.log(response);
-				console.log(dropzone.getAcceptedFiles());
-				//this.removeAllFiles(true);
-                var uploadedFile = this.getUploadingFiles();
-                dropzone.removeFile(uploadedFile);
-
-				var form = this;
-
-				//this.removeAllFiles();
+				$('.dz-preview.dz-image-preview').hide();
 				$(file.previewTemplate).find('.dz-error-message').html(response);
-				$(file.previewTemplate).find('.dz-remove').html('test');
-				$(file.previewTemplate).find('.dz-image').html('');
+        $('.dz-error-message').on('click', function(){
+			    dropzone.removeAllFiles(true);
+        })
 
-				$('.dz-error-message').on('click', function(){
-				    form.removeAllFiles(true);
-                })
-
-                $('.form-upload .order-block').css('display', 'none');
+				$('.form-upload .order-block').css('display', 'none');
 
 			});
 		}
