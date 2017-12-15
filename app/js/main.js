@@ -232,11 +232,11 @@ function removeTab(){
 				var formCustomBlock = $('.modal-emulation-workspace .small-block .form-custom');
 				var secondTab = $('#settingsTab .wrap-for-mobile');
 				var orderBlock = $('.modal-emulation-options .order-button');
-                $(orderBlock).appendTo('.mobile-menu');
 
+				$(orderBlock).appendTo('.mobile-menu');
 				$(formCustomBlock).appendTo('#prevForm');
-				$('a[aria-controls="audienceTab"]').removeClass('show active');
-				$('a[aria-controls="prevFormTab"]').tab('show');
+				//$('a[aria-controls="audienceTab"]').removeClass('show active');
+				$('a[href="#prevForm"]').tab('show');
 				$(secondTab).appendTo('#audienceTab');
 
 			}
@@ -251,7 +251,7 @@ function removeTab(){
             $(orderBlock).appendTo('modal-emulation-options');
 			$(formCustomBlock).appendTo(parentBlock);
 
-			$('#audienceTab-tab').tab('show');
+			$('a[href="#audienceTab"]').tab('show');
 			$(secondTab).appendTo('#settingsTab');
 
 		}

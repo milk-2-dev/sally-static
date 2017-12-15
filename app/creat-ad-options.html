@@ -21,12 +21,13 @@
   <div class="mobile-menu login-user">
     <ul class="nav" role="tablist">
       <li class="nav-item">
-        <a class="nav-link active"
+        <a class="nav-link"
            data-toggle="tab"
            href="#prevForm"
            role="tab"
-           aria-controls="prevFormTab"
-           aria-selected="true">
+           aria-controls="prevForm"
+           aria-selected="true"
+           aria-expanded="true">
 
           <i class="icon icon-Message" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 20 20" id="Message" y="310"><title>Message</title><path d="M10 12a4.997 4.997 0 0 1-4.578-3h9.156A4.997 4.997 0 0 1 10 12M7 3.75a1.251 1.251 0 0 1 0 2.5 1.251 1.251 0 0 1 0-2.5m6 0a1.251 1.251 0 0 1 0 2.5 1.251 1.251 0 0 1 0-2.5M18 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h1v4l4-4h11a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2" fill="#9A9A9A" fill-rule="evenodd"></path></svg>
@@ -38,8 +39,8 @@
            data-toggle="tab"
            href="#audienceTab"
            role="tab"
-           aria-controls="audienceTab"
-           aria-selected="true">
+           aria-controls="audience"
+           aria-selected="false">
 
           <i class="icon icon-Custsomize" aria-hidden="true">
             <svg width="20" height="18" viewBox="0 0 20 18" id="Custsomize" y="178"><title>Custsomize</title><path d="M7 6c1.654 0 3 1.346 3 3s-1.346 3-3 3-3-1.346-3-3 1.346-3 3-3zm10-6c1.654 0 3 1.346 3 3s-1.346 3-3 3-3-1.346-3-3 1.346-3 3-3zm0 12c1.654 0 3 1.346 3 3s-1.346 3-3 3-3-1.346-3-3 1.346-3 3-3zM2.5 9c0 .346.047.678.121 1H0V8h2.621A4.458 4.458 0 0 0 2.5 9zm10 6c0 .346.047.678.121 1H0v-2h12.621a4.458 4.458 0 0 0-.121 1zm-1.121-7h8.62v2h-8.62c.074-.322.12-.654.12-1 0-.344-.046-.676-.12-1zM12.5 3c0 .346.047.678.121 1H0V2h12.621a4.458 4.458 0 0 0-.121 1z" fill="#2B2B2B" fill-rule="evenodd"></path></svg>
@@ -240,7 +241,7 @@
                         </div>
                       </div>
 
-                      <div class="form-item" id="customizeAudience" onclick="$("#saveCustomAudinceButton").show()">
+                      <div class="form-item" id="customizeAudience" onclick="$('#saveCustomAudinceButton').show()">
                         <p class="form-item__title">Behavior and Interests</p>
 
                         <input type="text" placeholder="Search behaviors & interests...">
