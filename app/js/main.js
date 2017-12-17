@@ -511,6 +511,8 @@ $(document).ready(function() {
       var form = $(form);
 
       $(form).find('.validate-order').each(function(){
+          validateOrder(form, button);
+
           $(this).keyup(function() {
               validateOrder(form, button)
           });
