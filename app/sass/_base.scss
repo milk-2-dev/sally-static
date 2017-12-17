@@ -926,7 +926,7 @@ button.close{
     margin-bottom: 10px;
     padding: 0 $MEO-padding;
 
-    a{
+    .button{
       width: 100%;
     }
   }
@@ -1016,12 +1016,12 @@ button.close{
 
   &:checked{
     + label {
-      background: map_get($colors, 'modal-blue');
+      background: #7d7d7d;
       &:before {
-        content: "public";
+        content: "private";
       }
       &:after {
-        left: 52px;
+        left: 3px;
       }
     }
   }
@@ -1034,10 +1034,11 @@ button.close{
     height: 31px;
     border-radius: 50px;
     cursor: pointer;
-    background: #7d7d7d;
+
+    background: map_get($colors, 'modal-blue');
 
     &:before {
-      content: "private";
+      content: "public";
       position: absolute;
       right: -100%;
       top: 50%;
@@ -1050,7 +1051,7 @@ button.close{
     &:after {
       content: "";
       position: absolute;
-      left: 3px;
+      left: 52px;
       top: 3px;
       display: block;
       width: 25px;

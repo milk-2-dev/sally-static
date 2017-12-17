@@ -490,7 +490,6 @@ $(document).ready(function() {
 	///////////// Share toogle
 
     function changeShareSettings() {
-        console.log('enter after click');
         if($('#shareSettingsToggle').prop( 'checked' )){
             $('#shareSetting').show('fast');
         }
@@ -620,6 +619,8 @@ $(document).ready(function() {
 				$(file.previewTemplate).find('.dz-remove').html('<i class="fa fa-close" aria-hidden="true"></i>');
 				$(file.previewTemplate).find('.dz-error-message').html();
 				validateOrder('#formToValidateOrder', '#validateOrder');
+
+                console.log( file);
 			});
 
 			this.on("removedfile", function(file) {
@@ -646,11 +647,13 @@ $(document).ready(function() {
 			this.on('error', function(file, response) {
 				$('.dz-preview.dz-image-preview').hide();
 				$(file.previewTemplate).find('.dz-error-message').html(response);
-        $('.dz-error-message').on('click', function(){
-			    dropzone.removeAllFiles(true);
-        })
+                $('.dz-error-message').on('click', function(){
+                    dropzone.removeAllFiles(true);
+                })
 
 				$('.form-upload .order-block').css('display', 'none');
+
+
 
 			});
 		}
