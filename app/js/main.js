@@ -489,11 +489,20 @@ $(document).ready(function() {
 
 	///////////// Share toogle
 
-	$('#shareSettingsTogle').on('click', function(){
-		$('#shareSetting').toggle('fast', function(){
+    function changeShareSettings() {
+        console.log('enter after click');
+        if($('#shareSettingsToggle').prop( 'checked' )){
+            $('#shareSetting').show('fast');
+        }
 
-		});
-	});
+        $('#shareSettingsToggle').on('change', function(){
+            $('#shareSetting').toggle('fast');
+        })
+    }
+
+    changeShareSettings();
+
+    ///////////// Share toogle
 
 
   //validate-order
