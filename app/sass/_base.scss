@@ -863,18 +863,17 @@ button.close{
   }
 
   a{
-    display: block;
+    display: flex;
+    align-items: center;
     text-transform: uppercase;
     color:#9a9a9a;
     position: absolute;
     top:50%;
     transform: translate(0, -50%);
-    display: inline-block;
-    vertical-align: middle;
 
     span{
       display: inline-block;
-      vertical-align: middle;
+      margin-top: 4px;
     }
 
     &:first-child{
