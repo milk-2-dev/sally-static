@@ -29,6 +29,7 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="tel"],
+input[type="url"],
 .select2-container .select2-choice,
 input[type="search"],
 select,
@@ -46,6 +47,7 @@ input[type="password"],
 input[type="email"],
 input[type="tel"],
 input[type="search"],
+input[type="url"],
 select,
 textarea{
   &:focus{
@@ -65,6 +67,7 @@ label + input[type="password"],
 label + input[type="email"],
 label + input[type="tel"],
 label + input[type="search"],
+input[type="url"],
 label + select,
 label + textarea{
   margin-top:5px;
