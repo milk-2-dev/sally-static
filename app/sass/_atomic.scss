@@ -1,3 +1,5 @@
+//todo Roman: delete this things, because bootstrap has it yet (.text-left and else)
+
 .align-left {
   text-align:left !important;
 }
@@ -7,6 +9,9 @@
 .align-center {
   text-align:center !important;
 }
+
+
+
 img.align-left {
   float:left;
   margin:.5em 2em .5em 0;
@@ -34,6 +39,8 @@ img.align-center {
 								13. Custom Padding And Margins
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ***********************************************************************************************/
+
+
 
 .margin_t_0{margin-top:0!important;}
 .margin_t_5{margin-top:5px!important;}
