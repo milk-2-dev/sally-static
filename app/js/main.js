@@ -437,7 +437,7 @@ $(document).ready(function() {
 	            ///truncate a post text
 		            $('.post-title .three-dots').ThreeDots({ max_rows:2 });
 		            $('.post-description .three-dots').ThreeDots({ max_rows:3 });
-							///
+				///
             }
         }
     }
@@ -455,7 +455,7 @@ $(document).ready(function() {
         $('.skill__circle .skill__circle_progress').css('stroke-dashoffset', 100 - statusValue);
     }
 
-	  userBarStatus();
+    userBarStatus();
 
     /////////////input length
 
@@ -467,6 +467,7 @@ $(document).ready(function() {
 			var maxLength = $(this).attr('maxLength');
 
 			$(this).parent().find('.edit-box-count').text(maxLength +'/'+ maxLength);
+
 
 			$(this).keyup(function() {
 				var textlen = maxLength - $(this).val().length;
@@ -480,7 +481,6 @@ $(document).ready(function() {
 					$(this).parent().find('.edit-box-error').show();
 					$(this).parent().find('.edit-box-error').text('Max length');
 				}
-
 			});
 		})
 	}
@@ -501,7 +501,7 @@ $(document).ready(function() {
 
     changeShareSettings();
 
-    ///////////// Share toogle
+    ///////////// Share toggle
 
 
   //validate-order
@@ -535,8 +535,13 @@ $(document).ready(function() {
       $(form).find('.validate-order').each(function(){
          var inputVal = $(this).val().length;
 
-          if(inputVal){
+          if(inputVal && inputVal < 30){
               $(this).removeClass('empty');
+          }
+          else if(inputVal >= 30){
+              var cropText = $(this).val().substr(0, 30);
+              $(this).removeClass('empty');
+              $(this).val(cropText);
           }
           else{
               $(this).addClass('empty');
@@ -564,7 +569,6 @@ $(document).ready(function() {
 			containerCssClass : "label-icon"
 		});
 	});
-
 	/////////////Activate selection
 
 
@@ -659,4 +663,26 @@ $(document).ready(function() {
 		}
 	});
   }
+
+
+  ///////validate url on preview
+    function isUrlValid(url) {
+        return /(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(url);
+    }
+
+    $('#inputForPreview').keyup(function(){
+        var url = $(this).val();
+
+        if(isUrlValid(url)){
+            $('.check-valid-url .button').removeClass('disabled');
+            $('.modal-emulation__next-button').removeClass('disabled');
+        }
+        else{
+            console.log('inside '+ url);
+            $('.check-valid-url .button').addClass('disabled');
+            $('.modal-emulation__next-button').addClass('disabled');
+        }
+    })
+
+    ///////validate url on preview
 });

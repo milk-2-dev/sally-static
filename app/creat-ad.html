@@ -146,8 +146,12 @@
 
               <div class="tab-pane fade show active" id="formLink" role="tabpanel" aria-labelledby="formLink-tab">
                 <div class="form-item">
-                  <input id="inputForPreview" class="modal-emulation__input focus-purple" type="text" placeholder="Paste a link of what you want to share...">
-                  <span class="input-notification align-left hidden-sm-down">If your url is valid, you will see a preview below</span>
+                  <input type="url" id="inputForPreview" class="modal-emulation__input focus-purple" type="text" placeholder="Paste a link of what you want to share..."/>
+                  <!--<span class="input-notification align-left hidden-sm-down">If your url is valid, you will see a preview below</span>-->
+                  <div class="check-valid-url d-flex align-items-center margin_t_10 justify-content-between hidden-sm-down">
+                    <p class="margin_b_0 margin_r_10">If your url is valid, click to see a preview below</p>
+                    <a class="button margin_r_0 bg-blue btn-round color-white disabled" href="">insert</a>
+                  </div>
                 </div>
               </div>
 
