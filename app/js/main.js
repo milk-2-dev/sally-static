@@ -571,15 +571,8 @@ $(document).ready(function() {
 	});
 	/////////////Activate selection
 
+    ////////////Add an ad
 
-
-	////////////Add an ad
-
-  $('#inputForPreview').on('change', function(){
-      $('#preview-block>img').css('display', 'none');
-      $('#preview-block').find('.message-article').css('display', 'block');
-      $('button[form="myAwesomeDropzone"]').css('display','block')
-  })
 
   if ($('#myAwesomeDropzone').length) {
 
@@ -676,11 +669,19 @@ $(document).ready(function() {
         if(isUrlValid(url)){
             $('.check-valid-url .button').removeClass('disabled');
             $('.modal-emulation__next-button').removeClass('disabled');
+
+            $('.check-valid-url').on('click', function(){
+                $('#preview-block>img').css('display', 'none');
+                $('#preview-block').find('.message-article').css('display', 'block');
+            })
         }
         else{
             console.log('inside '+ url);
             $('.check-valid-url .button').addClass('disabled');
             $('.modal-emulation__next-button').addClass('disabled');
+
+            $('#preview-block>img').css('display', 'block');
+            $('#preview-block').find('.message-article').css('display', 'none');
         }
     })
 
