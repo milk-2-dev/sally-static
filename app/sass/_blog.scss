@@ -804,13 +804,19 @@ section.post-author{
 
   .modal-title{
     margin-bottom: 15px;
+    font-size: 16px;
+  }
+
+  .slider-selection,
+  .slider-handle{
+    background: #9012fe;
   }
 }
 
 .message-reach__views{
   font-family: MuseoSans;
   font-size: 26px;
-  font-weight: 500;
+  font-weight: 900;
   line-height:1;
   text-align: right;
   margin-bottom:0;
