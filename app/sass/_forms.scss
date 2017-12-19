@@ -153,7 +153,7 @@ form{
     top:50%;
     right:8px;
     margin:0;
-    padding: 19px 29px 16px;
+    padding: 18px 29px 19px;
     background: #d4d4d4;
     transform: translate(0, -50%);
   }
@@ -538,18 +538,13 @@ form{
 
   select{
     border: 1px solid #dce3ef;
-    padding: 10px 15px;
     font-family: MuseoSans;
-    font-size: 20px;
     font-weight: 300;
     margin: 0;
-    //border: none;
+    padding: 15px 15px 13px;
     background: transparent;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     cursor: pointer;
-    //padding: 0 15px;
     background:url('../../images/Nav_Down.svg');
     background-size: 16px;
     background-repeat: no-repeat;
