@@ -561,7 +561,7 @@ $(document).ready(function() {
 
 	/////////////Activate selection
 	$(function(){
-		$("#tagSelection").select2({
+		$("#tagSelection").chosen({
 			allowClear: true,
 			//maximumSelectionLength: 2,
 			placeholder: 'Search for tags or add new...',

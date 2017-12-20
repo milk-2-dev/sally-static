@@ -923,7 +923,7 @@ button.close{
   .order-button{
     text-align: center;
     margin-bottom: 10px;
-    padding: 0 $MEO-padding;
+    padding: 10px $MEO-padding 0;
 
     .button{
       width: 100%;
@@ -966,7 +966,7 @@ button.close{
     padding-right:$MEO-padding;
     z-index: 1;
     //max-height:calc(100vh - 235px);
-    height: calc(100vh - 205px);
+    height: calc(100vh - 215px);
     overflow-y: auto;
   }
 

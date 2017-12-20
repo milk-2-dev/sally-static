@@ -102,16 +102,6 @@ form{
     cursor:pointer;
   }
 
-  .chosen-container-multi .chosen-choices {
-    background:#f4f6fa none repeat scroll 0 0;
-    border:1px solid #dce3ef;
-    border-radius:5px;
-    display:block;
-    margin:0;
-    padding:11px 10px;
-    width:100%;
-  }
-
   .slider-handle {
     cursor: pointer;
   }
@@ -554,6 +544,25 @@ form{
     background-size: 16px;
     background-repeat: no-repeat;
     background-position: calc(100% - 5px) center;
+  }
+
+  &.select-chosen{
+    .chosen-choices {
+      background:#f4f6fa;
+      border:1px solid map_get($colors, 'border-grey');
+      border-radius:4px;
+      display:block;
+      margin:0;
+      padding:11px 10px;
+      width:100%;
+      box-shadow: none;
+    }
+
+    .search-field{
+      //input{
+      //  width: 100% !important;
+      //}
+    }
   }
 }
 
