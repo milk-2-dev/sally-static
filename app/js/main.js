@@ -561,12 +561,8 @@ $(document).ready(function() {
 
 	/////////////Activate selection
 	$(function(){
-		$("#tagSelection").select2({
-			allowClear: true,
-			//maximumSelectionLength: 2,
-			placeholder: 'Search for tags or add new...',
-			width: '100%',
-			containerCssClass : "label-icon"
+		$("#tagSelection").chosen({
+			width: '100%'
 		});
 	});
 	/////////////Activate selection
