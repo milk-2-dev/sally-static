@@ -573,10 +573,10 @@ $(document).ready(function() {
   if ($('#myAwesomeDropzone').length) {
 
 	var dropzone = new Dropzone('#myAwesomeDropzone', {
-		url: '/',
+		//url: '/',
 		params:true,
 		previewTemplate: document.querySelector('#preview-template').innerHTML,
-		parallelUploads: null,
+		//parallelUploads: null,
 		thumbnailHeight: 307,
 		thumbnailWidth: 548,
 		thumbnailMethod: 'crop',

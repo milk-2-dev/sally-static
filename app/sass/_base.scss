@@ -773,9 +773,9 @@ button.close{
     >.row{
       height:100%;
 
-      @media (max-height: 900px){
-        height:auto;
-      }
+      //@media (max-height: 900px){
+      //  height:auto;
+      //}
     }
   }
 
@@ -922,8 +922,12 @@ button.close{
 
   .order-button{
     text-align: center;
-    margin-bottom: 10px;
-    padding: 10px $MEO-padding 0;
+    //margin-bottom: 10px;
+    padding: 10px $MEO-padding 10px;
+    height:105px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 
     .button{
       width: 100%;
@@ -966,7 +970,7 @@ button.close{
     padding-right:$MEO-padding;
     z-index: 1;
     //max-height:calc(100vh - 235px);
-    height: calc(100vh - 215px);
+    height: calc(100vh - 238px);
     overflow-y: auto;
   }
 
