@@ -909,10 +909,8 @@ button.close{
 }
 
 .modal-emulation-options{
-  //position: relative;
   z-index: 1;
   background: #fff;
-  //height: 100%;
   box-shadow: 4px 0 10px 4px rgba(0,0,0,0.22);
   display: flex;
   flex-direction: column;
@@ -922,7 +920,6 @@ button.close{
 
   .order-button{
     text-align: center;
-    //margin-bottom: 10px;
     padding: 10px $MEO-padding 10px;
     height:105px;
     display: flex;
@@ -970,7 +967,7 @@ button.close{
     padding-right:$MEO-padding;
     z-index: 1;
     //max-height:calc(100vh - 235px);
-    height: calc(100vh - 238px);
+    height: calc(100vh - 255px);
     overflow-y: auto;
   }
 
