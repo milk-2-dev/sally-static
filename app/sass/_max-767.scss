@@ -173,7 +173,7 @@
   //}
 
   .message-set-reach{
-    padding: 30px;
+    padding: 30px 0;
     position: relative;
     margin-top:30px;
 
@@ -181,8 +181,8 @@
       content: '';
       position: absolute;
       top:0;
-      left:-30px;
-      right:-30px;
+      left:-15px;
+      right:-15px;
       border-top:1px solid map_get($colors, 'border-grey');
     }
 
@@ -195,6 +195,10 @@
   .modal-header{
     padding-left:15px;
     padding-right:15px;
+
+    &.change-icon{
+      justify-content: flex-start !important;
+    }
   }
 
   .modal-title{
@@ -559,6 +563,10 @@
 
   .main-form__menu {
     justify-content: center;
+  }
+
+  #saveCustomAudinceButton{
+    margin-top:30px;
   }
 
 }
