@@ -568,6 +568,7 @@ form{
           box-shadow: none;
           color: #fff;
           border-radius: 50px;
+          padding: 5px 20px 5px 10px;
 
           .search-choice-close{
             display: inline-block;
@@ -576,8 +577,10 @@ form{
             text-rendering: auto;
             -webkit-font-smoothing: antialiased;
             background: none;
-            top: 3px;
-            opacity:.8;
+            top: 50%;
+            opacity: .8;
+            transform: translate(0, -50%);
+            height: 14px;
 
             &:before{
               content: "\f00d";
