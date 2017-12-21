@@ -49,6 +49,10 @@
   &.icon-facebook-share{
     @include sprite($facebook-share);
   }
+
+  &.icon-facebook-play{//<i class="icon icon-facebook-play"></i>
+    @include  sprite($play);
+  }
 }
 
 .icon-round{
