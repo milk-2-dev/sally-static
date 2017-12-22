@@ -603,7 +603,7 @@ $(document).ready(function() {
 
 		init: function() {
 			this.on("addedfile", function(file) {
-                $(file.previewTemplate).find('.dz-error-message').html('');
+				$(file.previewTemplate).find('.dz-error-message').html('');
 				$('button[form="myAwesomeDropzone"]').removeClass('disabled');
 				$('.form-upload .order-block').css('display', 'block');
 				//$('#myAwesomeDropzone').css('poiter-event', 'none');
@@ -640,9 +640,9 @@ $(document).ready(function() {
 			this.on('error', function(file, response) {
 				$('.dz-preview.dz-image-preview').hide();
 				$(file.previewTemplate).find('.dz-error-message').html(response);
-                $('.dz-error-message').on('click', function(){
-                    dropzone.removeAllFiles(true);
-                })
+        $('.dz-error-message').on('click', function(){
+            dropzone.removeAllFiles(true);
+        })
 
 				$('.form-upload .order-block').css('display', 'none');
 

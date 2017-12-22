@@ -94,7 +94,7 @@ gulp.task('svgSpriteBuild', function () {
 			pretty: true
 		}
 	}))
-	// remove all fill and style declarations in out shapes
+	//remove all fill and style declarations in out shapes
 	.pipe(cheerio({
 		run: function ($) {
 			$('[fill]').removeAttr('fill');
