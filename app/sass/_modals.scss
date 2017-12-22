@@ -143,6 +143,15 @@
    .modal-dialog {
      transform: translate(0, -50%);
    }
+
+   &#signIn,
+   &#signUp{
+     .modal-dialog {
+       top: 20px;
+       margin-bottom: 20px;
+       transform: translate(0);
+     }
+   }
  }
 }
 
