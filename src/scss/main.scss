@@ -1,0 +1,44 @@
+/* ============================ Main styles ============================ */
+
+@import 'base/variables';
+//@import 'my_functions';
+@import '_sprite';
+@import '_svg_sprite';
+@import '_icons';
+@import '_base';
+@import 'base/atomic';
+@import '_buttons';
+@import '_forms';
+@import 'base/typography';
+@import 'base/animation';
+@import '_fromTamplate';
+@import '_blog';
+@import '_custom-bg';
+@import '_modals';
+
+
+@import 'pages/header';
+@import 'pages/home';
+@import 'pages/footer';
+@import 'pages/dashboard';
+
+
+@import "_fonts";
+//@import "_responsive";
+//@import "partials/_facebook-prev";
+
+/* ============================ Media max-1200px ============================ */
+
+@import 'media/max-1200';
+
+/* ============================ Media max-992px ============================ */
+
+@import 'media/max-992';
+
+/* ============================ Media max-767px ============================ */
+
+@import 'media/max-767';
+
+/* ============================ Media max-550px ============================ */
+
+@import 'media/max-550';

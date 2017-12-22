@@ -1,0 +1,30 @@
+.button{
+  &.bg-light-gray{
+    color: #979797;
+  }
+
+  &.min_w_250{
+    min-width: 250px;
+  }
+
+  &.disabled{
+    background-color: #d8d8d8 !important;
+    pointer-events: none;
+  }
+
+  &.small{
+    padding:10px 28px;
+
+    &.br-light{
+      padding:10px 27px;
+    }
+  }
+}
+
+.modal-emulation__next-button{
+  position: fixed;
+  right:32px;
+  bottom:32px;
+  font-size:20px !important;
+  margin: 0 !important;
+}
