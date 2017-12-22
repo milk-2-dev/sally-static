@@ -533,6 +533,7 @@ form{
     margin: 0;
     padding: 15px 15px 13px;
     background: transparent;
+    -webkit-appearance: none;
     appearance: none;
     cursor: pointer;
     background:url('../../images/Nav_Down.svg');
@@ -984,4 +985,111 @@ form{
     color: #06a9d4;
   }
 
+}
+
+.form-upload{
+  padding:10px;
+  border:1px solid #555;
+  border-radius: 4px;
+  text-align: center;
+
+  .dropzone {
+    padding: 10px;
+    border:2px dashed map_get($colors, 'pink');
+
+    .dz-preview{
+      .dz-image {
+        border-radius: 4px;
+        width:100%;
+        height:100%;
+      }
+
+      .dz-remove{
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        z-index: 100;
+        font-weight: 100;
+        font-size: 25px;
+
+        i{
+          cursor:pointer;
+        }
+      }
+
+      .dz-remove--icon{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        color: #fff;
+        background: #d8d8d8;
+        padding: 10px;
+        border-radius: 8px;
+
+        &:after{
+          content: 'replace';
+          display: none;
+          color: #fff;
+          text-transform: uppercase;
+          text-align: center;
+        }
+
+        &:hover{
+          cursor: pointer;
+        }
+
+        i,svg,path{
+          cursor: pointer;
+
+        }
+      }
+
+      .dz-error-message{
+        z-index: 1000;
+        position: relative;
+        display: block;
+        opacity: 1;
+        border-radius: 0;
+        font-size: 20px;
+        top: auto;
+        left: auto;
+        width: 100%;
+        background: transparent;
+        padding: 0;
+        color: #000;
+
+        &:after{
+          display: none;
+        }
+      }
+    }
+
+    &.dropzone-pretty{
+      padding:0;
+      border: 2px dashed #dce3ef;
+
+      .dz-preview{
+        margin:0;
+      }
+    }
+
+    &.dz-started{
+      border: 2px solid transparent;
+
+      .dz-remove--icon{
+        display: none;
+      }
+    }
+  }
+
+  .dz-message{
+    color: #aaa;
+  }
+
+  .dz-message__title{
+    display: block;
+    font-size: 30px;
+  }
 }

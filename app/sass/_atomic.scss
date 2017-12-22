@@ -63,36 +63,10 @@ img.align-center {
 /********************************************
 			  	12-5. Colors
 *********************************************/
-.color-white, .color-white.button, .color-white.button:hover, .color-light,.wysija-submit-field.wysija-submit{color:#fff !important;}
-//.color-black{color:#212428!important;}
-//.color-blue{color:map_get($colors, 'pink')!important;}
-//.color-dark-blue{color:#161c43!important;}
-//.color-light-blue{color:#2eb9ea!important;}
-//.color-turquoise-blue{color:#5fd0e4!important;}
-//.color-gray{color:#bfcdde!important;}
-//.color-dark-gray{color:#8a9fb9 !important;}
-//.color-periwinkle-gray{color:#e5eaf3!important;}
-//.color-botticelli-gray{color:#d6deec!important;}
-//.color-light-gray{color:#f9f9f9!important;}
-//.color-silver{color:#c9c9c9!important;}
-//.color-orange{color:#f3c72f!important;}
-//.color-dark-orange{color:#ed9b4b!important;}
-//.color-bittersweet{color:#ff7859!important;}
-//.color-green{color:#85c94f!important;}
-//.color-dark-green{color:#3ec8a7!important;}
-//.color-turquoise{color:#41d4d6!important;}
-//.color-purple{color:#9268e8!important;}
-//.color-dark-purple{color:#603497!important;}
-//.color-pink{color:#f06387!important;}
-//.color-cranberry{color:#de5477!important;}
-//.color-yellow{color:#ffff4a!important;}
-//.color-red{color:#eb5848!important;}
-//.color-mulberry{color:#c95b97!important;}
-//.color-salmon{color:#f99376!important;}
-//.color-pictonblue{color:#47b3dd!important;}
-//.color-tundora{color:#444444 !important;}
-//.color-royalBlue{color:#3a6ee8 !important;}
-//.color-torchRed{color:#fd0025 !important;}
-//.color-hotGray{color:#ACB4B8 !important;}
-//.color-codGray{color:#1c1c1c !important;}
-//.color-doveGray{color:#666666 !important;}
+.color-white,
+.color-white.button,
+.color-white.button:hover,
+.color-light {
+  color:#fff !important;
+}
+
