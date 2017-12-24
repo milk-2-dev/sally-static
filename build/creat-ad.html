@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name=viewport content="initial-scale=1.0, maximum-scale=1, user-scalable=no" width=device-width>
+  <title>Sally</title>
+  <link rel="stylesheet" href="./css/libs.min.css">
+  <link rel="stylesheet" href="./css/main.css">
+
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body class="headerstyle4 headerfixed">
+<!-- Splendid Content -->
+<div id="splendid-content">
+
+  <div class="mobile-menu login-user">
+    <ul class="nav" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active"
+             data-toggle="tab"
+             data-name="insert a url"
+             href="#formLink"
+             role="tab"
+             aria-controls="formLink"
+             aria-selected="true"
+             onclick="changeFormTitle(this)">
+
+          <i class="icon icon-Ad_link">
+            <svg width="26" height="26" viewBox="0 0 26 26" id="Ad_Link" y="26"><title>Ad_Link</title><path d="M23.98 11.78l-4.881 4.88a6.899 6.899 0 0 1-9.759 0c-.424-.424-.756-.9-1.048-1.392L10.56 13c.108-.109.241-.171.368-.244.157.535.43 1.042.852 1.464a3.453 3.453 0 0 0 4.88 0l4.878-4.88a3.453 3.453 0 0 0 0-4.88 3.454 3.454 0 0 0-4.879 0l-1.735 1.738a8.657 8.657 0 0 0-4.402-.48l3.698-3.697a6.902 6.902 0 0 1 9.76 9.76zm-12.903 8.023L9.34 21.54a3.456 3.456 0 0 1-4.88 0 3.456 3.456 0 0 1 0-4.88l4.88-4.88a3.452 3.452 0 0 1 4.88 0c.42.42.694.928.852 1.463.128-.075.26-.135.367-.243l2.268-2.267a6.782 6.782 0 0 0-1.048-1.392 6.9 6.9 0 0 0-9.759 0L2.021 14.22a6.902 6.902 0 0 0 9.76 9.76l3.697-3.698a8.652 8.652 0 0 1-4.401-.479z" fill="#2B2B2B" fill-rule="nonzero"></path></svg>
+          </i>
+
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab"
+           data-name="Upload a file"
+           href="#formImages"
+           role="tab"
+           aria-controls="formImages"
+           aria-selected="false"
+           onclick="changeFormTitle(this)">
+          <i class="icon icon-Ad_File">
+            <svg width="26" height="26" viewBox="0 0 26 26" id="Ad_File" y="0"><title>Ad_File</title><path d="M25.556 23.111V2.89C25.556 1.3 24.278 0 22.716 0H2.84C1.278 0 0 1.3 0 2.889V23.11C0 24.7 1.278 26 2.84 26h19.876c1.562 0 2.84-1.3 2.84-2.889zM7.809 15.167l3.549 4.347L16.328 13l6.388 8.667H2.84l4.969-6.5z" fill="#D8D8D8" fill-rule="nonzero"></path></svg>
+          </i>
+
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab"
+           data-name="Record a video"
+           href="#formCamera"
+           role="tab"
+           aria-controls="formCamera"
+           aria-selected="false"
+           onclick="changeFormTitle(this)">
+
+          <i class="icon icon-Ad_Photo">
+            <svg width="28" height="25" viewBox="0 0 28 25" id="Ad_Photo" y="52"><title>Ad_Photo</title><path d="M14.34 22.2c-4.452 0-8.071-3.682-8.071-8.21 0-4.528 3.62-8.21 8.07-8.21s8.07 3.682 8.07 8.21c0 4.528-3.62 8.21-8.07 8.21M25.1 4.412c1.485 0 2.69 1.226 2.69 2.737v15.053c0 1.51-1.205 2.737-2.69 2.737H3.58c-1.486 0-2.69-1.227-2.69-2.737V7.148c0-1.51 1.204-2.737 2.69-2.737h2.596c.898 0 1.739-.457 2.238-1.219l1.092-1.668A2.68 2.68 0 0 1 11.743.306h5.192c.899 0 1.74.457 2.238 1.218l1.092 1.668a2.678 2.678 0 0 0 2.239 1.22h2.595zM14.34 8.517c-2.967 0-5.38 2.454-5.38 5.473 0 3.019 2.413 5.474 5.38 5.474s5.38-2.455 5.38-5.474-2.413-5.473-5.38-5.473z" fill="#D8D8D8" fill-rule="evenodd"></path></svg>
+          </i>
+        </a>
+      </li>
+    </ul>
+
+    <div class="order-button">
+      <button type="submit" form="myAwesomeDropzone" class="button bg-blue color-white disabled">Next</button>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <main id="splendid-main-container padding_t_0">
+    <section class="modal-emulation">
+      <div class="modal-emulation-head">
+          <h5 class="modal-title">Create your ad</h5>
+          <a class="close" data-dismiss="modal" aria-label="Close">
+            <i class="icon icon-Nav_X" aria-hidden="true">
+              <svg class="hidden-sm-down" width="24" height="24" viewBox="0 0 24 24" id="Nav_X" y="468"><title>Nav_X</title><path fill="#FFF" d="M24 2.417L21.583 0 12 9.583 2.417 0 0 2.417 9.583 12 0 21.583 2.417 24 12 14.417 21.583 24 24 21.583 14.417 12z" fill-rule="evenodd" opacity=".5"></path></svg>
+              <svg class="hidden-md-up" width="10" height="16" viewBox="0 0 10 16" id="Nav_Back" y="444"><title>Nav_Back</title><path fill="#fff" d="M9.947 1.827l-6.12 6.12 6.12 6.12-1.894 1.88-8-8 8-8z" fill-rule="evenodd"></path></svg>
+            </i>
+          </a>
+      </div>
+      <div class="modal-emulation-body step1">
+        <div class="small-block content-center">
+          <div class="main-form">
+            <div class="main-form__menu">
+              <span class="main-form__menu-title">
+                insert a url
+              </span>
+
+              <ul class="nav hidden-sm-down" id="myTab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" id="formLink-tab"
+                     data-toggle="tab"
+                     data-name="insert a url"
+                     href="#formLink"
+                     role="tab"
+                     aria-controls="formLink"
+                     aria-selected="true"
+                     onclick="changeFormTitle(this)">
+
+                    <i class="icon icon-Ad_link">
+                      <svg width="26" height="26" viewBox="0 0 26 26" id="Ad_Link" y="26"><title>Ad_Link</title><path d="M23.98 11.78l-4.881 4.88a6.899 6.899 0 0 1-9.759 0c-.424-.424-.756-.9-1.048-1.392L10.56 13c.108-.109.241-.171.368-.244.157.535.43 1.042.852 1.464a3.453 3.453 0 0 0 4.88 0l4.878-4.88a3.453 3.453 0 0 0 0-4.88 3.454 3.454 0 0 0-4.879 0l-1.735 1.738a8.657 8.657 0 0 0-4.402-.48l3.698-3.697a6.902 6.902 0 0 1 9.76 9.76zm-12.903 8.023L9.34 21.54a3.456 3.456 0 0 1-4.88 0 3.456 3.456 0 0 1 0-4.88l4.88-4.88a3.452 3.452 0 0 1 4.88 0c.42.42.694.928.852 1.463.128-.075.26-.135.367-.243l2.268-2.267a6.782 6.782 0 0 0-1.048-1.392 6.9 6.9 0 0 0-9.759 0L2.021 14.22a6.902 6.902 0 0 0 9.76 9.76l3.697-3.698a8.652 8.652 0 0 1-4.401-.479z" fill="#2B2B2B" fill-rule="nonzero"></path></svg>
+                    </i>
+
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="formImages-tab"
+                     data-toggle="tab"
+                     data-name="Upload a file"
+                     href="#formImages"
+                     role="tab"
+                     aria-controls="formImages"
+                     aria-selected="false"
+                     onclick="changeFormTitle(this)">
+
+                    <i class="icon icon-Ad_File">
+                      <svg width="26" height="26" viewBox="0 0 26 26" id="Ad_File" y="0"><title>Ad_File</title><path d="M25.556 23.111V2.89C25.556 1.3 24.278 0 22.716 0H2.84C1.278 0 0 1.3 0 2.889V23.11C0 24.7 1.278 26 2.84 26h19.876c1.562 0 2.84-1.3 2.84-2.889zM7.809 15.167l3.549 4.347L16.328 13l6.388 8.667H2.84l4.969-6.5z" fill="#D8D8D8" fill-rule="nonzero"></path></svg>
+                    </i>
+
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="formCamera-tab"
+                     data-toggle="tab"
+                     data-name="Record a video"
+                     href="#formCamera"
+                     role="tab"
+                     aria-controls="formCamera"
+                     aria-selected="false"
+                     onclick="changeFormTitle(this)">
+
+                    <i class="icon icon-Ad_Photo">
+                      <svg width="28" height="25" viewBox="0 0 28 25" id="Ad_Photo" y="52"><title>Ad_Photo</title><path d="M14.34 22.2c-4.452 0-8.071-3.682-8.071-8.21 0-4.528 3.62-8.21 8.07-8.21s8.07 3.682 8.07 8.21c0 4.528-3.62 8.21-8.07 8.21M25.1 4.412c1.485 0 2.69 1.226 2.69 2.737v15.053c0 1.51-1.205 2.737-2.69 2.737H3.58c-1.486 0-2.69-1.227-2.69-2.737V7.148c0-1.51 1.204-2.737 2.69-2.737h2.596c.898 0 1.739-.457 2.238-1.219l1.092-1.668A2.68 2.68 0 0 1 11.743.306h5.192c.899 0 1.74.457 2.238 1.218l1.092 1.668a2.678 2.678 0 0 0 2.239 1.22h2.595zM14.34 8.517c-2.967 0-5.38 2.454-5.38 5.473 0 3.019 2.413 5.474 5.38 5.474s5.38-2.455 5.38-5.474-2.413-5.473-5.38-5.473z" fill="#D8D8D8" fill-rule="evenodd"></path></svg>
+                    </i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="tab-content" id="myTabContent">
+
+              <div class="tab-pane fade show active" id="formLink" role="tabpanel" aria-labelledby="formLink-tab">
+                <div class="form-item">
+                  <input type="url" id="inputForPreview" class="modal-emulation__input focus-purple" type="text" placeholder="Paste a link of what you want to share..."/>
+                  <!--<span class="input-notification align-left hidden-sm-down">If your url is valid, you will see a preview below</span>-->
+                  <div class="check-valid-url d-flex align-items-center margin_t_10 justify-content-between hidden-sm-down">
+                    <p class="margin_b_0 margin_r_10">If your url is valid, click to see a preview below</p>
+                    <a class="button margin_r_0 bg-blue btn-round color-white disabled" href="javascript:void(0);">insert</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="formImages" role="tabpanel" aria-labelledby="formImages-tab">
+                <div class="form-upload">
+                  <form action="/" id="myAwesomeDropzone" class="dropzone">
+                    <div class="fallback">
+                      <input name="file" type="file" multiple />
+                    </div>
+                  </form>
+
+                  <div id="preview-template" style="display: none;">
+
+                    <div class="dz-preview dz-file-preview">
+                      <div class="dz-image"><img data-dz-thumbnail=""></div>
+                      <div class="dz-error-message"><span data-dz-errormessage=""></span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="formCamera" role="tabpanel" aria-labelledby="formCamera-tab">
+                <div class="form-item text-center">
+                  <div class="icon-round">
+                    <i class="icon icon-Ad_Photo icon-white lg-size" aria-hidden="true">
+                      <svg width="28" height="25" viewBox="0 0 28 25" id="Ad_Photo" y="52"><title>Ad_Photo</title><path d="M14.34 22.2c-4.452 0-8.071-3.682-8.071-8.21 0-4.528 3.62-8.21 8.07-8.21s8.07 3.682 8.07 8.21c0 4.528-3.62 8.21-8.07 8.21M25.1 4.412c1.485 0 2.69 1.226 2.69 2.737v15.053c0 1.51-1.205 2.737-2.69 2.737H3.58c-1.486 0-2.69-1.227-2.69-2.737V7.148c0-1.51 1.204-2.737 2.69-2.737h2.596c.898 0 1.739-.457 2.238-1.219l1.092-1.668A2.68 2.68 0 0 1 11.743.306h5.192c.899 0 1.74.457 2.238 1.218l1.092 1.668a2.678 2.678 0 0 0 2.239 1.22h2.595zM14.34 8.517c-2.967 0-5.38 2.454-5.38 5.473 0 3.019 2.413 5.474 5.38 5.474s5.38-2.455 5.38-5.474-2.413-5.473-5.38-5.473z" fill="#D8D8D8" fill-rule="evenodd"></path></svg>
+                    </i>
+                  </div>
+
+                  <a href="" class="button bg-blue small btn-round color-white min_w_250 margin_r_0">record</a>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="small-block padding_20 hidden-sm-down" id="preview-block">
+          <img src="./images/facebook-preview.png" alt="">
+          <div class="message-article" style="display: none">
+            <article>
+              <header class="message-article__head">
+                <div class="message-article__head-wrap">
+                  <img class="message-article__logo" src="http://placehold.it/60x60" alt="">
+
+                  <div class="message-article__main-info">
+                    <p class="message-article__author">Buffer</p>
+
+                    <ul class="message-article__meta">
+                      <li>4 January at 17:01</li>
+                      <li><i class="fa fa-globe" aria-hidden="true"></i></li>
+                    </ul>
+                  </div>
+
+                  <div class="message-article__menu">
+                    <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                    <span>
+                                                    Like
+                                                </span>
+                  </div>
+                </div>
+
+                <p class="message-article__head-desc">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
+                </p>
+              </header>
+              <section class="message-article__content">
+                <img src="http://placehold.it/535x330" alt="" class="message-article__content-img">
+                <p class="message-article__content-title">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                </p>
+                <p class="message-article__content-text">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur id molestias odit perspiciatis porro ratione vel. Corporis eaque illo iste laboriosam nulla quo repudiandae veritatis. Adipisci id itaque nihil.
+                </p>
+                <div class="message-article__content-link">
+                                            <span>
+                                                blog.bufferapp.com
+                                            </span>
+                  <a>More</a>
+                </div>
+              </section>
+              <div class="message-article__footer">
+                <ul>
+                  <li>
+                    <i class="icon icon-facebook-like"></i>
+                    <span>Like</span>
+                  </li>
+                  <li>
+                    <i class="icon icon-facebook-comment"></i>
+                    <span>Comment</span>
+                  </li>
+                  <li>
+                    <i class="icon icon-facebook-share"></i>
+                    <span>Share</span>
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="order-button hidden-sm-down">
+          <button type="submit" form="myAwesomeDropzone" class="modal-emulation__next-button button margin_r_0 bg-blue btn-round color-white disabled" href="">Next</button>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <!-- Main Container -->
+</div>
+<!-- Splendid Content -->
+</body>
+
+<script src="js/libs.min.js"></script>
+<script src="js/main.js"></script>
+
+</html>
