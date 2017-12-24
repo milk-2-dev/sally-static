@@ -1,14 +1,17 @@
 var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
+    watch = require('gulp-watch'),
 
 	////Minify JavaScript
     uglify = require('gulp-uglify'),
 
 	////Compile scss
     sass = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps'),
 
 	/////Take all template
     rigger = require('gulp-rigger'),
+    cssmin = require('gulp-minify-css'),
 
     cssnano = require('gulp-cssnano'),
 
@@ -37,8 +40,7 @@ var gulp = require('gulp'),
 	////Generate png sprite
     spritesmith = require('gulp.spritesmith'),
 	merge = require('merge-stream'),
-    buffer = require('vinyl-buffer'),
-    imagemin = require('gulp-imagemin')
+    buffer = require('vinyl-buffer')
 
 
 var buildFolder = 'build',
@@ -48,27 +50,27 @@ var buildFolder = 'build',
 			html: buildFolder +'/',
 			js: buildFolder +'/js/',
 			css: buildFolder +'/css/',
-			img: buildFolder +'/img/',
+			img: buildFolder +'/images/',
 			fonts: buildFolder +'/fonts/'
 		},
 		src: { //From where gulp must take sources
 			html: srcFolder +'/*.html',
 			js: srcFolder +'/js/*.js',
 			style: srcFolder +'/scss/*.scss',
-			img: srcFolder +'/img/**/*.*',
+			img: srcFolder +'/images/**/*.*',
 			fonts: srcFolder +'/fonts/**/*.*'
 		},
 		watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
 			html: srcFolder +'/**/*.html',
 			js: srcFolder +'/js/**/*.js',
-			style: srcFolder +'/style/**/*.scss',
-			img: srcFolder +'/img/**/*.*',
+			style: srcFolder +'/scss/**/*.scss',
+			img: srcFolder +'/images/**/*.*',
 			fonts: srcFolder +'/fonts/**/*.*'
 		},
 		clean: './' + buildFolder
 	};
 
-var config = {
+var ServerConfig = {
     server: {
         baseDir:'./' + buildFolder
     },
@@ -80,7 +82,7 @@ var config = {
 
 gulp.task('html:build', function () {
     gulp.src(path.src.html) //Take all html files
-	.pipe(rigger()) //Take all template in html
+	.pipe(rigger()).on('error', sass.logError) //Take all template in html
 	.pipe(gulp.dest(path.build.html)) //Put result into build directory
 	.pipe(browserSync.reload({stream: true}))
 });
@@ -114,41 +116,60 @@ gulp.task('js:build', function () {
 gulp.task('style:build', function () {
     gulp.src(path.src.style) //Выберем наш main.scss
 	.pipe(sourcemaps.init()) //То же самое что и с js
-	.pipe(sass()) //Скомпилируем
-	.pipe(prefixer()) //Добавим вендорные префиксы
+	.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+	.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: false }))
 	.pipe(cssmin()) //Сожмем
 	.pipe(sourcemaps.write())
 	.pipe(gulp.dest(path.build.css)) //И в build
-	.pipe(reload({stream: true}));
+	.pipe(browserSync.reload({stream: true}))
 });
 
+gulp.task('libsCss:build', function () {
+    gulp.src(path.build.css + '/libs.css')
+	.pipe(cssnano())
+	.pipe(rename({suffix: '.min'}))
+	.pipe(gulp.dest(buildFolder + '/css'));
+});
 
+gulp.task('fonts:build', function() {
+    gulp.src(path.src.fonts)
+        .pipe(gulp.dest(path.build.fonts))
+});
 
-
-gulp.task('sass', function(){
-    return gulp.src('app/scss/**/*.scss')
-        //.pipe(sourcemaps.init())
-        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: false }))
-        //.pipe(sourcemaps.write('../css', {addComment: false}))
-        .pipe(gulp.dest('app/css'))
+gulp.task('image:build', function () {
+    gulp.src(path.src.img) //Выберем наши картинки
+        .pipe(imagemin({ //Сожмем их
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()],
+            interlaced: true
+        }))
+        .pipe(gulp.dest(path.build.img)) //И бросим в build
         .pipe(browserSync.reload({stream: true}))
 });
 
-gulp.task('browser-sync',function(){
-    browserSync({
-        server: "./app"
-    });
-});
+gulp.task('build', [
+    'html:build',
+    'libsJs:build',
+    'js:build',
+    'style:build',
+    'libsCss:build',
+    'fonts:build',
+    'image:build'
+]);
 
+// gulp.task('browser-sync',function(){
+//     browserSync({
+//         server: "./app"
+//     });
+// });
 
-
-gulp.task('css-libs', ['sass'], function() {
-    return gulp.src('app/css/libs.css')
-    .pipe(cssnano())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('app/css'));
-});
+// gulp.task('css-libs', ['sass'], function() {
+//     return gulp.src('app/css/libs.css')
+//     .pipe(cssnano())
+//     .pipe(rename({suffix: '.min'}))
+//     .pipe(gulp.dest('app/css'));
+// });
 
 gulp.task('sprite', function () {
     // Generate our spritesheet
@@ -225,12 +246,49 @@ gulp.task('svgSpriteSass', function () {
 
 gulp.task('svgSprite', ['svgSpriteBuild', 'svgSpriteSass']);
 
-gulp.task('watch', ['browser-sync', 'css-libs', 'scripts'], function() {
-    gulp.watch('app/scss/**/*.scss', ['sass']);
-    gulp.watch('app/*.html', browserSync.reload);
-    gulp.watch('app/js/**/*.js', browserSync.reload);
+gulp.task('watch', function(){
+    watch([path.watch.html], function(event, cb) {
+        gulp.start('html:build')
+		//.pipe(browserSync.reload({stream: true}))
+    });
+    watch([path.watch.style], function(event, cb) {
+        gulp.start('style:build')
+		//.pipe(browserSync.reload({stream: true}))
+    });
+    // watch([path.watch.js], function(event, cb) {
+    //     gulp.start('libsJs:build');
+    // });
+    watch([path.watch.js], function(event, cb) {
+        gulp.start('js:build')
+        //.pipe(browserSync.reload({stream: true}))
+    });
+    watch([path.watch.img], function(event, cb) {
+        gulp.start('image:build')
+		//.pipe(browserSync.reload({stream: true}))
+    });
+    watch([path.watch.fonts], function(event, cb) {
+        gulp.start('fonts:build')
+		//.pipe(browserSync.reload({stream: true}))
+    });
 });
+
+gulp.task('webserver', function () {
+    browserSync(ServerConfig);
+});
+
+gulp.task('clean', function (cb) {
+    rimraf(path.clean, cb);
+});
+
+// gulp.task('watch', ['browser-sync', 'css-libs', 'scripts'], function() {
+//     gulp.watch('app/scss/**/*.scss', ['sass']);
+//     gulp.watch('app/*.html', browserSync.reload);
+//     gulp.watch('app/js/**/*.js', browserSync.reload);
+// });
 
 // ----------------------Дефолтный таск gulp --------------------------------
 
-gulp.task('default', ['watch']);
+//gulp.task('default', ['watch']);
+gulp.task('default', ['build', 'webserver', 'watch']);
+gulp.task('watch-spriteSvg', ['svgSprite', 'build', 'webserver', 'watch']);
+gulp.task('watch-spritePng', ['sprite', 'build', 'webserver', 'watch']);
