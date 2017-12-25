@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
-    watch = require('gulp-watch'),
+    //watch = require('gulp-watch'),
 
 	////Minify JavaScript
     uglify = require('gulp-uglify'),
@@ -50,13 +50,13 @@ var buildFolder = 'build',
 			html: buildFolder +'/',
 			js: buildFolder +'/js/',
 			css: buildFolder +'/css/',
-			img: buildFolder +'/images/',
+			img: buildFolder +'/images/**/*.*',
 			fonts: buildFolder +'/fonts/'
 		},
 		src: { //From where gulp must take sources
 			html: srcFolder +'/*.html',
 			js: srcFolder +'/js/*.js',
-			style: srcFolder +'/scss/*.scss',
+			style: srcFolder +'/scss/',
 			img: srcFolder +'/images/**/*.*',
 			fonts: srcFolder +'/fonts/**/*.*'
 		},
@@ -82,7 +82,7 @@ var ServerConfig = {
 
 gulp.task('html:build', function () {
     gulp.src(path.src.html) //Take all html files
-	.pipe(rigger()).on('error', sass.logError) //Take all template in html
+	.pipe(rigger()) //Take all template in html
 	.pipe(gulp.dest(path.build.html)) //Put result into build directory
 	.pipe(browserSync.reload({stream: true}))
 });
@@ -102,7 +102,6 @@ gulp.task('libsJs:build', function() {//scripts
         srcFolder + '/libs/sprite-cash.js'
     ])
 	.pipe(concat('libs.min.js'))
-	//.pipe(uglify()) this doing on next step
 	.pipe(gulp.dest(srcFolder + '/js'));
 });
 
@@ -114,7 +113,7 @@ gulp.task('js:build', function () {
 });
 
 gulp.task('style:build', function () {
-    gulp.src(path.src.style) //Выберем наш main.scss
+    gulp.src(path.src.style + 'main.scss') //Выберем наш main.scss
 	.pipe(sourcemaps.init()) //То же самое что и с js
 	.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
 	.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: false }))
@@ -125,7 +124,8 @@ gulp.task('style:build', function () {
 });
 
 gulp.task('libsCss:build', function () {
-    gulp.src(path.build.css + '/libs.css')
+    gulp.src(path.src.style + '/libs.scss')
+	.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
 	.pipe(cssnano())
 	.pipe(rename({suffix: '.min'}))
 	.pipe(gulp.dest(buildFolder + '/css'));
@@ -133,7 +133,7 @@ gulp.task('libsCss:build', function () {
 
 gulp.task('fonts:build', function() {
     gulp.src(path.src.fonts)
-        .pipe(gulp.dest(path.build.fonts))
+	.pipe(gulp.dest(path.build.fonts))
 });
 
 gulp.task('image:build', function () {
@@ -246,30 +246,37 @@ gulp.task('svgSpriteSass', function () {
 
 gulp.task('svgSprite', ['svgSpriteBuild', 'svgSpriteSass']);
 
-gulp.task('watch', function(){
-    watch([path.watch.html], function(event, cb) {
-        gulp.start('html:build')
-		//.pipe(browserSync.reload({stream: true}))
-    });
-    watch([path.watch.style], function(event, cb) {
-        gulp.start('style:build')
-		//.pipe(browserSync.reload({stream: true}))
-    });
-    // watch([path.watch.js], function(event, cb) {
-    //     gulp.start('libsJs:build');
-    // });
-    watch([path.watch.js], function(event, cb) {
-        gulp.start('js:build')
-        //.pipe(browserSync.reload({stream: true}))
-    });
-    watch([path.watch.img], function(event, cb) {
-        gulp.start('image:build')
-		//.pipe(browserSync.reload({stream: true}))
-    });
-    watch([path.watch.fonts], function(event, cb) {
-        gulp.start('fonts:build')
-		//.pipe(browserSync.reload({stream: true}))
-    });
+// gulp.task('watch', function(){
+//     watch([path.watch.html], function(event, cb) {
+//         gulp.start('html:build')
+// 		//.pipe(browserSync.reload({stream: true}))
+//     });
+//     watch([path.watch.style], function(event, cb) {
+//         gulp.start('style:build')
+// 		//.pipe(browserSync.reload({stream: true}))
+//     });
+//     // watch([path.watch.js], function(event, cb) {
+//     //     gulp.start('libsJs:build');
+//     // });
+//     watch([path.watch.js], function(event, cb) {
+//         gulp.start('js:build')
+//         //.pipe(browserSync.reload({stream: true}))
+//     });
+//     watch([path.watch.img], function(event, cb) {
+//         gulp.start('image:build')
+// 		//.pipe(browserSync.reload({stream: true}))
+//     });
+//     watch([path.watch.fonts], function(event, cb) {
+//         gulp.start('fonts:build')
+// 		//.pipe(browserSync.reload({stream: true}))
+//     });
+// });
+
+gulp.task('watch', function() {
+    gulp.watch(path.watch.html, ['html:build']);
+    gulp.watch(path.watch.style, ['style:build']);
+    gulp.watch(path.watch.js, ['js:build']);
+    gulp.watch(path.watch.img, ['image:build']);
 });
 
 gulp.task('webserver', function () {
