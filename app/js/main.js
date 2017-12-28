@@ -573,10 +573,10 @@ $(document).ready(function() {
   if ($('#myAwesomeDropzone').length) {
 
 	var dropzone = new Dropzone('#myAwesomeDropzone', {
-		//url: '/',
+		url: '/',
 		params:true,
 		previewTemplate: document.querySelector('#preview-template').innerHTML,
-		//parallelUploads: null,
+		parallelUploads: null,
 		thumbnailHeight: 307,
 		thumbnailWidth: 548,
 		thumbnailMethod: 'crop',
@@ -584,6 +584,7 @@ $(document).ready(function() {
 		maxFiles: 1,
 		addRemoveLinks: true,
 		acceptedFiles: 'image/*, video/*',
+		clickable: ['.dz-remove--icon', '.dropzone', '.message-article__author', '.dz-error-message'],
 
 		dictInvalidFileType:"Please insert a valid image or video file under 24mb",
 
@@ -601,7 +602,15 @@ $(document).ready(function() {
 			done();
 		},
 
+
 		init: function() {
+
+            // var mockFile = { name: "boom-flash-on-white_1308-2912", size: 62214, type: 'image/jpeg' };
+            // this.addFile.call(this, mockFile);
+            // this.options.thumbnail.call(this, mockFile, "https://image.freepik.com/free-vector/boom-flash-on-white_1308-2912.jpg");
+
+            var prevFile;
+
 			this.on("addedfile", function(file) {
 				$(file.previewTemplate).find('.dz-error-message').html('');
 				$('button[form="myAwesomeDropzone"]').removeClass('disabled');
@@ -611,17 +620,26 @@ $(document).ready(function() {
 				$('.form-upload .dropzone').removeClass('empty');
 				$(file.previewTemplate).find('.dz-remove').html('<i class="fa fa-close" aria-hidden="true"></i>');
 				$(file.previewTemplate).find('.dz-error-message').html();
+                $('.dz-remove--icon').css('display', 'block');
 				validateOrder('#formToValidateOrder', '#validateOrder');
 
-                console.log( file);
+                if (typeof prevFile !== "undefined") {
+                    this.removeFile(prevFile);
+                }
 			});
 
 			this.on("removedfile", function(file) {
 				$('button[form="myAwesomeDropzone"]').addClass('disabled');
 				$('.form-upload .order-block').css('display', 'none');
 				$('.form-upload .dropzone').addClass('empty');
+                $('.dz-remove--icon').css('display', 'none');
 				validateOrder('#formToValidateOrder', '#validateOrder');
 			});
+
+            this.on('success', function(file, responseText) {
+                prevFile = file;
+
+            });
 
 			// this.on("reset", function(file) {
 			// 	$('button[form="myAwesomeDropzone"]').addClass('disabled');
@@ -640,19 +658,17 @@ $(document).ready(function() {
 			this.on('error', function(file, response) {
 				$('.dz-preview.dz-image-preview').hide();
 				$(file.previewTemplate).find('.dz-error-message').html(response);
-        $('.dz-error-message').on('click', function(){
-            dropzone.removeAllFiles(true);
-        })
+                $('.dz-error-message').on('click', function(){
+                    dropzone.removeAllFiles(true);
+                })
 
 				$('.form-upload .order-block').css('display', 'none');
-
-
+				$('.dz-remove--icon').css('display', 'none');
 
 			});
 		}
 	});
   }
-
 
   ///////validate url on preview
     function isUrlValid(url) {

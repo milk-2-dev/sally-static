@@ -320,14 +320,19 @@ form{
       }
 
       .dz-remove--icon {
-        background: map_get($colors, 'modal-blue');
+        background: map_get($colors, 'modal-blue') !important;
 
         i{
           background: map_get($colors, 'modal-blue');
         }
 
         &:after{
+          content: 'replace';
           display: block;
+          color: #fff;
+          text-transform: uppercase;
+          text-align: center;
+          margin-top: -14px;
         }
       }
     }
@@ -996,6 +1001,32 @@ form{
   .dropzone {
     padding: 10px;
     border:2px dashed map_get($colors, 'pink');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .dz-remove--icon{
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 100;
+      color: #fff;
+      background: #d8d8d8;
+      padding: 10px;
+      border-radius: 8px;
+      z-index: 1010;
+
+      &:hover{
+        cursor: pointer;
+      }
+
+      i,svg,path{
+        cursor: pointer;
+
+      }
+    }
 
     .dz-preview{
       .dz-image {
@@ -1017,35 +1048,6 @@ form{
         }
       }
 
-      .dz-remove--icon{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 100;
-        color: #fff;
-        background: #d8d8d8;
-        padding: 10px;
-        border-radius: 8px;
-
-        &:after{
-          content: 'replace';
-          display: none;
-          color: #fff;
-          text-transform: uppercase;
-          text-align: center;
-        }
-
-        &:hover{
-          cursor: pointer;
-        }
-
-        i,svg,path{
-          cursor: pointer;
-
-        }
-      }
-
       .dz-error-message{
         z-index: 1000;
         position: relative;
@@ -1064,6 +1066,16 @@ form{
           display: none;
         }
       }
+
+      &:hover{
+        .dz-image{
+          img{
+            transform: scale(1);
+            filter: none;
+          }
+        }
+      }
+
     }
 
     &.dropzone-pretty{
@@ -1078,9 +1090,15 @@ form{
     &.dz-started{
       border: 2px solid transparent;
 
-      .dz-remove--icon{
-        display: none;
-      }
+      //&:hover{
+      //  dz-remove--icon{
+      //    background: map_get($colors, 'modal-blue') !important;
+      //  }
+      //}
+
+      //.dz-remove--icon{
+      //  display: block;
+      //}
     }
   }
 
