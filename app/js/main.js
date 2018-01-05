@@ -605,9 +605,19 @@ $(document).ready(function() {
 
 		init: function() {
 
-            // var mockFile = { name: "boom-flash-on-white_1308-2912", size: 62214, type: 'image/jpeg' };
-            // this.addFile.call(this, mockFile);
-            // this.options.thumbnail.call(this, mockFile, "https://image.freepik.com/free-vector/boom-flash-on-white_1308-2912.jpg");
+            // if($('#internal_ad_image').length && !$('#internal_ad_image').hasClass('done')){
+            //    var imageUrl = $('#internal_ad_image').attr('value');
+            //
+            //    var imageName = imageUrl.split('/');
+            //        imageName = imageName[imageName.length-1];
+            //
+            //     var mockFile = { name: imageName, type: 'image/jpeg' };
+            //     this.addFile.call(this, mockFile);
+            //     this.options.thumbnail.call(this, mockFile, imageUrl);
+            //     $('.dz-remove--icon').css('display', 'block');
+            //     $('#internal_ad_image').addClass('done')
+            // }
+
 
             var prevFile;
 
