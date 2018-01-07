@@ -15,6 +15,9 @@ var gulp = require('gulp'),
 
     cssnano = require('gulp-cssnano'),
 
+	/////Compile pug files
+    pug = require('gulp-pug'),
+
 	////Optimize images
     imagemin = require('gulp-imagemin'),
     imageminJpegtran = require('imagemin-jpegtran'),
@@ -54,18 +57,18 @@ var buildFolder = 'build',
 			fonts: buildFolder +'/fonts/'
 		},
 		src: { //From where gulp must take sources
-			html: srcFolder +'/*.html',
+			pugFiles: srcFolder +'/*.pug',
 			js: srcFolder +'/js/*.js',
 			style: srcFolder +'/scss/',
 			img: srcFolder +'/images/**/*.*',
 			fonts: srcFolder +'/fonts/**/*.*'
 		},
 		watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
-			html: srcFolder +'/**/*.html',
+            pugFiles: srcFolder +'/**/*.pug',
 			js: srcFolder +'/js/**/*.js',
 			style: srcFolder +'/scss/**/*.scss',
 			img: srcFolder +'/images/**/*.*',
-			fonts: srcFolder +'/fonts/**/*.*'
+			//fonts: srcFolder +'/fonts/**/*.*'
 		},
 		clean: './' + buildFolder
 	};
@@ -80,11 +83,14 @@ var ServerConfig = {
 };
 
 
-gulp.task('html:build', function () {
-    gulp.src(path.src.html) //Take all html files
-	.pipe(rigger()) //Take all template in html
-	.pipe(gulp.dest(path.build.html)) //Put result into build directory
-	.pipe(browserSync.reload({stream: true}))
+gulp.task('html:build', function buildHTML() {
+    return gulp.src(path.src.pugFiles)
+        .pipe(pug({
+            pretty:true,
+            filename: true
+        }))
+        .pipe(gulp.dest(path.build.html)) //Put result into build directory
+        .pipe(browserSync.reload({stream: true}))
 });
 
 gulp.task('libsJs:build', function() {//scripts
@@ -157,19 +163,6 @@ gulp.task('build', [
     'fonts:build',
     'image:build'
 ]);
-
-// gulp.task('browser-sync',function(){
-//     browserSync({
-//         server: "./app"
-//     });
-// });
-
-// gulp.task('css-libs', ['sass'], function() {
-//     return gulp.src('app/css/libs.css')
-//     .pipe(cssnano())
-//     .pipe(rename({suffix: '.min'}))
-//     .pipe(gulp.dest('app/css'));
-// });
 
 gulp.task('sprite', function () {
     // Generate our spritesheet
@@ -273,7 +266,7 @@ gulp.task('svgSprite', ['svgSpriteBuild', 'svgSpriteSass']);
 // });
 
 gulp.task('watch', function() {
-    gulp.watch(path.watch.html, ['html:build']);
+    gulp.watch(path.watch.pugFiles, ['html:build']);
     gulp.watch(path.watch.style, ['style:build']);
     gulp.watch(path.watch.js, ['js:build']);
     gulp.watch(path.watch.img, ['image:build']);

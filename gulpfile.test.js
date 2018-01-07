@@ -12,7 +12,16 @@ var gulp = require('gulp'),
     pngquant = require('imagemin-pngquant'),
     rimraf = require('rimraf'),
     browserSync = require("browser-sync"),
+    pug = require('gulp-pug'),
     reload = browserSync.reload;
+
+gulp.task('views', function buildHTML() {
+    return gulp.src('views/*.pug')
+        .pipe(pug({
+            // Your options in here.
+        }))
+});
+
 
 var path = {
     build: { //Тут мы укажем куда складывать готовые после сборки файлы
