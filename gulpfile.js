@@ -35,6 +35,8 @@ var gulp = require('gulp'),
 
     ////Generate svg sprite
 	svgSprite = require('gulp-svg-sprites'),
+	filter    = require('gulp-filter'),
+	svg2png   = require('gulp-svg2png'),
     svgmin = require('gulp-svgmin'),
     cheerio = require('gulp-cheerio'),
     replace = require('gulp-replace'),
@@ -60,7 +62,12 @@ var buildFolder = 'build',
 			pugFiles: srcFolder +'/*.pug',
 			js: srcFolder +'/js/*.js',
 			style: srcFolder +'/scss/',
-			img: srcFolder +'/images/**/*.*',
+			img: [
+				srcFolder +'/images/**/*',
+				!srcFolder +'/images/icons'
+			],
+			icons: srcFolder +'/images/icons/',
+			// iconsPng: srcFolder +'/images/icons/iconsPng/*',
 			fonts: srcFolder +'/fonts/**/*.*'
 		},
 		watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
@@ -164,59 +171,73 @@ gulp.task('build', [
     'image:build'
 ]);
 
-gulp.task('sprite', function () {
-    // Generate our spritesheet
-    var spriteData = gulp.src('app/images/icons/*.png').pipe(spritesmith({
-        imgName: 'sprite.png',
-        cssName: '_sprite.scss'
-    }));
-
-    // Pipe image stream through image optimizer and onto disk
-    var imgStream = spriteData.img
-    // DEV: We must buffer our stream into a Buffer for `imagemin`
-        .pipe(buffer())
-        .pipe(imagemin())
-        .pipe(gulp.dest('app/images/sprites/'));
-
-    // Pipe CSS stream through CSS optimizer and onto disk
-    var cssStream = spriteData.css
-        //.pipe(csso())
-        .pipe(gulp.dest('app/scss/'));
-
-    // Return a merged stream to handle both `end` events
-    return merge(imgStream, cssStream);
-});
+// gulp.task('sprite', function () {
+//     // Generate our spritesheet
+//     var spriteData = gulp.src('app/images/icons/*.png').pipe(spritesmith({
+//         imgName: 'sprite.png',
+//         cssName: '_sprite.scss'
+//     }));
+//
+//     // Pipe image stream through image optimizer and onto disk
+//     var imgStream = spriteData.img
+//     // DEV: We must buffer our stream into a Buffer for `imagemin`
+//         .pipe(buffer())
+//         .pipe(imagemin())
+//         .pipe(gulp.dest('app/images/sprites/'));
+//
+//     // Pipe CSS stream through CSS optimizer and onto disk
+//     var cssStream = spriteData.css
+//         //.pipe(csso())
+//         .pipe(gulp.dest('app/scss/'));
+//
+//     // Return a merged stream to handle both `end` events
+//     return merge(imgStream, cssStream);
+// });
 
 gulp.task('svgSpriteBuild', function () {
-	return gulp.src('app/images/icons-svg/*.svg')
-	// minify svg
-	.pipe(svgmin({
-		js2svg: {
-			pretty: true
-		}
-	}))
-	//remove all fill and style declarations in out shapes
-	.pipe(cheerio({
-		run: function ($) {
-			$('[fill]').removeAttr('fill');
-			$('[style]').removeAttr('style');
-		},
-		parserOptions: { xmlMode: true }
-	}))
-	// cheerio plugin create unnecessary string '>', so replace it.
-	.pipe(replace('&gt;', '>'))
-	// build svg sprite
-	.pipe(svgSprite({
-				mode: "symbols",
-				preview: false,
-				selector: "icon-%f",
-				layout: "vertical",
-				svg: {
-					symbols: 'symbol_sprite.html'
-				}
-			}
-	))
-	.pipe(gulp.dest('app/'));
+	return gulp.src(path.src.icons + '/iconsSvg/*')
+		// .pipe(svgmin({
+		// 	js2svg: {
+		// 		pretty: true
+		// 	}
+		// }))
+		//remove all fill and style declarations in out shapes
+		// .pipe(cheerio({
+		// 	run: function ($) {
+		// 		$('[fill]').removeAttr('fill');
+		// 		$('[style]').removeAttr('style');
+		// 	},
+		// 	parserOptions: { xmlMode: true }
+		// }))
+		// cheerio plugin create unnecessary string '>', so replace it.
+		//.pipe(replace('&gt;', '>'))
+		// build svg sprite
+		.pipe(svgSprite({
+            cssFile: '_spriteSvg.scss',
+            preview: false,
+            svg: {
+                sprite: "../../images/sprites/spriteSvg.svg"
+            },
+            svgPath: '../../images/sprites/spriteSvg.svg',
+            pngPath: '../../images/sprites/spriteSvg.png',
+            layout: "vertical",
+            padding: 10,
+            templates: { scss: true },
+            // templates: {
+            //     css: fs.readFileSync( ''+path.src.style +'sprites/_sprite-template.scss', "utf-8")
+            // }
+				//mode: "symbols",
+				//preview: false,
+				//selector: "icon-%f",
+				//layout: "vertical",
+				// svg: {
+				// 	symbols: 'symbol_sprite.html'
+				// }
+		}))
+		.pipe(gulp.dest(path.src.style + '/sprites/')) // Write the sprite-sheet + CSS + Preview
+		.pipe(filter(path.src.img + '/icons/iconsSvg/*'))  // Filter out everything except the SVG file
+		.pipe(svg2png())           // Create a PNG
+		.pipe(gulp.dest(path.src.img + '/sprites/'))
 });
 
 // create scss file for our sprite

@@ -1,10 +1,10 @@
 
 .<%=common %> {
   display: inline-block;
-  height: 1em;
-  width: 1em;
-  fill: inherit;
-  stroke: inherit;
+  //height: 1em;
+  //width: 1em;
+  //fill: inherit;
+  //stroke: inherit;
 
 <% _.forEach(svg, function(svgItem) { %>
   &.<%=svgItem.name%> {
