@@ -1150,3 +1150,24 @@ button.close{
   text-transform: none;
   margin:10px 0;
 }
+
+.owl-nav{
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: -100px;
+  right: -100px;
+  transform: translate(0, -50%);
+
+  @media(max-width: 1260px){
+    display: none;
+  }
+}
+
+//.slider__item{
+//  display: flex;
+//  flex-wrap:wrap;
+//  justify-content: space-between;
+//  align-content: flex-start;
+//}
