@@ -122,7 +122,7 @@
 
               <div class="small-block padding_20 margin_b_20">
                 <div class="form-custom">
-                  <form action="" id="formToValidateOrder">
+                  <form action="/" id="formToValidateOrder">
                     <div class="message-article">
                       <article>
                         <header class="message-article__head">
@@ -149,14 +149,20 @@
                         <section class="message-article__content no-border">
                           <div class="form-item edit-box ">
                             <div class="form-upload hover-border">
-
                               <div id="myAwesomeDropzone" class="dropzone dropzone-pretty empty">
                                 <div class="fallback">
                                   <input name="file" type="file" multiple />
                                 </div>
+                                <span class="dz-remove--icon">
+                                    <i class="icon icon-Image medium-icon" aria-hidden="true">
+                                      <svg width="75" height="41" viewBox="0 0 75 41" id="Image" y="269"><title>Image</title><path d="M34.62 34.498l3.157-3.252-7.393-8.04L44.74 8.302 75 40.931l-19.793.048.008.006H52.99L46.747 41l-.014-.015H0l20.67-21.493 13.95 15.006zM14.826 11.622c-3.372 0-6.105-2.602-6.105-5.811C8.72 2.6 11.454 0 14.826 0c3.371 0 6.104 2.602 6.104 5.81 0 3.21-2.733 5.812-6.104 5.812z" fill=""#8d8d8d" fill-rule="evenodd"></path></svg>
+                                    </i>
+                                  </span>
                               </div>
 
                               <span class="edit-box-text">image</span>
+
+
 
                               <div id="preview-template" style="display: none;">
 
@@ -165,11 +171,7 @@
                                     <img data-dz-thumbnail="">
                                   </div>
                                   <div class="dz-error-message"><span data-dz-errormessage=""></span></div>
-                                  <a class="dz-remove--icon" href="javascript:undefined;" data-dz-remove="">
-                                    <i class="icon icon-Image medium-icon" aria-hidden="true">
-                                      <svg width="75" height="41" viewBox="0 0 75 41" id="Image" y="269"><title>Image</title><path d="M34.62 34.498l3.157-3.252-7.393-8.04L44.74 8.302 75 40.931l-19.793.048.008.006H52.99L46.747 41l-.014-.015H0l20.67-21.493 13.95 15.006zM14.826 11.622c-3.372 0-6.105-2.602-6.105-5.811C8.72 2.6 11.454 0 14.826 0c3.371 0 6.104 2.602 6.104 5.81 0 3.21-2.733 5.812-6.104 5.812z" fill=""#8d8d8d" fill-rule="evenodd"></path></svg>
-                                    </i>
-                                  </a>
+
                                 </div>
                               </div>
                             </div>
@@ -341,9 +343,9 @@
                           <div class="form-item">
                             <p class="form-item__title">ad tags</p>
 
-                            <div class="input-with-icon">
+                            <div class="select-block select-chosen select-icon select-icon__label">
 
-                              <select id="tagSelection" class="js-example-basic-multiple-limit js-states form-control" multiple="multiple">
+                              <select id="tagSelection" multiple="multiple" data-placeholder="Search for tags or add new...">
                                 <option value="1">value 1</option>
                                 <option value="2">value 2</option>
                                 <option value="3">value 3 long example</option>
@@ -351,8 +353,8 @@
                                 <option value="5">value 5</option>
                                 <option value="6">value 6</option>
                               </select>
-                              <pre data-fill-from=".js-code-placeholder"></pre>
                             </div>
+
                           </div>
                         </div>
 
@@ -411,7 +413,7 @@
               </div>
 
               <div class="order-button">
-                <a id="saveCustomAudinceButton" class="text-uppercase margin_b_10" style="display: none" href="" data-target="#saveCustomAudience" data-toggle="modal">Save custom audience</a>
+                <a id="saveCustomAudinceButton" class="text-uppercase" style="display: none" href="" data-target="#saveCustomAudience" data-toggle="modal">Save custom audience</a>
                 <a id="validateOrder" href="javascript:void(0);" class="button bg-blue btn-round color-white margin_r_0 disabled">next</a>
               </div>
 
@@ -455,8 +457,6 @@
     </div>
   </div>
 </div>
-
-
 </body>
 
 <script src="js/libs.min.js"></script>

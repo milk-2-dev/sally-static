@@ -102,16 +102,6 @@ form{
     cursor:pointer;
   }
 
-  .chosen-container-multi .chosen-choices {
-    background:#f4f6fa none repeat scroll 0 0;
-    border:1px solid #dce3ef;
-    border-radius:5px;
-    display:block;
-    margin:0;
-    padding:11px 10px;
-    width:100%;
-  }
-
   .slider-handle {
     cursor: pointer;
   }
@@ -330,14 +320,19 @@ form{
       }
 
       .dz-remove--icon {
-        background: map_get($colors, 'modal-blue');
+        background: map_get($colors, 'modal-blue') !important;
 
         i{
           background: map_get($colors, 'modal-blue');
         }
 
         &:after{
+          content: 'replace';
           display: block;
+          color: #fff;
+          text-transform: uppercase;
+          text-align: center;
+          margin-top: -14px;
         }
       }
     }
@@ -543,6 +538,7 @@ form{
     margin: 0;
     padding: 15px 15px 13px;
     background: transparent;
+    -webkit-appearance: none;
     appearance: none;
     cursor: pointer;
     background:url('../../images/Nav_Down.svg');
@@ -550,7 +546,112 @@ form{
     background-repeat: no-repeat;
     background-position: calc(100% - 5px) center;
   }
+
+  &.select-chosen{
+    .chosen-choices {
+      background:#f4f6fa;
+      border:1px solid map_get($colors, 'input-border');
+      border-radius:4px;
+      display:block;
+      margin:0;
+      padding:11px 15px 10px;
+      width:100%;
+      box-shadow: none;
+      z-index: 1011;
+      
+      li{
+        &.search-field{
+          input[type="text"]{
+            color: initial;
+            font-size: initial;
+            color: #c8cbd0;
+          }
+        }
+
+        &.search-choice{
+          background: #e7b5f2;
+          border: none;
+          box-shadow: none;
+          color: #fff;
+          border-radius: 50px;
+          padding: 5px 20px 5px 10px;
+
+          .search-choice-close{
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            background: none;
+            top: 50%;
+            opacity: .8;
+            transform: translate(0, -50%);
+            height: 14px;
+
+            &:before{
+              content: "\f00d";
+            }
+
+            &:hover{
+              opacity:1;
+            }
+          }
+        }
+      }
+    }
+
+    .search-field{
+      //input{
+      //  width: 100% !important;
+      //}
+    }
+
+    .chosen-drop{
+      top: 98%;
+      border: 1px solid map_get($colors, 'border-grey');
+      box-shadow: none;
+    }
+
+    .chosen-results{
+      li{
+        &.highlighted{
+          background-color: #e0f7ff;
+          color: #06a9d4;
+          background-image: none;
+        }
+      }
+    }
+  }
+
+  &.select-icon{
+    .chosen-choices {
+      padding: 11px 15px 10px 40px;
+      position: relative;
+    }
+
+    &.select-icon__label{
+      .chosen-choices {
+        &:before{
+          content: "\f02b";
+          position: absolute;
+          top: 12px;
+          left: 10px;
+          display: inline-block;
+          font: normal normal normal 18px/1 FontAwesome;
+          font-size: inherit;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          font-size: 26px;
+          color: #c8cbd0;
+        }
+      }
+    }
+
+  }
 }
+
+
 
 .radio-block{
   margin: 15px 0;
@@ -811,27 +912,27 @@ form{
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.22);
 }
 
-.label-icon{
-  .select2-selection__rendered{
-    position: relative;
-    padding-left:35px !important;
-
-    &:before{
-      content: "\f02b";
-      position: absolute;
-      top:0;
-      left:0;
-      display: inline-block;
-      font: normal normal normal 18px/1 FontAwesome;
-      font-size: inherit;
-      text-rendering: auto;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      font-size: 26px;
-      color: #c8cbd0;
-    }
-  }
-}
+//.label-icon{
+//  .select2-selection__rendered{
+//    position: relative;
+//    padding-left:35px !important;
+//
+//    &:before{
+//      content: "\f02b";
+//      position: absolute;
+//      top:0;
+//      left:0;
+//      display: inline-block;
+//      font: normal normal normal 18px/1 FontAwesome;
+//      font-size: inherit;
+//      text-rendering: auto;
+//      -webkit-font-smoothing: antialiased;
+//      -moz-osx-font-smoothing: grayscale;
+//      font-size: 26px;
+//      color: #c8cbd0;
+//    }
+//  }
+//}
 
 
 
@@ -889,4 +990,124 @@ form{
     color: #06a9d4;
   }
 
+}
+
+.form-upload{
+  padding:10px;
+  border:1px solid #555;
+  border-radius: 4px;
+  text-align: center;
+
+  .dropzone {
+    padding: 10px;
+    border:2px dashed map_get($colors, 'pink');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .dz-remove--icon{
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 100;
+      color: #fff;
+      background: #d8d8d8;
+      padding: 10px;
+      border-radius: 8px;
+      z-index: 1010;
+
+      &:hover{
+        cursor: pointer;
+      }
+
+      i,svg,path{
+        cursor: pointer;
+
+      }
+    }
+
+    .dz-preview{
+      .dz-image {
+        border-radius: 4px;
+        width:100%;
+        height:100%;
+      }
+
+      .dz-remove{
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        z-index: 100;
+        font-weight: 100;
+        font-size: 25px;
+
+        i{
+          cursor:pointer;
+        }
+      }
+
+      .dz-error-message{
+        z-index: 1000;
+        position: relative;
+        display: block;
+        opacity: 1;
+        border-radius: 0;
+        font-size: 20px;
+        top: auto;
+        left: auto;
+        width: 100%;
+        background: transparent;
+        padding: 0;
+        color: #000;
+
+        &:after{
+          display: none;
+        }
+      }
+
+      &:hover{
+        .dz-image{
+          img{
+            transform: scale(1);
+            filter: none;
+          }
+        }
+      }
+
+    }
+
+    &.dropzone-pretty{
+      padding:0;
+      border: 2px dashed #dce3ef;
+
+      .dz-preview{
+        margin:0;
+      }
+    }
+
+    &.dz-started{
+      border: 2px solid transparent;
+
+      //&:hover{
+      //  dz-remove--icon{
+      //    background: map_get($colors, 'modal-blue') !important;
+      //  }
+      //}
+
+      //.dz-remove--icon{
+      //  display: block;
+      //}
+    }
+  }
+
+  .dz-message{
+    color: #aaa;
+  }
+
+  .dz-message__title{
+    display: block;
+    font-size: 30px;
+  }
 }

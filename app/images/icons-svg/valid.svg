@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="6px" viewBox="0 0 9 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Path 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="SignUp_email_validation" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-535.000000, -480.000000)">
+        <g id="email_signup" transform="translate(435.000000, 51.000000)" fill="#63A91D" fill-rule="nonzero">
+            <g id="input-copy-2" transform="translate(100.000000, 344.000000)">
+                <g id="good" transform="translate(0.000000, 78.000000)">
+                    <path d="M6.83188931,7.23386704 C7.49127539,6.78842737 8.36393013,6.99820041 8.78101824,7.70240825 C9.19810635,8.40661609 9.00168505,9.33858954 8.34229897,9.78402921 L3.92769829,12.7662552 C3.32909268,13.1706354 2.54262487,13.0390944 2.08843889,12.4586291 L0.328703828,10.209627 C-0.171598726,9.57022314 -0.091826318,8.61873953 0.506880489,8.08442891 C1.1055873,7.5501183 1.99651041,7.63531324 2.49681297,8.27471713 L3.46307109,9.5096283 L6.83188931,7.23386704 Z" id="Path-2"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

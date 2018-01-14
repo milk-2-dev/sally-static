@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="9px" viewBox="0 0 12 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_email_unactive</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="SignUp_email" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-549.000000, -443.000000)">
+        <g id="email_signup" transform="translate(435.000000, 51.000000)">
+            <g id="input-copy-2" transform="translate(100.000000, 344.000000)">
+                <g id="ic_email_unactive" transform="translate(12.000000, 44.000000)">
+                    <rect id="Rectangle-3" x="0" y="0" width="16" height="16"></rect>
+                    <path d="M12.8,5.3746 L8,9.5908 L3.2,5.3686 L3.2,5.2 L12.8,5.2 L12.8,5.3746 Z M3.2,11.8 L3.2,6.967 L8,11.188 L12.8,6.9718 L12.8,11.8 L3.2,11.8 Z M2,13 L14,13 L14,4 L2,4 L2,13 Z" id="email-[#1573]" fill="#ADACAC" fill-rule="evenodd"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

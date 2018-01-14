@@ -8,11 +8,11 @@ var gulp            = require('gulp'),
     del             = require('del'),
     autoprefixer    = require('gulp-autoprefixer'),
 	svgSprite         = require('gulp-svg-sprites'),
-		svgmin          = require('gulp-svgmin'),
-		cheerio         = require('gulp-cheerio'),
-		replace         = require('gulp-replace'),
-		fs              = require('fs'),
-    //spritesmith     = require('gulp.spritesmith'),
+    svgmin          = require('gulp-svgmin'),
+    cheerio         = require('gulp-cheerio'),
+    replace         = require('gulp-replace'),
+    fs              = require('fs'),
+    spritesmith     = require('gulp.spritesmith'),
     //phantomjssmith  = require('phantomjssmith');,
     merge           = require('merge-stream'),
     buffer          = require('vinyl-buffer'),
@@ -47,45 +47,45 @@ gulp.task('scripts', function() {
         'app/libs/gsap/src/minified/TweenMax.min.js',
         'app/libs/seiyria-bootstrap-slider/dist/bootstrap-slider.js',
         'app/libs/dropzone/dist/dropzone.js',
-        'app/libs/select2/dist/js/select2.full.js',
+        'app/libs/chosen/chosen.jquery.js',
         'app/libs/mobile-detect/mobile-detect.js',
         'app/libs/ThreeDots/ThreeDots.js',
         'app/libs/sprite-cash.js'
-        ])
-        .pipe(concat('libs.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('app/js'));
+    ])
+    .pipe(concat('libs.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('app/js'));
 });
 
 gulp.task('css-libs', ['sass'], function() {
     return gulp.src('app/css/libs.css')
-        .pipe(cssnano())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('app/css'));
+    .pipe(cssnano())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('app/css'));
 });
 
-// gulp.task('sprite', function () {
-//     // Generate our spritesheet
-//     var spriteData = gulp.src('app/images/icons/*.png').pipe(spritesmith({
-//         imgName: 'sprite.png',
-//         cssName: '_sprite.scss'
-//     }));
-//
-//     // Pipe image stream through image optimizer and onto disk
-//     var imgStream = spriteData.img
-//     // DEV: We must buffer our stream into a Buffer for `imagemin`
-//         //.pipe(buffer())
-//         //.pipe(imagemin())
-//         .pipe(gulp.dest('app/images/sprites/'));
-//
-//     // Pipe CSS stream through CSS optimizer and onto disk
-//     var cssStream = spriteData.css
-//         //.pipe(csso())
-//         .pipe(gulp.dest('app/sass/'));
-//
-//     // Return a merged stream to handle both `end` events
-//     return merge(imgStream, cssStream);
-// });
+gulp.task('sprite', function () {
+    // Generate our spritesheet
+    var spriteData = gulp.src('app/images/icons/*.png').pipe(spritesmith({
+        imgName: 'sprite.png',
+        cssName: '_sprite.scss'
+    }));
+
+    // Pipe image stream through image optimizer and onto disk
+    var imgStream = spriteData.img
+    // DEV: We must buffer our stream into a Buffer for `imagemin`
+        //.pipe(buffer())
+        //.pipe(imagemin())
+        .pipe(gulp.dest('app/images/sprites/'));
+
+    // Pipe CSS stream through CSS optimizer and onto disk
+    var cssStream = spriteData.css
+        //.pipe(csso())
+        .pipe(gulp.dest('app/sass/'));
+
+    // Return a merged stream to handle both `end` events
+    return merge(imgStream, cssStream);
+});
 
 gulp.task('svgSpriteBuild', function () {
 	return gulp.src('app/images/icons-svg/*.svg')
@@ -95,7 +95,7 @@ gulp.task('svgSpriteBuild', function () {
 			pretty: true
 		}
 	}))
-	// remove all fill and style declarations in out shapes
+	//remove all fill and style declarations in out shapes
 	.pipe(cheerio({
 		run: function ($) {
 			$('[fill]').removeAttr('fill');
