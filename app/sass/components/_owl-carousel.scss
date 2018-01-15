@@ -1,0 +1,13 @@
+.owl-nav{
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: -100px;
+  right: -100px;
+  transform: translate(0, -50%);
+
+  @media(max-width: 1260px){
+    display: none;
+  }
+}

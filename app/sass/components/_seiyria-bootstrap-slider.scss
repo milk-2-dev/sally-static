@@ -1,0 +1,27 @@
+.slider-selection {
+  background: $slider-color;
+  border-radius: 0;
+}
+
+.slider-track {
+  border-radius: 0;
+  background: #d8d8d8;
+  height:6px;
+  margin-top:-4px;
+}
+
+.slider.slider-horizontal {
+  width: 100%;
+
+  .slider-handle,
+  .slider-tick {
+    margin-left: -5px;
+  }
+}
+
+.slider-handle {
+  background: $slider-color;
+  //background: none;
+  width:19px;
+  height:19px;
+}

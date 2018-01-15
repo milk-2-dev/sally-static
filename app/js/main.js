@@ -558,7 +558,7 @@ $(document).ready(function() {
 		maxFiles: 1,
 		addRemoveLinks: true,
 		acceptedFiles: 'image/*, video/*',
-		clickable: ['.dz-remove--icon', '.dropzone', '.message-article__author', '.dz-error-message'],
+		//clickable: ['.dz-remove--icon', '.dropzone', '.message-article__author', '.dz-error-message'],
 
 		dictInvalidFileType:"Please insert a valid image or video file under 24mb",
 
