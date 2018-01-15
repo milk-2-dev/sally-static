@@ -1,0 +1,24 @@
+.first-screen{
+  padding: 114px 0;
+
+  h1{
+    margin-bottom:10px;
+    text-align: center;
+  }
+
+  p{
+    text-align: center;
+    color: #4A4A4A;
+    font-size: 24px;
+    font-weight: 300;
+
+    &.logo-label{
+      //font-family: "MuseoSans";
+      font-weight: 900;
+      font-size: 40px;
+      color: map_get($colors, 'pink');
+      margin-bottom:10px;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.iPhone.Safari{
+  .modal-emulation-body {
+    height: calc(100vh - 128px);
+  }
+
+  .modal-emulation-options-tabs{
+    .tab-content {
+      max-height: calc(100vh - 245px);
+    }
+  }
+}
