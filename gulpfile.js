@@ -43,6 +43,7 @@ gulp.task('scripts', function() {
         'app/libs/tether/dist/js/tether.min.js',
         'app/libs/bootstrap/dist/js/bootstrap.min.js',
         'app/libs/OwlCarousel2/dist/owl.carousel.min.js',
+        'app/libs/carousel-2rows/carousel-2rows.js',
         'app/libs/gsap/src/minified/TweenMax.min.js',
         'app/libs/seiyria-bootstrap-slider/dist/bootstrap-slider.js',
         'app/libs/dropzone/dist/dropzone.js',

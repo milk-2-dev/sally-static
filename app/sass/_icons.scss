@@ -50,8 +50,38 @@
     @include sprite($facebook-share);
   }
 
-  &.icon-facebook-play{//<i class="icon icon-facebook-play"></i>
-    @include  sprite($play);
+  &.icon-slider-nav{
+    position: relative;
+    height: 96px;
+    width: 48px;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.22);
+
+    &:before{
+      content: "\f054";
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: block;
+      color: #222;
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    &.left{
+      &:before {
+        content: "\f053";
+      }
+    }
   }
 }
 

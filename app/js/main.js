@@ -321,32 +321,6 @@ $(document).ready(function() {
 
             if (!$('body').hasClass("mobile")) {
 
-                var owl = $(".custom-posts .owl-carousel").owlCarousel({
-                    center: true,
-                    items: 1,
-                    slideSpeed: 500,
-                    autoplay: true,
-                    autoplayTimeout: 4500,
-                    loop: true,
-                    mouseDrag: true,
-                    singleItem: true,
-                    dots: false,
-                    margin: 0,
-                    dotsData: false,
-                    nav: false,
-                    //autoHeight:true,
-                    responsive:{
-                        0:{
-                            items:1,
-                            stagePadding: 20
-                        },
-                        480:{
-                            items:1,
-                            stagePadding: 80
-                        }
-                    }
-                }).data('owlCarousel');
-
                 $('body').removeClass("desctop");
                 $('body').addClass("mobile");
 
@@ -708,4 +682,53 @@ $(document).ready(function() {
     })
 
     ///////validate url on preview
+
+    var owl = $(".custom-posts .owl-carousel").owlCarousel({
+        items: 3,
+        slideSpeed: 500,
+        autoplay: true,
+        autoplayTimeout: 4500,
+        loop: true,
+        mouseDrag: true,
+        margin: 20,
+        dots: false,
+        nav: true,
+        navText: [
+            "<i class='icon icon-slider-nav left'></i>",
+            "<i class='icon icon-slider-nav'></i>"
+        ],
+
+        owl2row: true,
+        owl2rowTarget: 'slider__item',
+        owl2rowContainer: 'owl2row-item',
+        owl2rowDirection: 'utd',
+        responsiveClass: true,
+        responsive:{
+            0:{
+                items:1,
+                owl2row: false,
+                center: true,
+                stagePadding: 20
+            },
+            480:{
+                items:1,
+                owl2row: false,
+                center: true,
+                stagePadding: 80
+            },
+            768:{
+                items:2,
+                owl2row: false,
+                center: true,
+                stagePadding: 80
+            },
+            992:{
+                items:3,
+                //owl2row: false,
+            },
+            1200:{
+                items:3
+            }
+        }
+    }).data('owlCarousel');
 });
