@@ -1,14 +1,34 @@
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color:#e2e3e6;
+  color:map_get($input-colors, 'placeholder');
+  text-transform: lowercase;
+  //vertical-align: baseline;
+  //font-size: 18px;
+  //font-family: 'Poppins', sans-serif;
+  //line-height: 1.5;
 }
 ::-moz-placeholder { /* Firefox 19+ */
-  color:#e2e3e6;
+  color:map_get($input-colors, 'placeholder');
+  text-transform: lowercase;
+  //vertical-align: baseline;
+  //font-size: 18px;
+  //font-family: 'Poppins', sans-serif;
+  //line-height: 1.5;
 }
 :-ms-input-placeholder { /* IE 10+ */
-  color:#e2e3e6;
+  color:map_get($input-colors, 'placeholder');
+  text-transform: lowercase;
+  //vertical-align: baseline;
+  //font-size: 18px;
+  //font-family: 'Poppins', sans-serif;
+  //line-height: 1.5;
 }
 :-moz-placeholder { /* Firefox 18- */
-  color:#e2e3e6;
+  color:map_get($input-colors, 'placeholder');
+  text-transform: lowercase;
+  //vertical-align: baseline;
+  //font-size: 18px;
+  //font-family: 'Poppins', sans-serif;
+  //line-height: 1.5;
 }
 
 /********************************************
@@ -36,7 +56,7 @@ select,
 textarea{
   display: block;
   width: 100%;
-  padding: 15px 15px 13px;
+  padding: 13px 15px;
   border: 1px solid #dce3ef;
   margin: 0;
   border-radius: 4px;
@@ -50,15 +70,20 @@ input[type="search"],
 input[type="url"],
 select,
 textarea{
+  caret-color: map_get($input-colors, 'caret-default');
+  font-family: Poppins;
+  font-size: 16px;
+
   &:focus{
     border:1px solid map_get($colors, 'modal-blue');
     outline: none;
   }
 
   &.focus-purple{
+    caret-color: map_get($input-colors, 'caret-purple');
+
     &:focus{
-      border:1px solid map_get($colors, 'pink');
-      outline: none;
+      border:1px solid map_get($input-colors, 'focus');
     }
   }
 }
@@ -117,10 +142,10 @@ form{
 
   input[type="text"]{
     margin: 0;
-    border: 1px solid #000;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.22);
-    border: solid 1px map_get($colors, 'border-grey');
+    border: 1px solid #979797;
+    border-radius: map_get($main-params, 'radius');;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.22);
     padding:8px 120px 8px 20px;
     background: #fff;
     min-height: 72px;
@@ -144,7 +169,7 @@ form{
     right:8px;
     margin:0;
     padding: 18px 29px 19px;
-    background: #d4d4d4;
+    background: #d8d8d8;
     transform: translate(0, -50%);
   }
 }
@@ -182,7 +207,7 @@ form{
     appearance: none;
     cursor: pointer;
     padding: 0 15px;
-    background:url('../../images/Nav_Down.svg');
+    background:url(asset-path('Nav_Down.svg'));
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center right;
@@ -261,7 +286,8 @@ form{
 }
 
 .form-item{
-  margin-bottom: 40px;
+  //margin-bottom: 40px;
+  margin-bottom: 24px;
   text-align: left;
 
   .form-upload{
@@ -320,14 +346,19 @@ form{
       }
 
       .dz-remove--icon {
-        background: map_get($colors, 'modal-blue');
+        background: map_get($colors, 'modal-blue') !important;
 
         i{
           background: map_get($colors, 'modal-blue');
         }
 
         &:after{
+          content: 'replace';
           display: block;
+          color: #fff;
+          text-transform: uppercase;
+          text-align: center;
+          margin-top: -14px;
         }
       }
     }
@@ -407,16 +438,39 @@ form{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0 !important;
+
+  >div{
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    width: 100%;
+    margin-bottom:24px;
+    margin-right: 20px;
+
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+}
+
+.form-item__hr{
+  height: 2px;
+  border-radius: 2px;
+  background-color: #E9E9E9
+}
+
+.form-title{
+
 }
 
 .form-item__title{
-  font-weight: 700;
-  margin-bottom: 0;
-  margin-bottom:10px;
   text-transform: uppercase;
-  font-family: MuseoSans;
-  font-size: 16px;
-  font-weight: bold;
+  color: map_get($input-colors, 'label');
+  margin-bottom:8px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
 }
 
 .form-item__description{
@@ -448,7 +502,7 @@ form{
     cursor: pointer;
     width: 100%;
     text-align: center;
-    font-family: MuseoSans;
+
     font-size: 20px;
     font-weight: 500;
     background: #d8d8d8;
@@ -514,9 +568,93 @@ form{
   }
 }
 
+//todo Roman i look for needed this think
+
 .login-form{
   .form-item{
     margin-bottom: 30px;
+  }
+}
+
+//
+
+.input-block{
+  &.input-icon{
+    position: relative;
+
+    input{
+      &:focus{
+        & + i{
+          &.position-left{
+            svg{
+              fill: linear-gradient(135deg, #3023ae, #c85dd7);
+            }
+          }
+        }
+      }
+    }
+
+    .icon{
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      line-height: 0;
+      width: auto;
+      height: auto;
+
+      &.position-left{
+        left: 10px;
+      }
+
+      &.position-right{
+        right: 10px;
+      }
+    }
+  }
+
+  &.input-icon--left{
+    input{
+      padding-left: 30px;
+    }
+  }
+
+  &.input-icon--right{
+    input{
+      padding-right: 30px;
+    }
+  }
+
+  .validation{
+    position: absolute;
+    left: 0;
+    bottom: -17px;
+    width: 100%;
+    font-size: 12px;
+    color: map_get($input-colors, 'valid');
+
+    &.invalid{
+      color: map_get($input-colors, 'invalid');
+    }
+  }
+
+  &.input--button-in{
+    display: flex;
+    justify-content: space-between;
+
+    input{
+      width: 100%;
+      border-radius: 0;
+      border-right: 0;
+      border-color: map_get($input-colors, 'button-in');
+    }
+
+    .button{
+      //border: 1px solid #979797;
+      padding: 14px 24px 13px;
+      color: #fff;
+      border-radius: 0 4px 4px 0;
+      background-color: map_get($input-colors, 'button-in');
+    }
   }
 }
 
@@ -528,7 +666,7 @@ form{
 
   select{
     border: 1px solid #dce3ef;
-    font-family: MuseoSans;
+
     font-weight: 300;
     margin: 0;
     padding: 15px 15px 13px;
@@ -536,7 +674,7 @@ form{
     -webkit-appearance: none;
     appearance: none;
     cursor: pointer;
-    background:url('../../images/Nav_Down.svg');
+    background:url(asset-path('Nav_Down.svg'));
     background-size: 16px;
     background-repeat: no-repeat;
     background-position: calc(100% - 5px) center;
@@ -553,7 +691,7 @@ form{
       width:100%;
       box-shadow: none;
       z-index: 1011;
-      
+
       li{
         &.search-field{
           input[type="text"]{
@@ -646,62 +784,10 @@ form{
   }
 }
 
-
-
-.radio-block{
-  margin: 15px 0;
-  position: relative;
-
-  &:last-child{
-    margin:0;
-  }
-
-  [type="radio"] {
+.radio-block,
+.radio-block__wrap{
+  input[type="radio"] {
     display: none;
-
-    &:checked{
-      + label{
-        &:before{
-          background: #fff;
-        }
-        &:after {
-          border:5px solid map_get($colors, 'modal-blue');
-        }
-      }
-    }
-  }
-
-  label {
-    position: relative;
-    padding-left:50px;
-    cursor: pointer;
-
-    &:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 50%;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      transform: translate(0, -50%);
-      border:1px solid #9f9f9f;
-      background: #d8d8d8;
-    }
-
-    &:after {
-      content: "";
-      position: absolute;
-      left: 1px;
-      top: 50%;
-      width:18px;
-      height:18px;
-      overflow: hidden;
-      border-radius: 50%;
-      transform: translate(0, -50%);
-      border:0 solid transparent;
-      transition: .2s ease-in-out;
-    }
   }
 
   &.label-layer{
@@ -724,6 +810,245 @@ form{
         }
       }
     }
+  }
+
+  &.radio-block--standart{
+    margin: 15px 0;
+    position: relative;
+
+    &:last-child{
+      margin:0;
+    }
+
+    input[type="radio"]{
+      &:checked{
+        + label{
+          &:before{
+            background: #fff;
+          }
+          &:after {
+            border:5px solid map_get($colors, 'modal-blue');
+          }
+        }
+      }
+    }
+
+    label {
+      position: relative;
+      padding-left:50px;
+      cursor: pointer;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        transform: translate(0, -50%);
+        border:1px solid #9f9f9f;
+        background: #d8d8d8;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 1px;
+        top: 50%;
+        width:18px;
+        height:18px;
+        overflow: hidden;
+        border-radius: 50%;
+        transform: translate(0, -50%);
+        border:0 solid transparent;
+        transition: .2s ease-in-out;
+      }
+    }
+  }
+
+  &.radio-block--custom{
+    padding: 11px 20px;
+    border: 1px solid map_get($input-colors, 'radio-default');
+    border-radius: map_get($main-params, 'radius');
+    min-height: 60px;
+
+    input[type="radio"]{
+      &:checked{
+        + label{
+          &:after {
+            opacity: 1;
+            border: none;
+          }
+        }
+      }
+    }
+
+    label {
+      position: relative;
+      padding-left:40px;
+      cursor: pointer;
+      margin-bottom: 0;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: 50%;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        transform: translate(0, -50%);
+        border:2px solid map_get($input-colors, 'radio-default');
+        background: transparent;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 50%;
+        width: 10px;
+        height: 10px;
+        opacity: 0;
+        border-radius: 50%;
+        transform: translate(0, -50%);
+        border:none;
+        transition: .2s ease-in-out;
+        //background: map_get($input-colors, 'radio-blue');
+      }
+    }
+  }
+
+  &.checked{
+    box-shadow: 0 2px 12px 0 #D8D8D8;
+  }
+
+  &.radio-block--checked-blue{
+    $color: map_get($input-colors, 'radio-blue');
+
+    input[type="radio"]{
+      &:checked{
+        + label{
+          &:before{
+            border: 2px solid $color;
+          }
+        }
+      }
+    }
+
+    label {
+      &:after {
+        background: $color;
+      }
+    }
+
+    &.checked{
+      border:1px solid $color
+    }
+
+    &.attention{
+      box-shadow: 0 2px 12px 0 #D8D8D8;
+      border:1px solid $color
+    }
+  }
+
+  &.radio-block--checked-purple{
+    $color:map_get($input-colors, 'radio-purple');
+
+    input[type="radio"]{
+      &:checked{
+        + label{
+          &:before{
+            border: 2px solid $color;
+          }
+        }
+      }
+    }
+
+    label {
+      &:after {
+        background: $color;
+      }
+    }
+
+    &.checked{
+      border:1px solid $color;
+    }
+
+    &.attention{
+      box-shadow: 0 2px 12px 0 #D8D8D8;
+      border:1px solid $color;
+    }
+  }
+
+  &.with-icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .icons-wrap{
+      display: flex;
+      align-items: center;
+
+      .icon{
+        //margin-right: 5px;
+
+        &:last-child{
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.checkbox-block{
+  input[type="checkbox"] {
+    display: none;
+
+    &:checked{
+      + label{
+        &:before{
+          background: map_get($input-colors, 'checkbox-checked');
+          border:1px solid map_get($input-colors, 'checkbox-checked');
+        }
+      }
+    }
+  }
+
+  label {
+    position: relative;
+    padding-left:30px;
+    cursor: pointer;
+    color: map_get($input-colors, 'checkbox-label');
+    font-size: 14px;
+    font-weight: 100;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      //transform: translate(0, -50%);
+      border:1px solid map_get($input-colors, 'checkbox-border');
+      box-shadow: 0 2px 16px 0 #ECECEC;
+    }
+
+    //&:after {
+    //  content: "";
+    //  position: absolute;
+    //  left: 1px;
+    //  top: 50%;
+    //  width:18px;
+    //  height:18px;
+    //  //overflow: hidden;
+    //  //border-radius: 50%;
+    //  transform: translate(0, -50%);
+    //  //order:0 solid transparent;
+    //  transition: .2s ease-in-out;
+    //}
   }
 }
 
@@ -789,30 +1114,6 @@ form{
 .login-block{
   padding:0 50px 0;
 
-
-  &.br_b{
-    border-bottom: 1px solid lighten(map_get($colors, 'grey'), 50%);
-  }
-
-  &.br_b--or{
-    position: relative;
-    border-bottom: 1px solid lighten(map_get($colors, 'grey'), 50%);
-
-    &:after{
-      content: 'or';
-      position: absolute;
-      bottom:-18px;
-      left: 50%;
-      padding:10px 30px;
-      background: #fff;
-      z-index: 1;
-      transform: translate(-50%, 0);
-      font-family: Helvetica;
-      font-size: 20px;
-      line-height: 1;
-    }
-  }
-
   a{
     display: block;
     text-align: center;
@@ -822,6 +1123,30 @@ form{
     &:last-child{
       margin-bottom:0;
     }
+  }
+}
+
+.br_b{
+  border-bottom: 1px solid lighten(map_get($colors, 'grey'), 50%);
+}
+
+.br_b--or{
+  position: relative;
+  border-bottom: 1px solid map_get($colors, 'border-grey');
+
+  &:after{
+    content: 'or';
+    color:map_get($colors, 'border-grey');
+    position: absolute;
+    bottom:-18px;
+    left: 50%;
+    padding:10px 30px;
+    background: #fff;
+    z-index: 1;
+    transform: translate(-50%, 0);
+    font-family: Helvetica;
+    font-size: 20px;
+    line-height: 1;
   }
 }
 
@@ -835,7 +1160,7 @@ form{
 
 .main-form{
   .nav-link{
-    padding:0;
+    padding:0 20px 5px 10px;
   }
   .tab-content{
     padding:0;
@@ -848,6 +1173,23 @@ form{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 24px;
+
+  &.full-tabs{
+    ul{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      li{
+        width: 100%;
+
+        a{
+          text-align: center;
+        }
+      }
+    }
+  }
 
   ul{
     text-align: right;
@@ -855,7 +1197,7 @@ form{
   .nav-item{
     display: inline-block;
     margin-bottom:8px;
-    margin-right:30px;
+    margin-right:-2px;
 
     &:last-child{
       margin-right:0;
@@ -865,6 +1207,21 @@ form{
   a{
     font-size: 25px;
     color: map_get($colors, 'default-link');
+    border-bottom: 3px solid map_get($colors, 'default-link');
+
+
+
+    .icon{
+      vertical-align: middle;
+      margin-right: 2px;
+    }
+
+    >span{
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 18px;
+      font-weight: 600;
+    }
 
     svg{
       path{
@@ -875,6 +1232,7 @@ form{
 
     &.active{
       color: map_get($colors, 'active-link');
+      border-bottom: 3px solid map_get($main-params, 'blue');
 
       svg{
         path{
@@ -907,6 +1265,30 @@ form{
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.22);
 }
 
+//.label-icon{
+//  .select2-selection__rendered{
+//    position: relative;
+//    padding-left:35px !important;
+//
+//    &:before{
+//      content: "\f02b";
+//      position: absolute;
+//      top:0;
+//      left:0;
+//      display: inline-block;
+//      font: normal normal normal 18px/1 FontAwesome;
+//      font-size: inherit;
+//      text-rendering: auto;
+//      -webkit-font-smoothing: antialiased;
+//      -moz-osx-font-smoothing: grayscale;
+//      font-size: 26px;
+//      color: #c8cbd0;
+//    }
+//  }
+//}
+
+
+
 .select2-container{
   .select2-selection--multiple{
     padding: 10px 15px 8px;
@@ -924,11 +1306,11 @@ form{
     }
   }
 
- &.select2-container--focus{
-   .select2-selection--multiple{
-     border: solid map_get($colors, 'modal-blue') 1px;
-   }
- }
+  &.select2-container--focus{
+    .select2-selection--multiple{
+      border: solid map_get($colors, 'modal-blue') 1px;
+    }
+  }
 
   .select2-selection--multiple{
     .select2-selection__choice {
@@ -964,16 +1346,56 @@ form{
 }
 
 .form-upload{
-  padding:10px;
-  border:1px solid #555;
-  border-radius: 4px;
+  padding:12px;
+  border: 1px solid #979797;
+  border-radius: map_get($main-params, 'radius');
   text-align: center;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.22);
+
+  &.no-shadow{
+    box-shadow: none;
+  }
 
   .dropzone {
     padding: 10px;
     border:2px dashed map_get($colors, 'pink');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .dz-remove--icon{
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      background: #d8d8d8;
+      padding: 10px;
+      border-radius: 8px;
+      z-index: 1010;
+
+      &:hover{
+        cursor: pointer;
+      }
+
+      i,svg,path{
+        cursor: pointer;
+
+      }
+    }
 
     .dz-preview{
+      &:hover{
+        .dz-image{
+          img{
+            transform: scale(1);
+            filter: none;
+          }
+        }
+      }
+
       .dz-image {
         border-radius: 4px;
         width:100%;
@@ -990,35 +1412,6 @@ form{
 
         i{
           cursor:pointer;
-        }
-      }
-
-      .dz-remove--icon{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 100;
-        color: #fff;
-        background: #d8d8d8;
-        padding: 10px;
-        border-radius: 8px;
-
-        &:after{
-          content: 'replace';
-          display: none;
-          color: #fff;
-          text-transform: uppercase;
-          text-align: center;
-        }
-
-        &:hover{
-          cursor: pointer;
-        }
-
-        i,svg,path{
-          cursor: pointer;
-
         }
       }
 
@@ -1054,9 +1447,15 @@ form{
     &.dz-started{
       border: 2px solid transparent;
 
-      .dz-remove--icon{
-        display: none;
-      }
+      //&:hover{
+      //  dz-remove--icon{
+      //    background: map_get($colors, 'modal-blue') !important;
+      //  }
+      //}
+
+      //.dz-remove--icon{
+      //  display: block;
+      //}
     }
   }
 
@@ -1068,4 +1467,115 @@ form{
     display: block;
     font-size: 30px;
   }
+}
+
+.registration-form{
+  max-width: 370px;
+  margin: 0 auto;
+
+  .form-button{
+    margin-top: 40px;
+    //margin-bottom: 16px;
+
+    .button{
+      margin: 0;
+      width: 100%;
+    }
+  }
+}
+
+.show-pass{
+  cursor: pointer;
+}
+
+.plan-form{
+  .form-button{
+    .button{
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+.pay-as-you-go{
+  .slider.slider-horizontal .slider-track {
+    height: 6px;
+    margin-top: -3px;
+    border-radius: 5px;
+    background: transparent;
+  }
+
+  .slider-handle {
+    background: transparent;
+    border: 6px solid #FFFFFF;
+    background-color: #1FA1FF;
+    box-shadow: 0 2px 12px 0 #BBBBBB;
+  }
+
+  .slider-selection {
+    background: linear-gradient(90deg, #59D5FF 0%, #0089EC 100%);
+    border-radius: 0;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+
+  .slider-track-low, .slider-track-high {
+    background-color: #1FA1FF;
+    opacity: .1;
+  }
+
+  .message-reach__costs,
+  .message-reach__costs span{
+    color: #9A9A9A;
+    font-family: Poppins;
+    font-size: 14px;
+  }
+}
+
+.pay-as-you-go__title{
+  color: #7D7D7D;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.pay-as-you-go__views{
+  max-width: 180px;
+  min-width: 180px;
+  margin: 0  auto;
+
+  .message-reach__views{
+    position: relative;
+    padding-left:50px;
+    border: 1px solid map_get($input-colors, 'radio-blue');
+    border-radius: map_get($main-params, 'radius');
+    box-shadow: 0 2px 12px 0 #D8D8D8;
+    margin-bottom: 12px;
+
+    .icon{
+      position: absolute;
+      top: 50%;
+      left: 17px;
+      transform: translate(0, -50%);
+    }
+
+    span{
+      display: block;
+      border-left: 1px solid map_get($input-colors, 'radio-blue');
+      padding: 16px;
+      text-align: left;
+    }
+  }
+
+  >span{
+    display: block;
+    text-align: center;
+    color: #34495E;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+  }
+
 }

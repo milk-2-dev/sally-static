@@ -204,7 +204,7 @@
 
   &.style-normal{
     .post-title{
-      font-family: MuseoSans;
+
       font-size: 20px;
       font-weight: bold;
       letter-spacing: 1.1px;
@@ -225,7 +225,7 @@
 
       h2{
         text-transform: uppercase;
-        font-family: MuseoSans;
+
         font-size: 24px;
         font-weight: bold;
         letter-spacing: 1.3px;
@@ -252,7 +252,7 @@
     color: map_get($colors, 'grey');
     margin-bottom: 10px;
   }
-  
+
   .post-demographic{
     position: relative;
     margin-bottom: 10px;
@@ -340,7 +340,7 @@
   padding: 0;
   list-style:none;
   font-size: 14px;
-  
+
   li{
     display: inline-block;
     color: lighten(map_get($colors, 'grey'), 20%);
@@ -438,7 +438,7 @@
     display: block;
     clear: both;
   }
-  
+
   span{
     text-transform: uppercase;
     color: lighten(map_get($colors, 'grey'), 20%);
@@ -509,7 +509,7 @@
     margin-bottom:30px;
     position: relative;
     padding-left:40px;
-    font-family: MuseoSans;
+
     line-height: 1.4;
     color:#000;
     font-weight: 400;
@@ -618,7 +618,7 @@
     span{
       display: inline-block;
       vertical-align: baseline;
-      font-family: MuseoSans;
+
       font-size: 16px;
       font-weight: 500;
       line-height: 1;
@@ -651,7 +651,7 @@
 }
 
 .message-reach__views{
-  font-family: MuseoSans;
+
   font-size: 26px;
   font-weight: 900;
   line-height:1;
@@ -660,7 +660,7 @@
 }
 
 .message-reach__costs{
-  font-family: MuseoSans;
+
   font-size: 18px;
   font-weight: 500;
   text-align: right;
@@ -675,7 +675,7 @@
   color: map_get($colors, 'pink');
   text-align: right;
   margin-bottom: 10px;
-  font-family: MuseoSans;
+
   font-size: 16px;
   font-weight: 500;
   margin-top: 45px;

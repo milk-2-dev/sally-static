@@ -1,58 +1,6 @@
 .icon{
   display: inline-block;
   line-height: 1.5;
-
-  &.icon-target-icon{
-    @include sprite($target-icon);
-  }
-
-  &.icon-message{
-    @include sprite($message-icon);
-  }
-
-  &.icon-edit{
-    @include sprite($edit-icon);
-  }
-
-  &.icon-link{
-    @include sprite($link-icon);
-  }
-
-  &.icon-target{
-    @include sprite($target-icon);
-  }
-
-  &.icon-customizations{
-    @include sprite($customizations-icon);
-  }
-
-  &.icon-location{
-    @include sprite($location-icon);
-  }
-
-  &.icon-timing{
-    @include sprite($timing-icon);
-  }
-
-  &.icon-gender{
-    @include sprite($gender-icon);
-  }
-
-  &.icon-facebook-like{
-    @include sprite($facebook-like);
-  }
-
-  &.icon-facebook-comment{
-    @include sprite($facebook-comment);
-  }
-
-  &.icon-facebook-share{
-    @include sprite($facebook-share);
-  }
-
-  &.icon-facebook-play{//<i class="icon icon-facebook-play"></i>
-    @include  sprite($play);
-  }
 }
 
 .icon-round{

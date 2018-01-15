@@ -146,7 +146,7 @@
     height:21px;
     margin:22px auto;
     display:block;
-    background:url('../images/sprites/accordion-icon.png') no-repeat;
+    background:image_url('sprites/accordion-icon.png') no-repeat;
   }
 
   li.dropdown-active>.dropdown-icon span{
@@ -199,6 +199,25 @@
 
   #main-footer {
     padding: 40px 0 45px;
+  }
+
+  .form-item--few-blocks{
+    &.few-blocks--md{
+      flex-direction: column;
+
+      >div{
+        display: flex;
+        align-items: center;
+        align-self: stretch;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom:10px;
+
+        &:last-child{
+          margin-right: 0;
+        }
+      }
+    }
   }
 
 }

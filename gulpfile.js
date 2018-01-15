@@ -10,8 +10,8 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
 
 	/////Take all template
-    rigger = require('gulp-rigger'),
-    cssmin = require('gulp-minify-css'),
+    //rigger = require('gulp-rigger'),
+    //cssmin = require('gulp-clean-css'),
 
     cssnano = require('gulp-cssnano'),
 
@@ -86,7 +86,7 @@ var ServerConfig = {
     },
     // tunnel: true,
     host: 'localhost',
-    port: 3000
+    //port: 3000
 };
 
 
@@ -130,7 +130,7 @@ gulp.task('style:build', function () {
 	.pipe(sourcemaps.init()) //То же самое что и с js
 	.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
 	.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: false }))
-	.pipe(cssmin()) //Сожмем
+	.pipe(cssnano()) //Сожмем
 	.pipe(sourcemaps.write())
 	.pipe(gulp.dest(path.build.css)) //И в build
 	.pipe(browserSync.reload({stream: true}))

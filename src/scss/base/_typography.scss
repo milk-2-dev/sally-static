@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6 {
   color:#fff;
 }
 h1{
-  font-size:3em;
+  font-size:48px;
   margin:.3125em 0 .5em;
 }
 h2{
@@ -38,15 +38,25 @@ h6{
   font-size:1em;
   margin:0.9375em 0 1.5em;
 }
+
 a{
-  color:map_get($colors, 'pink');
-  transition: color .3s, border .3s, opacity .3s;
-  -webkit-transition: color .3s, border .3s, opacity .3s;
-  -moz-transition: color .3s, border .3s, opacity .3s;
+  color: map_get($link-colors, 'default');
+  transition: .2s ease-in-out;
+
+  svg{
+    transition: .2s ease-in-out;
+  }
+
+  &:hover{
+    text-decoration: none;
+    color: map_get($link-colors, 'hover');
+
+    svg{
+      fill: map_get($link-colors, 'hover');
+    }
+  }
 }
-a:hover{
-  text-decoration: none;
-}
+
 h2.big{
   font-size:2.625em;
 }

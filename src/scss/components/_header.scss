@@ -5,6 +5,8 @@
 ***********************************************************************************************/
 
 #header{
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,0.15);
+
     .logo{
         padding:10px 0;
     }
@@ -29,7 +31,6 @@
 }
 
 .logo__text{
-    font-family: MuseoSans;
     font-size: 40px;
     font-weight: 900;
     color: map_get($colors, 'pink');
@@ -51,17 +52,12 @@
     z-index:1000;
     -webkit-transform: translateZ(0px);
     box-shadow: 0 1px 3px rgba(0,0,0,.16);
-    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.16);
-    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.16);
-    -webkit-animation: animateFixedHeader .4s;
     animation: animateFixedHeader .4s;
-    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
     background: #fff;
 }
 
 #header.fixed-header .logo{
-    -webkit-animation: animateFixedHeaderLogo .6s;
     animation: animateFixedHeaderLogo .6s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
@@ -151,21 +147,6 @@
         align-self: center;
         color: #fff;
     }
-
-    /*a{
-        margin-right: 5px;
-        margin-left: 5px;
-        text-transform: uppercase;
-        font-weight: 600;
-
-        &:last-child{
-            margin-right: 0;
-        }
-
-        &:first-child{
-            margin-left: 0;
-        }
-    }*/
 }
 
 .sign-via-social{
@@ -193,11 +174,6 @@
 .sign-via-social{
     margin-top: -8px;
 }
-
-/*.align-center{
-    display: flex;
-    align-items: center;
-}*/
 
 .social-media-statistic{
     li{
@@ -254,20 +230,7 @@
                 border: 2px solid #ddd;
                 margin: auto;
             }
-            /*
-                        &:after{
-                            content:'√';
-                            position: absolute;
-                            top:0;
-                            left:0;
-                            bottom:0;
-                            width:6px;
-                            height:6px;
-                            background: red;
-                            border-radius: 50%;
-                            display: none;
-                        }
-            */
+
             &.active{
                 &:before{
                     background:map_get($colors, 'pink');
@@ -451,7 +414,22 @@
 
                 &:hover{
                     text-decoration: none;
-                    color: map_get($colors, 'pink');
+                    color: map_get($link-colors, 'hover');
+                    .icon{
+                        .fill-class{
+                            fill: map_get($link-colors, 'hover');
+                        }
+                    }
+                }
+
+                .icon{
+                    margin-right: 4px;
+                }
+
+                .icon,
+                span{
+                    display: inline-block;
+                    vertical-align: middle;
                 }
 
                 &.small-menu__attention{
@@ -469,11 +447,5 @@
             }
         }
     }
-}
-
-.logo-label{
-    font-size: 40px;
-    color: map_get($colors, 'pink');
-    margin-bottom:10px;
 }
 

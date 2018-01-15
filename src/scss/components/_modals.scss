@@ -1,4 +1,3 @@
-
 @media(min-width:768px){.modal-dialog.modal-sm{max-width:606px;}}
 @media(min-width:992px){.modal-dialog.modal-lg{max-width:972px;}}
 @media (min-width: 576px){
@@ -76,7 +75,6 @@
 
 .modal-title{
   text-transform: uppercase;
-  font-family: MuseoSans;
   font-size: 24px;
   font-weight: bold;
 }
@@ -109,7 +107,6 @@
     width:50%;
     float: left;
     text-align: center;
-    font-family: MuseoSans;
     font-size: 18px;
     font-weight: 500;
     letter-spacing: 1.1px;
@@ -139,11 +136,20 @@
 }
 
 .modal{
- &.show{
-   .modal-dialog {
-     transform: translate(0, -50%);
-   }
- }
+  &.show{
+    .modal-dialog {
+      transform: translate(0, -50%);
+    }
+
+    &#signIn,
+    &#signUp{
+      .modal-dialog {
+        top: 20px;
+        margin-bottom: 20px;
+        transform: translate(0);
+      }
+    }
+  }
 }
 
 .close{
