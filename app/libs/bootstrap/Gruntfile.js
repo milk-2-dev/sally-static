@@ -169,7 +169,7 @@ module.exports = function (grunt) {
           'Attribute “autocomplete” not allowed on element “button” at this point.',
           'Consider using the “h1” element as a top-level heading only (all “h1” elements are treated as top-level headings by many screen readers and other tools).',
           'Element “div” not allowed as child of element “progress” in this context. (Suppressing further errors from this subtree.)',
-          'Element “images” is missing required attribute “src”.',
+          'Element “img” is missing required attribute “src”.',
           'The “color” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
           'The “date” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
           'The “datetime” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
