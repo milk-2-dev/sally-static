@@ -1,5 +1,5 @@
-//@import "../components/blog";
-//@import "../components/footer";
-//@import "../components/forms";
-//@import "../components/header";
-//@import "../components/modals";
+@import "../_variables";
+@import "_blog";
+@import "_footer";
+@import "_header";
+@import "_modal-emulation";

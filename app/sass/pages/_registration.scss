@@ -1,0 +1,189 @@
+.registration{
+  background-color: #c66cd7;
+  background-image: linear-gradient(135deg, #3023ae, #c85dd7);
+  min-height: 100vh;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+
+  &:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 1180px;
+    max-height: 697px;
+    margin: auto;
+    background: image_url('reg-bg.png');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+
+  .br_b--or{
+    margin: 30px auto;
+    max-width: 370px;
+  }
+}
+
+.registration__block {
+  background: #fff;
+  padding: 30px;
+  border-radius: 4px;
+}
+
+.registration__block-head{
+  text-align: center;
+}
+
+.registration-title{
+  color: map_get($colors, 'pink');
+  padding: 0 50px;
+  position: relative;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.registration_step-back{
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #9b9b9b;
+
+  svg{
+    fill:#9b9b9b;
+  }
+
+  i,
+  span{
+    display: inline-block;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+}
+
+.registration-desc{
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 35px;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.registration-text{
+  font-size: 14px;
+  color: #9b9b9b;
+  max-width: 255px;
+  margin: 0 auto 30px;
+
+  span{
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #000;
+  }
+}
+
+.social-block{
+  max-width: 370px;
+  margin: 20px auto 40px;
+
+  &.social-block--inline{
+    margin: 20px auto 30px;
+    ul{
+      margin: 0;
+      padding:0;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+
+      li{
+        width: 100%;
+        margin-right: 4px;
+        //margin-bottom: 10px;
+
+
+        &:last-child{
+          margin-right: 0;
+
+          a{
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+          }
+        }
+
+        &:first-child{
+          a{
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+          }
+        }
+
+        a{
+          padding: 15px 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: .2s ease-in-out;
+          border: 1px solid transparent;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+
+  a{
+    display: block;
+    margin-bottom: 12px;
+    color: #fff;
+
+    .social-fill{
+      transition: .2s ease-in-out;
+    }
+
+    &:hover{
+      background: #fff !important;
+    }
+  }
+}
+
+.form-forgot-pass{
+  font-size: 14px;
+  margin-bottom: 40px;
+  margin-top: 16px;
+
+  a{
+    color: #9b9b9b;
+
+    &:hover{
+      color: map_get($link-colors, 'hover');
+    }
+  }
+}
+
+.registration__block-body{
+  margin-top: 20px;
+}
+
+.registration__block-footer{
+  margin-top: 16px;
+
+  p{
+    margin-bottom: 0;
+
+    a{
+      color: map_get($colors, 'link');
+      font-weight: 600;
+    }
+  }
+}

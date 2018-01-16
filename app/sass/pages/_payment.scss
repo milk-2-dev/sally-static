@@ -1,0 +1,33 @@
+.chose-method{
+  .radio-block{
+    margin-bottom: 8px;
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+}
+
+.total-price{
+  margin-bottom: 25px;
+  i{
+    font-size: 24px;
+    margin-right: 4px;
+    color: map_get($main-params, 'purple');
+    font-style: normal;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  span{
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 600;
+    font-size: 24px;
+
+    em{
+      font-style: normal;
+      font-size: 48px;
+    }
+  }
+}

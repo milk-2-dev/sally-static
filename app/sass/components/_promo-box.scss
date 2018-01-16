@@ -1,0 +1,53 @@
+.promo-box-inner{
+  position: relative;
+  z-index: 2;
+  padding: 55px 70px;
+
+  p{
+    margin-bottom: 0;
+  }
+}
+.promo-box h2,
+.promo-box h3{
+  margin:0;
+}
+.promo-box{
+  display: block;
+  margin:40px 0 35px;
+  background-position:center center;
+  background-repeat:repeat;
+  background-size:100% auto;
+
+  &.style2 {
+    transition:all 0.5s ease;
+
+    .promo-box-inner{
+      padding:65px 80px 65px;
+      text-align:center;
+      color:#fff;
+
+      .button{
+        margin:0;
+      }
+    }
+
+    h1,
+    h3,
+    h4,
+    h5,
+    h6{
+      color:#fff;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    h5 {
+      margin-bottom: 50px;
+      margin-top: 10px;
+    }
+  }
+}
