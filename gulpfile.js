@@ -55,7 +55,7 @@ var buildFolder = 'build',
 			html: buildFolder +'/',
 			js: buildFolder +'/js/',
 			css: buildFolder +'/css/',
-			img: buildFolder +'/images/**/*.*',
+			img: buildFolder +'/images/',
 			fonts: buildFolder +'/fonts/'
 		},
 		src: { //From where gulp must take sources
