@@ -1,0 +1,306 @@
+.icon {
+    font-size: 10px;
+    &:before {
+      content:' ';
+      vertical-align:middle;
+      display: inline-block;
+      background-image: url("../../images/sprites/spriteSvg.svg");
+      background-repeat: no-repeat;
+      background-size: 9.5em 95em;
+
+      .no-svg & {
+        background-image: url("../../images/sprites/spriteSvg.png");
+      }
+    }
+}
+
+
+
+
+.icon.Ad_File {
+  &:before {
+      background-position: -1em -1em;
+      width: 2.6em;
+      height: 2.6em;
+    }
+  }
+
+  @mixin icon-Ad_File(){
+    @extend .Ad_File;
+  }
+
+
+.icon.Ad_Link {
+  &:before {
+      background-position: -1em -5.6em;
+      width: 2.6em;
+      height: 2.6em;
+    }
+  }
+
+  @mixin icon-Ad_Link(){
+    @extend .Ad_Link;
+  }
+
+
+.icon.Ad_Photo {
+  &:before {
+      background-position: -1em -10.2em;
+      width: 2.8em;
+      height: 2.5em;
+    }
+  }
+
+  @mixin icon-Ad_Photo(){
+    @extend .Ad_Photo;
+  }
+
+
+.icon.Audience_Age {
+  &:before {
+      background-position: -1em -14.7em;
+      width: 1.6em;
+      height: 2.4em;
+    }
+  }
+
+  @mixin icon-Audience_Age(){
+    @extend .Audience_Age;
+  }
+
+
+.icon.Audience_Gender {
+  &:before {
+      background-position: -1em -19.1em;
+      width: 2.2em;
+      height: 2em;
+    }
+  }
+
+  @mixin icon-Audience_Gender(){
+    @extend .Audience_Gender;
+  }
+
+
+.icon.Audience_Interest {
+  &:before {
+      background-position: -1em -23.1em;
+      width: 2em;
+      height: 1.8em;
+    }
+  }
+
+  @mixin icon-Audience_Interest(){
+    @extend .Audience_Interest;
+  }
+
+
+.icon.Audience_Location {
+  &:before {
+      background-position: -1em -26.9em;
+      width: 1.2em;
+      height: 2em;
+    }
+  }
+
+  @mixin icon-Audience_Location(){
+    @extend .Audience_Location;
+  }
+
+
+.icon.Audience_Target {
+  &:before {
+      background-position: -1em -30.9em;
+      width: 1.8em;
+      height: 1.9em;
+    }
+  }
+
+  @mixin icon-Audience_Target(){
+    @extend .Audience_Target;
+  }
+
+
+.icon.Custsomize {
+  &:before {
+      background-position: -1em -34.8em;
+      width: 2em;
+      height: 1.8em;
+    }
+  }
+
+  @mixin icon-Custsomize(){
+    @extend .Custsomize;
+  }
+
+
+.icon.Edit {
+  &:before {
+      background-position: -1em -38.6em;
+      width: 1.4em;
+      height: 1.4em;
+    }
+  }
+
+  @mixin icon-Edit(){
+    @extend .Edit;
+  }
+
+
+.icon.Gender_All {
+  &:before {
+      background-position: -1em -42em;
+      width: 2.4em;
+      height: 2em;
+    }
+  }
+
+  @mixin icon-Gender_All(){
+    @extend .Gender_All;
+  }
+
+
+.icon.Gender_Female {
+  &:before {
+      background-position: -1em -46em;
+      width: 1em;
+      height: 1.9em;
+    }
+  }
+
+  @mixin icon-Gender_Female(){
+    @extend .Gender_Female;
+  }
+
+
+.icon.Gender_Male {
+  &:before {
+      background-position: -1em -49.9em;
+      width: 1em;
+      height: 2em;
+    }
+  }
+
+  @mixin icon-Gender_Male(){
+    @extend .Gender_Male;
+  }
+
+
+.icon.Image {
+  &:before {
+      background-position: -1em -53.9em;
+      width: 7.5em;
+      height: 4.1em;
+    }
+  }
+
+  @mixin icon-Image(){
+    @extend .Image;
+  }
+
+
+.icon.Message {
+  &:before {
+      background-position: -1em -60em;
+      width: 2em;
+      height: 2em;
+    }
+  }
+
+  @mixin icon-Message(){
+    @extend .Message;
+  }
+
+
+.icon.Mobile_Main_Dashboard {
+  &:before {
+      background-position: -1em -64em;
+      width: 4.2em;
+      height: 3.6em;
+    }
+  }
+
+  @mixin icon-Mobile_Main_Dashboard(){
+    @extend .Mobile_Main_Dashboard;
+  }
+
+
+.icon.Mobile_Main_Home {
+  &:before {
+      background-position: -1em -69.6em;
+      width: 4.2em;
+      height: 3.9em;
+    }
+  }
+
+  @mixin icon-Mobile_Main_Home(){
+    @extend .Mobile_Main_Home;
+  }
+
+
+.icon.Mobile_Main_User {
+  &:before {
+      background-position: -1em -75.5em;
+      width: 3.6em;
+      height: 3.9em;
+    }
+  }
+
+  @mixin icon-Mobile_Main_User(){
+    @extend .Mobile_Main_User;
+  }
+
+
+.icon.Nav_Back {
+  &:before {
+      background-position: -1em -81.4em;
+      width: 1em;
+      height: 1.6em;
+    }
+  }
+
+  @mixin icon-Nav_Back(){
+    @extend .Nav_Back;
+  }
+
+
+.icon.Nav_Down {
+  &:before {
+      background-position: -1em -85em;
+      width: 1.2em;
+      height: 0.8em;
+    }
+  }
+
+  @mixin icon-Nav_Down(){
+    @extend .Nav_Down;
+  }
+
+
+.icon.Nav_X {
+  &:before {
+      background-position: -1em -87.8em;
+      width: 2.4em;
+      height: 2.4em;
+    }
+  }
+
+  @mixin icon-Nav_X(){
+    @extend .Nav_X;
+  }
+
+
+.icon.Preview {
+  &:before {
+      background-position: -1em -92.2em;
+      width: 1.8em;
+      height: 1.8em;
+    }
+  }
+
+  @mixin icon-Preview(){
+    @extend .Preview;
+  }
+
+
+

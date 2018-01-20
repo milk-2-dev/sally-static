@@ -1,0 +1,73 @@
+$main-color: #004a80;
+$accent-color: #b0a635;
+$white: #fff;
+$grey: darken($white, 40%);
+$black: #000;
+$dark-color: #212123;
+$red-color: #d22;
+
+$youtube-color: #bb0000;
+$twitter-color: #00aced;
+$facebook-color: #3b5998;
+$instagramm-color: #517fa4;
+
+$slider-color: #7d7d7d;
+
+$MEO-padding: 30px; //modal-emulation-options paddings
+
+$main-params:(
+        'blue': #1fa1fd,
+        'purple': #8f29fc,
+        'radius': 5px
+);
+
+$input-colors:(
+        'label': #bbbbbb,
+        'input': #000,
+        'placeholder': #d8d8d8,
+        'focus': #8f29fc,
+        'caret-default': #1fa1fd,
+        'caret-purple': #8f29fc,
+        'valid': #63a91d,
+        'invalid': #ff5661,
+        'radio-default': #909090,
+        'radio-blue': #1fa1ff,
+        'radio-purple': #8330f4,
+        'button-in': #9a9a9a,
+        'checkbox-border': #dbdbdb,
+        'checkbox-checked': #8f29fc,
+        'checkbox-label': #9a9a9a
+);
+
+$link-colors:(
+        'default': #1e8fe1,
+        'hover': #8f29fc,
+        'active': #000,
+        'visited': #4a4a4a,
+        'step-back-def': #9B9B9B
+);
+
+$social:(
+        'amazon': #FF9900,
+        'google': #DD4B39,
+        'facebook': #4872CC,
+        'email': #9c5ed3
+);
+
+$colors: (
+        'pink': #8f29fc,
+        'blue': #275993,
+        'modal-blue': #1fa1fd,
+        'grey': #4a4a4a,
+        'border-grey': #d8d8d8,
+        'text-grey': #9a9a9a,
+        'h-color': #000,
+        'features-post-title': #000,
+        'active-link': #2B2B2B,
+        'default-link': #D8D8D8,
+        'hover-link': #9013FE,
+        'click-link': #9013FE,
+        'input-border': #dce3ef,
+        'block-title': #2b2b2b,
+        'block-title-second': #7D7D7D
+);

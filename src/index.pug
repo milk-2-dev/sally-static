@@ -1,0 +1,19 @@
+extends template/layout/main-layout
+
+block title
+	title  main page
+
+block content
+	body(class="headerstyle4 headerfixed")
+		#splendid-content
+			//    HEADER
+			include template/base/header
+			//    HEADER END
+
+			//				MENU-MOB
+			include template/layout/menu-mob
+			//				MENU-MOB END
+
+			//				MENU-MOB
+			include template/components/home
+			//				MENU-MOB END

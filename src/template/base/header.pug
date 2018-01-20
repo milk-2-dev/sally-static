@@ -1,0 +1,39 @@
+header(id="header")
+	//				Main Header
+	#main-header.bg-white.hidden-sm-down
+		.container-fluid.padding_l_35.padding_r_35
+			.row.align-items-center
+				.col-lg-1.col-md-1
+					.logo
+						a(class="logo__text", href="http://localhost:3000/") S
+				.col-lg-5.col-md-5
+					form(class="share-form")
+						input(
+							type="text",
+							placeholder="Add a link..."
+						)
+						button(
+							class="button bg-black color-white",
+							data-toggle="modal",
+							data-target="#messagePreview"
+						) share
+
+				.col-lg-6.col-md-6.small-menu
+					ul
+						li
+							a(href="javascript:void(0);") How it works
+						li
+							a(
+								href="javascript:void(0);",
+								data-toggle="modal",
+								data-target="#signIn"
+							) sign in
+						li
+							a(
+								href="javascript:void(0)",
+								data-toggle="modal",
+								data-target="#signUp",
+								class="small-menu__attention"
+							) sign up
+
+	//				Main Header End

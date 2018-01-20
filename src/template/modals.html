@@ -1,0 +1,575 @@
+<!--MODALS-->
+<div class="modal fade" id="signIn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-gray">
+                <h5 class="modal-title">sign In</h5>
+                <a class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="icon icon-Nav_X" aria-hidden="true">
+                        <svg class="hidden-sm-down" width="24" height="24" viewBox="0 0 24 24" id="Nav_X" y="468"><title>Nav_X</title><path fill="#FFF" d="M24 2.417L21.583 0 12 9.583 2.417 0 0 2.417 9.583 12 0 21.583 2.417 24 12 14.417 21.583 24 24 21.583 14.417 12z" fill-rule="evenodd" opacity=".5"></path></svg>
+                        <svg class="hidden-md-up" width="10" height="16" viewBox="0 0 10 16" id="Nav_Back" y="444"><title>Nav_Back</title><path fill="#fff" d="M9.947 1.827l-6.12 6.12 6.12 6.12-1.894 1.88-8-8 8-8z" fill-rule="evenodd"></path></svg>
+                    </i>
+                </a>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body__wrap">
+                    <div class="login-form__wrap">
+                        <h4 class="margin_b_40">
+                            You aren’t signed in! In order to sway your message, please sign in below, or create an account if you don’t have one yet.
+                        </h4>
+
+                        <div class="login-block br_b padding_b_50">
+                            <a href="" class="button bg-royalBlue color-white">sign in with Facebook</a>
+                            <a href="" class="button bg-orange color-white">sign in with Amazon</a>
+                            <a href="" class="button bg-red color-white">sign in with Google</a>
+                            <a href="" class="button bg-dark-gray color-white">sign in with Email</a>
+                        </div>
+
+                        <p class="link-create-account">
+                            Don`t have an account? <a href="javascript:void(0);" onClick="openSignIn()">Create one now!</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-gray">
+                <h5 class="modal-title">Create account</h5>
+                <a class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="icon icon-Nav_X" aria-hidden="true">
+                        <svg class="hidden-sm-down" width="24" height="24" viewBox="0 0 24 24" id="Nav_X" y="468"><title>Nav_X</title><path fill="#FFF" d="M24 2.417L21.583 0 12 9.583 2.417 0 0 2.417 9.583 12 0 21.583 2.417 24 12 14.417 21.583 24 24 21.583 14.417 12z" fill-rule="evenodd" opacity=".5"></path></svg>
+                        <svg class="hidden-md-up" width="10" height="16" viewBox="0 0 10 16" id="Nav_Back" y="444"><title>Nav_Back</title><path fill="#fff" d="M9.947 1.827l-6.12 6.12 6.12 6.12-1.894 1.88-8-8 8-8z" fill-rule="evenodd"></path></svg>
+                    </i>
+                </a>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body__wrap">
+                    <div class="login-form__wrap">
+                        <div class="login-block br_b--or padding_b_50">
+                            <a href="" class="button bg-royalBlue color-white">sign up with Facebook</a>
+                            <a href="" class="button bg-orange color-white">sign up with Amazon</a>
+                            <a href="" class="button bg-red color-white">sign up with Google</a>
+                        </div>
+
+                        <div class="login-block padding_t_50">
+                            <form action="" class="login-form">
+                                <div class="form-item">
+                                    <input class="form-control" aria-describedby="emailmail" type="text" value="" name="email" placeholder="Email">
+                                </div>
+
+                                <div class="form-item">
+                                    <input class="form-control" aria-describedby="emailname" type="text" value="" name="name" placeholder="Name">
+                                </div>
+
+                                <div class="form-item">
+                                    <input class="form-control" aria-describedby="emailpass" type="text" value="" name="pass" placeholder="Password">
+                                </div>
+
+                                <div class="form-item">
+                                    <input class="form-control" aria-describedby="emailconfpass" type="text" value="" name="confpass" placeholder="Confirm password">
+                                </div>
+
+                                <div class="form-button align-center ">
+                                    <button class="button bg-black color-white margin_t_20" type="submit">Create Account</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="messagePreview" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header change-icon">
+                <h5 class="modal-title">Message confirmation</h5>
+                <a class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="icon icon-Nav_X" aria-hidden="true">
+                        <svg class="hidden-sm-down" width="24" height="24" viewBox="0 0 24 24" id="Nav_X" y="468"><title>Nav_X</title><path fill="#FFF" d="M24 2.417L21.583 0 12 9.583 2.417 0 0 2.417 9.583 12 0 21.583 2.417 24 12 14.417 21.583 24 24 21.583 14.417 12z" fill-rule="evenodd" opacity=".5"></path></svg>
+                        <svg class="hidden-md-up" width="10" height="16" viewBox="0 0 10 16" id="Nav_Back" y="444"><title>Nav_Back</title><path fill="#fff" d="M9.947 1.827l-6.12 6.12 6.12 6.12-1.894 1.88-8-8 8-8z" fill-rule="evenodd"></path></svg>
+                    </i>
+                </a>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body__overflow">
+                    <div class="img-block hidden-md-up">
+                        <div class="edit-menu">
+                            <ul>
+                                <li><a href="javascript:void(0);">
+                                    <i class="icon icon-Preview" aria-hidden="true">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" id="Preview" y="492"><title>Preview</title><path d="M13.95 15.3c-1.24 0-2.25-1.01-2.25-2.25s1.01-2.25 2.25-2.25 2.25 1.01 2.25 2.25-1.01 2.25-2.25 2.25m-9.9 0c-1.24 0-2.25-1.01-2.25-2.25s1.01-2.25 2.25-2.25 2.25 1.01 2.25 2.25-1.01 2.25-2.25 2.25m13.91-2.965L14.698 1.732A2.443 2.443 0 0 0 12.353 0 2.456 2.456 0 0 0 9.9 2.453V3.6H8.1V2.453C8.1 1.101 7 0 5.647 0a2.443 2.443 0 0 0-2.345 1.732L.04 12.335A.906.906 0 0 0 0 12.6v.45a4.054 4.054 0 0 0 4.05 4.05 4.054 4.054 0 0 0 4.05-4.05V9h1.8v4.05a4.054 4.054 0 0 0 4.05 4.05A4.054 4.054 0 0 0 18 13.05v-.45c0-.09-.013-.18-.04-.265" fill-rule="evenodd"></path></svg>
+                                    </i>
+                                </a></li>
+                                <li><a href="javascript:void(0);" data-toggle="modal" data-target="#messagePreviewEdit">
+                                    <i class="icon icon-Edit" aria-hidden="true">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" id="Edit" y="196"><title>Edit</title><path d="M13.76 3.329c.32-.322.32-.857 0-1.161L11.831.24c-.304-.321-.84-.321-1.16 0L9.056 1.855l3.088 3.088 1.614-1.614zm-2.438 2.437L8.234 2.678 0 10.912V14h3.088l8.234-8.234z" fill-rule="evenodd"></path></svg>
+                                    </i>
+                                </a></li>
+                            </ul>
+                        </div>
+
+                        <img src="http://placehold.it/400x400" alt="">
+                    </div>
+
+                    <div class="row message-preview">
+                        <div class="col-lg-7 col-md-7 message-article">
+                            <article>
+                                <header class="message-article__head">
+                                    <div class="message-article__head-wrap">
+                                        <img class="message-article__logo" src="http://placehold.it/60x60" alt="">
+
+                                        <div class="message-article__main-info">
+                                            <p class="message-article__author">Buffer</p>
+
+                                            <ul class="message-article__meta">
+                                                <li>4 January at 17:01</li>
+                                                <li><i class="fa fa-globe" aria-hidden="true"></i></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="message-article__menu">
+                                            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                            <span>
+                                                    Like
+                                                </span>
+                                        </div>
+                                    </div>
+
+                                    <p class="message-article__head-desc">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br/>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br/>
+                                    </p>
+                                </header>
+                                <section class="message-article__content">
+                                    <img src="http://placehold.it/535x330" alt="" class="message-article__content-img">
+                                    <p class="message-article__content-title">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    </p>
+                                    <p class="message-article__content-text">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur id molestias odit perspiciatis porro ratione vel. Corporis eaque illo iste laboriosam nulla quo repudiandae veritatis. Adipisci id itaque nihil.
+                                    </p>
+                                    <div class="message-article__content-link">
+                                            <span>
+                                                blog.bufferapp.com
+                                            </span>
+                                        <a>More</a>
+                                    </div>
+                                </section>
+                                <div class="message-article__footer">
+                                    <ul>
+                                        <li>
+                                            <i class="icon icon-facebook-like"></i>
+                                            <span>Like</span>
+                                        </li>
+                                        <li>
+                                            <i class="icon icon-facebook-comment"></i>
+                                            <span>Comment</span>
+                                        </li>
+                                        <li>
+                                            <i class="icon icon-facebook-share"></i>
+                                            <span>Share</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </article>
+                            <!--<iframe src="https://www.facebook.com/ads/api/preview_iframe.php?d=AQJNQQxnVVnyeFoY4HOq9Rs537ZmbJvSfzDB4_VwMrPKzQiljlzplUCkXXwdaGdk5hRimyEKfkoB_GjkmR0nQr9rsHkcjSSZeFea9FBHA_gSBgXrcikUJx06ihU9s9-5PhYxQvknmEGWMZXg_w434SznpD7Bg345_Jlv4jXKYJ8iFpn1x7MEQj2FFltBV5X20gy7HaoG9kk84hHUwfUhHU0OhJC0_Dq5LyGyUlzpb65exQggtLnnFzYGzT9ep6FekhU&amp;t=AQKlkpqcbrpg5DRp" width="540" height="690" scrolling="yes" style="border: none;"></iframe>-->
+                            <!--<iframe src='https://www.facebook.com/ads/api/preview_iframe.php?d=AQK63gSlz5CuRmHUhhFK6Vp_bQHgF9JOlOrh1yrAAt6eg5M1Nf3kZydb0JwPF1bVcJIEY3q-GpGaIM5IC1bOIa2bYuPmRSUa0Oj8zlYiuqTyzgrPi5lY_oIeGQ9JtgXqEQYcf4IiH0aOwkGM9uGfWromFOvZ3zCKajFmjguY4obddPGcxMp_4M4phqdDKRwTnMvIJOllU2fAU5Zz7IpHd7GqDoucNuYCd8BCIt7qPxfnYCNETz_oerwnqhtjQ7GMmMc&amp;t=AQJcHGHsr4ATQvGc' width='335' height='450' scrolling='yes' style='border: none;'></iframe>-->
+                        </div>
+
+                        <div class="col-lg-5 col-md-5 padding_l_0 padding_r_0">
+                            <div class="message-list">
+                                <p class="modal-title message-edit">
+                                    <a href="javascript:void(0);" class="hidden-sm-down" data-toggle="modal" data-target="#messagePreviewEdit">
+                                        <i class="icon icon-Edit" aria-hidden="true">
+                                            <svg width="14" height="14" viewBox="0 0 14 14" id="Edit" y="196"><title>Edit</title><path d="M13.76 3.329c.32-.322.32-.857 0-1.161L11.831.24c-.304-.321-.84-.321-1.16 0L9.056 1.855l3.088 3.088 1.614-1.614zm-2.438 2.437L8.234 2.678 0 10.912V14h3.088l8.234-8.234z" fill-rule="evenodd"></path></svg>
+                                        </i>
+                                        <span>edit</span>
+                                    </a>
+
+                                    Save obamacare Save obamacare
+
+                                    <span class="text-from-prev">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur id molestias odit perspiciatis porro ratione vel. Corporis eaque illo iste laboriosam nulla quo repudiandae veritatis. Adipisci id itaque nihil.
+                                        </span>
+
+                                    <span class="tags">
+                                            <span class="tags-item">obamacare</span>
+                                            <span class="tags-item">healthcare</span>
+                                        </span>
+                                </p>
+
+                                <div class="form-item">
+                                    <p class="form-item__title">
+                                        demographic presents
+                                    </p>
+
+                                    <div class="select-block">
+                                        <select name="" id="">
+                                            <option value="">1</option>
+                                            <option value="">2</option>
+                                            <option value="">3</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="message-list__item">
+                                    <i class="icon icon-Audience_Interest">
+                                        <svg width="20" height="18" viewBox="0 0 20 18" id="Audience_Interest" y="121"><title>Audience_Interest</title><path d="M7 10a1.001 1.001 0 0 1 0-2 1.001 1.001 0 0 1 0 2m0-4a2.993 2.993 0 0 0-2.815 2H0v2h4.185A2.993 2.993 0 0 0 7 12a2.993 2.993 0 0 0 2.815-2H20V8H9.815A2.993 2.993 0 0 0 7 6m10 10a1.001 1.001 0 0 1 0-2 1.001 1.001 0 0 1 0 2m0-4a2.993 2.993 0 0 0-2.815 2H0v2h14.185A2.993 2.993 0 0 0 17 18c1.654 0 3-1.345 3-3 0-1.654-1.346-3-3-3m0-10a1.001 1.001 0 0 1 0 2 1.001 1.001 0 0 1 0-2m0 4c1.654 0 3-1.345 3-3 0-1.654-1.346-3-3-3a2.993 2.993 0 0 0-2.815 2H0v2h14.185A2.993 2.993 0 0 0 17 6" fill="#4F3857" fill-rule="evenodd"></path></svg>
+                                    </i>
+
+                                    <span>
+                                            Interests: Barack Obama, <br/>
+                                            Behaviors: Cofee
+                                        </span>
+                                </div>
+
+                                <div class="message-list__item">
+                                    <i class="icon icon-Audience_Location">
+                                        <svg width="12" height="20" viewBox="0 0 12 20" id="Audience_Location" y="139"><title>Audience_Location</title><path d="M8 6.002c0 1.102-.897 2-2 2s-2-.898-2-2c0-1.102.897-2 2-2s2 .898 2 2zm-5.999 14v-2h8v2h-8zm4-18c2.206 0 4 1.794 4 4 0 2.507-2.438 6.294-4.002 8.382-1.563-2.086-3.998-5.872-3.998-8.382 0-2.206 1.793-4 4-4m0 15.562c2.402-2.883 6-7.825 6-11.562 0-3.309-2.691-6-6-6-3.31 0-6 2.691-6 6C0 9.74 3.6 14.682 6 17.564" fill="#4F3857" fill-rule="evenodd"></path></svg>
+                                    </i>
+                                    <span>
+                                            California, United States
+                                        </span>
+                                </div>
+
+                                <div class="message-list__item">
+                                    <i class="icon icon-Audience_Age">
+                                        <svg width="16" height="24" viewBox="0 0 16 24" id="Audience_Age" y="77"><title>Audience_Age</title><path d="M7.999 17.998a6 6 0 1 1 0-12 6 6 0 0 1 0 12zM10.246 22H5.754l-.738-2.583a7.945 7.945 0 0 0 5.968 0L10.246 22zM5.754 2h4.492l.738 2.583a7.945 7.945 0 0 0-5.968 0L5.754 2zm7.783 4.24A7.97 7.97 0 0 1 16 12a7.97 7.97 0 0 1-2.463 5.761L11.754 24H4.246l-1.783-6.239A7.97 7.97 0 0 1 0 12a7.97 7.97 0 0 1 2.463-5.76L4.246 0h7.508l1.783 6.24zM5 15l3-2 3 2-3-6-3 6z" fill="#4F3857" fill-rule="evenodd"></path></svg>
+                                    </i>
+
+                                    <span>
+                                            24 - 61
+                                        </span>
+                                </div>
+
+                                <div class="message-list__item">
+                                    <i class="icon icon-Gender_All">
+                                        <svg width="24" height="20" viewBox="0 0 24 20" id="Gender_All" y="210"><title>Gender_All</title><path d="M5 5c-.551 0-1-.448-1-1 0-.55.449-1 1-1 .551 0 1 .45 1 1 0 .552-.449 1-1 1m3-1c0-1.654-1.346-3-3-3S2 2.346 2 4c0 1.655 1.346 3 3 3s3-1.345 3-3M6.999 15c-.734 0-.783 0-1.732 3h-.534c-.911-2.88-.995-3-1.651-3a70.72 70.72 0 0 1-.806 0s.637-2.532 1.229-4.8C3.644 9.517 4.287 9 5 9c.713 0 1.356.517 1.507 1.255C7.064 12.369 7.724 15 7.724 15c-.23.002-.666 0-.725 0m1.456-5.198C8.126 8.179 6.672 7 5 7 3.328 7 1.875 8.18 1.558 9.746c-.635 2.415-.362 1.345-1.528 6.011A.998.998 0 0 0 .979 17s.744.017 1.331.018c.192.573.479 1.465.736 2.283a1 1 0 0 0 .954.7h2a1 1 0 0 0 .954-.7c.257-.818.545-1.71.736-2.283.587-.001 1.332-.018 1.332-.018a1.001 1.001 0 0 0 .948-1.243c-1.13-4.523-.937-3.773-1.515-5.955M22 13h-1a1 1 0 0 0-1 1v4h-2v-4a1 1 0 0 0-1-1h-1v-2c0-1.654 1.346-3 3-3s3 1.346 3 3v2zm-3-7c-2.757 0-5 2.244-5 5v3a1 1 0 0 0 1 1h1v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-4h1a1 1 0 0 0 1-1v-3c0-2.756-2.243-5-5-5zm0-2c-.551 0-1-.448-1-1 0-.55.449-1 1-1 .551 0 1 .45 1 1 0 .552-.449 1-1 1m3-1c0-1.654-1.346-3-3-3s-3 1.346-3 3c0 1.655 1.346 3 3 3s3-1.345 3-3" fill="#2A2A2A" fill-rule="evenodd"></path></svg>
+                                    </i>
+                                    <span>
+                                    All
+                                </span>
+                                </div>
+
+                            </div>
+                            <div class="message-set-reach">
+                                <div class="row justify-content-between padding_l_15 padding_r_15">
+                                    <p class="modal-title">
+                                        set reach
+                                    </p>
+                                    <p id="setReachViews" class="message-reach__views"> ~ <span>0</span> views</p>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <form action="">
+                                            <input id="setReach"
+                                                   data-slider-id='setReachSlider'
+                                                   type="text"
+                                                   data-slider-min="0"
+                                                   data-slider-max="10000"
+                                                   data-slider-step="50"
+                                                   data-slider-value="100"
+                                                   data-slider-tooltip="hide"
+                                                   data-view-value="0.01"/>
+                                        </form>
+
+                                        <p id="setReachMany" class="message-reach__costs">$ <span>0</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+
+                <div class="modal-buttons">
+                    <a href="javascript:void(0);"  data-dismiss="modal" class="button bg-light-gray">cancel</a>
+                    <a href="" class="button color-white bg-blue">sway</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="payment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="" class="margin_r_20"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                <h5 class="modal-title">PAYMENT & review </h5>
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+                <!--<span aria-hidden="true">&times;</span>-->
+                <!--</button>-->
+            </div>
+            <div class="modal-body">
+                <div class="modal-body__wrap">
+                    <form action="" class="payment">
+                        <div class="form-item">
+                            <p class="form-item__title">
+                                address information
+                            </p>
+
+                            <div class="payment-item">
+                                <div class="payment-item__head">
+                                    <img src="http://placehold.it/50x30" alt="">
+                                    <p>Address Book</p>
+                                </div>
+
+                                <ul>
+                                    <li>John Smith</li>
+                                    <li>1234 Main St.</li>
+                                    <li>Anytown, State 10203</li>
+                                    <li>UNITED STATES</li>
+                                </ul>
+
+                                <div class="payment-radio">
+                                    <input type="radio" name="addressBook" id="addressBook" value="3">
+                                    <label for="addressBook">John Smith, 1234 Main St., Anytown, State...</label>
+
+                                    <input type="radio" name="addressBook" id="addressBook2" value="1">
+                                    <label for="addressBook2">John Smith, 9876 Other St., Anytown, State...</label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-item">
+                            <p class="form-item__title">
+                                Payment information
+                            </p>
+
+                            <div class="payment-item">
+                                <div class="payment-item__head">
+                                    <img src="http://placehold.it/50x30" alt="">
+                                    <p>Payment Method</p>
+                                </div>
+
+                                <p class="payment-card">
+                                    visa... 1010
+                                </p>
+
+                                <div class="payment-radio">
+                                    <input type="radio" name="paymentCard" id="paymentCard" value="3">
+                                    <label for="paymentCard">
+                                        Visa… 1010
+                                        <img src="http://placehold.it/53x26" alt="" class="cart-type">
+                                    </label>
+
+                                    <input type="radio" name="paymentCard" id="paymentCard2" value="1">
+                                    <label for="paymentCard2">
+                                        Visa… 1234
+                                        <img src="http://placehold.it/53x26" alt="" class="cart-type">
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="modal-buttons">
+                    <a href="javascript:void(0);"  data-dismiss="modal" class="button bg-light-gray">cancel</a>
+                    <a href="" class="button color-white bg-blue" data-toggle="modal" data-target="#success">purchase</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header justify-content-center">
+                <h5 class="modal-title">SUCCESS!</h5>
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+                <!--<span aria-hidden="true">&times;</span>-->
+                <!--</button>-->
+            </div>
+            <div class="modal-body">
+                <div class="modal-body__wrap">
+                    <h5 class="align-center">
+                        Your sway has been sent!
+                    </h5>
+                    <h5 class="margin_b_40">
+                        Let your friends know that you’ve championed a message, and encourage them to follow your lead:
+                    </h5>
+
+                    <div class="modal-social">
+                        <a href=""><img src="http://placehold.it/50x50" alt=""></a>
+                        <a href=""><img src="http://placehold.it/50x50" alt=""></a>
+                        <a href=""><img src="http://placehold.it/50x50" alt=""></a>
+                        <a href=""><img src="http://placehold.it/50x50" alt=""></a>
+                        <a href=""><img src="http://placehold.it/50x50" alt=""></a>
+                    </div>
+
+                    <div class="succses-buttons">
+                        <a href="javascript:void(0);" class="button bg-black color-white">go to dashboard</a>
+                        <br/>
+                        <a href="javascript:void(0);" class="">back to home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="shouldPost" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    Message should post under
+                </h5>
+
+                <a class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="icon icon-Nav_X" aria-hidden="true">
+                        <svg class="hidden-sm-down" width="24" height="24" viewBox="0 0 24 24" id="Nav_X" y="468"><title>Nav_X</title><path fill="#FFF" d="M24 2.417L21.583 0 12 9.583 2.417 0 0 2.417 9.583 12 0 21.583 2.417 24 12 14.417 21.583 24 24 21.583 14.417 12z" fill-rule="evenodd" opacity=".5"></path></svg>
+                        <svg class="hidden-md-up" width="10" height="16" viewBox="0 0 10 16" id="Nav_Back" y="444"><title>Nav_Back</title><path fill="#fff" d="M9.947 1.827l-6.12 6.12 6.12 6.12-1.894 1.88-8-8 8-8z" fill-rule="evenodd"></path></svg>
+                    </i>
+                </a>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body__wrap">
+                    <form class="form-custom">
+                        <div class="form-item">
+                            <p class="form-item__title">
+                                accounts
+                            </p>
+
+                            <div class="radio-block">
+                                <input type="radio" name="post-place" id="postPlace">
+                                <label for="postPlace">Sway page</label>
+                            </div>
+
+                            <div class="radio-block label-layer">
+                                <input type="radio" name="post-place" id="postPlaceSelect">
+                                <label class="" for="postPlaceSelect"></label>
+                                <div class="select-block">
+                                    <select name="" id="">
+                                        <option value="">1</option>
+                                        <option value="">2</option>
+                                        <option value="">3</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <div class="modal-buttons">
+                    <a href="javascript:void(0);"  data-dismiss="modal" class="button bg-light-gray">cancel</a>
+                    <a href="" class="button color-white bg-blue" data-toggle="modal" data-target="#payment">done</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="messagePreviewEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <a href="" class="margin_r_20"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                    Edit your sway
+                </h5>
+
+                <a class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="icon icon-Nav_X" aria-hidden="true">
+                        <svg class="hidden-sm-down" width="24" height="24" viewBox="0 0 24 24" id="Nav_X" y="468"><title>Nav_X</title><path fill="#FFF" d="M24 2.417L21.583 0 12 9.583 2.417 0 0 2.417 9.583 12 0 21.583 2.417 24 12 14.417 21.583 24 24 21.583 14.417 12z" fill-rule="evenodd" opacity=".5"></path></svg>
+                        <svg class="hidden-md-up" width="10" height="16" viewBox="0 0 10 16" id="Nav_Back" y="444"><title>Nav_Back</title><path fill="#fff" d="M9.947 1.827l-6.12 6.12 6.12 6.12-1.894 1.88-8-8 8-8z" fill-rule="evenodd"></path></svg>
+                    </i>
+                </a>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body__overflow">
+                    <form class="quick-amplify-form">
+                        <div class="form-item">
+                            <p class="form-item__title">Your link</p>
+                            <div class="input-success">
+                                <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                <input class="input-ellipsis" type="text" value="http://www.example.com">
+                            </div>
+                        </div>
+
+                        <div class="form-item">
+                            <p class="form-item__title">Who needs to see it</p>
+                            <div class="select-block">
+                                <select name="" id="example">
+                                    <option value="1">1</option>
+                                    <option value="1">2</option>
+                                    <option value="1">3</option>
+                                </select>
+                            </div>
+
+                            <a href="javascript:void(0);" class="input-notification align-right"
+                               onclick="$('#customizeAudience').show('slow')">customize audience</a>
+                        </div>
+
+                        <div class="form-item" id="customizeAudience" style="display: none">
+                            <p class="form-item__title">Behavior and Interests</p>
+
+                            <input type="text">
+                            <span class="input-notification">
+                                    ie: likes <b>COFFEE</b>, watches <b>ANIME</b>
+                                </span>
+                        </div>
+
+                        <div class="form-item">
+                            <p class="form-item__title">location</p>
+
+                            <input type="text">
+                        </div>
+
+                        <div class="form-item">
+                            <p class="form-item__title">Age</p>
+
+                            <input id="ageAuditory" type="text" class="span2" value="" data-slider-min="21" data-slider-max="100" data-slider-step="1" data-slider-value="[18,65]" data-slider-tooltip="hide">
+                            <p id="actualValue">21 - 65</p>
+                        </div>
+
+                        <div class="form-item">
+                            <p class="form-item__title margin_b_20">Gender</p>
+
+                            <div class="gender-radio">
+                                <input type="radio" checked="" name="gender" id="genderAll" value="3">
+                                <label for="genderAll">All</label>
+
+                                <input type="radio" name="gender" id="genderMen" value="1">
+                                <label for="genderMen">Men</label>
+
+                                <input type="radio" name="gender" id="genderWoman" value="2">
+                                <label for="genderWoman">Woman</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <div class="modal-buttons">
+                    <a href="javascript:void(0);"  data-dismiss="modal" class="button bg-light-gray">cancel</a>
+                    <a href="" class="button color-white bg-blue" data-toggle="modal" data-target="#payment">done</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- MODALS -->

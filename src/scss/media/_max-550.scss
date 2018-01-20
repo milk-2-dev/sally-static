@@ -1,0 +1,24 @@
+@media (max-width: 550px) {
+  .registration_step-back {
+    left: -20px;
+  }
+
+  .button{
+    &.icon-before {
+      padding-left: 30px;
+      padding-right: 10px;
+
+      svg,
+      .icon {
+        left: 10px;
+      }
+    }
+  }
+
+  .button.icon-before svg, .button.icon-before .icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translate(0, -50%);
+  }
+}

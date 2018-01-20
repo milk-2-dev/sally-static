@@ -1,0 +1,78 @@
+//todo Roman: delete this things, because bootstrap has it yet (.text-left and else)
+
+.align-left {
+  text-align:left !important;
+}
+.align-right {
+  text-align:right !important;
+}
+.align-center {
+  text-align:center !important;
+}
+
+.visibility_h{
+  visibility: hidden;
+}
+
+.text-underline{
+  text-decoration: underline
+}
+
+img.align-left {
+  float:left;
+  margin:.5em 2em .5em 0;
+}
+img.align-right {
+  float:right;
+  margin:.5em 0 .5em 2em;
+}
+img.align-center {
+  margin:1em auto;
+  display:block;
+}
+
+.resize_none{
+  resize: none;
+}
+
+.no-border{
+  border:none !important;
+}
+
+
+/**********************************************************************************************
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+								13. Custom Padding And Margins
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+***********************************************************************************************/
+
+
+
+@each $indentation, $orientation, $prefix in  (margin, margin-top, t),
+                                              (margin, margin-bottom, b),
+                                              (margin, margin-left, l),
+                                              (margin, margin-right, r),
+                                              (padding, padding-top, t),
+                                              (padding, padding-bottom, b),
+                                              (padding, padding-left, l),
+                                              (padding, padding-right, r)
+{
+  @for $i from 0 through 20{
+    .#{$indentation}_#{$prefix}_#{$i*5}{
+      #{$orientation}: #{$i*5}px !important;
+    }
+  }
+}
+
+
+
+/********************************************
+			  	12-5. Colors
+*********************************************/
+.color-white,
+.color-white.button,
+.color-white.button:hover,
+.color-light {
+  color:#fff !important;
+}
+
